@@ -1,20 +1,18 @@
 import Image from "next/image";
 import { LoadingSection } from "@/components/section";
-import Nav from "@/components/nav";
-import LoginButton from "@/components/login";
 
 export default function Loading() {
     return (
     <>
       <LoadingSection>
         <div className="relative min-h-screen mx-auto">
-          <div className="flex items-center w-64 mx-auto animate-pulse">
+          <div className="flex items-center w-64 h-64 mx-auto animate-pulse">
             <Image
               className="relative"
-              src="/logos/sayheysoundslogo.webp"
-              alt="SayHeySounds Logo"
-              width={1330}
-              height={1330}
+              src="/logos/min-logo.svg"
+              alt="CCFIL Logo"
+              width={100}
+              height={100}
               priority
             />
           </div>

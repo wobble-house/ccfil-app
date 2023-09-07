@@ -2,24 +2,34 @@
 import Link from 'next/link';
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from './click-handler';
+import ImageHandler from './image-handler';
 
 export default function Nav({children}) {
   const Navref = useRef();
+  const AboutRef = useRef();
+  const ServicesRef = useRef();
+  const [about, setAbout] = useState(false);
+  const [services, setServices] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const handleClickOutside = () => {
-    setNavbar(false)
+  const handleNavClickOutside = () => {
+    setNavbar(false);
   }
-  useOnClickOutside(Navref, handleClickOutside)
+  useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <div className="flex w-full z-50 px-5 mx-auto bg-inherit">
-        <div className="flex flex-col md:flex-row justify-center mx-auto">
-          <div className="flex flex-row">
+      <nav className="flex z-50 px-5  bg-inherit top-0">
+        <div className="flex flex-col md:flex-row justify-between w-full">
+
+          <div className="flex flex-row justify-between">
+          <div className={`w-5 h-5 mx-auto`}>
+              <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={20} height={20}></ImageHandler>
+              </div>
             <div className="flex flex-row-reverse items-center justify-between md:block">
-              <div className="z-10 md:hidden mr-auto relative">
+
+              <div className="z-30 md:hidden mr-auto relative">
                 <button
                   className="bg-white dark:bg-black pr-2 mr-2 pl-2 mt-5
                  border-2 rounded-md border-black focus:border-2 focus:animate-pulse"
-                 onClick={() => setNavbar(!navbar)}
+                 onClick={()=>setNavbar(!navbar)}
                 >
                   {navbar ? (
                     <svg
@@ -56,38 +66,88 @@ export default function Nav({children}) {
               </div>
             </div>
           </div>
-            <div ref={Navref} className={`flex h-full z-20 md:mx-auto content-center items-center bg-white dark:bg-black md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul  className="text-center flex flex-col md:flex-row gap-5">
-                <li>
-                  <Link href="/" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
+            <div ref={Navref} className={`z-20 mx-auto bg-white dark:bg-black justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
+              <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg">
+                <li className="max-w-[70px]">
+                  <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
                   Home
                   </Link>
                 </li>
-                <li>
-                  <Link href="/about" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
-                  About
+
+
+                <li className="max-w-[70px]">
+                <Link href="/about"  className="font-sans uppercase text-xs whitespace-nowrap"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} >
+                  About Us
+                  </Link>
+                  <ul onMouseLeave={() => setAbout(false)} className={`${about ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
+                    <li>
+                  <Link href="/about/commitment" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Our Commitment
+                  </Link>
+                  </li>
+                  <li className="">
+                  <Link href="/about/team" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Team
+                  </Link>
+                  </li>
+                  <li className="">
+                  <Link href="/about/strategic-plan" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Strategic Plan
+                  </Link>
+                  </li>
+                  <li className="">
+                  <Link href="/about/code-of-ethics" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Code of Ethics
+                  </Link>
+                  </li>
+                 </ul>
+                </li>
+
+
+                <li className="max-w-[70px]">
+                <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Services
+                  </Link>
+                  <ul onMouseLeave={() => setServices(false)} className={`${services ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
+                  <li>
+                  <Link href="/services/program-components" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Program Components
                   </Link>
                 </li>
                 <li>
-                  <Link href="/artists" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
-                  Our Roster
+                  <Link href="/services/residential-program" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Semi-Independent Residential Programs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sync" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
-                  Sync Placements
+                  <Link href="/services/supported-employment" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Supported Employment
                   </Link>
                 </li>
-                <li>
-                  <Link href="/submissions" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
-                  Artist Submissions
+                  </ul>
+                </li>
+
+
+                <li className="max-w-[70px]">
+                  <Link href="/outcomes" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Outcomes
+                  </Link>
+                </li>
+                <li className="max-w-[70px]">
+                  <Link href="/cause" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Cause
+                  </Link>
+                </li>
+                <li className="max-w-[70px]">
+                  <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  Contact Us
                   </Link>
                 </li>
                 {children}
               </ul>
           </div>
           </div>
-          </div>
+          </nav>
           
   );
 };

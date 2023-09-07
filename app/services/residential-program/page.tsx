@@ -1,14 +1,14 @@
 import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
-import Loading from "./loading"
+import Loading from "@/app/loading"
 
 export const metadata = {
-  title: 'Home',
+  title: 'Semi-Independent Residential Program',
   description: 'Learn more about CCFIL',
 }
 
-export default function Home() {
+export default function ResidentialProgram() {
   return (
    <>
          <Animation mode={'wait'} initial={false}>

@@ -29,8 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="relative mx-auto no-scrollbar">
         <GABody/>
+        
+        <main className={`flex flex-col mx-auto min-h-screen w-full snap-y`}>
         <Nav><></></Nav>
-        <main className={` mx-auto min-h-screen w-full snap-y`}>
               {children}
             </main>
             <Footer/>
