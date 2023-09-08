@@ -6,8 +6,6 @@ import ImageHandler from './image-handler';
 
 export default function Nav({children}) {
   const Navref = useRef();
-  const AboutRef = useRef();
-  const ServicesRef = useRef();
   const [about, setAbout] = useState(false);
   const [services, setServices] = useState(false);
   const [navbar, setNavbar] = useState(false);
@@ -16,13 +14,10 @@ export default function Nav({children}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-50 px-5  bg-inherit top-0">
-        <div className="flex flex-col md:flex-row justify-between w-full">
-
+      <nav className="flex z-50 px-5 top-0 justify-center">
+        <ImageHandler src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="absolute z-0"></ImageHandler>
+        <div className="flex flex-col md:flex-row justify-between p-10 mx-auto z-10">
           <div className="flex flex-row justify-between">
-          <div className={`w-5 h-5 mx-auto`}>
-              <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={20} height={20}></ImageHandler>
-              </div>
             <div className="flex flex-row-reverse items-center justify-between md:block">
 
               <div className="z-30 md:hidden mr-auto relative">
@@ -66,8 +61,12 @@ export default function Nav({children}) {
               </div>
             </div>
           </div>
-            <div ref={Navref} className={`z-20 mx-auto bg-white dark:bg-black justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg">
+            <div ref={Navref} className={`flex flex-col md:flex-row mx-auto bg-transparent bg-white bg-opacity-50 pb-10 pl-16 pr-16 dark:bg-black md:block ${navbar ? 'sticky' : 'hidden'}`}>
+            <div className="flex flex-row p-5 content-center">
+              <div className={`flex w-9 h-9`}>
+              <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}></ImageHandler>
+              </div>
+              <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg ml-auto pb-10">
                 <li className="max-w-[70px]">
                   <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
                   Home
@@ -145,6 +144,15 @@ export default function Nav({children}) {
                 </li>
                 {children}
               </ul>
+              </div>
+              <div className="p-16 bg-transparent bg-opacity-50 border-solid border-white border-[10px]">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+          <div className="flex flex-row justify-between pt-10">
+            <p>{`(248) 410-2715`}</p>
+            <p>{`-->`}</p>
+            <p>Contact us</p>
+          </div>
           </div>
           </div>
           </nav>

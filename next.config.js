@@ -3,6 +3,7 @@ module.exports = {
     images: {
       domains: [
         'firebasestorage.googleapis.com',
+        'ccfil.com'
       ],
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",
