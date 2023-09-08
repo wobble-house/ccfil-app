@@ -9,6 +9,8 @@ export default function Nav({children}) {
   const [about, setAbout] = useState(false);
   const [services, setServices] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [selectedLink, setSelectedLink] = useState("");
+
   const handleNavClickOutside = () => {
     setNavbar(false);
   }
@@ -67,35 +69,40 @@ export default function Nav({children}) {
               <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}></ImageHandler>
               </div>
               <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg ml-auto pb-10">
-                <li className="max-w-[70px]">
-                  <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
-                  Home
+                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+                  <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=> setNavbar(false)} onMouseDown={()=>setSelectedLink("/")}>
+                    Home
                   </Link>
                 </li>
 
 
-                <li className="max-w-[70px]">
-                <Link href="/about"  className="font-sans uppercase text-xs whitespace-nowrap"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} >
+                <li className={`max-w-[70px] ${selectedLink.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                <Link href="/about"  className="font-sans uppercase text-xs whitespace-nowrap"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about")} >
                   About Us
                   </Link>
                   <ul onMouseLeave={() => setAbout(false)} className={`${about ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
-                    <li>
-                  <Link href="/about/commitment" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  <li className={`max-w-[70px] ${selectedLink != "/about/commitment" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/about/commitment" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/commitment")}>
                   Our Commitment
                   </Link>
                   </li>
-                  <li className="">
-                  <Link href="/about/team" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  <li className={`max-w-[70px] ${selectedLink != "/about/team" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/about/team" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/team")}>
                   Team
                   </Link>
                   </li>
-                  <li className="">
-                  <Link href="/about/strategic-plan" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  <li className={`max-w-[70px] ${selectedLink != "/about/strategic-plan" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/about/strategic-plan" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/strategic-plan")}>
                   Strategic Plan
                   </Link>
                   </li>
-                  <li className="">
-                  <Link href="/about/code-of-ethics" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  <li className={`max-w-[70px] ${selectedLink != "/about/code-of-ethics" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/about/code-of-ethics" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/code-of-ethics")}>
                   Code of Ethics
                   </Link>
                   </li>
@@ -103,23 +110,27 @@ export default function Nav({children}) {
                 </li>
 
 
-                <li className="max-w-[70px]">
-                <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
                   Services
                   </Link>
                   <ul onMouseLeave={() => setServices(false)} className={`${services ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
-                  <li>
-                  <Link href="/services/program-components" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                  <li className={`max-w-[70px] ${selectedLink != "/services/program-components" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/services/program-components" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services/program-components")}>
                   Program Components
                   </Link>
                 </li>
-                <li>
-                  <Link href="/services/residential-program" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink != "/services/residential-program" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/services/residential-program" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services/residential-program")}>
                   Semi-Independent Residential Programs
                   </Link>
                 </li>
-                <li>
-                  <Link href="/services/supported-employment" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink != "/services/supported-employment" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/services/supported-employment" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
                   Supported Employment
                   </Link>
                 </li>
@@ -127,18 +138,21 @@ export default function Nav({children}) {
                 </li>
 
 
-                <li className="max-w-[70px]">
-                  <Link href="/outcomes" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/outcomes" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/outcomes")}>
                   Outcomes
                   </Link>
                 </li>
-                <li className="max-w-[70px]">
-                  <Link href="/cause" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/cause" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/cause")}>
                   Cause
                   </Link>
                 </li>
-                <li className="max-w-[70px]">
-                  <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)}>
+                <li className={`max-w-[70px] ${selectedLink != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500`}>
+
+                  <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/contact")}>
                   Contact Us
                   </Link>
                 </li>
@@ -151,7 +165,9 @@ export default function Nav({children}) {
           <div className="flex flex-row justify-between pt-10">
             <p>{`(248) 410-2715`}</p>
             <p>{`-->`}</p>
-            <p>Contact us</p>
+            <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap">
+                  Contact Us
+                  </Link>
           </div>
           </div>
           </div>
