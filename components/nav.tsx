@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from './click-handler';
 import ImageHandler from './image-handler';
+import Image from 'next/image';
 
 export default function Nav({children}) {
   const Navref = useRef();
@@ -16,9 +17,11 @@ export default function Nav({children}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-50 px-5 top-0 justify-center">
-        <ImageHandler src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="absolute z-0"></ImageHandler>
-        <div className="flex flex-col md:flex-row justify-between p-10 mx-auto z-10">
+      <nav className="flex z-10 justify-center top-0 ">
+        <div className="absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
+        <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image"/>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between px-10 pt-10 mx-auto z-10 max-w-6xl">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row-reverse items-center justify-between md:block">
 

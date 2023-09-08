@@ -33,6 +33,7 @@ export default function RootLayout({
         <main className={`flex flex-col mx-auto min-h-screen w-full snap-y`}>
         <Nav><></></Nav>
               {children}
+              
             </main>
             <Footer/>
             </body>

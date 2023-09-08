@@ -8,11 +8,11 @@ export default function Footer(){
     <>
     <Animation mode={'wait'} initial={false}>
         <Section>
-            <div className="p-16 bottom-0">
-                <div className="absolute w-full bottom-0 left-0">
-                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={1440} height={1920}/>
+            <div className="bottom-0 overflow-hidden z-0 py-16">
+                <div className="absolute w-full bottom-0">
+                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440}/>
             </div>
-            <div className={`w-full sticky my-2 bottom-0 bg-[#66686b] p-16`}>
+            <div className={`max-w-6xl sticky my-2 bottom-0 bg-[#66686b] p-16 mx-auto`}>
                 <div className="flex flex-col md:flex-row justify-between text-white max-w-6xl mx-auto gap-10">
                 <div className="flex flex-col content-center max-w-md gap-5">
                     <h2 className="text-bold text-2xl">

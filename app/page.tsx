@@ -17,7 +17,7 @@ export default function Home() {
    <>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-screen mt-20 p-20">
+          <div className="flex max-w-screen mt-20 py-5 z-10 w-full bg-white">
           <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl="/about" Type="A"/>
           </div>
         </Suspense>
