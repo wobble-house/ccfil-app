@@ -14,9 +14,10 @@ export default function InfoSegment({headerText, bodyText, Type, ImageUrl, Butto
             <h2 className="text-2xl font-bold text-blue-700">{headerText}</h2>
             <hr className="border-red-500 border-2 w-1/2"/>
             <p>{bodyText}</p>
-            <button className="uppercase border-2 border-blue-500 rounded-full px-6 py-2 mx-auto hover:bg-blue-500 hover:text-white"
+            {ButtonUrl == null ? <></> : <button className="uppercase border-2 border-blue-500 rounded-full px-6 py-2 mx-auto hover:bg-blue-500 hover:text-white"
             onClick={()=> router.push(ButtonUrl)}>Learn More About Us
-            </button>
+            </button> }
+            
             </div>
         </div>
     )

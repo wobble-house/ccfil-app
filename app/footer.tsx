@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { Animation } from "@/utils/animation/animation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faInstagram, faSoundcloud, faYoutube, faFacebook} from "@fortawesome/free-brands-svg-icons";
 import Section from "@/components/section";
+import ImageHandler from "@/components/image-handler";
 
 export default function Footer(){
     return (
     <>
     <Animation mode={'wait'} initial={false}>
         <Section>
+            <div className="p-16 bottom-0">
+                <div className="absolute w-full bottom-0 left-0">
+                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={1440} height={1920}/>
+            </div>
             <div className={`w-full sticky my-2 bottom-0 bg-[#66686b] p-16`}>
                 <div className="flex flex-col md:flex-row justify-between text-white max-w-6xl mx-auto gap-10">
                 <div className="flex flex-col content-center max-w-md gap-5">
@@ -47,6 +50,7 @@ Sterling Heights, MI 48312
                 </div>
                 </div>
                 <p className="text-center font-mono text-xs text-white pt-20">©Copyright 2023 Community Connections. All Rights Reserved. Privacy Policy</p>
+            </div>
             </div>
         </Section>
         </Animation>
