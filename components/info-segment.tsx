@@ -29,7 +29,7 @@ export function StickyInfoSegment({children, captionText}){
         <>
         <div className="w-full bg-[#f5f5f5]">
         <div className="flex flex-col md:flex-row max-w-6xl py-16 px-3 gap-10 mx-auto">
-            <div className="w-1/3 border-[10px] border-blue-500 p-10 sticky mb-auto">
+            <div className="w-1/3 border-[10px] border-blue-500 p-10 sticky top-4 mb-auto">
                 <h2 className="text-blue-700 font-black text-5xl">
                     {captionText}
                 </h2>
