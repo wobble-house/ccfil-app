@@ -6,9 +6,9 @@ import ImageHandler from "@/components/image-handler";
 export default function Footer(){
     return (
     <>
-            <div className=" bottom-0 overflow-hidden py-16 bg-white">
+            <div className="relative bottom-0 overflow-hidden py-16 bg-white">
 
-                <div className="absolute w-full bottom-0 z-0">
+                <div className="absolute w-full bottom-0">
                 <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440}/>
             </div>
             <div className={`max-w-6xl sticky my-2 bottom-0 bg-[#66686b] p-16 mx-auto`}>

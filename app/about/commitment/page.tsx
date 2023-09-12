@@ -4,7 +4,6 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
-import Section from "@/components/section"
 
 export const metadata = {
   title: 'Commitment',
@@ -24,6 +23,9 @@ Community Connections provides a supportive living environment through a multidi
 const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeTile.jpg`
 const quote = `It’s good to push yourself and do what you don’t necessarily want to do, that if you’re not automatically good at it, you should try. Trying is so important.`
 const quoteName = `Meryl Streep`
+const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/happiness-quote.jpg`
+
+
 export default function Commitment() {
   
   return (
@@ -31,17 +33,11 @@ export default function Commitment() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-            <Section initial={false} useOnce>
           <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl={null} Type="A"/>
-          </Section>
-          <Section initial={false} useOnce>
-          <StickyInfoSegment captionText={captionText}>
+          <StickyInfoSegment captionText={captionText} type="A">
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>
-          </Section>
-          <Section initial={false} useOnce>
-          <QuoteSection quote={quote} quoteName={quoteName}/>
-          </Section>
+          <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
         </Suspense>
       </Animation>

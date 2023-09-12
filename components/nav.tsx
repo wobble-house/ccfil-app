@@ -17,7 +17,7 @@ export default function Nav({children}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-10 justify-center top-0 mb-12">
+      <nav className="flex z-40 justify-center top-0 mb-12">
         <div className="absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
         <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image"/>
         </div>
@@ -72,14 +72,14 @@ export default function Nav({children}) {
               <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}></ImageHandler>
               </div>
               <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg ml-auto pb-10">
-                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] `}>
+                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
                   <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=> setNavbar(false)} onMouseDown={()=>setSelectedLink("/")}>
                     Home
                   </Link>
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px]`}>
+                <li className={`max-w-[70px] ${selectedLink.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
                 <Link href="/about"  className="font-sans uppercase text-xs whitespace-nowrap"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about")} >
                   About Us
@@ -113,7 +113,7 @@ export default function Nav({children}) {
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px]`}>
+                <li className={`max-w-[70px] ${selectedLink.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
                 <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
                   Services
@@ -141,19 +141,19 @@ export default function Nav({children}) {
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px]`}>
+                <li className={`max-w-[70px] ${selectedLink != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
                   <Link href="/outcomes" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/outcomes")}>
                   Outcomes
                   </Link>
                 </li>
-                <li className={`max-w-[70px] ${selectedLink != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px]`}>
+                <li className={`max-w-[70px] ${selectedLink != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
                   <Link href="/cause" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/cause")}>
                   Cause
                   </Link>
                 </li>
-                <li className={`max-w-[70px] ${selectedLink != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px]`}>
+                <li className={`max-w-[70px] ${selectedLink != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
                   <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/contact")}>
                   Contact Us
