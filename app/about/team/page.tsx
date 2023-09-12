@@ -3,6 +3,7 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment from "@/components/info-segment"
+import QuoteSection from "@/components/quote"
 
 export const metadata = {
   title: 'Team',
@@ -18,14 +19,18 @@ We also use community-based experiences as a way of providing our residents with
 
 Together our cognitive programs, positive behavior supports, and learning approach to prosocial skills truly is what sets us apart.`
 const ImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILAboutUsBW.jpg`
+const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`
+const quoteName = `ELLEN DEGENERES`
+const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/resident-quote.jpg`
 
 export default function Team() {
   return (
    <>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-screen py-5">
+          <div className="flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl={null} Type="A"/>
+          <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
         </Suspense>
       </Animation>
