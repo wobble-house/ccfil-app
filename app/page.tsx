@@ -20,6 +20,7 @@ export default function Home() {
           <div className="flex max-w-screen mt-20 py-5 z-10 w-full bg-white">
           <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl="/about" Type="A"/>
           </div>
+          
         </Suspense>
       </Animation>
    </>
