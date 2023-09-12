@@ -6,10 +6,9 @@ import ImageHandler from "@/components/image-handler";
 export default function Footer(){
     return (
     <>
-    <Animation mode={'wait'} initial={false}>
-        <Section>
-            <div className="bottom-0 overflow-hidden z-0 py-16">
-                <div className="absolute w-full bottom-0">
+            <div className=" bottom-0 overflow-hidden py-16 bg-white">
+
+                <div className="absolute w-full bottom-0 z-0">
                 <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440}/>
             </div>
             <div className={`max-w-6xl sticky my-2 bottom-0 bg-[#66686b] p-16 mx-auto`}>
@@ -51,9 +50,8 @@ Sterling Heights, MI 48312
                 </div>
                 <p className="text-center font-mono text-xs text-white pt-20">©Copyright 2023 Community Connections. All Rights Reserved. Privacy Policy</p>
             </div>
-            </div>
-        </Section>
-        </Animation>
+            
+        </div>
     </>
     )
 }

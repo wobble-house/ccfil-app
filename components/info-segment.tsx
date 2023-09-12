@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function InfoSegment({headerText, bodyText, Type, ImageUrl, ButtonUrl}:{headerText : string, bodyText: string, Type: string, ImageUrl, ButtonUrl}){
     const router = useRouter();
     return(
-        <div className={`z-20 h-full bg-white pb-10 mx-auto `}>
+        <div className={`z-20 h-full bg-white py-12 mx-auto `}>
             <div className={`max-w-6xl flex flex-col mx-auto w-full h-full ${Type != "B" ? "md:flex-row " : "md:flex-row-reverse"}`}>
             <div className={`w-1/2 ${Type != "B" ? "ml-5" : "mr-5"}`}>
             <ImageHandler src={ImageUrl} width={800} height={600}/>
@@ -27,7 +27,7 @@ export default function InfoSegment({headerText, bodyText, Type, ImageUrl, Butto
 export function StickyInfoSegment({children, captionText}){
     return(
         <>
-        <div className="w-full bg-[#f5f5f5]">
+        <div className="w-full z-20 bg-[#f5f5f5]">
         <div className="flex flex-col md:flex-row max-w-6xl py-16 px-3 gap-10 mx-auto">
             <div className="w-1/3 border-[10px] border-blue-500 p-10 sticky top-4 mb-auto">
                 <h2 className="text-blue-700 font-black text-5xl">

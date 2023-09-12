@@ -18,7 +18,7 @@ export default function Cause() {
    <>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-screen mt-20 py-5">
+          <div className="mx-auto max-w-screen py-5">
           <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl={null} Type="B"/>
           </div>
         </Suspense>

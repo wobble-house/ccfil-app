@@ -9,14 +9,14 @@ import { useOnClickOutside } from "./click-handler";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-export default function Section({ children }) {
+export default function Section({ children, initial, useOnce }:{children, initial: boolean, useOnce: boolean}) {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: false });
+    const isInView = useInView(sectionRef, { once: useOnce });
     return (
       <motion.section layout className="overscroll-auto sticky-top-0 snap-center" ref={sectionRef}>
         <motion.div
         layout
-        initial={false}
+        initial={initial}
           style={{
             opacity: isInView ? 1 : 0,
             transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
@@ -146,7 +146,7 @@ export function SectionSwap2({color, title, subtitle}:{color: string, title: str
   const [green, setGreen] = useState((color != "green") ? false : true);
   return (
 <>
-<Section> 
+<Section initial={false} useOnce> 
               <div className={`flex mx-auto transition ease-in-out delay-150 flex-col items-center min-h-screen h-full w-full justify-center 
               ${!green ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
               ${!blue ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}

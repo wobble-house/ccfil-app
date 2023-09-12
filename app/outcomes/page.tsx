@@ -13,7 +13,7 @@ export default function Outcomes() {
    <>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-screen mt-10">
+          <div className="mx-auto max-w-screen">
           <h2 className="text-2xl font-bold uppercase">{metadata.title}</h2>
           </div>
         </Suspense>
