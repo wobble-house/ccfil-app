@@ -2,6 +2,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageHandler from "@/components/image-handler";
+import Image from "next/image";
 
 const whoWeAre = `
 Community Connections for Independent Living, LLC is a group of caring professionals dedicated to the residents we service, individuals who sustained Traumatic Brain Injury (TBI). 
@@ -30,7 +31,7 @@ export default function Footer(){
                 </div>
                 <div className="flex flex-col md:ml-auto content-center gap-5 justify-center items-center">
                 <div className="mx-auto">
-                    image goes here
+                <Image src="/logos/main-logo-white.svg" alt="CCFIL logo" width={225} height={58}/>
                 </div>
                 <hr></hr>
                 <div className="w-40">
