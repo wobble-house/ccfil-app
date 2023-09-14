@@ -94,7 +94,7 @@ export function InfoCard({
     initial="hidden"
     animate="visible"
     variants={dropIn}
-    className="fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-50 z-50 p-5"
+    className="transition ease-in-out delay-200 duration-300 fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-50 z-50 p-5"
     >
       <div className="flex details-card justify-center items-center mx-auto">
                   <motion.div
@@ -127,7 +127,7 @@ else return (
     key={`${id} modal closed`}
     variants={animationItem}
     id={id}
-    className="flex flex-col hover:scale-105 relative grow shrink"
+    className="transition ease-in-out delay-200 duration-300 flex flex-col hover:scale-105 relative grow shrink"
     >
                 <motion.button 
                 initial="visible"
