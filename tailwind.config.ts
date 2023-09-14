@@ -24,6 +24,7 @@ const config: Config = {
       },
     },
     colors: {
+      transparent: 'transparent',
       gray1: 'rgb(var(--color-gray1) / <alpha-value>)',
       gray2: 'rgb(var(--color-gray2) / <alpha-value>)',
      gray3: 'rgb(var(--color-gray3) / <alpha-value>)',

@@ -16,7 +16,7 @@ export function InfoCardList({data}){
             whileInView="visible"
             variants={animationList}
             viewport={{ once: false }}
-            className="grid grid-cols-0 md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-30 relative"
+            className="p-10 grid grid-cols-0 md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-30 relative"
             >
                 {infoData.map(data => (<InfoCard 
                   id={`${data.id} card`}

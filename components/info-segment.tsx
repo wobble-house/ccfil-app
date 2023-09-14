@@ -32,8 +32,8 @@ export function StickyInfoSegment({children, captionText, type}){
         <Section initial={true} useOnce>
         <div className="relative w-full z-40 bg-white">
         <div className={`flex flex-col ${type == "A" ? "md:flex-row" : "md:flex-row-reverse"} max-w-6xl py-16 px-3 gap-10 mx-auto justify-center`}>
-            <div className="md:w-1/3 border-[10px] border-blue2 p-10 sticky top-4 mb-auto max-w-[300px]">
-                <h2 className="text-blue1 font-black text-4xl flex flex-shrink relative">
+            <div className="flex items-center md:w-1/3 border-[10px] border-blue2 p-10 sticky top-4 mb-auto max-w-[300px] aspect-[1/1]">
+                <h2 className="text-blue1 font-black text-4xl flex flex-shrink relative ">
                     {captionText}
                 </h2>
             </div>
