@@ -27,7 +27,7 @@ export function DetailsCard({
  }){
 
       return (
-        <div className="flex flex-col shrink py-4 px-6 bg-black overflow-auto max-h-[400px] no-scrollbar rounded-md">
+        <div className="flex flex-col shrink py-4 px-6 bg-blue2 overflow-auto max-h-[400px] no-scrollbar rounded-md">
             <motion.div layout
                 initial="hidden"
                 animate="visible"

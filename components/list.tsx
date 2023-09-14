@@ -94,7 +94,7 @@ export function InfoCard({
     initial="hidden"
     animate="visible"
     variants={dropIn}
-    className="fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-black bg-opacity-75 z-50 p-5"
+    className="fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-50 z-50 p-5"
     >
       <div className="flex details-card justify-center items-center mx-auto">
                   <motion.div
@@ -105,7 +105,7 @@ export function InfoCard({
                   animate="visible"
                   exit="exit"
                   >
-                    <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-blue-500 rounded-full pb-1 mx-auto">
+                    <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-pink rounded-full pb-1 mx-auto">
       <span className="text-xl hover:animate-pulse m-3 text-white">x</span>
       </button>
                   <div ref={ref} className="overflow-y-scroll no-scrollbar">
@@ -143,7 +143,7 @@ else return (
                         <h2 className="flex lg:text-2xl uppercase font-bold text-left text-white">{firstName}&nbsp;{lastName}</h2>
                         <h3 className="lg:text-xl uppercase italic text-left text-white">{title}</h3>
                      </div>
-                <div className="flex bg-zinc-50 relative">
+                <div className="flex relative">
                   <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} priority className="object-cover" />
                 </div>
 
