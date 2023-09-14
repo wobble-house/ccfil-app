@@ -2,10 +2,10 @@ import Image from "next/image"
 import Section from "./section"
 export default function QuoteSection({quote, quoteName, quoteImgSrc}:{quote:string, quoteName: string, quoteImgSrc}){
     return(
-        <Section initial={true} useOnce={true}>
+        <Section initial={true} useOnce={false}>
         <div className="flex flex-col">
 
-        <div className="fixed top-0 left-0 md:min-w-screen -z-0 w-full">
+        <div className="fixed top-0 left-0 md:min-w-screen z-0 w-full">
             <Image src={quoteImgSrc} width={2560} height={1440} alt="background image of smiling people" className="min-h-screen aspect-[16/9] object-cover"/>
         </div>
                 <div className="flex flex-col max-w-3xl bg-transparent mx-auto h-[400px] z-10 justify-center gap-14">

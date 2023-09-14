@@ -20,7 +20,7 @@ export default function Section({ children, initial, useOnce }:{children, initia
         initial={initial}
         style={{
             opacity: isInView ? 1 : 0,
-            transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
+            transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
           }}
         >
           {children}

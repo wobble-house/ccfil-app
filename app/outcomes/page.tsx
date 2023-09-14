@@ -3,9 +3,11 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import QuoteSection from "@/components/quote"
+import Image from "next/image"
+import Section from "@/components/section"
 
 export const metadata = {
-  title: 'Outcomese',
+  title: 'Outcomes',
   description: 'Learn more about CCFIL',
 }
 
@@ -18,9 +20,15 @@ export default function Outcomes() {
    <>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="flex flex-col w-full">
-          <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
+              <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16">
+            <Image src="https://ccfil.com/wp-content/uploads/2021/11/CCFIL-DemographicsInfographic_v02-768x1199.png" 
+            width={623} 
+            height={973} 
+            alt="demographic infographic" 
+            priority
+            className="relative"/>
           </div>
+          <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
         </Suspense>
       </Animation>
    </>
