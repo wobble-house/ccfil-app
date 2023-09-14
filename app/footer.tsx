@@ -9,12 +9,12 @@ export default function Footer(){
             <div className="relative bottom-0 overflow-hidden py-16 bg-white">
 
                 <div className="absolute w-full bottom-0">
-                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440}/>
+                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440} alt={`footer image`}/>
             </div>
-            <div className={`max-w-6xl sticky my-2 bottom-0 bg-[#66686b] p-16 mx-auto`}>
+            <div className={`max-w-6xl sticky my-2 bottom-0 bg-gray3 p-16 mx-auto`}>
                 <div className="flex flex-col md:flex-row justify-between text-white max-w-6xl mx-auto gap-10">
                 <div className="flex flex-col content-center max-w-md gap-5">
-                    <h2 className="text-bold text-2xl">
+                    <h2 className="font-bold text-2xl">
                     Who We Are
                     </h2>
                     <hr>

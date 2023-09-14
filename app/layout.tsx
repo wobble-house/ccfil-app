@@ -9,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import {Lato ,Paytone_One } from 'next/font/google'
 
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -20,17 +21,32 @@ export const metadata: Metadata = {
   },
 }
 
+const paytoneOne = Paytone_One({
+  weight: '400',
+  style: 'normal',
+  subsets: ["latin","latin-ext"],
+  variable: '--font-PaytoneOne',
+  display: 'swap'
+})
+
+const latoLite = Lato({
+  weight: '100',
+  style: 'normal',
+  subsets: ["latin","latin-ext"],
+  variable: '--font-Lato',
+  display: 'swap'
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="relative mx-auto no-scrollbar">
+    <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable}`}>
+      <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
-        
-        <main className={`flex flex-col mx-auto min-h-screen w-full snap-y`}>
+        <main className={`flex flex-col mx-auto min-h-screen snap-y`}>
         <Nav><></></Nav>
               {children}
               

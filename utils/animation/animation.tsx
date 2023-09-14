@@ -29,7 +29,6 @@ export const animationList = {
 export const dropIn = {
   hidden: {
       opacity: 0,
-      scale: 0,
       transition: {
         duration: 2,
         type: "spring",
@@ -39,7 +38,6 @@ export const dropIn = {
   },
   visible: {
       opacity: 1,
-      scale: 1,
       transition: {
           duration: 1.5,
           type: "spring",
@@ -49,14 +47,13 @@ export const dropIn = {
   },
   exit: {
       opacity: 0,
-      scale:0
+      scale:0,
   },
 };
 
 export const animationItem = {
 visible: { 
   opacity: 1,
-  scale: 1,
   y: 0,
   transition: {
     when: "beforeChildren",
@@ -64,7 +61,6 @@ visible: {
 },
 hidden: { 
   opacity: 0,
-  scale: 0,
   y:-100,
   transition: {
     when: "afterChildren",

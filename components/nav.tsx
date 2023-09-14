@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from './click-handler';
-import ImageHandler from './image-handler';
 import Image from 'next/image';
 
 export default function Nav({children}) {
@@ -19,7 +18,7 @@ export default function Nav({children}) {
   return (
       <nav className="flex z-40 justify-center top-0 mb-12">
         <div className="absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
-        <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image"/>
+        <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
         </div>
         <div className="flex flex-col md:flex-row justify-between px-10 pt-10 mx-auto z-10 max-w-6xl">
           <div className="flex flex-row justify-between">
@@ -27,8 +26,8 @@ export default function Nav({children}) {
 
               <div className="z-30 md:hidden mr-auto relative">
                 <button
-                  className="bg-white dark:bg-black pr-2 mr-2 pl-2 mt-5
-                 border-2 rounded-md border-black focus:border-2 focus:animate-pulse"
+                  className="bg-white dark:bg-blue2 pr-2 mr-2 pl-2 mt-5
+                 border-2 rounded-md border-blue2 focus:border-2 focus:animate-pulse"
                  onClick={()=>setNavbar(!navbar)}
                 >
                   {navbar ? (
@@ -66,14 +65,14 @@ export default function Nav({children}) {
               </div>
             </div>
           </div>
-            <div ref={Navref} className={`flex flex-col md:flex-row mx-auto bg-transparent bg-white bg-opacity-50 pb-10 pl-16 pr-16 dark:bg-black md:block ${navbar ? 'sticky' : 'hidden'}`}>
+            <div ref={Navref} className={`flex flex-col md:flex-row mx-auto bg-transparent bg-white bg-opacity-50 pb-10 pl-16 pr-16 dark:bg-blue2 md:block ${navbar ? 'sticky' : 'hidden'}`}>
             <div className="flex flex-row p-5 content-center">
               <div className={`flex w-9 h-9`}>
-              <ImageHandler src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}></ImageHandler>
+              <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
               </div>
               <ul  className="text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg ml-auto pb-10">
-                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <Link href="/" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=> setNavbar(false)} onMouseDown={()=>setSelectedLink("/")}>
+                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                  <Link href="/" className="font-sans uppercase font-bold text-sm whitespace-nowrap text-blue2" onClick={()=> setNavbar(false)} onMouseDown={()=>setSelectedLink("/")}>
                     Home
                   </Link>
                 </li>
@@ -81,7 +80,7 @@ export default function Nav({children}) {
 
                 <li className={`max-w-[70px] ${selectedLink.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                <Link href="/about"  className="font-sans uppercase text-xs whitespace-nowrap"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about")} >
+                <Link href="/about"  className="font-sans uppercase text-sm whitespace-nowrap font-bold text-blue2"  onMouseOver={()=> setAbout(true)} onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about")} >
                   About Us
                   </Link>
                   <ul onMouseLeave={() => setAbout(false)} className={`${about ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
@@ -115,7 +114,7 @@ export default function Nav({children}) {
 
                 <li className={`max-w-[70px] ${selectedLink.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
+                <Link href="/services"  onMouseOver={()=> setServices(true)} className="font-sans uppercase text-sm whitespace-nowrap font-bold text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
                   Services
                   </Link>
                   <ul onMouseLeave={() => setServices(false)} className={`${services ? "absolute bg-[#2852ab] text-white p-3 rounded-lg gap-3" : "hidden"}`}>
@@ -143,19 +142,19 @@ export default function Nav({children}) {
 
                 <li className={`max-w-[70px] ${selectedLink != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                  <Link href="/outcomes" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/outcomes")}>
+                  <Link href="/outcomes" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/outcomes")}>
                   Outcomes
                   </Link>
                 </li>
                 <li className={`max-w-[70px] ${selectedLink != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                  <Link href="/cause" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/cause")}>
+                  <Link href="/cause" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/cause")}>
                   Cause
                   </Link>
                 </li>
                 <li className={`max-w-[70px] ${selectedLink != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-red-500 -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-red-500 hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                  <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/contact")}>
+                  <Link href="/contact" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/contact")}>
                   Contact Us
                   </Link>
                 </li>

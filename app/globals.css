@@ -19,11 +19,33 @@
 
 @layer base {
   html {
-      -ms-overflow-style: none;  /* IE and Edge */
+    -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;
+      --color-blue1: 67 90 162;
+      --color-blue2: 36 64 142;
+      --color-pink: 221 102 150;
+      --color-gray1: 241 241 242;
+      --color-gray2: 155 157 159;
+      --color-gray3: 109 110 112;
+      --color-white: 255 255 255;
+      --color-black: 0 0 0;
     }
   html::-webkit-scrollbar {
     display: none;
+  }
+  h1 {
+    font-family: var(--PaytoneOne), sans-serif;
+    font-size: 2.25rem/* 36px */;
+    line-height: 2.5rem/* 40px */;
+  }
+  h2 {
+    font-family: var(--PaytoneOne), sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  
+  p {
+    font-family: var(--Lato), sans-serif;
   }
 
 @keyframes fadeInAnimation {
@@ -35,6 +57,7 @@
      }
 }
 }
+
 
 .btn:active {
   animation: button-pop 0.25s ease-out;
@@ -134,12 +157,4 @@
   fill: var(--background);
   height: 15px;
   width: 15px;
-}
-
-h2 {
-  font-family: 'Paytone One', sans-serif;
-}
-
-p {
-  font-family: 'Lato Light', sans-serif;
 }

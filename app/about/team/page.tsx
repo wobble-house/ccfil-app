@@ -2,8 +2,10 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import InfoSegment from "@/components/info-segment"
+import InfoSegment,{ StickyInfoSegment} from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
+import { InfoCardList, FeaturedCardList } from "@/components/list"
+import { CardListData } from "./data"
 
 export const metadata = {
   title: 'Team',
@@ -18,10 +20,15 @@ Our rehabilitation plans hinge on two main elements: positive behavioral support
 We also use community-based experiences as a way of providing our residents with real-world based cognitive rehabilitation that will help them reintegrate back into their home community.
 
 Together our cognitive programs, positive behavior supports, and learning approach to prosocial skills truly is what sets us apart.`
-const ImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILAboutUsBW.jpg`
+const infoImage = {
+  url: `https://ccfil.com/wp-content/uploads/2016/07/CCFILAboutUsBW.jpg`,
+  alt: `image for website`
+}
 const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`
 const quoteName = `ELLEN DEGENERES`
 const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/resident-quote.jpg`
+const leadershipCaptionText = `Leadership`
+const teamCaptionText = `Our Team`
 
 export default function Team() {
   return (
@@ -29,8 +36,14 @@ export default function Team() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl={null} Type="A"/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
+          <StickyInfoSegment captionText={leadershipCaptionText} type="B">
+            <FeaturedCardList data={CardListData}/>
+          </StickyInfoSegment>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
+          <StickyInfoSegment captionText={teamCaptionText} type="A">
+            <InfoCardList data={CardListData}/>
+          </StickyInfoSegment>
           </div>
         </Suspense>
       </Animation>

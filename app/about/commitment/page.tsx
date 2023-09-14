@@ -12,6 +12,10 @@ export const metadata = {
 
 const headerText =`We are committed to enhancing the daily lives of all our residents.`
 const bodyText = `Community Connections provides a comprehensive, semi-independent community-based living program for individuals affected by traumatic brain injury. Cognitive, social, vocational, and educational components are integrated into each resident’s individualized treatment plan, which is facilitated by both the resident and our dedicated occupational therapists and rehabilitation specialists.`
+const infoImage = {
+  url: `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW.jpg`,
+  alt: `image for website`
+}
 const ImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW.jpg`
 const captionText = "Enriching Our Residents' Lives"
 const stickyHeaderText = `Independence and ownership are encouraged and supported on entry into our program.`
@@ -33,7 +37,7 @@ export default function Commitment() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} ImageUrl={ImageUrl} ButtonUrl={null} Type="A"/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
           <StickyInfoSegment captionText={captionText} type="A">
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>

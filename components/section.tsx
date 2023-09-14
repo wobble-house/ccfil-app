@@ -15,6 +15,7 @@ export default function Section({ children, initial, useOnce }:{children, initia
     return (
       <motion.section layout className="overscroll-auto" ref={sectionRef}>
         <motion.div
+        className="overscroll-contain"
         layout
         initial={initial}
         style={{
@@ -62,8 +63,8 @@ export function Spacer(){
           }}
           className="flex mx-auto justify-center text-center"
         >
-          <div className="animate-bounce bg-rosspurple dark:bg-rossdarkpurple pr-1 pb-1 -mt-1">
-      <div className="bg-rossblue dark:bg-rossdarkblue pr-1 pb-1 -ml-1 -mt-2 pt-1">
+          <div className="animate-bounce pr-1 pb-1 -mt-1">
+      <div className="pr-1 pb-1 -ml-1 -mt-2 pt-1">
       <div ref={spacerRef} className="bg-rosspurple dark:bg-rossdarkpurple p-1 -ml-1 -mt-2 text-white">
         <FontAwesomeIcon icon={faArrowDown} size="xl"/>
         </div>
