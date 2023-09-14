@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Cause',
@@ -23,6 +24,7 @@ const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/resident-quote
 export default function Cause() {
   return (
    <>
+   <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">

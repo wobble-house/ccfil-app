@@ -3,13 +3,22 @@ import Link from 'next/link';
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-export default function Nav({children}) {
+export default function Nav({metadata}) {
+  const router = useRouter();
+  const pathname = usePathname();
   const Navref = useRef();
   const [about, setAbout] = useState(false);
   const [services, setServices] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [selectedLink, setSelectedLink] = useState("");
+
+  const handleAboutMouseover = () => {
+    services ? setServices(false) : setAbout(true);  }
+
+  const handleServicesMouseover = () => {
+    about ? setAbout(false) : setServices(true);  }
 
   const handleNavClickOutside = () => {
     setNavbar(false);
@@ -65,116 +74,150 @@ export default function Nav({children}) {
             </div>
 
             <div ref={Navref} className={`flex grow bg-blue1 md:bg-white md:bg-opacity-50 dark:bg-blue2 md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
-            <div className="flex flex-col md:flex-row p-10">
-              <div className={`flex w-9 h-9 ml-5`}>
+            <div className="flex flex-col md:flex-row px-10">
+              <div className={`flex w-9 h-9 ml-5 my-8`}>
               <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
               </div>
               <ul  className=" text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg md:ml-auto pb-10 pr-10">
-                <li className={`max-w-[70px] ${selectedLink == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <Link href="/" className="font-sans uppercase font-bold text-sm whitespace-nowrap text-white md:text-blue2" onClick={()=> setNavbar(false)} onMouseDown={()=>setSelectedLink("/")}>
+                <li className={`transition ease-in-out delay-200 pt-7 max-w-[70px] ${pathname == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                  <button
+                  className="font-sans uppercase font-bold text-sm whitespace-nowrap text-white md:text-blue2" 
+                  onClick={()=> router.push("/")}>
                     Home
-                  </Link>
+                  </button>
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                <Link href="/about"  className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2"  onMouseOver={()=>setAbout(true)} onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about")} >
+                <button
+                 className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2"  
+                onMouseOver={handleAboutMouseover} 
+                onClick={()=> router.push("/about" )} >
                   About Us
-                  </Link>
-                  <ul onMouseLeave={()=>setAbout(false)} className={`absolute ${about ? "bg-blue1 text-white p-3 rounded-lg gap-3" : "hidden"}`}>
-                  <li className={``}>
+                  </button>
+                  <ul onMouseLeave={()=>setAbout(false)} className={`absolute mt-2 ${about ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/about/commitment" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/commitment")}>
+                  <button
+                  className="transition ease-in-out delay-200 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                  onClick={()=> router.push("/about/commitment" )}
+                  >
                   Our Commitment
-                  </Link>
+                  </button>
                   </li>
-                  <li className={``}>
+                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/about/team" className="block font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/team")}>
+                  <button
+                  className="transition ease-in-out delay-200 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                  onClick={()=> router.push("/about/team" )} 
+                  >
                   Team
-                  </Link>
+                  </button>
                   </li>
-                  <li className={``}>
+                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/about/strategic-plan" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/strategic-plan")}>
+                  <button 
+                  className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                  onClick={()=> router.push("/about/strategic-plan" )} 
+                  >
                   Strategic Plan
-                  </Link>
+                  </button>
                   </li>
-                  <li className={` `}>
+                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2  hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/about/code-of-ethics" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/about/code-of-ethics")}>
+                  <button
+                  className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                  onClick={()=> router.push("/about/code-of-ethics" )}
+                  >
                   Code of Ethics
-                  </Link>
+                  </button>
                   </li>
                  </ul>
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                      <Link 
-                      href="/services"  
-                      className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
-                      onMouseOver={()=>setServices(true)} 
-                      onClick={()=>setNavbar(false)} 
-                      onMouseDown={()=>setSelectedLink("/services")}>
+                      <button 
+                      className=" uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
+                      onMouseOver={handleServicesMouseover} 
+                      onClick={()=> router.push("/services" )} 
+                      >
                         Services
-                        </Link>
-                  <ul onMouseLeave={()=>setServices(false)} className={`absolute ${services ? "bg-blue1 text-white p-5 rounded-lg gap-7" : "hidden"}`}>
-                  <li className={``}>
+                        </button>
+                  <ul onMouseLeave={()=>setServices(false)} className={`absolute mt-2 ${services ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/services/program-components" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services/program-components")}>
-                  Program Components
-                  </Link>
-                </li>
-                <li className={``}>
+                      <button
+                      className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                      onClick={()=> router.push("/services/program-components" )}
+                      >
+                      Program Components
+                      </button>
+                    </li>
+                    <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
-                  <Link href="/services/residential-program" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services/residential-program")}>
-                  Semi-Independent Residential Programs
-                  </Link>
-                </li>
-                <li className={` `}>
-
-                  <Link href="/services/supported-employment" className="font-sans uppercase text-xs whitespace-nowrap" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/services")}>
-                  Supported Employment
-                  </Link>
-                </li>
+                      <button
+                      className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                      onClick={()=> router.push("/services/residential-program" )}
+                      >
+                      Semi-Independent Residential Programs
+                      </button>
+                    </li>
+                    <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 rounded-md hover:scale-[1.03]`}>
+                      <button
+                      className="transition ease-in-out delay-100 duration-300 block uppercase font-bold text-xs rounded-md text-white hover:text-pink py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+                      onClick={()=> router.push("/services/supported-employment" )}
+                      >
+                      Supported Employment
+                      </button>
+                    </li>
                   </ul>
                 </li>
 
 
-                <li className={`max-w-[70px] ${selectedLink != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-
-                  <Link href="/outcomes" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/outcomes")}>
-                  Outcomes
-                  </Link>
+                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                  <button
+                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
+                    onClick={()=> router.push("/outcomes" )} 
+                    >
+                      Outcomes
+                  </button>
                 </li>
-                <li className={`max-w-[70px] ${selectedLink != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                  <Link href="/cause" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/cause")}>
-                  Cause
-                  </Link>
+                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                  <button 
+                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
+                    onClick={()=> router.push("/cause" )} 
+                    >
+                      Cause
+                  </button>
                 </li>
-                <li className={`max-w-[70px] ${selectedLink != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
 
-                  <Link href="/contact" className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" onClick={()=>setNavbar(false)} onMouseDown={()=>setSelectedLink("/contact")}>
-                  Contact Us
-                  </Link>
+                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
+                  <button
+                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
+                    onClick={()=> router.push("/contact" )} 
+                    >
+                      Contact Us
+                  </button>
                 </li>
-                {children}
+
               </ul>
               </div>
               <div className={`flex flex-col gap-6 md:3/4 lg:w-3/5 p-16 bg-transparent bg-opacity-50 border-solid border-white mx-16 mb-10 border-[10px] ${!navbar ? "visible" : "hidden"}`}>
-          <h3 className="text-blue1 font-bold text-2xl">small text</h3>
-          <h1 className="text-6xl font-black text-blue2">Big Text</h1>
+          <h3 className="text-blue1 font-bold text-2xl">{metadata.description}</h3>
+          <h1 className="text-6xl font-black text-blue2">{metadata.title}</h1>
           <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">button</button>
           </div>
           <div className="flex flex-row justify-between px-10 invisible md:visible">
             <p>{`(248) 410-2715`}</p>
             <p>{`-->`}</p>
-            <Link href="/contact" className="font-sans uppercase text-xs whitespace-nowrap">
+            <Link href="/contact" >
+              <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
                   Contact Us
+                  </h3>
                   </Link>
           </div>
           </div>

@@ -3,6 +3,7 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment from "@/components/info-segment"
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Program Components',
@@ -21,6 +22,7 @@ const infoImage = {
 export default function ProgramComponents() {
   return (
    <>
+      <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto max-w-screen py-5">

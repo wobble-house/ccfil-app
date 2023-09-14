@@ -5,6 +5,7 @@ import Loading from "@/app/loading"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Code of Ethics',
@@ -40,6 +41,7 @@ Website: www.safehotline.com`
 export default function CodeOfEthics() {
   return (
    <>
+   <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto max-w-6xl py-20">

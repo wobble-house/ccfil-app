@@ -5,6 +5,7 @@ import Loading from "@/app/loading"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Supported Employment',
@@ -51,6 +52,7 @@ Discharge
 export default function SupportedEmployment() {
   return (
    <>
+      <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
         <ReactMarkdown className="markdown p-2 text-left pt-20" remarkPlugins={[remarkGfm, remarkBreaks]}>

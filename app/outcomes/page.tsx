@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import QuoteSection from "@/components/quote"
 import Image from "next/image"
-import Section from "@/components/section"
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Outcomes',
@@ -18,6 +18,7 @@ const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/resident-quote
 export default function Outcomes() {
   return (
    <>
+      <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
               <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16">

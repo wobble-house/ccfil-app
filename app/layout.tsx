@@ -3,7 +3,6 @@ import './globals.css'
 import {GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
 import Footer from './footer'
-import Nav from '@/components/nav'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -47,7 +46,7 @@ export default function RootLayout({
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen snap-y`}>
-        <Nav><></></Nav>
+        
               {children}
               
             </main>

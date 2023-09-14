@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
+import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Commitment',
@@ -34,6 +35,7 @@ export default function Commitment() {
   
   return (
    <>
+    <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
