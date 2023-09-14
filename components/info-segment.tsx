@@ -2,6 +2,9 @@
 import ImageHandler from "./image-handler";
 import { useRouter } from "next/navigation";
 import Section from "./section";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl}){
     const router = useRouter();
@@ -14,9 +17,11 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
             </div>
             <div className={`flex flex-col gap-7 border-[10px] border-gray1 bg-transparent px-20 py-10 md:w-1/2 ${Type != "B" ? "-ml-16 mr-10" : "-mr-16 ml-10 z-10"} mt-20`}>
             <p>icon</p>
-            <h2 className="text-2xl font-bold text-blue1">{headerText}</h2>
-            <hr className="border-pink border-2 w-1/2"/>
-            <p>{bodyText}</p>
+            <h2 className="text-2xl text-blue2">{headerText}</h2>
+            <hr className="border-pink border-2 md:w-1/3"/>
+            <ReactMarkdown className="markdown p-2 list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
+            {bodyText}
+            </ReactMarkdown>
             {ButtonUrl == null ? <></> : <button className="uppercase border-2 border-blue-500 rounded-full px-6 py-2 mx-auto hover:bg-blue-500 hover:text-white"
             onClick={()=> router.push(ButtonUrl)}>Learn More About Us
             </button> }
@@ -55,7 +60,9 @@ export function InfoBody({headerText, bodyText,ImageUrl,ButtonUrl }:{headerText:
             <div className="flex flex-col gap-7 p-5">
             <h2 className="text-2xl font-bold text-blue1">{headerText}</h2>
             <hr className="border-pink border-2 w-1/2"/>
-            <p>{bodyText}</p>
+            <ReactMarkdown className="markdown p-2 list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
+                {bodyText}
+                </ReactMarkdown>
             {ButtonUrl == null ? <></> : <button className="uppercase border-2 border-blue1 rounded-full px-6 py-2 mx-auto hover:bg-blue1 hover:text-white"
             onClick={()=> router.push(ButtonUrl)}>Learn More About Us
             </button> }

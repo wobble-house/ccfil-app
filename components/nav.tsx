@@ -16,7 +16,7 @@ export default function Nav({children}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-40 md:justify-center top-0 mb-12 w-full">
+      <nav className="flex z-40 md:justify-center top-0 mb-4 w-full">
         <div className="flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
         <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
         </div>

@@ -20,9 +20,9 @@ const ImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW
 const captionText = "Enriching Our Residents' Lives"
 const stickyHeaderText = `Independence and ownership are encouraged and supported on entry into our program.`
 const stickyBodyText = `Community Connections acknowledges that each resident has unique routines and interests prior to admission; it is our mission to respect, uphold, and enhance the daily lives of our residents while guiding them towards greater self-reliance and community reentry. Each resident frequently meets with our rehabilitation specialists to ensure progress towards their individualized treatment goals while maintaining choice-driven objectives. Community Connections believes that residents’ motivation, achievement, and happiness are maximized by our innovative approach to cognitive-behavioral programming coupled with our compassionate and encouraging support staff.
-
+\\
 In addition to numerous opportunities to participate in peer support groups and therapeutic recreational activities, residents of our program are provided with a furnished apartment, utilities, cable/internet services, and transportation to community outings and medical appointments. Community Connections is also distinct from other programs as we welcome spouses and children of our residents. Residents’ family dynamics are incorporated into their Individualized Treatment Plans to ensure continued positive, healthy relationships.
-
+\\
 Community Connections provides a supportive living environment through a multidisciplinary approach to community integration. We are committed to excellence to enrich the lives of our residents and the community in which they live.`
 const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeTile.jpg`
 const quote = `It’s good to push yourself and do what you don’t necessarily want to do, that if you’re not automatically good at it, you should try. Trying is so important.`

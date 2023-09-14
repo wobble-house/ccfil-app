@@ -30,7 +30,7 @@ const paytoneOne = Paytone_One({
 })
 
 const latoLite = Lato({
-  weight: '100',
+  weight: ['100','300','400','700','900'],
   style: 'normal',
   subsets: ["latin","latin-ext"],
   variable: '--font-Lato',

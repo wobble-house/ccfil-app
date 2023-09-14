@@ -31,21 +31,24 @@
       --color-black: 0 0 0;
     }
   html::-webkit-scrollbar {
-    display: none;
+    display: none
   }
+    
   h1 {
-    font-family: var(--PaytoneOne), sans-serif;
+    font-family: var(--font-PaytoneOne), sans-serif;
     font-size: 2.25rem/* 36px */;
     line-height: 2.5rem/* 40px */;
+    color: rgb(var(--color-blue1));
   }
   h2 {
-    font-family: var(--PaytoneOne), sans-serif;
+    font-family: var(--font-PaytoneOne), sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    color: rgb(var(--color-blue1));
   }
   
   p {
-    font-family: var(--Lato), sans-serif;
+    font-family: var(--font-Lato), sans-serif;
   }
 
 @keyframes fadeInAnimation {
@@ -56,6 +59,20 @@
         opacity: 1;
      }
 }
+}
+
+.markdown h2 {
+  font-family: var(--font-PaytoneOne), sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(var(--color-blue1));
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.markdown br {
+    display: block;
+    margin: 10px 0;
 }
 
 
