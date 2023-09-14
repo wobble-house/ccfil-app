@@ -75,8 +75,11 @@ export default function Nav({metadata}) {
 
             <div ref={Navref} className={`flex grow bg-blue1 md:bg-white md:bg-opacity-50 dark:bg-blue2 md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
             <div className="flex flex-col md:flex-row px-10">
-              <div className={`flex w-9 h-9 ml-5 my-8`}>
+              <div className={`lg:hidden flex w-9 h-9 ml-5 my-8`}>
               <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
+              </div>
+              <div className={`lg:visible invisible flex w-64 h-16 ml-5 my-3 justify-center`}>
+              <Image src="/logos/main-logo.svg" alt="CCFIL logo" width={225} height={58}/>
               </div>
               <ul  className=" text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg md:ml-auto pb-10 pr-10">
                 <li className={`transition ease-in-out delay-200 pt-7 max-w-[70px] ${pathname == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
@@ -93,10 +96,15 @@ export default function Nav({metadata}) {
                 <button
                  className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2"  
                 onMouseOver={handleAboutMouseover} 
-                onClick={()=> router.push("/about" )} >
+                onClick={()=> setAbout(true)} >
                   About Us
                   </button>
-                  <ul onMouseLeave={()=>setAbout(false)} className={`absolute mt-2 ${about ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <ul onMouseLeave={()=>setAbout(false)} className={`absolute mt-4 ${about ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <div className="-mt-4 -mb-4 ml-2 w-0 h-0 
+                    border-l-[25px] border-l-transparent
+                    border-b-[35px] border-blue1
+                    border-r-[25px] border-r-transparent">
+                  </div>
                   <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
                   <button
@@ -142,11 +150,16 @@ export default function Nav({metadata}) {
                       <button 
                       className=" uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
                       onMouseOver={handleServicesMouseover} 
-                      onClick={()=> router.push("/services" )} 
+                      onClick={()=> setServices(true)} 
                       >
                         Services
                         </button>
-                  <ul onMouseLeave={()=>setServices(false)} className={`absolute mt-2 ${services ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <ul onMouseLeave={()=>setServices(false)} className={`absolute mt-4 ${services ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
+                  <div className="-mt-4 -mb-4 ml-2 w-0 h-0 
+                    border-l-[25px] border-l-transparent
+                    border-b-[35px] border-blue1
+                    border-r-[25px] border-r-transparent">
+                  </div>
                   <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
 
                       <button
