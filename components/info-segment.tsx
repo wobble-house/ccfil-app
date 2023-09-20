@@ -5,6 +5,8 @@ import Section from "./section";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
+import ccfilicon from "\public\Icons\Icons\compassion-icon-2.svg"
+import Image from "next/image";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl}){
     const router = useRouter();
@@ -16,7 +18,7 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
             <ImageHandler src={infoImage.url} width={800} height={600} alt={infoImage.alt}/>
             </div>
             <div className={`flex flex-col gap-7 border-[10px] border-gray1 bg-transparent px-20 py-10 md:w-1/2 ${Type != "B" ? "-ml-16 mr-10" : "-mr-16 ml-10 z-10"} mt-20`}>
-            <p>icon</p>
+            <Image src={`/Icons/Icons/compassion-icon-2.svg`} alt="icon" width="60" height="60"/>
             <h2 className="text-2xl text-blue2">{headerText}</h2>
             <hr className="border-pink border-2 md:w-1/3"/>
             <ReactMarkdown className="markdown p-2 list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>

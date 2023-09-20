@@ -1,10 +1,49 @@
 'use client';
 import Link from 'next/link';
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
+
+const images = [
+  `https://ccfil.com/wp-content/uploads/2016/05/fetured.png`,
+  `https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`,
+  `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`
+]
+export function Slideshow() {
+  const [image, setImage] = useState(images[0]);
+  // If the current image is the last one in the array, go back to the first. 
+  // Otherwise, move to the next image.
+  const nextIndex = (images.indexOf(image) + 1) % images.length;
+  const nextImage = images[nextIndex];
+  setInterval(() => setImage(nextImage), 5000);
+  return (
+    <AnimatePresence mode={'sync'} initial={false}>
+      <motion.div
+      layout
+      initial={{ 
+        opacity: 0,
+        zIndex: 0 }}
+      animate={{ 
+        opacity: 1,
+        transition: {
+          delay: 1,
+          duration: 0.8,
+        },
+        zIndex:1 }}
+      exit={{ opacity: 0,
+        transition: {
+          delay: 1,
+          duration: 0.8,
+        },
+        zIndex:0 }}>
+    <Image id='slideshow' src={image} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+    </motion.div>
+    </AnimatePresence>
+  )
+}
 
 export default function Nav({metadata}) {
   const router = useRouter();
@@ -13,12 +52,17 @@ export default function Nav({metadata}) {
   const [about, setAbout] = useState(false);
   const [services, setServices] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  
 
   const handleAboutMouseover = () => {
-    services ? setServices(false) : setAbout(true);  }
+    setAbout(true);
+    setServices(false);
+  };
 
   const handleServicesMouseover = () => {
-    about ? setAbout(false) : setServices(true);  }
+    setAbout(false);
+    setServices(true);
+  };
 
   const handleNavClickOutside = () => {
     setNavbar(false);
@@ -26,12 +70,11 @@ export default function Nav({metadata}) {
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
       <nav className="flex z-40 md:justify-center top-0 mb-4 w-full">
-        <div className="flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
-        <Image src="https://ccfil.com/wp-content/uploads/2016/05/fetured.png" width={1920} height={1080} className="invisible md:visible z-0 min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+        <div className="transition ease=in-out delay-50 duration-300 flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
+        <Slideshow/>
         </div>
         <div className="flex flex-col md:flex-row flex-grow justify-between z-10 max-w-6xl mx-10 mt-10">
             <div className=" flex flex-col md:flex-row-reverse items-center justify-between md:block">
-
               <div className="relative z-50 md:hidden">
                 <button
                   className=" bg-white dark:bg-blue2 px-2
