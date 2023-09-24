@@ -8,9 +8,9 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const images = [
-  `https://ccfil.com/wp-content/uploads/2016/05/fetured.png`,
-  `https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`,
-  `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`
+  `1`,
+  `2`,
+  `3`
 ]
 export function Slideshow() {
   const [image, setImage] = useState(images[0]);
@@ -19,29 +19,69 @@ export function Slideshow() {
   const nextIndex = (images.indexOf(image) + 1) % images.length;
   const nextImage = images[nextIndex];
   setInterval(() => setImage(nextImage), 5000);
+  if (image == "1") 
   return (
     <AnimatePresence mode={'sync'} initial={false}>
       <motion.div
       layout
       initial={{ 
-        opacity: 0,
-        zIndex: 0 }}
+        opacity: 0}}
       animate={{ 
         opacity: 1,
         transition: {
           delay: 1,
           duration: 0.8,
-        },
-        zIndex:1 }}
+        } }}
       exit={{ opacity: 0,
         transition: {
           delay: 1,
           duration: 0.8,
-        },
-        zIndex:0 }}>
-    <Image id='slideshow' src={image} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+        }}}>
+    <Image src={`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
     </motion.div>
     </AnimatePresence>
+  )
+  else if (image == "2")return (
+    <AnimatePresence mode={'sync'} initial={false}>
+      <motion.div
+      layout
+      initial={{ 
+        opacity: 0}}
+      animate={{ 
+        opacity: 1,
+        transition: {
+          delay: 1,
+          duration: 0.8,
+        } }}
+      exit={{ opacity: 0,
+        transition: {
+          delay: 1,
+          duration: 0.8,
+        }}}>
+    <Image src={`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+    </motion.div>
+    </AnimatePresence>
+  )
+  else return (
+    <AnimatePresence mode={'sync'} initial={false}>
+    <motion.div
+    layout
+    initial={{ 
+      opacity: 0}}
+    animate={{ 
+      opacity: 1,
+      transition: {
+        delay: 1,
+        duration: 0.8,
+      } }}
+    exit={{ opacity: 0,
+      transition: {
+        delay: 1,
+        duration: 0.8,
+      }}}>
+  <Image src={`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+  </motion.div>
+  </AnimatePresence>
   )
 }
 
