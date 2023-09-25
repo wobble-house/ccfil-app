@@ -1,85 +1,15 @@
 'use client';
-import Link from 'next/link';
 import React, { useState, useRef, useEffect } from "react";
 import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
-
-
-const images = [
-  {id: 'image1', src:`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`},
-  {id: 'image2', src:`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`},
-  {id: 'image3', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg` },
-  {id: 'image4', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILServicesHeader.jpg`},
-]
-
-export function Slideshow() {
-  const [count, setCount] = useState(0)
-  const [image, setImage] = useState(images[count])
-  const [nextImage, setNextImage] = useState(images[count+1])
-  const resetTimer = setInterval(reset, 60000)
-  const timer = setInterval(() => {
-    {count > images.length - 1? resetTimer : setCount(count + 1)}
-  }, 9000);
-  function reset (){
-    timer
-    setCount(0)
-    setImage(images[3])
-    setNextImage(images[1])
-    clearTimeout(resetTimer)
-  }
-  useEffect(() => {
-
-    if (count > images.length - 1) {
-      clearInterval(timer)
-      setCount(0)
-      setImage(images[0])
-      setNextImage(images[0])
-      timer
-    } 
-    {count > images.length - 1? setImage(images[0]) : setImage(images[count])}
-    {count > images.length - 1 ? setNextImage(images[0]) : setNextImage(images[count+1]) }
-  }, [count]);
-
-  return (
-    <>
-
-          <div
-      
-      className={`absolute top-0 bg-transparent`}
->
-    <Image key={`${image.id}-fg`} src={image.src} width={1920} height={1080} className="slideshowbg invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image"/>
-    </div> 
-    {nextImage ? 
-    <div
-      
-      className={`absolute top-0 bg-transparent`}
->
-  <Image key={`${nextImage.id}-next`} src={nextImage?.src} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center bg-transparent" alt="bg image"/>
-    </div> : <div
-      
-      className={`absolute top-0 bg-transparent`}
->
-    <Image key={`${images[0].id}-bg`} src={images[0].src} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center bg-transparent" alt="bg image"/>
-    </div> }
-        
-    
-
-    </>
-  )
-}
-
-
+import { Slideshow } from './carousel';
+import {NavLink, NavListLink, aboutList, servicesList, NavHeader } from "@/components/nav-links"
 
 export default function Nav({metadata}) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const Navref = useRef();
   const [about, setAbout] = useState(false);
-  const [services, setServices] = useState(false);
+  const [services, setServices] = useState(false)
+  const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
-  
 
   const handleAboutMouseover = () => {
     setAbout(true);
@@ -152,157 +82,15 @@ export default function Nav({metadata}) {
               <Image src="/logos/main-logo.svg" alt="CCFIL logo" width={225} height={58}/>
               </div>
               <ul  className=" text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg md:ml-auto pb-10 pr-10">
-                <li className={`transition ease-in-out delay-200 pt-7 max-w-[70px] ${pathname == "/" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <button
-                  className="font-sans uppercase font-bold text-sm whitespace-nowrap text-white md:text-blue2" 
-                  onClick={()=> router.push("/")}>
-                    Home
-                  </button>
-                </li>
-
-
-                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname.slice(0,6) == "/about" ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-
-                <button
-                 className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2"  
-                onMouseOver={handleAboutMouseover} 
-                onClick={()=> setAbout(true)} >
-                  About Us
-                  </button>
-                  <ul onMouseLeave={()=>setAbout(false)} className={`absolute mt-4 ${about ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
-                  <div className="-mt-4 -mb-4 ml-2 w-0 h-0 
-                    border-l-[25px] border-l-transparent
-                    border-b-[35px] border-blue1
-                    border-r-[25px] border-r-transparent">
-                  </div>
-                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
-
-                  <button
-                  className="transition ease-in-out delay-200 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                  onClick={()=> router.push("/about/commitment" )}
-                  >
-                  Our Commitment
-                  </button>
-                  </li>
-                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
-
-                  <button
-                  className="transition ease-in-out delay-200 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                  onClick={()=> router.push("/about/team" )} 
-                  >
-                  Team
-                  </button>
-                  </li>
-                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
-
-                  <button 
-                  className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                  onClick={()=> router.push("/about/strategic-plan" )} 
-                  >
-                  Strategic Plan
-                  </button>
-                  </li>
-                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2  hover:scale-[1.03] rounded-md`}>
-
-                  <button
-                  className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                  onClick={()=> router.push("/about/code-of-ethics" )}
-                  >
-                  Code of Ethics
-                  </button>
-                  </li>
-                 </ul>
-                </li>
-
-
-                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname.slice(0,9) != "/services" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-
-                      <button 
-                      className=" uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
-                      onMouseOver={handleServicesMouseover} 
-                      onClick={()=> setServices(true)} 
-                      >
-                        Services
-                        </button>
-                  <ul onMouseLeave={()=>setServices(false)} className={`absolute mt-4 ${services ? "bg-blue1 text-white rounded-md gap-7" : "hidden"}`}>
-                  <div className="-mt-4 -mb-4 ml-2 w-0 h-0 
-                    border-l-[25px] border-l-transparent
-                    border-b-[35px] border-blue1
-                    border-r-[25px] border-r-transparent">
-                  </div>
-                  <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
-
-                      <button
-                      className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                      onClick={()=> router.push("/services/program-components" )}
-                      >
-                      Program Components
-                      </button>
-                    </li>
-                    <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
-
-                      <button
-                      className="transition ease-in-out delay-200 duration-300 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                      onClick={()=> router.push("/services/residential-program" )}
-                      >
-                      Semi-Independent Residential Programs
-                      </button>
-                    </li>
-                    <li className={`transition ease=in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 rounded-md hover:scale-[1.03]`}>
-                      <button
-                      className="transition ease-in-out delay-100 duration-300 block uppercase font-bold text-xs rounded-md text-white hover:text-pink py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
-                      onClick={()=> router.push("/services/supported-employment" )}
-                      >
-                      Supported Employment
-                      </button>
-                    </li>
-                  </ul>
-                </li>
-
-
-                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/outcomes" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <button
-                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
-                    onClick={()=> router.push("/outcomes" )} 
-                    >
-                      Outcomes
-                  </button>
-                </li>
-
-                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/cause" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <button 
-                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
-                    onClick={()=> router.push("/cause" )} 
-                    >
-                      Cause
-                  </button>
-                </li>
-
-                <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname != "/contact" ? "" : "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]"} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
-                  <button
-                    className="font-sans uppercase text-sm whitespace-nowrap font-bold text-white md:text-blue2" 
-                    onClick={()=> router.push("/contact" )} 
-                    >
-                      Contact Us
-                  </button>
-                </li>
-
+                <NavLink path={`/`} text={`Home`}/>
+                <NavListLink items={aboutList} path={`/about`} text={`About Us`} onMouseLeave={()=>setAbout(false)} onMouseOver={handleAboutMouseover} onClick={()=>setAbout(true)} listState={about}/>
+                <NavListLink items={servicesList} path={`/services`} text={`Services`} onMouseLeave={()=>setServices(false)} onMouseOver={handleServicesMouseover} onClick={()=>setServices(true)} listState={services}/>
+                <NavLink path={`/outcomes`} text={`Outcomes`}/>
+                <NavLink path={`/cause`} text={`Cause`}/>
+                <NavLink path={`/contact`} text={`Contact Us`}/>
               </ul>
               </div>
-              <div className={`flex flex-col gap-6 md:3/4 lg:w-3/5 p-16 bg-transparent bg-opacity-50 border-solid border-white mx-16 mb-10 border-[10px] ${!navbar ? "visible" : "hidden"}`}>
-          <h3 className="text-blue1 font-bold text-2xl">{metadata.description}</h3>
-          <h1 className="text-6xl font-black text-blue2">{metadata.title}</h1>
-          <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">button</button>
-          </div>
-          <div className="flex flex-row justify-between px-10 invisible md:visible">
-            <p>{`(248) 410-2715`}</p>
-            <p>{`-->`}</p>
-            <Link href="/contact" >
-              <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
-                  Contact Us
-                  </h3>
-                  </Link>
-          </div>
+              <NavHeader description={metadata.description} navbar={navbar} title={metadata.title}/>
           </div>
           </div>
           </nav>

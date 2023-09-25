@@ -5,11 +5,13 @@ import Loading from "./loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import Nav from "@/components/nav"
+import {NavLink, NavListLink, NavListInnerLink, aboutList, servicesList } from "@/components/nav-links"
 
 export const metadata = {
   title: 'Home',
   description: 'Learn More About CCFIL'
 } 
+
 
 const headerText =`We provide supported independent living, dedicated to community re-entry.`
 const bodyText = `Community Connections provides supported independent living services to individuals with brain injuries whom have successfully progressed through clinical rehabilitation programs. When they enter our program they are now in need of a comprehensive, community-based living and learning program. We recognize that each person is different and that their head injury is different. Their problems are different. Therefore, we use individualized, community-based situations as on-going learning tools to improve skills in the areas of executive functioning, visual processing, and information processing all while improving memory and attention deficits.`
