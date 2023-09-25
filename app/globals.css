@@ -59,7 +59,17 @@
         opacity: 1;
      }
 }
+@keyframes fadeOutAnimation {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+   }
 }
+}
+
+
 
 .markdown h2 {
   font-family: var(--font-PaytoneOne), sans-serif;
@@ -96,6 +106,7 @@
 .btn:active {
   animation: button-pop 0.25s ease-out;
 }
+
 
 @keyframes button-pop {
   0% {
@@ -166,7 +177,6 @@
   transition: transform var(--transition), background var(--transition);
   position: absolute;
   transform: translate(0);
-  transition: transform var(--transition);
 }
 
 .toggle.enabled::before {
@@ -191,4 +201,31 @@
   fill: var(--background);
   height: 15px;
   width: 15px;
+}
+
+.slideshow {
+
+  animation: fadeInAnimation 2s ease-in-out;
+  z-index: 1
+}
+.slideshow::before{
+
+  animation: fadeInAnimation 2s ease-in-out;
+  z-index: 0;
+}
+.slideshow::after {
+  z-index: 1;
+}
+
+.slideshowbg {
+  z-index: 0
+}
+.slideshowbg::before{
+  animation: fadeInAnimation 2s ease-in-out;
+  z-index: 1;
+}
+.slideshowbg::after {
+  animation: fadeOutAnimation 2s ease-in-out;
+  display: none;
+  z-index: 0;
 }

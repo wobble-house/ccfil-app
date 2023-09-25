@@ -5,52 +5,68 @@ import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
+
 
 const images = [
-  `https://ccfil.com/wp-content/uploads/2016/05/fetured.png`,
-  `https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`,
-  `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`
+  {id: 'image1', src:`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`},
+  {id: 'image2', src:`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`},
+  {id: 'image3', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg` },
+  {id: 'image4', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILServicesHeader.jpg`},
 ]
 
 export function Slideshow() {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(0)
   const [image, setImage] = useState(images[count])
+  const [nextImage, setNextImage] = useState(images[count+1])
+  const resetTimer = setInterval(reset, 60000)
   const timer = setInterval(() => {
-    setCount((prevCount) => (prevCount + 1) % images.length);
-    setImage(images[count]);
-  }, 5000);
-
+    {count > images.length - 1? resetTimer : setCount(count + 1)}
+  }, 9000);
+  function reset (){
+    timer
+    setCount(0)
+    setImage(images[3])
+    setNextImage(images[1])
+    clearTimeout(resetTimer)
+  }
   useEffect(() => {
+
     if (count > images.length - 1) {
-      setTimeout(()=>setCount(0), 5000)
-      setTimeout(()=>setImage(images[0]), 5000)
       clearInterval(timer)
-    } else {
-      
-    }
-  }, [count, timer]);
+      setCount(0)
+      setImage(images[0])
+      setNextImage(images[0])
+      timer
+    } 
+    {count > images.length - 1? setImage(images[0]) : setImage(images[count])}
+    {count > images.length - 1 ? setNextImage(images[0]) : setNextImage(images[count+1]) }
+  }, [count]);
 
   return (
-    <AnimatePresence mode={'sync'} initial={false}>
-      <motion.div
-      layout
-      initial={{ 
-        opacity: 0}}
-      animate={{ 
-        opacity: 1,
-        transition: {
-          delay: 1,
-          duration: 0.8,
-        } }}
-      exit={{ opacity: 0,
-        transition: {
-          delay: 1,
-          duration: 0.8,
-        }}}>
-    <Image src={image} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
-    </motion.div>
-    </AnimatePresence>
+    <>
+
+          <div
+      
+      className={`absolute top-0 bg-transparent`}
+>
+    <Image key={`${image.id}-fg`} src={image.src} width={1920} height={1080} className="slideshowbg invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image"/>
+    </div> 
+    {nextImage ? 
+    <div
+      
+      className={`absolute top-0 bg-transparent`}
+>
+  <Image key={`${nextImage.id}-next`} src={nextImage?.src} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center bg-transparent" alt="bg image"/>
+    </div> : <div
+      
+      className={`absolute top-0 bg-transparent`}
+>
+    <Image key={`${images[0].id}-bg`} src={images[0].src} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center bg-transparent" alt="bg image"/>
+    </div> }
+        
+    
+
+    </>
   )
 }
 
@@ -81,7 +97,7 @@ export default function Nav({metadata}) {
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
       <nav className="flex z-40 md:justify-center top-0 mb-4 w-full">
-        <div className="transition ease=in-out delay-50 duration-300 flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
+        <div className="flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
         <Slideshow/>
         </div>
         <div className="flex flex-col md:flex-row flex-grow justify-between z-10 max-w-6xl mx-10 mt-10">
