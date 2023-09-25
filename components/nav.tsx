@@ -8,18 +8,29 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const images = [
-  `1`,
-  `2`,
-  `3`
+  `https://ccfil.com/wp-content/uploads/2016/05/fetured.png`,
+  `https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`,
+  `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`
 ]
+
 export function Slideshow() {
-  const [image, setImage] = useState(images[0]);
-  // If the current image is the last one in the array, go back to the first. 
-  // Otherwise, move to the next image.
-  const nextIndex = (images.indexOf(image) + 1) % images.length;
-  const nextImage = images[nextIndex];
-  setInterval(() => setImage(nextImage), 5000);
-  if (image == "1") 
+  const [count, setCount] = useState(0)
+  const [image, setImage] = useState(images[count])
+  const timer = setInterval(() => {
+    setCount((prevCount) => (prevCount + 1) % images.length);
+    setImage(images[count]);
+  }, 5000);
+
+  useEffect(() => {
+    if (count > images.length - 1) {
+      setCount(0);
+      setImage(images[0])
+      clearInterval(timer)
+    } else {
+      
+    }
+  }, [count, timer]);
+
   return (
     <AnimatePresence mode={'sync'} initial={false}>
       <motion.div
@@ -37,53 +48,13 @@ export function Slideshow() {
           delay: 1,
           duration: 0.8,
         }}}>
-    <Image src={`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
+    <Image src={image} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
     </motion.div>
     </AnimatePresence>
-  )
-  else if (image == "2")return (
-    <AnimatePresence mode={'sync'} initial={false}>
-      <motion.div
-      layout
-      initial={{ 
-        opacity: 0}}
-      animate={{ 
-        opacity: 1,
-        transition: {
-          delay: 1,
-          duration: 0.8,
-        } }}
-      exit={{ opacity: 0,
-        transition: {
-          delay: 1,
-          duration: 0.8,
-        }}}>
-    <Image src={`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
-    </motion.div>
-    </AnimatePresence>
-  )
-  else return (
-    <AnimatePresence mode={'sync'} initial={false}>
-    <motion.div
-    layout
-    initial={{ 
-      opacity: 0}}
-    animate={{ 
-      opacity: 1,
-      transition: {
-        delay: 1,
-        duration: 0.8,
-      } }}
-    exit={{ opacity: 0,
-      transition: {
-        delay: 1,
-        duration: 0.8,
-      }}}>
-  <Image src={`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg`} width={1920} height={1080} className="slideshow invisible md:visible min-h-[600px] object-cover object-center justify-center" alt="bg image" priority/>
-  </motion.div>
-  </AnimatePresence>
   )
 }
+
+
 
 export default function Nav({metadata}) {
   const router = useRouter();
