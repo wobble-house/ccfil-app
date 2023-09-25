@@ -14,7 +14,7 @@ const images = [
 ]
 
 export function Slideshow() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   const [image, setImage] = useState(images[count])
   const timer = setInterval(() => {
     setCount((prevCount) => (prevCount + 1) % images.length);
@@ -23,8 +23,8 @@ export function Slideshow() {
 
   useEffect(() => {
     if (count > images.length - 1) {
-      setCount(0);
-      setImage(images[0])
+      setTimeout(()=>setCount(0), 5000)
+      setTimeout(()=>setImage(images[0]), 5000)
       clearInterval(timer)
     } else {
       
