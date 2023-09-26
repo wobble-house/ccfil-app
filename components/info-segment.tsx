@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ccfilicon from "\public\Icons\Icons\compassion-icon-2.svg"
 import Image from "next/image";
+import { AccordionItem } from "./accordion-item";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl}){
     const router = useRouter();
@@ -34,11 +35,11 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
     )
 }
 
-export function StickyInfoSegment({children, captionText, type}){
+export function StickyInfoSegment({bgcolor, children, captionText, type}){
     return(
-        <Section initial={true} useOnce>
-        <div className="relative w-full z-40 bg-white">
-        <div className={`flex flex-col ${type == "A" ? "md:flex-row" : "md:flex-row-reverse"} max-w-6xl py-16 px-3 gap-10 mx-auto justify-center`}>
+        <section>
+        <div className={`w-full bg-${bgcolor}`}>
+        <div className={`flex flex-col ${type == "A" ? "md:flex-row" : "md:flex-row-reverse"} max-w-6xl py-16 px-3 gap-10 mx-auto justify-center bg-${bgcolor}`}>
             <div className="flex items-center md:w-1/3 border-[10px] border-blue2 p-10 sticky top-4 mb-auto max-w-[300px] aspect-[1/1]">
                 <h2 className="text-blue1 font-black text-4xl flex flex-shrink relative ">
                     {captionText}
@@ -49,7 +50,7 @@ export function StickyInfoSegment({children, captionText, type}){
             </div>
         </div>
         </div>
-        </Section>
+        </section>
     )
 }
 
@@ -66,6 +67,29 @@ export function InfoBody({headerText, bodyText,ImageUrl,ButtonUrl }:{headerText:
                 {bodyText}
                 </ReactMarkdown>
             {ButtonUrl == null ? <></> : <button className="uppercase border-2 border-blue1 rounded-full px-6 py-2 mx-auto hover:bg-blue1 hover:text-white"
+            onClick={()=> router.push(ButtonUrl)}>Learn More About Us
+            </button> }
+            </div>
+            </div>
+        </>
+    )
+}
+
+export function InfoAccordionBody({headerText, items, ImageUrl,ButtonUrl }:{headerText: string, items, ImageUrl, ButtonUrl}){
+    const router = useRouter();
+    return(
+        <>
+            <div className="flex flex-col gap-7 bg-white">
+                <ImageHandler src={ImageUrl} width={800} height={600}/>
+                    <div className="flex flex-col gap-7 p-5">
+                        <h2 className="text-2xl font-bold text-blue1">{headerText}</h2>
+                        <hr className="border-pink border-2 w-1/2"/>
+                    <div className={`flex flex-col gap-3`}>
+                {items.map(item => (
+                    <AccordionItem key={item.id} accordionTitle={item.accordionTitle} accordionBodyText={item.accordionBodyText} icon={item.icon}/>
+                ))}
+            </div>
+            {ButtonUrl == null ? <></> : <button className="transition ease-in-out duration-75 uppercase border-2 border-blue1 rounded-full px-6 py-2 mx-auto hover:bg-blue1 hover:text-white"
             onClick={()=> router.push(ButtonUrl)}>Learn More About Us
             </button> }
             </div>

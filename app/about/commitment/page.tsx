@@ -40,7 +40,7 @@ export default function Commitment() {
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
-          <StickyInfoSegment captionText={captionText} type="A">
+          <StickyInfoSegment captionText={captionText} type="A" bgcolor="gray1">
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>

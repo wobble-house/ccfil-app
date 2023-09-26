@@ -2,8 +2,9 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import InfoSegment, {StickyInfoSegment, InfoBody} from "@/components/info-segment"
+import InfoSegment, {StickyInfoSegment, InfoAccordionBody, InfoBody} from "@/components/info-segment"
 import Nav from "@/components/nav"
+import { accordionData } from "./data"
 
 export const metadata = {
   title: 'Program Components',
@@ -21,7 +22,6 @@ const infoImage = {
 const servicesCaptionText = `Program Overview`
 
 const accordionHeaderText = `Program Components`
-const accordionBodyText = `Accordion goes here`
 const accordionImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/program-components.jpg`
 
 const stickyHeaderText = `Additional Services`
@@ -35,10 +35,10 @@ export default function ProgramComponents() {
       <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-screen py-5">
+          <div className="mx-auto w-full max-w-screen py-5">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B"/>
-          <StickyInfoSegment captionText={servicesCaptionText} type="A">
-          <InfoBody headerText={accordionHeaderText} bodyText={accordionBodyText} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
+          <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1">
+          <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           <div className="flex flex-col h-64 border-[8px] border-blue1 border-solid p-15 bg-blue1 justify-center items-center">
             <h2 className="text-white text-2xl font-bold text-center">Ready to chat a bit more?</h2>
