@@ -18,8 +18,9 @@ export const QR = (props) => {
           }
         }}
         style={{ width: '100%' }}
-      />
-      <p>{data}</p>
+        constraints={{ facingMode: 'environment'|'user' }}
+        />
+        <p>{data}</p>
     </>
   );
 };
