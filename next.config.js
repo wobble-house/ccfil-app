@@ -10,7 +10,6 @@ module.exports = {
       minimumCacheTTL: 60,
   },
     experimental: {
-      appDir: true,
       typedRoutes: true,
     },
     typescript: {
