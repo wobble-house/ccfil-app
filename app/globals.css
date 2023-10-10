@@ -200,29 +200,16 @@
   width: 15px;
 }
 
-.slideshow {
-
-  animation: fadeInAnimation 2s ease-in-out;
-  z-index: 1
-}
-.slideshow::before{
-
-  animation: fadeInAnimation 2s ease-in-out;
+.carousel {
   z-index: 0;
 }
-.slideshow::after {
-  z-index: 1;
+
+.carouselCard {
+  position: absolute;
+  opacity: 0;
+  transition: 1s  ease-in-out;
 }
 
-.slideshowbg {
-  z-index: 0
-}
-.slideshowbg::before{
-  animation: fadeInAnimation 2s ease-in-out;
-  z-index: 1;
-}
-.slideshowbg::after {
-  animation: fadeOutAnimation 2s ease-in-out;
-  display: none;
-  z-index: 0;
+.carouselCard-active {
+  opacity: 1;
 }

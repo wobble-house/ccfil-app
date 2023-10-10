@@ -3,7 +3,8 @@ import React, { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
-import { SlideshowHeader, Header } from '@/components/slideshow';
+import { Header } from '@/components/header';
+import { Carousel, slides } from "./carousel";
 import {NavLink, NavListLink, aboutList, servicesList, NavHeader } from "@/components/nav-links"
 
 const images = [
@@ -35,9 +36,9 @@ export default function Nav({metadata}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-40 md:justify-center top-0 pb-12 w-full">
-        <div className="flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
-        {pathname != '/' ? <Header images={images[metadata.bgimage]}/> : <SlideshowHeader images={images}/>}
+      <nav className="flex z-40 md:justify-center top-0 w-full">
+        <div className="flex invisible md:visible absolute w-full overflow-hidden justify-center align-bottom h-full">
+        {pathname != '/' ? <Header images={images[metadata.bgimage]}/> : <Carousel slides={slides}/>}
         </div>
         <div className="flex flex-col md:flex-row flex-grow justify-between z-10 m-14">
             <div className=" flex flex-col md:flex-row-reverse items-center justify-between md:block">
