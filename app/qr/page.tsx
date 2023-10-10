@@ -3,11 +3,12 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import Nav from "@/components/nav"
-import {QR} from "./qr"
+import {QR} from "../../components/qr"
 
 export const metadata = {
   title: 'QR Scanner',
   description: 'Learn more about CCFIL',
+  bgimage: 1
 }
 
 export default function QRPage() {

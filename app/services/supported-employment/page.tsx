@@ -9,7 +9,8 @@ import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Supported Employment',
-  description: 'Learn more about CCFIL',
+  description: '',
+  bgimage: 0
 }
 
 const supportedEmploymentText = `
@@ -55,7 +56,7 @@ export default function SupportedEmployment() {
       <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-        <ReactMarkdown className="markdown p-2 text-left pt-20" remarkPlugins={[remarkGfm, remarkBreaks]}>
+        <ReactMarkdown className="markdown p-2 text-left py-20" remarkPlugins={[remarkGfm, remarkBreaks]}>
         {supportedEmploymentText}
                 </ReactMarkdown>
         </Suspense>

@@ -8,7 +8,8 @@ import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Outcomes',
-  description: 'Learn more about CCFIL',
+  description: `Improved quality of life is our set standard; we won't settle for anything less.`,
+  bgimage: 0
 }
 
 const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`

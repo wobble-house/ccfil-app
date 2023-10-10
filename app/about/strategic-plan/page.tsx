@@ -7,7 +7,8 @@ import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Strategic Plan',
-  description: 'Learn more about CCFIL',
+  description: '',
+  bgimage: 1
 }
 
 export default function StrategicPlan() {

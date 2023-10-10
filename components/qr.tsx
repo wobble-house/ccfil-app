@@ -17,10 +17,8 @@ export const QR = (props) => {
             console.info(error);
           }
         }}
-        style={{ width: '100%' }}
         constraints={{ facingMode: { exact: 'environment'}}}
         />
-        <p>{data}</p>
-    </>
+        <p>{data}</p>    </>
   );
 };

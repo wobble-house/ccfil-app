@@ -9,8 +9,9 @@ import { CardListData } from "./data"
 import Nav from "@/components/nav"
 
 export const metadata = {
-  title: 'Team',
-  description: 'Learn more about CCFIL',
+  title: 'About Us',
+  description: 'Hello. We’re Community Connections for Independent Living.',
+  bgimage: 4
 }
 
 const headerText =`We’re a thoughtful, trusted company that treats residents and staff like family.`

@@ -9,7 +9,8 @@ import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Code of Ethics',
-  description: 'Learn more about CCFIL',
+  description: '',
+  bgimage: 0
 }
 const codeOfEthics = `
 Philosophy & Intent

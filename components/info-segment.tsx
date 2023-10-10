@@ -20,9 +20,9 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
             </div>
             <div className={`flex flex-col gap-7 border-[10px] border-gray1 bg-transparent px-20 py-10 md:w-1/2 ${Type != "B" ? "-ml-16 mr-10" : "-mr-16 ml-10 z-10"} mt-20`}>
             <Image src={`/Icons/Icons/compassion-icon-2.svg`} alt="icon" width="60" height="60"/>
-            <h2 className="text-2xl text-blue2">{headerText}</h2>
+            <h2 className="text-blue2">{headerText}</h2>
             <hr className="border-pink border-2 md:w-1/3"/>
-            <ReactMarkdown className="markdown p-2 list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
+            <ReactMarkdown className="markdown p-2 text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
             {bodyText}
             </ReactMarkdown>
             {ButtonUrl == null ? <></> : <button className="uppercase border-2 border-blue-500 rounded-full px-6 py-2 mx-auto hover:bg-blue-500 hover:text-white"

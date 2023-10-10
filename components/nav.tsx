@@ -1,15 +1,27 @@
 'use client';
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { useOnClickOutside } from './click-handler';
 import Image from 'next/image';
-import { Slideshow } from './carousel';
+import { SlideshowHeader, Header } from '@/components/slideshow';
 import {NavLink, NavListLink, aboutList, servicesList, NavHeader } from "@/components/nav-links"
+
+const images = [
+  {id: 'image1', src:`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`},
+  {id: 'image2', src:`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`},
+  {id: 'image3', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg` },
+  {id: 'image4', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILServicesHeader.jpg`},
+  {id: 'image5', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILAboutUsHeader.jpg`},
+  {id: 'image6', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCausesHeader.jpg`},
+  {id: 'image7', src: `https://ccfil.com/wp-content/uploads/2016/07/contact-ccfil.jpg`}
+]
 
 export default function Nav({metadata}) {
   const [about, setAbout] = useState(false);
   const [services, setServices] = useState(false)
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
+  const pathname = usePathname()
   function handleAboutMouseover (){
     setAbout(true);
     setServices(false);
@@ -23,11 +35,11 @@ export default function Nav({metadata}) {
   }
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
-      <nav className="flex z-40 md:justify-center top-0 mb-4 w-full">
+      <nav className="flex z-40 md:justify-center top-0 pb-12 w-full">
         <div className="flex invisible md:visible absolute h-[600px] w-full overflow-hidden justify-center align-bottom">
-        <Slideshow/>
+        {pathname != '/' ? <Header images={images[metadata.bgimage]}/> : <SlideshowHeader images={images}/>}
         </div>
-        <div className="flex flex-col md:flex-row flex-grow justify-between z-10 max-w-6xl mx-10 mt-10">
+        <div className="flex flex-col md:flex-row flex-grow justify-between z-10 m-14">
             <div className=" flex flex-col md:flex-row-reverse items-center justify-between md:block">
               <div className="relative z-50 md:hidden">
                 <button className=" bg-white dark:bg-blue2 px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse"onClick={()=>setNavbar(!navbar)}>
@@ -44,8 +56,8 @@ export default function Nav({metadata}) {
               </div>
             </div>
 
-            <div ref={Navref} className={`flex grow bg-blue1 md:bg-white md:bg-opacity-50 dark:bg-blue2 md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
-            <div className="flex flex-col md:flex-row px-10">
+            <div ref={Navref} className={`flex grow bg-blue1 md:bg-white md:bg-opacity-75 dark:bg-blue2 md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
+            <div className="flex flex-col md:flex-row px-10 pb-8">
               <div className={`lg:hidden flex w-9 h-9 ml-5 my-8`}>
               <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
               </div>

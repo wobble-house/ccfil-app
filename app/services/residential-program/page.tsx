@@ -9,7 +9,8 @@ import Nav from "@/components/nav"
 
 export const metadata = {
   title: 'Semi-Independent Residential Program',
-  description: 'Learn more about CCFIL',
+  description: '',
+  bgimage: 0
 }
 
 const semiIndependentResidentialProgram = `
@@ -40,7 +41,7 @@ export default function ResidentialProgram() {
       <Nav metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-        <ReactMarkdown className="markdown p-2 text-left pt-20" remarkPlugins={[remarkGfm, remarkBreaks]}>
+        <ReactMarkdown className="markdown p-2 text-left pt-20 pb-20" remarkPlugins={[remarkGfm, remarkBreaks]}>
         {semiIndependentResidentialProgram}
                 </ReactMarkdown>
         </Suspense>

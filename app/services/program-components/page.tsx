@@ -7,8 +7,9 @@ import Nav from "@/components/nav"
 import { accordionData } from "./data"
 
 export const metadata = {
-  title: 'Program Components',
-  description: 'Learn more about CCFIL',
+  title: 'Services',
+  description: `Our residents' trust isn't freely given.  We earn it every day`,
+  bgimage: 3
 }
 
 const headerText =`All services we provide are based on over a decade of doing the right thing.`
@@ -25,7 +26,11 @@ const accordionHeaderText = `Program Components`
 const accordionImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/program-components.jpg`
 
 const stickyHeaderText = `Additional Services`
-const stickyBodyText = `We’re committed to supporting our residents in every way possible. This means that if needed, Community Connections will ensure that other therapies, outside of our services, are provided on a fee for service basis, such as:    `
+const stickyBodyText = `We’re committed to supporting our residents in every way possible. This means that if needed, Community Connections will ensure that other therapies, outside of our services, are provided on a fee for service basis, such as:
+ 
+- Physical Therapy
+- Speech/Language Pathology
+`
 const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/additional-services.jpg`
 
 
@@ -40,9 +45,11 @@ export default function ProgramComponents() {
           <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1">
           <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
-          <div className="flex flex-col h-64 border-[8px] border-blue1 border-solid p-15 bg-blue1 justify-center items-center">
+          <div className="flex flex-col h-64 bg-blue1 justify-center items-center p-10">
+            <div className={`flex flex-col border-solid border-[8px] border-white w-full h-full justify-center gap-5`}>
             <h2 className="text-white text-2xl font-bold text-center">Ready to chat a bit more?</h2>
-            <button className="px-10 py-4 text-center bg-blue2 hover:bg-transparent hover:border-2 hover:border-blue1 rounded-full text-2xl font-bold text-white hover:text-blue2 mx-auto">Contact Us</button>
+            <button className="px-10 py-2 text-center bg-blue2 bg-transparent border-[3px] border-white hover:bg-white rounded-full text-xl font-bold text-white hover:text-blue2 mx-auto uppercase">Contact Us</button>
+            </div>
             </div>
           </StickyInfoSegment>
           </div>

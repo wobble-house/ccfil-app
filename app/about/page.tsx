@@ -7,6 +7,7 @@ import Nav from "@/components/nav"
 export const metadata = {
   title: 'About Us',
   description: 'Learn more about CCFIL',
+  bgimage: 1
 }
 
 export default function About() {

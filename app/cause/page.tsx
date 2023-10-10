@@ -7,8 +7,9 @@ import QuoteSection from "@/components/quote"
 import Nav from "@/components/nav"
 
 export const metadata = {
-  title: 'Cause',
-  description: 'Learn more about CCFIL',
+  title: 'Meet CC Cares.',
+  description: `Caring for community doesn't stop inside our doors.`,
+  bgimage: 5
 }
 
 const headerText =`Community is an integral part of everything we do.`

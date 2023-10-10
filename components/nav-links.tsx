@@ -30,7 +30,7 @@ export function NavLink({path, text}){
 }
 
 export function NavListLink({items, path, text, onMouseLeave, onMouseOver, onClick, listState}){
-    const pathname = usePathname()
+  const pathname = usePathname()
     return(
 <li className={`transition ease-in-out delay-200 duration-300 pt-7 max-w-[70px] ${pathname.slice(0,6) == path ? "border-b-0 border-r-0 border-l-0 border-2 border-pink -mt-[2px] -mb-[2px]" : ""} hover:border-b-0 hover:border-r-0 hover:border-l-0 hover:border-2 hover:border-pink hover:-mt-[2px] hover:-mb-[2px]`}>
 <button
@@ -68,22 +68,31 @@ export function NavListInnerLink({linkpath, text}){
 }
 
 export function NavHeader({description, navbar, title}){
+  const pathname = usePathname()
     return(
         <>
-        <div className={`flex flex-col gap-6 md:3/4 lg:w-3/5 p-16 bg-transparent bg-opacity-50 border-solid border-white mx-16 mb-10 border-[10px] ${!navbar ? "visible" : "hidden"}`}>
+        {pathname != "/" ? 
+        <><div className={`flex flex-col gap-6 px-16 py-20 bg-transparent border-solid border-white mx-16 mb-16 border-[10px] ${!navbar ? "visible" : "hidden"}`}>
+          <h1 className="text-6xl font-black text-blue2">{title}</h1>
+          <h3 className="text-blue1 font-bold text-2xl">{description}</h3>
+          </div></> 
+          : 
+          <><div className={`flex flex-col gap-6 md:3/4 lg:w-3/5 p-16 bg-transparent bg-opacity-50 border-solid border-white mx-16 mb-10 border-[10px] ${!navbar ? "visible" : "hidden"}`}>
           <h3 className="text-blue1 font-bold text-2xl">{description}</h3>
           <h1 className="text-6xl font-black text-blue2">{title}</h1>
           <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">button</button>
           </div>
-          <div className="flex flex-row justify-between px-10 invisible md:visible">
-            <p>{`(248) 410-2715`}</p>
+           <div className="flex flex-row justify-between px-10 invisible md:visible m-10">
+            <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">{`(248) 410-2715`}</h3>
             <p>{`-->`}</p>
             <Link href="/contact" >
               <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
                   Contact Us
                   </h3>
                   </Link>
-          </div>
+          </div></>
+          }
+          
           </>
     )
 }

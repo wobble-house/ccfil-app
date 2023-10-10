@@ -7,8 +7,9 @@ import QuoteSection from "@/components/quote"
 import Nav from "@/components/nav"
 
 export const metadata = {
-  title: 'Commitment',
-  description: 'Learn more about CCFIL',
+  title: 'Our Commitment',
+  description: `Our residents' motivation, achievement, and happiness is our top priority.`,
+  bgimage: 2
 }
 
 const headerText =`We are committed to enhancing the daily lives of all our residents.`

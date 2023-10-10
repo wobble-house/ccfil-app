@@ -9,7 +9,8 @@ import {NavLink, NavListLink, NavListInnerLink, aboutList, servicesList } from "
 
 export const metadata = {
   title: 'Home',
-  description: 'Learn More About CCFIL'
+  description: 'Learn More About CCFIL',
+  bgimage: 1
 } 
 
 
