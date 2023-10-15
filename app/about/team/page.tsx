@@ -6,7 +6,7 @@ import InfoSegment,{ StickyInfoSegment} from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { InfoCardList, FeaturedCardList } from "@/components/list"
 import { CardListData } from "./data"
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 
 export const metadata = {
   title: 'About Us',
@@ -35,7 +35,7 @@ const teamCaptionText = `Our Team`
 export default function Team() {
   return (
    <>
-      <Nav metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">

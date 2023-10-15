@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import Loading from "./loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 import {NavLink, NavListLink, NavListInnerLink, aboutList, servicesList } from "@/components/nav-links"
 
 export const metadata = {
@@ -26,7 +26,7 @@ const quoteName = `Audrey Hepburn`
 export default function Home() {
   return (
    <>
-      <Nav metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full bg-white">

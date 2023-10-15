@@ -3,7 +3,7 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import Image from "next/image"
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 
 export const metadata = {
   title: 'Strategic Plan',
@@ -14,7 +14,7 @@ export const metadata = {
 export default function StrategicPlan() {
   return (
    <>
-   <Nav metadata={metadata}/>
+   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col mx-auto justify-center items-center py-10 bg-gray1 w-full gap-10">

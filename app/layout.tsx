@@ -2,7 +2,7 @@ import 'server-only'
 import './globals.css'
 import {GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
-import Footer from './footer'
+import Footer from '../components/footer'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -25,7 +25,7 @@ const paytoneOne = Paytone_One({
   style: 'normal',
   subsets: ["latin","latin-ext"],
   variable: '--font-PaytoneOne',
-  display: 'swap'
+  display: 'fallback'
 })
 
 const latoLite = Lato({

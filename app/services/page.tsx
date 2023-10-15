@@ -2,7 +2,7 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 
 export const metadata = {
   title: 'Services',
@@ -13,7 +13,7 @@ export const metadata = {
 export default function Services() {
   return (
    <>
-      <Nav metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto max-w-screen">

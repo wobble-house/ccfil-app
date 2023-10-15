@@ -3,7 +3,7 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, {StickyInfoSegment, InfoAccordionBody, InfoBody} from "@/components/info-segment"
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 import { accordionData } from "./data"
 
 export const metadata = {
@@ -37,7 +37,7 @@ const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/additional-
 export default function ProgramComponents() {
   return (
    <>
-      <Nav metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen py-5">

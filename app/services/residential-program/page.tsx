@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import Nav from "@/components/nav"
+import { NavHeader } from "@/components/header"
 
 export const metadata = {
   title: 'Semi-Independent Residential Program',
@@ -38,7 +38,7 @@ Transition/Discharge
 export default function ResidentialProgram() {
   return (
    <>
-      <Nav metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
         <ReactMarkdown className="markdown p-2 text-left pt-20 pb-20" remarkPlugins={[remarkGfm, remarkBreaks]}>
