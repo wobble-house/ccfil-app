@@ -38,7 +38,7 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
 export function StickyInfoSegment({bgcolor, children, captionText, type}){
     return(
         <section>
-        <div className={`w-full bg-${bgcolor}`}>
+        <div className={`relative w-full ${type == "A" ? "bg-white":"bg-gray1"} overflow-auto z-90`}>
         <div className={`flex flex-col ${type == "A" ? "md:flex-row" : "md:flex-row-reverse"} max-w-6xl py-16 px-3 gap-10 mx-auto justify-center bg-${bgcolor}`}>
             <div className="flex items-center md:w-1/3 border-[10px] border-blue2 p-10 sticky top-4 mb-auto max-w-[300px] aspect-[1/1]">
                 <h2 className="text-blue1 font-black text-4xl flex flex-shrink relative ">

@@ -35,7 +35,7 @@ export default function Outcomes() {
             className="relative"/>
           </div>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
-          <StickyInfoSegment captionText={outcomesCaptionText} type="B" bgcolor='grey1'>
+          <StickyInfoSegment captionText={outcomesCaptionText} type="B" bgcolor='white'>
             <FeaturedCardList data={testimonialCardListData}/>
           </StickyInfoSegment>
         </Suspense>

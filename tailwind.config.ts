@@ -168,7 +168,7 @@ const config: Config = {
       rose: colors.rose,
       gray1: 'rgb(var(--color-gray1) / <alpha-value>)',
       gray2: 'rgb(var(--color-gray2) / <alpha-value>)',
-     gray3: 'rgb(var(--color-gray3) / <alpha-value>)',
+      gray3: 'rgb(var(--color-gray3) / <alpha-value>)',
       blue1: 'rgb(var(--color-blue1) / <alpha-value>)',
       blue2: 'rgb(var(--color-blue2) / <alpha-value>)',
       pink: 'rgb(var(--color-pink) / <alpha-value>)',

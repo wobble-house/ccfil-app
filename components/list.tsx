@@ -43,7 +43,7 @@ export function FeaturedCardList({data}){
             whileInView="visible"
             variants={animationList}
             viewport={{ once: false }}
-            className="flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-30"
+            className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
             >
               {featuredData.map(data => (
                   <InfoCard 

@@ -40,7 +40,7 @@ export default function Team() {
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
-          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey1'>
+          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2'>
             <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>
           
