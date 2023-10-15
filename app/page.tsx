@@ -23,6 +23,7 @@ const infoImage = {
 const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/motivational-guote-2.jpg`
 const quote = `Nothing is impossible, the word itself says, 'I'm possible'!`
 const quoteName = `Audrey Hepburn`
+
 export default function Home() {
   return (
    <>

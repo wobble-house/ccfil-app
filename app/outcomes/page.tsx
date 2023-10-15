@@ -5,6 +5,9 @@ import Loading from "@/app/loading"
 import QuoteSection from "@/components/quote"
 import Image from "next/image"
 import { NavHeader } from "@/components/header"
+import { StickyInfoSegment } from "@/components/info-segment"
+import { FeaturedCardList } from "@/components/list"
+import { testimonialCardListData } from "@/components/data"
 
 export const metadata = {
   title: 'Outcomes',
@@ -15,6 +18,7 @@ export const metadata = {
 const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`
 const quoteName = `ELLEN DEGENERES`
 const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/resident-quote.jpg`
+const outcomesCaptionText = `Real Stories from Real Residents`
 
 export default function Outcomes() {
   return (
@@ -31,6 +35,9 @@ export default function Outcomes() {
             className="relative"/>
           </div>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
+          <StickyInfoSegment captionText={outcomesCaptionText} type="B" bgcolor='grey1'>
+            <FeaturedCardList data={testimonialCardListData}/>
+          </StickyInfoSegment>
         </Suspense>
       </Animation>
    </>

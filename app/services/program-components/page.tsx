@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, {StickyInfoSegment, InfoAccordionBody, InfoBody} from "@/components/info-segment"
 import { NavHeader } from "@/components/header"
-import { accordionData } from "./data"
+import { accordionData } from "@/components/data"
 
 export const metadata = {
   title: 'Services',

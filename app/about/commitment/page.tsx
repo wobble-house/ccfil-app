@@ -5,6 +5,8 @@ import Loading from "@/app/loading"
 import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
+import { FeaturedCardList } from "@/components/list"
+import { testimonialCardListData } from "@/components/data"
 
 export const metadata = {
   title: 'Our Commitment',
@@ -30,6 +32,7 @@ const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampus
 const quote = `It’s good to push yourself and do what you don’t necessarily want to do, that if you’re not automatically good at it, you should try. Trying is so important.`
 const quoteName = `Meryl Streep`
 const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/happiness-quote.jpg`
+const commitmentCaptionText = `Real Stories from Real Residents`
 
 
 export default function Commitment() {
@@ -45,6 +48,9 @@ export default function Commitment() {
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
+          <StickyInfoSegment captionText={commitmentCaptionText} type="B" bgcolor='grey1'>
+            <FeaturedCardList data={testimonialCardListData}/>
+          </StickyInfoSegment>
           </div>
         </Suspense>
       </Animation>

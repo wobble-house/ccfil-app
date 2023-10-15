@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import InfoSegment,{ StickyInfoSegment} from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { InfoCardList, FeaturedCardList } from "@/components/list"
-import { CardListData } from "./data"
+import { teamCardListData } from "@/components/data"
 import { NavHeader } from "@/components/header"
 
 export const metadata = {
@@ -41,13 +41,13 @@ export default function Team() {
           <div className="flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
           <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey1'>
-            <FeaturedCardList data={CardListData}/>
+            <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>
           
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           
           <StickyInfoSegment captionText={teamCaptionText} type="A" bgcolor="white">
-            <InfoCardList data={CardListData}/>
+            <InfoCardList data={teamCardListData}/>
           </StickyInfoSegment>
           </div>
         </Suspense>
