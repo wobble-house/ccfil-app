@@ -45,8 +45,8 @@ export default function CodeOfEthics() {
    <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto max-w-6xl py-20">
-          <ReactMarkdown className="markdown p-2 list-inside text-left" remarkPlugins={[remarkGfm, remarkBreaks]}>
+          <div className="flex mx-auto py-16 z-50 bg-white w-full justify-center">
+          <ReactMarkdown className="markdown p-2 list-inside text-left max-w-4xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
                {codeOfEthics}
                 </ReactMarkdown>
           </div>

@@ -17,7 +17,7 @@ export default function StrategicPlan() {
    <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="flex flex-col mx-auto justify-center items-center py-10 bg-gray1 w-full gap-10">
+          <div className="flex flex-col mx-auto justify-center items-center py-10 bg-gray1 w-full gap-10 z-50">
           <Image src="https://ccfil.com/wp-content/uploads/2023/02/Strategic_Plan-2023-2025-1024x768.png" width={1024} height={768} alt="strategic plan"/>
           <button className="text-center bg-blue1 hover:bg-white hover:bg-opacity-75 text-white font-bold hover:text-blue1 hover:border-solid hover:border-[2px] rounded-full px-10 py-3 m-3 hover:mb-[9px]">
             DOWNLOAD PDF COPY

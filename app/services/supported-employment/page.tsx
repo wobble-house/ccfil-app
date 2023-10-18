@@ -56,9 +56,11 @@ export default function SupportedEmployment() {
       <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-        <ReactMarkdown className="markdown p-2 text-left py-20 mt-40" remarkPlugins={[remarkGfm, remarkBreaks]}>
+        <div className="flex mx-auto py-16 z-50 bg-white w-full justify-center">
+        <ReactMarkdown className="markdown p-2 list-inside text-left max-w-4xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
         {supportedEmploymentText}
                 </ReactMarkdown>
+        </div>
         </Suspense>
       </Animation>
    </>
