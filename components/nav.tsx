@@ -22,7 +22,7 @@ export default function Nav() {
   useOnClickOutside(Navref, handleNavClickOutside)
   return (
       <nav className="flex z-40 md:justify-center top-0 w-full">
-        <div className="flex flex-col md:flex-row flex-grow justify-between">
+        <div className="flex flex-col md:flex-row flex-grow justify-end">
                 <button className="relative z-50 md:hidden dark:bg-blue2 px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse"onClick={()=>setNavbar(!navbar)}>
                   {navbar ? (
                     <svg xmlns="http://www.w3.org/2000/svg"className="w-6 h-6 border-solid text-blue1"viewBox="0 0 20 20"fill="currentColor">
@@ -34,10 +34,10 @@ export default function Nav() {
                     </svg>
                   )}
                 </button>
-            <div ref={Navref} className={`flex grow bg-blue1 dark:bg-blue2 md:bg-transparent md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
-              <ul  className=" text-center flex flex-col flex-shrink md:grid md:grid-cols-6 gap-3 max-w-lg md:ml-auto pr-10">
+            <div ref={Navref} className={`flex bg-blue1 dark:bg-blue2 md:bg-transparent md:block items-stretch ${navbar ? 'flex flex-col' : 'hidden'}`}>
+              <ul  className=" text-center flex flex-col md:grid md:grid-cols-6 gap-3 pr-10">
                 <NavLink path={`/`} text={`Home`}/>
-                <NavListLink items={aboutList} path={`/about`} text={`About Us`} onMouseLeave={()=>setAbout(false)} onMouseOver={handleAboutMouseover} onClick={()=>setAbout(true)} listState={about}/>
+                <NavListLink items={aboutList} path={`/about`} text={`About`} onMouseLeave={()=>setAbout(false)} onMouseOver={handleAboutMouseover} onClick={()=>setAbout(true)} listState={about}/>
                 <NavListLink items={servicesList} path={`/services`} text={`Services`} onMouseLeave={()=>setServices(false)} onMouseOver={handleServicesMouseover} onClick={()=>setServices(true)} listState={services}/>
                 <NavLink path={`/outcomes`} text={`Outcomes`}/>
                 <NavLink path={`/cause`} text={`Cause`}/>

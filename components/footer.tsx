@@ -32,10 +32,10 @@ export default function Footer(){
                 </h2>
             </div>
 </div> : ""}
-                <div className="absolute w-full bottom-0 z-80">
+                <div className="absolute w-full bottom-0 z-70">
                 <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440} alt={`footer image`}/>
             </div>
-            <div className={`sticky flex flex-col my-2 bg-gray3 px-16 pt-16 pb-4 z-90 mx-16 justify-between max-w-6xl w-full`}>
+            <div className={`sticky flex flex-col my-2 bg-gray3 px-16 pt-16 pb-4 z-80 mx-16 justify-between max-w-6xl w-full`}>
                 <div className="flex flex-col md:flex-row justify-between text-white mx-auto w-full">
                 <div className="flex flex-col content-center max-w-md gap-5">
                     <h2 className="text-2xl text-white">
