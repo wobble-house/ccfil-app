@@ -1,8 +1,10 @@
+'use client';
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageHandler from "@/components/image-handler";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const whoWeAre = `
 Community Connections for Independent Living, LLC is a group of caring professionals dedicated to the residents we service, individuals who sustained Traumatic Brain Injury (TBI). 
@@ -10,15 +12,31 @@ Community Connections for Independent Living, LLC is a group of caring professio
 We realize that each of our residents has a unique journey to recovery ahead of them. Therefore, we develop an individualized rehabilitation plan that ensures they learn the skills and tools they need to successfully navigate school, work and daily life. Ultimately our role is to be supportive and help our residents reach their goals and move forward with their rehabilitation.
 `
 export default function Footer(){
+    const pathname = usePathname();
     return (
     <>
-            <div className="relative bottom-0 overflow-hidden py-16 bg-white">
-
-                <div className="absolute w-full bottom-0">
+            <div className="flex flex-col relative bottom-0 overflow-hidden pt-16 pb-4 bg-white justify-center w-full items-center">
+{pathname == '/' ? <div className={`relative flex flex-row mx-auto max-w-6xl justify-between pb-16`}>
+    <div className={`flex flex-col w-1/2 gap-10`}>
+        <p>We at Community Connections for Independent Living are proud members of these TBI advocacy organizations. Through continued collaboration and education, we strengthen our mission to serve and promote the rights and quality of life for brain injury survivors.</p>
+    <div className={`grid grid-cols-3 justify-evenly items-center gap-10`}>
+        <Image src={`/logos/logos/CPAN.png`} height={893} width={1999} alt="CPAN logo" className={``}/>
+        <Image src={`/logos/logos/mbipc.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
+        <Image src={`/logos/logos/BIAMI.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
+    </div>
+    </div>
+    <div className=" overscroll-auto items-center border-[10px] border-blue2 p-10 top-4">
+                <h2 className="text-blue1 font-black text-6xl flex flex-shrink relative ">
+                    TBI
+                    <br></br>Advocacy
+                </h2>
+            </div>
+</div> : ""}
+                <div className="absolute w-full bottom-0 z-80">
                 <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440} alt={`footer image`}/>
             </div>
-            <div className={`max-w-6xl sticky my-2 bottom-0 bg-gray3 p-16 mx-auto`}>
-                <div className="flex flex-col md:flex-row justify-between text-white max-w-6xl mx-auto gap-10">
+            <div className={`sticky flex flex-col my-2 bg-gray3 px-16 pt-16 pb-4 z-90 mx-16 justify-between max-w-6xl w-full`}>
+                <div className="flex flex-col md:flex-row justify-between text-white mx-auto w-full">
                 <div className="flex flex-col content-center max-w-md gap-5">
                     <h2 className="text-2xl text-white">
                     Who We Are
@@ -33,7 +51,8 @@ export default function Footer(){
                 <div className="mx-auto">
                 <Image src="/logos/main-logo-white.svg" alt="CCFIL logo" width={225} height={58}/>
                 </div>
-                <hr></hr>
+                <hr>
+                </hr>
                 <div className="w-40">
                     <p className="text-white">
                     Mailing Address
@@ -49,10 +68,10 @@ Sterling Heights, MI 48312
                     {`F(586) 573-6397`}
                     </p>
                 </div>
-                <button className="transition ease-in-out duration-[500ms] bg-blue1 hover:px-9 hover:py-2 px-10 py-3 rounded-full uppercase mx-auto hover:text-blue1 hover:bg-transparent font-bold border-solid hover:border-blue1 hover:border-4">contact us</button>
+                <button className="transition ease-in-out duration-[500ms] bg-blue1 hover:px-9 hover:py-2 px-10 py-3 rounded-full uppercase mx-auto hover:text-blue1 hover:bg-transparent font-bold border-solid hover:border-blue1 hover:border-4 text-white">contact us</button>
                 </div>
                 </div>
-                <p className="text-center font-mono text-xs text-white pt-20 hover:animate-pulse">©Copyright 2023 Community Connections. All Rights Reserved. Privacy Policy</p>
+                <p className="text-center font-mono text-xs text-white hover:animate-pulse pt-16">©Copyright 2023 Community Connections. All Rights Reserved. Privacy Policy</p>
             </div>
             
         </div>
