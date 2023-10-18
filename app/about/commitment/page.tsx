@@ -6,7 +6,7 @@ import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/info-segm
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
 import { FeaturedCardList } from "@/components/list"
-import { testimonialCardListData } from "@/components/data"
+import { testimonialCardListData } from "@/components/data/data"
 
 export const metadata = {
   title: 'Our Commitment',
@@ -20,7 +20,6 @@ const infoImage = {
   url: `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW.jpg`,
   alt: `image for website`
 }
-const ImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW.jpg`
 const captionText = "Enriching Our Residents' Lives"
 const stickyHeaderText = `Independence and ownership are encouraged and supported on entry into our program.`
 const stickyBodyText = `Community Connections acknowledges that each resident has unique routines and interests prior to admission; it is our mission to respect, uphold, and enhance the daily lives of our residents while guiding them towards greater self-reliance and community reentry. Each resident frequently meets with our rehabilitation specialists to ensure progress towards their individualized treatment goals while maintaining choice-driven objectives. Community Connections believes that residents’ motivation, achievement, and happiness are maximized by our innovative approach to cognitive-behavioral programming coupled with our compassionate and encouraging support staff.
@@ -43,7 +42,7 @@ export default function Commitment() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/plant.svg'}/>
           <StickyInfoSegment captionText={captionText} type="A" bgcolor="gray1">
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>

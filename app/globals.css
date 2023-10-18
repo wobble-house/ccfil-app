@@ -45,11 +45,21 @@
     font-size: 1.5rem;
     line-height: 1.7rem;
     color: rgb(var(--color-blue1));
-    font-weight: 800;
+  }
+  h4 {
+    font-family: var(--font-ProzaLibre), sans-serif;
   }
   
   p {
     font-family: var(--font-Lato), sans-serif;
+  }
+
+  button {
+    font-family: var(--font-Lato), sans-serif;
+    color: rgb(var(--color-blue1));
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
   }
 
 @keyframes fadeInAnimation {

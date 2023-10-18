@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import {Lato ,Paytone_One } from 'next/font/google'
+import {Lato ,Paytone_One, Proza_Libre } from 'next/font/google'
 
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -28,6 +28,14 @@ const paytoneOne = Paytone_One({
   display: 'fallback'
 })
 
+const prozaLibre = Proza_Libre({
+  weight: ['400','500','600','700','800'],
+  style: 'normal',
+  subsets: ["latin","latin-ext"],
+  variable: '--font-ProzaLibre',
+  display: 'swap'
+})
+
 const latoLite = Lato({
   weight: ['100','300','400','700','900'],
   style: 'normal',
@@ -42,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable}`}>
+    <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable} ${prozaLibre.variable}`}>
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen snap-y`}>

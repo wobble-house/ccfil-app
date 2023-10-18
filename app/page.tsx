@@ -5,7 +5,6 @@ import Loading from "./loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
-import {NavLink, NavListLink, NavListInnerLink, aboutList, servicesList } from "@/components/nav-links"
 
 export const metadata = {
   title: 'Home',
@@ -31,7 +30,7 @@ export default function Home() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full bg-white">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A"/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A" icon={'/Icons/Icons/page.svg'}/>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
         </Suspense>

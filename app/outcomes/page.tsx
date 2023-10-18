@@ -7,7 +7,7 @@ import Image from "next/image"
 import { NavHeader } from "@/components/header"
 import { StickyInfoSegment } from "@/components/info-segment"
 import { FeaturedCardList } from "@/components/list"
-import { testimonialCardListData } from "@/components/data"
+import { testimonialCardListData } from "@/components/data/data"
 
 export const metadata = {
   title: 'Outcomes',

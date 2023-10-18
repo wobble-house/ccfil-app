@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import Nav from "./nav"
 import { useOnClickOutside } from './click-handler';
 import { HeaderCarousel } from "./carousel";
-import { bgimages, carouselSlides } from "./data";
+import { bgimages, carouselSlides } from "./data/data";
 
 export function NavHeader({description, title, metadata}){
   const Navref = useRef();
@@ -24,7 +24,7 @@ export function NavHeader({description, title, metadata}){
     </div> : 
     <HeaderCarousel carouselSlides={carouselSlides}/>}
       </div>
-<div className={`flex flex-col px-16 pb-16 gap-5 bg-white bg-opacity-75 w-full z-10 m-12 min-h-[500px]`}>
+<div className={`flex flex-col px-16 pb-6 gap-5 bg-white bg-opacity-75 w-full z-10 m-12 min-h-[500px]`}>
         <div className={`flex flex-row`}>
           <div className={`lg:hidden flex w-9 h-9 ml-5`}>
           <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
@@ -49,9 +49,12 @@ export function NavHeader({description, title, metadata}){
           </div>
           }
           {pathname != "/" ? "":
-          <div className="flex flex-row justify-between px-10 invisible md:visible">
-            <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">{`(248) 410-2715`}</h3>
-            <p>{`-->`}</p>
+          <div className="flex flex-row justify-between pt-10 invisible md:visible">
+            <div className={`flex flex-row gap-2 items-center`}>
+              <Image src={'/Icons/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
+            <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest pb-1">{`(248) 410-2715`}</h3>
+            </div>
+            <p></p>
             <Link href="/contact" >
               <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
                   Contact Us

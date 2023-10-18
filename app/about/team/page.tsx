@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import InfoSegment,{ StickyInfoSegment} from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { InfoCardList, FeaturedCardList } from "@/components/list"
-import { teamCardListData } from "@/components/data"
+import { teamCardListData } from "@/components/data/data"
 import { NavHeader } from "@/components/header"
 
 export const metadata = {
@@ -38,8 +38,8 @@ export default function Team() {
       <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A"/>
+          <div className="relative flex flex-col w-full">
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/compassion.svg'}/>
           <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2'>
             <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>

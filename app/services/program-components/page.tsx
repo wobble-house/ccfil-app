@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, {StickyInfoSegment, InfoAccordionBody, InfoBody} from "@/components/info-segment"
 import { NavHeader } from "@/components/header"
-import { accordionData } from "@/components/data"
+import { accordionData } from "@/components/data/data"
 
 export const metadata = {
   title: 'Services',
@@ -41,7 +41,7 @@ export default function ProgramComponents() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen py-5">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B"/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/education.svg'}/>
           <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1">
           <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
