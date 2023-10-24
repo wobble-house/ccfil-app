@@ -35,12 +35,12 @@ const teamCaptionText = `Our Team`
 export default function Team() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="relative flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/compassion.svg'}/>
-          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2'>
+          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2' className={"Leadership"}>
             <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>
           

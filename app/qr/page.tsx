@@ -14,7 +14,7 @@ export const metadata = {
 export default function QRPage() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto max-w-screen">

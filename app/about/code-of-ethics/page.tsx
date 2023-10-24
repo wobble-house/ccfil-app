@@ -42,7 +42,7 @@ Website: www.safehotline.com`
 export default function CodeOfEthics() {
   return (
    <>
-   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex mx-auto py-16 z-50 bg-white w-full justify-center">

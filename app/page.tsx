@@ -5,6 +5,7 @@ import Loading from "./loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
+import { carouselSlides } from "@/components/data/data"
 
 export const metadata = {
   title: 'Home',
@@ -26,7 +27,7 @@ const quoteName = `Audrey Hepburn`
 export default function Home() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={carouselSlides[0].description} title={carouselSlides[0].title} metadata={metadata} headerButton={{url: "/about/team#Leadership", title: "LEARN MORE"}}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full bg-white">

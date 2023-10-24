@@ -8,10 +8,10 @@ import remarkBreaks from "remark-breaks";
 import Image from "next/image";
 import { AccordionItem } from "./accordion-item";
 
-export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl, icon}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl, icon}){
+export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl, icon, className}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl, icon, className}){
     const router = useRouter();
     return(
-        <Section initial={false} useOnce>
+        <Section initial={false} useOnce className={className}>
         <div className={`relative z-40 h-full bg-white py-12 mx-auto `}>
             <div className={`max-w-6xl flex flex-col mx-auto w-full h-full ${Type != "B" ? "md:flex-row " : "md:flex-row-reverse"}`}>
             <div className={`md:w-1/2 ${Type != "B" ? "ml-5" : "mr-5"}`}>
@@ -34,9 +34,9 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
     )
 }
 
-export function StickyInfoSegment({bgcolor, children, captionText, type}){
+export function StickyInfoSegment({bgcolor, children, captionText, type, className}){
     return(
-        <Section initial={false} useOnce>
+        <Section initial={false} useOnce className={className}>
         <div className={`relative w-full ${type == "A" ? "bg-white":"bg-gray1"} overflow-auto z-90`}>
         <div className={`flex flex-col ${type == "A" ? "md:flex-row" : "md:flex-row-reverse"} max-w-6xl py-16 px-3 gap-10 mx-auto justify-center bg-${bgcolor}`}>
             <div className="flex items-center md:w-1/3 border-[10px] border-blue2 p-10 sticky top-4 mb-auto max-w-[300px] aspect-[1/1]">

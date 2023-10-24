@@ -37,7 +37,7 @@ const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/additional-
 export default function ProgramComponents() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen py-5">

@@ -8,7 +8,7 @@ import { useOnClickOutside } from './click-handler';
 import { HeaderCarousel } from "./carousel";
 import { bgimages, carouselSlides } from "./data/data";
 
-export function NavHeader({description, title, metadata}){
+export function NavHeader({description, title, metadata, headerButton}){
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname()
@@ -44,8 +44,11 @@ export function NavHeader({description, title, metadata}){
           <div className="flex flex-col gap-6">
           <h3 className="text-blue1 font-bold text-2xl">{description}</h3>
           <h1 className="text-6xl font-black text-blue2">{title}</h1>
-          <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">button</button>
-          </div>
+          {headerButton ? 
+          <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">
+            <Link href={headerButton.url} scroll={false}>{headerButton.title}</Link> </button>
+          : ""}
+          </div> 
           </div>
           }
           {pathname != "/" ? "":

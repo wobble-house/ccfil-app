@@ -23,7 +23,7 @@ const outcomesCaptionText = `Real Stories from Real Residents`
 export default function Outcomes() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
               <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16">
