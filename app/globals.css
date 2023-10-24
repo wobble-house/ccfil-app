@@ -80,7 +80,15 @@
 }
 }
 
-
+.name-container {
+  container-type: size;
+}
+.horizontal {
+  resize: horizontal;
+}
+.horizontal .child {
+  font-size: 10cqw;
+}
 
 .markdown h2 {
   font-family: var(--font-PaytoneOne), sans-serif;

@@ -44,10 +44,10 @@ export function DetailsCard({
                           initial="hidden"
                           animate="visible"
                           variants={animationItem} className="relative z-30">
-                <h2 className="text-white  text-left px-5 md:text-4xl">{firstName}&nbsp;{lastName}</h2>
+                <h2 className="text-white text-left px-5 md:text-4xl">{firstName}&nbsp;{lastName}</h2>
               </motion.div>
                           <div className="px-4 mr-auto">
-                          <h2 className="text-left text-white whitespace-nowrap italic ml-1">{title}</h2>
+                          <h3 className="text-left text-white whitespace-nowrap ml-1">{title}</h3>
                           <div className="mx-auto">
               <ReactMarkdown className="p-2 list-inside text-left max-w-2xl text-white text-sm" remarkPlugins={[remarkGfm, remarkBreaks]}>
                {bio}
