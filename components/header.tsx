@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import Nav from "./nav"
 import { useOnClickOutside } from './click-handler';
 import { HeaderCarousel } from "./carousel";
@@ -12,10 +12,16 @@ export function NavHeader({description, title, metadata, headerButton}){
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname()
+  const router = useRouter();
   function handleNavClickOutside() {
     setNavbar(false);
   }
   useOnClickOutside(Navref, handleNavClickOutside)
+  function handleAnchor(e){
+    e.preventDefault();
+    router.push("/about/team#Leadership")
+  }
+
     return(
       <div className="flex z-40 md:justify-center top-0 w-full">
       <div className="flex invisible md:visible absolute w-full overflow-hidden justify-center align-bottom h-full">
@@ -44,10 +50,11 @@ export function NavHeader({description, title, metadata, headerButton}){
           <div className="flex flex-col gap-6">
           <h3 className="text-blue1 font-bold text-2xl">{description}</h3>
           <h1 className="text-6xl font-black text-blue2">{title}</h1>
-          {headerButton ? 
-          <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]">
-            <Link href={headerButton.url} scroll={false}>{headerButton.title}</Link> </button>
-          : ""}
+          {headerButton != null ? 
+          <button className="mr-auto bg-blue1 rounded-full px-10 py-2 text-xl font-bold uppercase text-white hover:text-blue2 hover:bg-white hover:bg-opacity-25 hover:border-2 hover:border-blue2 hover:-mb-[3px]" onClick={handleAnchor}>
+            {headerButton.title}
+            </button>
+          : "" }
           </div> 
           </div>
           }

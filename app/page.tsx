@@ -31,7 +31,7 @@ export default function Home() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full bg-white">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A" icon={'/Icons/Icons/page.svg'}/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A" icon={'/Icons/Icons/page.svg'} id={null}/>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
         </Suspense>

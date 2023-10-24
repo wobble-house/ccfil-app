@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function Section({ children, initial, useOnce, className }:{children, initial: boolean, useOnce: boolean, className}) {
+export default function Section({ children, initial, useOnce, id }:{children, initial: boolean, useOnce: boolean, id}) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: useOnce });
     return (
-      <motion.section layout className={`${className} overscroll-auto`} ref={sectionRef}>
+      <motion.section layout className={`${id} overscroll-auto`} ref={sectionRef} id={id}>
         <motion.div
         className="overscroll-contain"
         layout

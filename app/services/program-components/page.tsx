@@ -41,8 +41,8 @@ export default function ProgramComponents() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen py-5">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/education.svg'}/>
-          <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1">
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/education.svg'} id={null}/>
+          <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           <div className="flex flex-col h-64 bg-blue1 justify-center items-center p-10">

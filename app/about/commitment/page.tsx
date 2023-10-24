@@ -42,12 +42,12 @@ export default function Commitment() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/plant.svg'}/>
-          <StickyInfoSegment captionText={captionText} type="A" bgcolor="gray1">
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/plant.svg'} id={null}/>
+          <StickyInfoSegment captionText={captionText} type="A" bgcolor="gray1" id={null}>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
-          <StickyInfoSegment captionText={commitmentCaptionText} type="B" bgcolor='grey1'>
+          <StickyInfoSegment captionText={commitmentCaptionText} type="B" bgcolor='grey1' id={null}>
             <FeaturedCardList data={testimonialCardListData}/>
           </StickyInfoSegment>
           </div>

@@ -1,4 +1,3 @@
-import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
@@ -39,14 +38,14 @@ export default function Team() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="relative flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/compassion.svg'}/>
-          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2' className={"Leadership"}>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/compassion.svg'} id={null}/>
+          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2' id={'Leadership'}>
             <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>
           
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           
-          <StickyInfoSegment captionText={teamCaptionText} type="A" bgcolor="white">
+          <StickyInfoSegment captionText={teamCaptionText} type="A" bgcolor="white" id={'Team'}>
             <InfoCardList data={teamCardListData}/>
           </StickyInfoSegment>
           </div>

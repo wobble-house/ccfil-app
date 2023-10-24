@@ -37,9 +37,9 @@ export default function Cause() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/shirt.svg'}/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/shirt.svg'} id={null}/>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
-          <StickyInfoSegment captionText={causeCaptionText} type="A" bgcolor="bg-gray1">
+          <StickyInfoSegment captionText={causeCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           <div className="flex flex-col h-64 bg-blue1 justify-center items-center p-10">
             <div className={`flex flex-col border-solid border-[8px] border-white w-full h-full justify-center gap-5`}>
