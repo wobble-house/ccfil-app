@@ -5,16 +5,16 @@ import Link from 'next/link'
 export function ContactForm(){
     const id = useId();
     // States for contact form fields
-    const [fullname, setFullname] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
+    const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
   
     //   Form validation state
     const [errors, setErrors] = useState({});
   
     //   Setting button text on form submission
-    const [buttonText, setButtonText] = useState("Send");
+    const [buttonText, setButtonText] = useState("Contact Us");
   
     // Setting success or failure messages states
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -25,16 +25,16 @@ export function ContactForm(){
       let tempErrors = {};
       let isValid = true;
   
-      if (fullname.length <= 0) {
-        tempErrors["fullname"] = true;
+      if (name.length <= 0) {
+        tempErrors["name"] = true;
         isValid = false;
       }
       if (email.length <= 0) {
         tempErrors["email"] = true;
         isValid = false;
       }
-      if (subject.length <= 0) {
-        tempErrors["subject"] = true;
+      if (phone.length <= 0) {
+        tempErrors["phone"] = true;
         isValid = false;
       }
       if (message.length <= 0) {
@@ -46,39 +46,7 @@ export function ContactForm(){
       console.log("errors", errors);
       return isValid;
     };
-    const list = {
-      visible: { 
-        opacity: 1,
-        transition: {
-          when: "beforeChildren",
-          staggerChildren: 0.3,
-        },
-      },
-      hidden: { 
-        opacity: 0,
-        transition: {
-          when: "afterChildren",
-        },
-      },
-    }
-  
-    const item = {
-      visible: { 
-        opacity: 1,
-        y: 0,
-        transition: {
-          when: "beforeChildren",
-          staggerChildren: 0.3,
-        },
-      },
-      hidden: { 
-        opacity: 0,
-        y:-100,
-        transition: {
-          when: "afterChildren",
-        },
-      },
-    }
+    
     //   Handling form submit
   
     const handleSubmit = async (e) => {
@@ -91,8 +59,8 @@ export function ContactForm(){
         const res = await fetch("./api/sendgrid", {
           body: JSON.stringify({
             email: email,
-            fullname: fullname,
-            subject: subject,
+            name: name,
+            phone: phone,
             message: message,
           }),
           headers: {
@@ -106,64 +74,52 @@ export function ContactForm(){
           console.log(error);
           setShowSuccessMessage(false);
           setShowFailureMessage(true);
-          setButtonText("Send");
+          setButtonText("Oops! There was an issue..");
           return;
         };
         setShowSuccessMessage(true);
         setShowFailureMessage(false);
         setButtonText("Sent!");
       }
-      console.log(fullname, email, subject, message);
+      console.log(name, email, phone, message);
     };
     return (
       <section>
               <form
-              className="flex flex-col px-8 text-white relative">
-                <div className="mb-20 pb-2 pr-2 -mt-2 pt-2">
-                <div className=" pb-2 pr-2 -ml-2 -mt-4 pt-4 md:whitespace-nowrap relative">
-                    <h2 className="-ml-2 -mt-8 px-5 mr-auto md:text-4xl">
-                    Send me a message
-                    </h2>
-                </div>
-                </div>
+              className="">
 
-            <div className="flex flex-col  pr-2 mb-12 shadow-2xl">
-                <label 
-                htmlFor="fullname" 
-                className="text-xl  px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">
-                Full Name
-                <span className="text-red">*</span>
-                </label>
-                <input id={id} type="text" value={fullname} onChange={e => setFullname(e.target.value)} name="fullname" className="   py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500  dark:text-gray-100 " />
+            <div className="flex flex-col gap-2 py-2 ">
+                <input id={id} type="text" placeholder="Name*" onChange={e => setName(e.target.value)} name="name" className="w-full focus:border-none focus:ring-blue1 " />
+            <hr className="border-pink border-1"/>
             </div>
 
-            <div className="flex flex-col  pr-2 mb-12 shadow-2xl">
-                <label htmlFor="email" className="text-xl   px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">E-mail<span className="text-red">*</span></label>
-                <input id={id} type="email" value={email} onChange={e => setEmail(e.target.value)} name="email" className="   py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500 dark:text-gray-100 " />
+            <div className="flex flex-col gap-2 py-2">
+                <input id={id} type="email" placeholder="Email*" onChange={e => setEmail(e.target.value)} name="email" className="" />
+            <hr className="border-pink border-1"/>
             </div>
 
-            <div className="flex flex-col  pr-2 mb-12 shadow-2xl">   
-        <label htmlFor="subject" className="text-xl px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Subject<span className="text-red">*</span></label>
-        <input id={id} type="text" value={subject} onChange={e => setSubject(e.target.value)} name="subject" className="    py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500 dark:text-gray-100 " />
-        </div>
+            <div className="flex flex-col gap-2 py-2">  
+        <input id={id} type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Phone" onChange={e => setPhone(e.target.value)} name="phone" className="" />
+        <hr className="border-pink border-1"/>
+            </div>
 
 
-        <div className="flex flex-col  pr-2 mb-12 shadow-2xl">
-        <label htmlFor="message" className="text-xl   px-2 mr-auto -ml-4 -mt-8 -mb-4 relative">Message<span className="text-red">*</span></label>
-        <textarea id={id} value={message} onChange={e => setMessage(e.target.value)} name="message" rows={6} className="   py-2 mb-2 pb-2 pl-4 pt-8 -ml-2 focus:outline-none focus:ring-2 ring-rossgreen font-light text-gray-500 dark:text-gray-100 "></textarea>
-        </div>
+        <div className="flex flex-col gap-2 py-2">
+        <textarea id={id} placeholder="Your Message*" onChange={e => setMessage(e.target.value)} name="message" rows={6} className=""></textarea>         
+        <hr className="border-pink border-1"/>
+            </div>
 
-        <div className={` mx-auto pb-1 pr-1 mb-10 ${!(message || subject || email || fullname) ? "": "animate-pulse"}`}>
+        <div className={` ${!(message || phone || email || name) ? "text-center py-10": "animate-pulse text-center py-10"}`}>
           <button 
-              className="drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto pb-1 pr-1 -ml-1 pt-2 -mt-2"
+              className="uppercase border-2 border-blue1 rounded-full px-10 py-2 mx-auto"
               onClick={handleSubmit}>
-                <h3 className=" text-white truncate font-bold -ml-1 -mt-2 px-3 py-2">
+                <h3 className="">
               {buttonText}
               </h3>
           </button>
         </div>  
-        { showFailureMessage === true && (<div className=" pb-2 pr-2"><div className="text-black">Error! Please try again. If you continue to encounter problems, please contact <Link href="mailto:ross@rossalanford.com">ross@rossalanford.com</Link></div></div>) }
-     { showSuccessMessage === true && (<div className=" pb-2 pr-2"><h4 className="text-center    -ml-2 -mt-2 text-gray-500 dark:text-gray-100 ">Please allow up to 48 hours for me to review your message. Thanks!</h4></div>) }
+        { showFailureMessage === true && (<div className=""><div className="">Error! Please try again. If you continue to encounter problems, please contact <Link href="mailto:marca@ccfil.com">marca@ccfil.com</Link></div></div>) }
+     { showSuccessMessage === true && (<div className=""><h4 className="">Please allow up to 48 hours for me to review your message. Thanks!</h4></div>) }
       </form>
       </section>
     )
