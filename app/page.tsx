@@ -28,14 +28,12 @@ export default function Home() {
   return (
    <>
       <NavHeader description={carouselSlides[0].description} title={carouselSlides[0].title} metadata={metadata} headerButton={{url: "/about/team#Leadership", title: "LEARN MORE"}}/>
-         <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full bg-white overflow-clip">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A" icon={'/Icons/Icons/page.svg'} id={null}/>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
         </Suspense>
-      </Animation>
    </>
   )
 }

@@ -23,8 +23,8 @@ export function NavHeader({description, title, metadata, headerButton}){
   }
 
     return(
-      <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden">
-      <div className="flex invisible md:visible absolute w-full justify-center align-bottom h-full">
+      <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden max-h-[600px]">
+      <div className="flex invisible md:visible absolute w-full justify-center">
       {pathname != '/' ? <div className={`absolute top-0`}>
       <Image key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg invisible md:visible min-h-[780px] object-cover object-center justify-center" alt="bg image"/>
     </div> : 
@@ -46,7 +46,7 @@ export function NavHeader({description, title, metadata, headerButton}){
           <h3 className="text-blue1 font-black text-2xl">{description}</h3>
           </div>
           : 
-          <div className={`flex flex-col gap-6 px-16 py-20 bg-transparent border-solid border-white border-[10px] md:w-4/5 lg:w-2/3 ${!navbar ? "visible" : "hidden"}`}>
+          <div className={`flex flex-col gap-6 px-16 py-20 bg-transparent border-solid border-white border-[10px] ${!navbar ? "visible" : "hidden"}`}>
           <div className="flex flex-col gap-6">
           <h3 className="text-blue1 font-bold text-2xl">{description}</h3>
           <h1 className="text-6xl font-black text-blue2">{title}</h1>

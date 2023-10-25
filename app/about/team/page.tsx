@@ -39,13 +39,13 @@ export default function Team() {
         <Suspense fallback={<Loading/>}>
           <div className="relative flex flex-col w-full">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/compassion.svg'} id={null}/>
-          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='grey2' id={'Leadership'}>
+          <StickyInfoSegment captionText={leadershipCaptionText} type="B" bgcolor='bg-gray1' id={'Leadership'}>
             <FeaturedCardList data={teamCardListData}/>
           </StickyInfoSegment>
           
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           
-          <StickyInfoSegment captionText={teamCaptionText} type="A" bgcolor="white" id={'Team'}>
+          <StickyInfoSegment captionText={teamCaptionText} type="A" bgcolor="bg-white" id={'Team'}>
             <InfoCardList data={teamCardListData}/>
           </StickyInfoSegment>
           </div>

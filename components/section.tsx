@@ -16,7 +16,7 @@ export default function Section({ children, initial, useOnce, id }:{children, in
         initial={initial}
         style={{
             opacity: isInView ? 1 : 0,
-            transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s"
+            transition: "all 0.5s cubic-bezier(0.17, 0.35, 0.55, 1) 0s"
           }}
         >
           {children}

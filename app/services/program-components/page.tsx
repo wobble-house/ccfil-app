@@ -40,7 +40,7 @@ export default function ProgramComponents() {
       <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="mx-auto w-full max-w-screen py-5">
+          <div className="mx-auto w-full max-w-screen">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/education.svg'} id={null}/>
           <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
