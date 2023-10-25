@@ -33,10 +33,7 @@ export function ContactForm(){
         tempErrors["email"] = true;
         isValid = false;
       }
-      if (phone.length <= 0) {
-        tempErrors["phone"] = true;
-        isValid = false;
-      }
+
       if (message.length <= 0) {
         tempErrors["message"] = true;
         isValid = false;
@@ -119,7 +116,7 @@ export function ContactForm(){
           </button>
         </div>  
         { showFailureMessage === true && (<div className=""><div className="">Error! Please try again. If you continue to encounter problems, please contact <Link href="mailto:marca@ccfil.com">marca@ccfil.com</Link></div></div>) }
-     { showSuccessMessage === true && (<div className=""><h4 className="">Please allow up to 48 hours for me to review your message. Thanks!</h4></div>) }
+     { showSuccessMessage === true && (<div className=""><h4 className="">Please allow up to 48 hours for us to review your message. Thanks!</h4></div>) }
       </form>
       </section>
     )

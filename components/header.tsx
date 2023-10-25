@@ -23,7 +23,7 @@ export function NavHeader({description, title, metadata, headerButton}){
   }
 
     return(
-      <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden max-h-[600px]">
+      <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden max-h-[700px]">
       <div className="flex invisible md:visible absolute w-full justify-center">
       {pathname != '/' ? <div className={`absolute top-0`}>
       <Image key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg invisible md:visible min-h-[780px] object-cover object-center justify-center" alt="bg image"/>
@@ -59,7 +59,7 @@ export function NavHeader({description, title, metadata, headerButton}){
           </div>
           }
           {pathname != "/" ? "":
-          <div className="flex flex-row justify-between pt-10 invisible md:visible">
+          <div className="flex flex-row justify-between py-10 invisible md:visible">
             <div className={`flex flex-row gap-2 items-center`}>
               <Image src={'/Icons/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
             <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest pb-1">{`(248) 410-2715`}</h3>
