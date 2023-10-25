@@ -76,7 +76,7 @@ export function InfoCard({
 <li
     id={id}
     key={`${id} modal open`} 
-    className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-50 p-5`}
+    className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-50 p-5 overscroll-none`}
     >
       <div className={`flex transform details-card justify-center items-center mx-auto ${isModalOpen ? "animate-slideUpEnter":"animate-slideUpLeave"}`}>
                   <div

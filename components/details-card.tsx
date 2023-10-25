@@ -25,19 +25,19 @@ export function DetailsCard({
  }){
 
       return (
-        <div className="flex flex-col shrink py-4 px-6 bg-blue2 overflow-auto max-h-[400px] no-scrollbar rounded-md ">
-            <div>
+        <div className="flex flex-col py-4 px-6 bg-blue2 overflow-auto overscroll-contain max-h-[400px] no-scrollbar rounded-md ">
+            <div className="">
               <div className="flex flex-col gap-2"> 
-                    <div className="flex flex-col md:flex-row grow shrink gap-8 align-middle max-w-3xl">
-                          <div className="m-3 max-w-[300px] mx-auto">
+                    <div className="md:grid md:grid-cols-2 gap-8 align-middle max-w-3xl">
+                          <div className=" m-3 max-w-[300px] mx-auto">
                             <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
                           </div>
-                        <div className="flex flex-col gap-1">
-                          <h2 className="text-white text-left md:text-4xl">{firstName}&nbsp;{lastName}</h2>
+                        <div className="flex flex-col gap-1 mr-4">
+                          <h2 className=" text-white text-left md:text-[2.2em] whitespace-normal">{firstName}&nbsp;{lastName}</h2>
                           
-                            <h3 className="text-left text-white whitespace-nowrap font-[600] ">{title}</h3>
+                            <h3 className="text-left text-white whitespace-nowrap font-[600]">{title}</h3>
                             <div className="mx-auto overflow-auto">
-                              <ReactMarkdown className="list-inside text-left max-w-2xl text-white text-sm whitespace-normal" remarkPlugins={[remarkGfm, remarkBreaks]}>
+                              <ReactMarkdown className="list-inside text-left max-w-2xl text-white text-sm whitespace-pre-line overflow-auto overscroll-contain " remarkPlugins={[remarkGfm, remarkBreaks]}>
                               {bio}
                                 </ReactMarkdown>
                             
