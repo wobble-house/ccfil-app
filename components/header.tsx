@@ -33,10 +33,10 @@ export function NavHeader({description, title, metadata, headerButton}){
 <div className={`flex flex-col px-16 pb-6 gap-5 bg-white bg-opacity-75 w-full z-10 m-12 min-h-[500px]`}>
         <div className={`flex flex-row justify-between w-full`}>
           <div className={`lg:hidden flex w-9 h-9 ml-5`}>
-          <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36}/>
+          <Image src="/logos/min-logo.svg" alt="CCFIL logo" width={36} height={36} priority/>
           </div>
           <div className={`lg:visible hidden lg:flex w-72 h-20 my-3 justify-center`}>
-          <Image src="/logos/main-logo.svg" alt="CCFIL logo" width={225} height={58}/>
+          <Image src="/logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
           </div>
           <Nav/>
         </div>
