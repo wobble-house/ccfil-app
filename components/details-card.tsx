@@ -25,10 +25,10 @@ export function DetailsCard({
  }){
 
       return (
-        <div className="flex flex-col bg-white bg-opacity-75 max-h-screen rounded-md border-white border-[11px]">
+        <div className="flex flex-col bg-white bg-opacity-75 max-h-[80vh] rounded-md border-white border-[11px]">
             <div className="overscroll-contain">
               <div className="relative flex flex-col gap-2"> 
-                    <div className=" md:flex gap-8 align-middle max-w-3xl justify-end">
+                    <div className=" md:flex gap-8 align-middle max-w-3xl justify-end ">
                           <div className="relative md:fixed top-0 md:top-3 md:left-8 max-w-[300px] mx-auto pt-3 md:pt-9">
                             <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
                           </div>
