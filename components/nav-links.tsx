@@ -58,7 +58,7 @@ onClick={onClick} >
 export function NavListInnerLink({linkpath, text}){
     return(
             <Link
-            className="transition ease-in-out delay-200 block uppercase font-bold text-xs bg-blue1 text-white rounded-md hover:text-pink hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full text-left" 
+            className="transition ease-in-out delay-200 block uppercase font-bold text-xs md:bg-blue1 text-white rounded-md hover:text-pink md:hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full md:text-left bg-blue2" 
             href={linkpath}
             prefetch
             >

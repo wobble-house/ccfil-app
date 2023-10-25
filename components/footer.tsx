@@ -15,18 +15,18 @@ export default function Footer(){
     const pathname = usePathname();
     return (
     <>
-            <div className="flex flex-col relative bottom-0 overflow-hidden pt-16 pb-4 bg-white justify-center w-full items-center">
-{pathname == '/' ? <div className={`relative flex flex-row mx-auto max-w-6xl justify-between pb-16`}>
-    <div className={`flex flex-col w-1/2 gap-10`}>
+            <div className="flex flex-col relative bottom-0 overflow-hidden px-5 pt-5 md:pt-16 pb-4 bg-white justify-center w-full items-center">
+{pathname == '/' ? <div className={`relative flex flex-col-reverse md:flex-row mx-auto max-w-6xl justify-between pb-16 gap-5 md:gap-0`}>
+    <div className={`flex flex-col md:w-1/2 gap-10`}>
         <p>We at Community Connections for Independent Living are proud members of these TBI advocacy organizations. Through continued collaboration and education, we strengthen our mission to serve and promote the rights and quality of life for brain injury survivors.</p>
-    <div className={`grid grid-cols-3 justify-evenly items-center gap-10`}>
+    <div className={`grid grid-cols-1 md:grid-cols-3 justify-center mx-auto md:justify-evenly items-center gap-10 px-5 md:px-0 md:max-w-[600px] max-w-[300px]`}>
         <Image src={`/logos/logos/CPAN.png`} height={893} width={1999} alt="CPAN logo" className={``}/>
         <Image src={`/logos/logos/mbipc.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
         <Image src={`/logos/logos/BIAMI.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
     </div>
     </div>
     <div className=" overscroll-auto items-center border-[10px] border-blue2 p-10 top-4">
-                <h2 className="text-blue1 font-black text-6xl flex flex-shrink relative ">
+                <h2 className="text-blue1 font-black text-5xl md:text-6xl flex flex-shrink relative ">
                     TBI
                     <br></br>Advocacy
                 </h2>

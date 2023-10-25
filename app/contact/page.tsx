@@ -27,7 +27,7 @@ export default function Contact() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto py-16 z-50 bg-white w-full">
-        <div className="grid grid-cols-2 mx-auto justify-between max-w-6xl px-3 gap-20">
+        <div className="md:grid md:grid-cols-2 mx-auto justify-between max-w-6xl px-3 gap-20">
           <div className="flex flex-col gap-7">
             <div className="flex flex-col border-solid border-[11px] border-gray1 p-12 gap-4">
               <h2>Mailing Address</h2>

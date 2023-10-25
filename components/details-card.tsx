@@ -25,19 +25,19 @@ export function DetailsCard({
  }){
 
       return (
-        <div className="flex flex-col py-4 px-6 bg-blue2 overflow-auto overscroll-contain max-h-[400px] no-scrollbar rounded-md ">
-            <div className="">
-              <div className="flex flex-col gap-2"> 
-                    <div className="md:grid md:grid-cols-2 gap-8 align-middle max-w-3xl">
-                          <div className=" m-3 max-w-[300px] mx-auto">
+        <div className="flex flex-col bg-white bg-opacity-75 max-h-screen rounded-md border-white border-[11px]">
+            <div className="overscroll-contain">
+              <div className="relative flex flex-col gap-2"> 
+                    <div className=" md:flex gap-8 align-middle max-w-3xl justify-end">
+                          <div className="relative md:fixed top-0 md:top-3 md:left-8 max-w-[300px] mx-auto pt-3 md:pt-9">
                             <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
                           </div>
-                        <div className="flex flex-col gap-1 mr-4">
-                          <h2 className=" text-white text-left md:text-[2.2em] whitespace-normal">{firstName}&nbsp;{lastName}</h2>
-                          
-                            <h3 className="text-left text-white whitespace-nowrap font-[600]">{title}</h3>
-                            <div className="mx-auto overflow-auto">
-                              <ReactMarkdown className="list-inside text-left max-w-2xl text-white text-sm whitespace-pre-line overflow-auto overscroll-contain " remarkPlugins={[remarkGfm, remarkBreaks]}>
+                        <div className="flex flex-col gap-2  md:w-1/2 md:pt-5 px-5 mb-8 ">
+                          <h2 className="text-left md:text-[2.2em] whitespace-normal">{firstName}&nbsp;{lastName}</h2>
+                            <h3 className="text-left whitespace-nowrap font-[600]">{title}</h3>
+                            <hr className="border-pink border-[1.5px] w-1/2"/>
+                            <div className="mx-auto overflow-auto max-h-[260px] bg-white">
+                              <ReactMarkdown className="list-inside text-left md:px-5 max-w-2xl text-sm whitespace-pre-line pb-20 md:py-5" remarkPlugins={[remarkGfm, remarkBreaks]}>
                               {bio}
                                 </ReactMarkdown>
                             
