@@ -1,5 +1,8 @@
 module.exports = {
     output: 'standalone',
+    env: {
+      SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    },
     images: {
       domains: [
         'firebasestorage.googleapis.com',
