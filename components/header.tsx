@@ -23,8 +23,8 @@ export function NavHeader({description, title, metadata, headerButton}){
   }
 
     return(
-      <div className="flex z-40 md:justify-center top-0 w-full">
-      <div className="flex invisible md:visible absolute w-full overflow-hidden justify-center align-bottom h-full">
+      <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden">
+      <div className="flex invisible md:visible absolute w-full justify-center align-bottom h-full">
       {pathname != '/' ? <div className={`absolute top-0`}>
       <Image key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg invisible md:visible min-h-[780px] object-cover object-center justify-center" alt="bg image"/>
     </div> : 

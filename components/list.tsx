@@ -1,22 +1,14 @@
 'use client';
 import ImageHandler from "./image-handler";
-import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { DetailsCard } from "./details-card";
-import { animationList, dropIn, animationItem } from "@/utils/animation/animation";
 import { useOnClickOutside } from "./click-handler";
 
 export function InfoCardList({data}){
   const infoData = data.filter(function (data) {return data.isFeatured === false})
   
   return(
-          <motion.ul
-            layout
-            initial="hidden"
-            whileInView="visible"
-            variants={animationList}
-            viewport={{ once: false }}
-            className="p-10 grid grid-cols-0 md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-30 relative"
+          <ul className="p-10 grid grid-cols-0 md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-30 relative"
             >
                 {infoData.map(data => (<InfoCard 
                   id={`${data.id} card`}
@@ -29,7 +21,7 @@ export function InfoCardList({data}){
                   title={data.title}
                 />
               ))}
-          </motion.ul>
+          </ul>
   )
 }
 
@@ -37,13 +29,7 @@ export function FeaturedCardList({data}){
   const featuredData = data.filter(function (data) {return data.isFeatured === true})
   
   return(
-          <motion.ul
-            layout
-            initial="hidden"
-            whileInView="visible"
-            variants={animationList}
-            viewport={{ once: false }}
-            className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
+          <ul className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
             >
               {featuredData.map(data => (
                   <InfoCard 
@@ -57,7 +43,7 @@ export function FeaturedCardList({data}){
                   title={data.title}
                 />
               ))}
-          </motion.ul>
+          </ul>
   )
 }
 
@@ -87,25 +73,16 @@ export function InfoCard({
   const open = () => setModalOpen(true);
   useOnClickOutside(ref, () => setModalOpen(false));
  if (isModalOpen) return (
-<motion.li
-    layout
+<li
     id={id}
     key={`${id} modal open`} 
-    initial="hidden"
-    animate="visible"
-    variants={dropIn}
-    className="transition ease-in-out delay-200 duration-300 fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-50 z-50 p-5"
+    className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-50 p-5`}
     >
-      <div className="flex details-card justify-center items-center mx-auto">
-                  <motion.div
-                  layout
-                  className="flex flex-col"
-                  variants={animationItem}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+      <div className={`flex transform details-card justify-center items-center mx-auto ${isModalOpen ? "animate-slideUpEnter":"animate-slideUpLeave"}`}>
+                  <div
+                  className="flex flex-col transform duration-300 ease-in-out "
                   >
-                    <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-pink rounded-full pb-1 mx-auto">
+                    <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-pink rounded-full pb-1 mx-auto" onClick={!isModalOpen ? close : open }>
       <span className="text-xl hover:animate-pulse m-3 text-white">x</span>
       </button>
                   <div ref={ref} className="overflow-y-scroll no-scrollbar">
@@ -117,26 +94,18 @@ export function InfoCard({
                     profileImage={profileImage}
                     title={title} />
                     </div>
-                </motion.div>
                 </div>
-                </motion.li>
+                </div>
+                </li>
                 )
 else return (
-  <motion.li
-    layout
+  <li
     key={`${id} modal closed`}
-    variants={animationItem}
     id={id}
-    className="transition ease-in-out delay-200 duration-300 flex flex-col hover:scale-105 relative grow shrink"
+    className={`transform ease-in-out delay-200 duration-300 flex flex-col hover:scale-105 relative grow shrink z-40`}
     >
-                <motion.button 
-                initial="visible"
-                animate="hidden"
-                exit="exit"
-                layout
-                whileTap={{scale: 0.95}}
-                whileHover={{scale: 1.05}}
-                className="save-button group"
+                <button 
+                className={`save-button group transform ease-in-out duration-300 modal open`}
                 onClick={!isModalOpen ? open : close }>
                     <div className="flex flex-col justify-end w-full shadow-2xl mx-auto transform duration-100 ease-in-out group-hover:shadow-4xl">
                     <div className="absolute px-4 py-2 z-30 w-full bg-blue1 bg-opacity-80 group-hover:bg-opacity-100 align-middle">
@@ -148,7 +117,7 @@ else return (
                 </div>
 
                 </div>
-              </motion.button>
-              </motion.li>
+              </button>
+              </li>
                 )
               }

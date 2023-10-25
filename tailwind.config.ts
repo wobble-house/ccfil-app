@@ -20,6 +20,8 @@ const config: Config = {
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       wiggle: 'wiggle 1s ease-in-out infinite',
+      slideUpEnter: 'slideUpEnter .3s ease-in-out',
+      slideUpLeave: 'slideUpLeave .3s ease-in-out',
     },
     aria: {
       busy: 'busy="true"',
@@ -584,6 +586,26 @@ const config: Config = {
       wiggle: {
         '0%, 100%': { transform: 'rotate(-3deg)' },
         '50%': { transform: 'rotate(3deg)' },
+      },
+      slideUpEnter: {
+        '0%': {
+          opacity: '0',
+          transform: 'translateY(500px) scale(0)',
+        },
+        '100%': {
+          opacity: '100',
+          transform: 'translateY(0px) scale(1)',
+        },
+      },
+      slideUpLeave: {
+        '0%': {
+          opacity: '100',
+          transform: 'translateY(0px) scale(1)',
+        },
+        '100%': {
+          opacity: '0',
+          transform: 'translateY(500px) scale(0)',
+        },
       },
     },
     letterSpacing: {
