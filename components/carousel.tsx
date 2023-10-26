@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react"
-import Image from "next/image";
+import ImageHandler from "./image-handler";
 
 export function HeaderCarousel({carouselSlides}){
     const [current, setCurrent] = useState(0);
@@ -18,7 +18,7 @@ const nextSlide = () => {
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
                         <div key={index} className={index == current ? `carouselCard carouselCard-active`: `carouselCard`}>
-                            <Image key={index} src={carouselSlide.src} width={2550} height={1440} className="bg-transparent min-h-screen md:min-h-[780px] object-cover object-center justify-center" alt="bg image" priority/>
+                            <ImageHandler key={index} src={carouselSlide.src} width={2550} height={1440} className="bg-transparent min-h-screen md:min-h-[780px] object-cover object-center justify-center" alt="bg image" priority/>
                         </div>
                     )
                 })}

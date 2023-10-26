@@ -11,26 +11,26 @@ export function DetailsCard({
   firstName,
   lastName,
   title,
-  profileImage,
+  Image,
  }:{ 
     bio: string,
     link: any,
     firstName: string,
     lastName: string,
-    profileImage: {
+    Image: {
         src: string,
         alt: string
     },
     title : string,
  }){
-
+console.log(JSON.stringify(Image?.src).replace("%22",""))
       return (
         <div className="flex flex-col bg-white bg-opacity-75 max-h-[80vh] rounded-md border-white border-[11px]">
             <div className="overscroll-contain">
               <div className="relative flex flex-col gap-2"> 
                     <div className=" md:flex gap-8 align-middle max-w-3xl justify-end ">
                           <div className="relative md:fixed top-0 md:top-3 md:left-8 max-w-[300px] mx-auto pt-3 md:pt-9">
-                            <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024}/>
+                            <ImageHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024}/>
                           </div>
                         <div className="flex flex-col gap-2  md:w-1/2 md:pt-5 px-5 mb-8 ">
                           <h2 className="text-left md:text-[2.2em] whitespace-normal">{firstName}&nbsp;{lastName}</h2>
@@ -40,7 +40,6 @@ export function DetailsCard({
                               <ReactMarkdown className="list-inside text-left md:px-5 max-w-2xl text-sm whitespace-pre-line pb-20 md:py-5" remarkPlugins={[remarkGfm, remarkBreaks]}>
                               {bio}
                                 </ReactMarkdown>
-                            
                           </div>
                         </div>
                       </div>

@@ -3,7 +3,6 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageHandler from "@/components/image-handler";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const whoWeAre = `
@@ -20,9 +19,9 @@ export default function Footer(){
     <div className={`flex flex-col md:w-1/2 gap-10`}>
         <p>We at Community Connections for Independent Living are proud members of these TBI advocacy organizations. Through continued collaboration and education, we strengthen our mission to serve and promote the rights and quality of life for brain injury survivors.</p>
     <div className={`grid grid-cols-1 md:grid-cols-3 justify-center mx-auto md:justify-evenly items-center gap-10 px-5 md:px-0 md:max-w-[600px] max-w-[300px]`}>
-        <Image src={`/Logos/OtherLogos/CPAN.png`} height={893} width={1999} alt="CPAN logo" className={``}/>
-        <Image src={`/Logos/OtherLogos/mbipc.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
-        <Image src={`/Logos/OtherLogos/BIAMI.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
+        <ImageHandler src={`public/Logos/OtherLogos/CPAN.png`} height={893} width={1999} alt="CPAN logo" className={``}/>
+        <ImageHandler src={`public/Logos/OtherLogos/mbipc.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
+        <ImageHandler src={`public/Logos/OtherLogos/BIAMI.png`} height={391} width={1500} alt="CPAN logo" className={``}/>
     </div>
     </div>
     <div className=" overscroll-auto items-center border-[10px] border-blue2 p-10 top-4">
@@ -33,7 +32,7 @@ export default function Footer(){
             </div>
 </div> : ""}
                 <div className="absolute w-full bottom-0 z-70">
-                <ImageHandler src="https://ccfil.com/wp-content/themes/ccfil/img/footer-bg.png" width={2560} height={1440} alt={`footer image`}/>
+                <ImageHandler src="public/Images/footer-bg.png" width={2560} height={1440} alt={`footer image`}/>
             </div>
             <div className={`sticky flex flex-col my-2 bg-gray3 px-16 pt-16 pb-4 z-80 mx-16 justify-between max-w-6xl w-full`}>
                 <div className="flex flex-col md:flex-row justify-between text-white mx-auto w-full">
@@ -49,7 +48,7 @@ export default function Footer(){
                 </div>
                 <div className="flex flex-col md:ml-auto content-center gap-5 justify-center items-center">
                 <div className="mx-auto">
-                <Image src="/Logos/main-logo-white.svg" alt="CCFIL logo" width={225} height={58}/>
+                <ImageHandler src="public/Logos/main-logo-white.svg" alt="CCFIL logo" width={225} height={58}/>
                 </div>
                 <hr>
                 </hr>

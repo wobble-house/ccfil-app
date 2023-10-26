@@ -1,0 +1,16 @@
+projects:
+  ccfilapp:
+    schemaPath: utils/graphql/schema.json
+    includes:
+      - utils/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: utils/graphql/API.ts
+        docsFilePath: utils/graphql
+        maxDepth: 4
+extensions:
+  amplify:
+    version: 3

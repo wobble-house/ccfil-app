@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { QrReader } from 'react-qr-reader';
+import { QrReader } from "react-qr-reader";
 
 export const QR = (props) => {
   const [data, setData] = useState('No result');

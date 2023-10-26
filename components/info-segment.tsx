@@ -5,7 +5,6 @@ import Section from "./section";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import Image from "next/image";
 import { AccordionItem } from "./accordion-item";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl, icon, id}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl, icon, id}){
@@ -19,7 +18,7 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
             </div>
             <div className={`relative flex flex-col gap-5 border-[10px] border-gray2 md:border-gray1 bg-white bg-opacity-50 md:bg-opacity-100 md:bg-transparent md:px-20 py-5 md:py-10 md:w-1/2 z-40 ${Type != "B" ? "md:-ml-16 md:mr-10" : "md:-mr-16 md:ml-10 z-30"} md:mt-20`}>
                 <div className="relative w-14 h-14 pl-3">
-                <Image src={icon} alt="icon" width={153} height={150} style={{display: "contain"}}/>
+                <ImageHandler src={icon} alt="icon" width={153} height={150} style={{display: "contain"}}/>
                 </div>
                 <div className="flex flex-col gap-3 sticky top-0 md:relative bg-white z-30 p-3">
             <h2 className=" text-blue2">{headerText}</h2>

@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
-import { FeaturedCardList } from "@/components/list"
+import { InfoCardList } from "@/components/list"
 import { testimonialCardListData } from "@/components/data/data"
 
 export const metadata = {
@@ -17,7 +17,7 @@ export const metadata = {
 const headerText =`We are committed to enhancing the daily lives of all our residents.`
 const bodyText = `Community Connections provides a comprehensive, semi-independent community-based living program for individuals affected by traumatic brain injury. Cognitive, social, vocational, and educational components are integrated into each resident’s individualized treatment plan, which is facilitated by both the resident and our dedicated occupational therapists and rehabilitation specialists.`
 const infoImage = {
-  url: `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeBW.jpg`,
+  url: `public/Images/CCFILCampusLifeBW.jpg`,
   alt: `image for website`
 }
 const captionText = "Enriching Our Residents' Lives"
@@ -27,10 +27,10 @@ const stickyBodyText = `Community Connections acknowledges that each resident ha
 In addition to numerous opportunities to participate in peer support groups and therapeutic recreational activities, residents of our program are provided with a furnished apartment, utilities, cable/internet services, and transportation to community outings and medical appointments. Community Connections is also distinct from other programs as we welcome spouses and children of our residents. Residents’ family dynamics are incorporated into their Individualized Treatment Plans to ensure continued positive, healthy relationships.
 \\
 Community Connections provides a supportive living environment through a multidisciplinary approach to community integration. We are committed to excellence to enrich the lives of our residents and the community in which they live.`
-const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeTile.jpg`
+const stickyImageUrl = `public/Images/CCFILCampusLifeTile.jpg`
 const quote = `It’s good to push yourself and do what you don’t necessarily want to do, that if you’re not automatically good at it, you should try. Trying is so important.`
 const quoteName = `Meryl Streep`
-const quoteImgSrc = `https://ccfil.com/wp-content/uploads/2016/08/happiness-quote.jpg`
+const quoteImgSrc = `public/Images/Quotes/happiness-quote.jpg`
 const commitmentCaptionText = `Real Stories from Real Residents`
 
 
@@ -48,7 +48,7 @@ export default function Commitment() {
           </StickyInfoSegment>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           <StickyInfoSegment captionText={commitmentCaptionText} type="B" bgcolor='bg-gray1' id={null}>
-            <FeaturedCardList data={testimonialCardListData}/>
+            <InfoCardList data={testimonialCardListData}/>
           </StickyInfoSegment>
           </div>
         </Suspense>

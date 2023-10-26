@@ -1,12 +1,12 @@
 "use client"
 import React, { useState, useRef } from "react";
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Nav from "./nav"
 import { useOnClickOutside } from './click-handler';
 import { HeaderCarousel } from "./carousel";
 import { bgimages, carouselSlides } from "./data/data";
+import ImageHandler from "./image-handler";
 
 export function NavHeader({description, title, metadata, headerButton}){
   const Navref = useRef();
@@ -20,23 +20,21 @@ export function NavHeader({description, title, metadata, headerButton}){
   function handleAnchor(e){
     e.preventDefault();
     router.push("/about/team#Leadership")
-  }
-
-    return(
+  } return(
       <div className="flex z-40 md:justify-center top-0 w-full overflow-hidden md:max-h-[700px]">
       <div className="flex flex-row absolute w-full justify-center">
       {pathname != '/' ? <div className={`absolute top-0`}>
-      <Image key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg min-h-screen md:min-h-[780px] object-cover object-center justify-center" alt="bg image"/>
+      <ImageHandler key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg min-h-screen md:min-h-[780px] object-cover object-center justify-center" alt="bg image"/>
     </div> : 
     <HeaderCarousel carouselSlides={carouselSlides}/>}
       </div>
 <div className={`flex flex-col md:px-16 md:pb-6 gap-5 bg-white bg-opacity-25 md:bg-opacity-75 w-full z-10 md:m-12 md:min-h-[500px]`}>
         <div className={`flex flex-row-reverse md:flex-row md:justify-between w-full`}>
           <div className={`lg:hidden flex w-9 h-auto mr-5 md:ml-5 mt-4`}>
-          <Image src="/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>
+          <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>
           </div>
           <div className={`lg:visible hidden lg:flex w-72 h-auto my-3 justify-center`}>
-          <Image src="/Logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
+          <ImageHandler src="public/Logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
           </div>
           <Nav/>
         </div>
@@ -61,7 +59,7 @@ export function NavHeader({description, title, metadata, headerButton}){
           {pathname != "/" ? "":
           <div className="flex flex-row justify-between py-3 mb-8 md:py-10 px-4 md:px-0 bg-white md:bg-transparent bg-opacity-50">
             <div className={`flex flex-row gap-2 items-center`}>
-              <Image src={'/Icons/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
+              <ImageHandler src={'public/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
             <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest pb-1">{`(248) 410-2715`}</h3>
             </div>
             <p></p>

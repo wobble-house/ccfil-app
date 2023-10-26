@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef } from "react";
-import { useOnClickOutside } from './click-handler';
-import {NavLink, NavListLink, aboutList, servicesList} from "@/components/nav-links"
+import {NavLink, NavListLink} from "@/components/nav-links"
+import { aboutList, servicesList } from "./data/data";
 
 export default function Nav() {
   const [about, setAbout] = useState(false);
@@ -16,9 +16,6 @@ export default function Nav() {
     setAbout(false);
     setServices(true);
   };
-  function handleNavClickOutside() {
-    setNavbar(false);
-  }
   function handleMainNavButton(){
     (navbar == false ? setNavbar(true): setNavbar(false))
   }

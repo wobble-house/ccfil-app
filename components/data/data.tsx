@@ -1,17 +1,17 @@
 export const bgimages = [
-    {id: 'image1', src:`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`},
-    {id: 'image2', src:`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`},
-    {id: 'image3', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg` },
-    {id: 'image4', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILServicesHeader.jpg`},
-    {id: 'image5', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILAboutUsHeader.jpg`},
-    {id: 'image6', src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCausesHeader.jpg`},
-    {id: 'image7', src: `https://ccfil.com/wp-content/uploads/2016/07/contact-ccfil.jpg`}
+    {id: 'image1', src:`public/Images/Backgrounds/fetured.png`},
+    {id: 'image2', src:`public/Images/Backgrounds/slide-2.jpg`},
+    {id: 'image3', src:`public/Images/Backgrounds/CCFILCampusLifeHeader-1.jpg`},
+    {id: 'image4', src:`public/Images/Backgrounds/CCFILServicesHeader.jpg`},
+    {id: 'image5', src:`public/Images/Backgrounds/CCFILAboutUsHeader.jpg`},
+    {id: 'image6', src:`public/Images/Backgrounds/CCFILCausesHeader.jpg`},
+    {id: 'image7', src:`public/Images/Backgrounds/contact-ccfil.jpg`}
   ]
 
   export const carouselSlides = [
-    {src:`https://ccfil.com/wp-content/uploads/2016/05/fetured.png`, title: 'Like Family', description: `We treat residents how we'd like to be treated.`, buttonText:`Learn More`, buttonLink:`/about`},
-    {src:`https://ccfil.com/wp-content/uploads/2016/05/slide-2.jpg`, title: `It's our only standard.`, description: `Success isn't just a goal`, buttonText:`Learn How`, buttonLink:`/services`},
-    {src:`https://ccfil.com/wp-content/uploads/2016/07/CCFILCampusLifeHeader-1.jpg` , title: `It's our commitment.`, description: 'Community is extremely important to us.', buttonText:`Learn Why`, buttonLink:`/about/commitment`}
+    {src:`public/Images/Backgrounds/fetured.png`, title: 'Like Family', description: `We treat residents how we'd like to be treated.`, buttonText:`Learn More`, buttonLink:`/about`},
+    {src:`public/Images/Backgrounds/slide-2.jpg`, title: `It's our only standard.`, description: `Success isn't just a goal`, buttonText:`Learn How`, buttonLink:`/services`},
+    {src:`public/Images/Backgrounds/CCFILCampusLifeHeader-1.jpg` , title: `It's our commitment.`, description: 'Community is extremely important to us.', buttonText:`Learn Why`, buttonLink:`/about/commitment`}
   ]
 
   export const teamCardListData = [
@@ -21,8 +21,8 @@ export const bgimages = [
     link: null,
     firstName: `Ronald J.`,
     lastName: `Urbin`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Ronald-Urbin-web.jpg`,
+    Image: {
+        src: "public/Images/Headshots/Ronald-Urbin-web.jpg",
         alt: "Ronald J. Urbin headshot"
     },
     title: `EXECUTIVE PROGRAM DIRECTOR`,
@@ -34,8 +34,8 @@ export const bgimages = [
     link: null,
     firstName: `Michael`,
     lastName: `Assenmacher`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Michael-Assenmacher-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Michael-Assenmacher-web.jpg`,
         alt: "Michael Assenmacher headshot"
     },
     title: `EXECUTIVE MEDICAL DIRECTOR`,
@@ -47,8 +47,8 @@ export const bgimages = [
     link: null,
     firstName: `Michele`,
     lastName: `Gorski`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Michele-Gorski-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Michele-Gorski-web.jpg`,
         alt: "Michele Gorski headshot"
     },
     title: `PRESIDENT`,
@@ -60,8 +60,8 @@ export const bgimages = [
     link: null,
     firstName: `Alyson`,
     lastName: `Strandloff`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Alyson-Fickany-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Alyson-Fickany-web.jpg`,
         alt: "Alyson Strandloff headshot"
     },
     title: `VICE PRESIDENT`,
@@ -73,8 +73,8 @@ export const bgimages = [
     link: null,
     firstName: `Katie`,
     lastName: `Krauseneck, OTRL`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Katie-Krauseneck-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Katie-Krauseneck-web.jpg`,
         alt: "Katie Krauseneck headshot"
     },
     title: `DIRECTOR OF CLINICAL SERVICES`,
@@ -86,8 +86,8 @@ export const bgimages = [
     link: null,
     firstName: `Renee`,
     lastName: `Bologna`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2020/05/Renee_CCFIL.headshot-1.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Renee_CCFIL.headshot-1.jpg`,
         alt: "Renee Bologna headshot"
     },
     title: `Occupational Therapist`,
@@ -99,8 +99,8 @@ export const bgimages = [
     link: null,
     firstName: `Holly`,
     lastName: `Lamb`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2021/04/HollyLand-1.png`,
+    Image: {
+        src: `public/Images/Headshots/HollyLand-1.png`,
         alt: "Holly Lamb Headshot"
     },
     title: `Occupational Therapist`,
@@ -112,8 +112,8 @@ export const bgimages = [
     link: null,
     firstName: `Hannah`,
     lastName: `Rackish`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2021/10/Hannah.png`,
+    Image: {
+        src: `public/Images/Headshots/Hannah.png`,
         alt: "Hannah Rackish headshot"
     },
     title: `Occupational Therapist`,
@@ -125,8 +125,8 @@ export const bgimages = [
     link: null,
     firstName: `Maria`,
     lastName: `Kruger`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Maria-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Maria-web.jpg`,
         alt: "Maria Kruger headshot"
     },
     title: `DIRECTOR OF WORK EXPERIENCE`,
@@ -138,8 +138,8 @@ export const bgimages = [
     link: null,
     firstName: `Heather`,
     lastName: `Miller`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2020/05/Heather_CCFIL.headshot-2.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Heather_CCFIL.headshot-2.jpg`,
         alt: "Heather Miller headshot"
     },
     title: `Occupational Therapy Assistant`,
@@ -151,8 +151,8 @@ export const bgimages = [
     link: null,
     firstName: `Courtney`,
     lastName: `Zary`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2021/06/Courtney.png`,
+    Image: {
+        src: `public/Images/Headshots/Courtney.png`,
         alt: "Courtney Zary headshot"
     },
     title: `Occupational Therapy Assistant`,
@@ -164,8 +164,8 @@ export const bgimages = [
     link: null,
     firstName: `Selena`,
     lastName: `Ladebauche`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2019/09/Selena_CCFIL.headshot.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Selena_CCFIL.headshot.jpg`,
         alt: "Selena Ladebauche headshot"
     },
     title: `Rehabilitation Coach`,
@@ -177,8 +177,8 @@ export const bgimages = [
     link: null,
     firstName: `Andrea`,
     lastName: `Lulgjuraj`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/08/Andrea-Lulgjuraj-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Andrea-Lulgjuraj-web.jpg`,
         alt: "Andrea Lulgjuraj headshot"
     },
     title: `Child Development Specialist`,
@@ -190,8 +190,8 @@ export const bgimages = [
     link: null,
     firstName: `Beverly`,
     lastName: `Bezrutch`,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/09/Beverly-Bezrutch-web.jpg`,
+    Image: {
+        src: `public/Images/Headshots/Beverly-Bezrutch-web.jpg`,
         alt: "Beverly Bezruch headshot"
     },
     title: `Educator / Rehabilitation Assistant`,
@@ -211,8 +211,8 @@ export const bgimages = [
     link: null,
     firstName: `Brandon`,
     lastName: ``,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/07/brandon-featured-img.jpg`,
+    Image: {
+        src: `public/Images/Headshots/brandon-featured-img.jpg`,
         alt: "Brandon headshot"
     },
     title: ``,
@@ -227,8 +227,8 @@ export const bgimages = [
     link: null,
     firstName: `David`,
     lastName: ``,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/07/david-featured-img.jpg`,
+    Image: {
+        src: 'public/Images/Headshots/david-featured-img.jpg',
         alt: "David headshot"
     },
     title: ``,
@@ -245,8 +245,8 @@ export const bgimages = [
     link: null,
     firstName: `Heather`,
     lastName: ``,
-    profileImage: {
-        src: `https://ccfil.com/wp-content/uploads/2016/07/heather-painting.jpg`,
+    Image: {
+        src: `public/Images/Headshots/heather-painting.jpg`,
         alt: "Heather headshot"
     },
     title: ``,
@@ -254,13 +254,13 @@ export const bgimages = [
   }]
 
   export const accordionData = [
-    {id: `accordion1`,accordionTitle: `COMPREHENSIVE ASSESSMENT UPON ADMISSION`, accordionBodyText: `Upon admission, each resident is evaluated by our occupational therapists through formal assessments, observations, and interviews to establish performance within the areas of activities of daily living, memory and attention, social adjustment, and safety.`, icon: "/Icons/Icons/assessment.svg"},
-    {id: `accordion2`,accordionTitle: `OCCUPATIONAL THERAPY SERVICES`, accordionBodyText: `Our occupational therapy services are the foundation of all our programming — from the initial assessment of each resident through — the continuous monitoring of their program goals and objectives. All residents receive therapy routinely and on a scheduled basis. Our occupational therapists also facilitate our peer support groups and our supported employment program.`, icon: "/Icons/Icons/education.svg"},
-    {id: `accordion3`,accordionTitle: `INDIVIDUALIZED REHABILITATION PLANS`, accordionBodyText: `CCFIL individualized rehabilitation plans and programming are developed through our one-to-one occupational therapy services which are offered to each resident. Each resident is provided with a lead occupational therapist to establish and oversee programming goals and objectives unique to meeting their needs. We provide licensed nursing staff to assist our residents with medication management as well as support services for any medical issues that may require assistance.`, icon: "/Icons/Icons/compassion.svg"},
-    {id: `accordion4`,accordionTitle: `RESIDENT SPECIFIC SUPERVISION`, accordionBodyText: `We respect the autonomy and personal space of our residents. Each resident is assessed individually upon admission to determine the supervision required that allows them to live in the least restrictive environment possible. We have found this approach gives our residents the best opportunity for optimal progression in their rehabilitation toward independence.`, icon: "/Icons/Icons/assessment.svg"},
-    {id: `accordion5`,accordionTitle: `FAMILY SUPPORT SERVICES`, accordionBodyText: `Our family support services welcome our residents’ family members' involvement in their rehabilitation. We are distinctive in accepting spouses and children of residents into our program. Additionally, we have a child development specialist on staff. Our child development specialist has proven to be invaluable in providing parenting in-services, exploring community family resources, and assisting in appropriate school placement of our residents’ children.`, icon: "/Icons/Icons/hands.svg"},
-    {id: `accordion6`,accordionTitle: `EDUCATIONAL/GED TUTORIAL SERVICES`, accordionBodyText: `As many of our residents’ progress in their rehabilitation, going back to school to complete a high school diploma or a college degree becomes a realistic goal. Our educational support staff — made up of certified special education and general education teachers — assist in making those educational goals achievable through our one-to-one tutorial services.`, icon: "/Icons/Icons/writing.svg"},
-    {id: `accordion7`,accordionTitle: `PEER SUPPORT GROUPS`, accordionBodyText: `Although our supported independent living program is occupational therapy centered and clinically based, we provide our residents the chance to meet with other residents to share their experiences and support one another. This opportunity has given our residents a valuable therapeutic venue to further facilitate a successful rehabilitation. Our peer support groups include a Men’s Club, Women’s Club, Walking Club, Iron Chef Club, CC Cares and various community outings.`, icon: "/Icons/Icons/speech.svg"},
+    {id: `accordion1`,accordionTitle: `COMPREHENSIVE ASSESSMENT UPON ADMISSION`, accordionBodyText: `Upon admission, each resident is evaluated by our occupational therapists through formal assessments, observations, and interviews to establish performance within the areas of activities of daily living, memory and attention, social adjustment, and safety.`, icon: "public/Icons/assessment.svg"},
+    {id: `accordion2`,accordionTitle: `OCCUPATIONAL THERAPY SERVICES`, accordionBodyText: `Our occupational therapy services are the foundation of all our programming — from the initial assessment of each resident through — the continuous monitoring of their program goals and objectives. All residents receive therapy routinely and on a scheduled basis. Our occupational therapists also facilitate our peer support groups and our supported employment program.`, icon: "public/Icons/education.svg"},
+    {id: `accordion3`,accordionTitle: `INDIVIDUALIZED REHABILITATION PLANS`, accordionBodyText: `CCFIL individualized rehabilitation plans and programming are developed through our one-to-one occupational therapy services which are offered to each resident. Each resident is provided with a lead occupational therapist to establish and oversee programming goals and objectives unique to meeting their needs. We provide licensed nursing staff to assist our residents with medication management as well as support services for any medical issues that may require assistance.`, icon: "public/Icons/compassion.svg"},
+    {id: `accordion4`,accordionTitle: `RESIDENT SPECIFIC SUPERVISION`, accordionBodyText: `We respect the autonomy and personal space of our residents. Each resident is assessed individually upon admission to determine the supervision required that allows them to live in the least restrictive environment possible. We have found this approach gives our residents the best opportunity for optimal progression in their rehabilitation toward independence.`, icon: "public/Icons/assessment.svg"},
+    {id: `accordion5`,accordionTitle: `FAMILY SUPPORT SERVICES`, accordionBodyText: `Our family support services welcome our residents’ family members' involvement in their rehabilitation. We are distinctive in accepting spouses and children of residents into our program. Additionally, we have a child development specialist on staff. Our child development specialist has proven to be invaluable in providing parenting in-services, exploring community family resources, and assisting in appropriate school placement of our residents’ children.`, icon: "public/Icons/hands.svg"},
+    {id: `accordion6`,accordionTitle: `EDUCATIONAL/GED TUTORIAL SERVICES`, accordionBodyText: `As many of our residents’ progress in their rehabilitation, going back to school to complete a high school diploma or a college degree becomes a realistic goal. Our educational support staff — made up of certified special education and general education teachers — assist in making those educational goals achievable through our one-to-one tutorial services.`, icon: "public/Icons/writing.svg"},
+    {id: `accordion7`,accordionTitle: `PEER SUPPORT GROUPS`, accordionBodyText: `Although our supported independent living program is occupational therapy centered and clinically based, we provide our residents the chance to meet with other residents to share their experiences and support one another. This opportunity has given our residents a valuable therapeutic venue to further facilitate a successful rehabilitation. Our peer support groups include a Men’s Club, Women’s Club, Walking Club, Iron Chef Club, CC Cares and various community outings.`, icon: "public/Icons/speech.svg"},
     {id: `accordion8`,accordionTitle: `RECREATIONAL OUTINGS & COMMUNITY SOCIAL OPPORTUNITIES`, 
     accordionBodyText: `We offer recreational outings and community social opportunities to help our residents improve their prosocial skills and to have fun interacting with their community at the same time. All the activities selected are suggested and chosen by our residents. This aligns with our program philosophy of being choice-driven and respectful of each person’s autonomy.
     Previous outings and social opportunities have included
@@ -272,6 +272,19 @@ export const bgimages = [
      - Going to Canterbury Village
      - Going to Greenfield Village
      - Going to Museums
-     - Going to the Detroit & Toledo Zoos`, icon: "/Icons/Icons/car.svg"},
-    {id: `accordion9`,accordionTitle: `TRANSPORTATION`, accordionBodyText: `Transportation is a component of our program that is not to be undervalued. It is more than transporting our residents from place to place. It is really a time to build trusting relationships through listening and respectful dialogue. Our transportation is provided by all our staff members with our own fleet of vehicles`, icon: "/Icons/Icons/car.svg"}
+     - Going to the Detroit & Toledo Zoos`, icon: "public/Icons/car.svg"},
+    {id: `accordion9`,accordionTitle: `TRANSPORTATION`, accordionBodyText: `Transportation is a component of our program that is not to be undervalued. It is more than transporting our residents from place to place. It is really a time to build trusting relationships through listening and respectful dialogue. Our transportation is provided by all our staff members with our own fleet of vehicles`, icon: "public/Icons/car.svg"}
+]
+
+export const aboutList = [
+  {id:`Our Commitment`, linkpath:`/about/commitment`, text:`Our Commitment`},
+  {id:`Team`, linkpath:`/about/team`, text:`Team`},
+  {id:`Strategic Plan`, linkpath:`/about/strategic-plan`, text:`Strategic Plan`},
+  {id:`Code of Ethics`, linkpath:`/about/code-of-ethics`, text:`Code of Ethics`}
+]
+
+export const servicesList = [
+  {id:`Program Components`, linkpath:`/services/program-components`, text:`Program Components`},
+  {id:`Semi-Independent Residential Programs`, linkpath:`/services/residential-program`, text:`Semi-Independent Residential Programs`},
+  {id:`Supported Employment`, linkpath:`/services/supported-employment`, text:`Supported Employment`}
 ]

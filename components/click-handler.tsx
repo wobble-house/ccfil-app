@@ -1,5 +1,4 @@
 'use client';
-import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export function useOnClickOutside(ref, handler) {

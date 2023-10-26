@@ -1,15 +1,15 @@
-import Image from "next/image";
+import ImageHandler from "@/components/image-handler";
 import { LoadingSection } from "@/components/section";
 
 export default function Loading() {
     return (
     <>
       <LoadingSection>
-        <div className="relative min-h-screen mx-auto">
+        <div className="flex flex-col relative justify-center min-h-screen mx-auto">
           <div className="flex items-center w-64 h-64 mx-auto animate-pulse">
-            <Image
+            <ImageHandler
               className="relative"
-              src="/logos/min-logo.svg"
+              src="public/Logos/min-logo.svg"
               alt="CCFIL Logo"
               width={100}
               height={100}

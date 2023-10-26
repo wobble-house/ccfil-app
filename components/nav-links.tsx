@@ -2,19 +2,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-export const aboutList = [
-    {id:`Our Commitment`, linkpath:`/about/commitment`, text:`Our Commitment`},
-    {id:`Team`, linkpath:`/about/team`, text:`Team`},
-    {id:`Strategic Plan`, linkpath:`/about/strategic-plan`, text:`Strategic Plan`},
-    {id:`Code of Ethics`, linkpath:`/about/code-of-ethics`, text:`Code of Ethics`}
-  ]
-
-export const servicesList = [
-    {id:`Program Components`, linkpath:`/services/program-components`, text:`Program Components`},
-    {id:`Semi-Independent Residential Programs`, linkpath:`/services/residential-program`, text:`Semi-Independent Residential Programs`},
-    {id:`Supported Employment`, linkpath:`/services/supported-employment`, text:`Supported Employment`}
-  ]
-
 export function NavLink({path, text}){
     const pathname = usePathname()
     return(

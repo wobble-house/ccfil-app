@@ -17,13 +17,13 @@ const bodyText = `We don’t believe in a “one size fits all” solution. All 
 
 We believe in working with our residents to figure out what they need in order to move forward. At any stage of the process, we are willing to reevaluate the plan if needed. While the way forward for everyone may be different, the end result is always the same, helping our residents move forward.`
 const infoImage = {
-  url: `https://ccfil.com/wp-content/uploads/2016/07/services.jpg`,
+  url: `public/Images/services.jpg`,
   alt: `image for website`
 }
 const servicesCaptionText = `Program Overview`
 
 const accordionHeaderText = `Program Components`
-const accordionImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/program-components.jpg`
+const accordionImageUrl = `public/Images/program-components.jpg`
 
 const stickyHeaderText = `Additional Services`
 const stickyBodyText = `We’re committed to supporting our residents in every way possible. This means that if needed, Community Connections will ensure that other therapies, outside of our services, are provided on a fee for service basis, such as:
@@ -31,7 +31,7 @@ const stickyBodyText = `We’re committed to supporting our residents in every w
 - Physical Therapy
 - Speech/Language Pathology
 `
-const stickyImageUrl = `https://ccfil.com/wp-content/uploads/2016/07/additional-services.jpg`
+const stickyImageUrl = `public/Images/additional-services.jpg`
 
 
 export default function ProgramComponents() {
@@ -41,7 +41,7 @@ export default function ProgramComponents() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'/Icons/Icons/education.svg'} id={null}/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/education.svg'} id={null}/>
           <StickyInfoSegment captionText={servicesCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoAccordionBody headerText={accordionHeaderText} items={accordionData} ImageUrl={accordionImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>

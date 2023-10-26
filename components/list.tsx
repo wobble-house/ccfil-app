@@ -5,19 +5,18 @@ import { DetailsCard } from "./details-card";
 import { useOnClickOutside } from "./click-handler";
 
 export function InfoCardList({data}){
-  const infoData = data.filter(function (data) {return data.isFeatured === false})
-  
+
   return(
           <ul className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
             >
-                {infoData.map(data => (<InfoCard 
+                {data.map(data => (<InfoCard 
                   id={`${data.id} card`}
                   key={data.id}
                   bio={data.bio}
                   link={data.link != null ? data.link : null}
                   firstName={data.firstName}
                   lastName={data.lastName}
-                  profileImage={data.profileImage}
+                  Image={data.Image}
                   title={data.title}
                 />
               ))}
@@ -25,35 +24,13 @@ export function InfoCardList({data}){
   )
 }
 
-export function FeaturedCardList({data}){
-  const featuredData = data.filter(function (data) {return data.isFeatured === true})
-  
-  return(
-          <ul className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
-            >
-              {featuredData.map(data => (
-                  <InfoCard 
-                  id={data.id}
-                  key={data.id}
-                  bio={data.bio}
-                  link={data.link != null ? data.link : null}
-                  firstName={data.firstName}
-                  lastName={data.lastName}
-                  profileImage={data.profileImage}
-                  title={data.title}
-                />
-              ))}
-          </ul>
-  )
-}
-
-export function InfoCard({ 
+export async function InfoCard({ 
   id,
   bio,
   link,
   firstName,
   lastName,
-  profileImage,
+  Image,
   title
  }:{ 
   id,
@@ -61,7 +38,7 @@ export function InfoCard({
     link: any,
     firstName: string,
     lastName: string,
-    profileImage: {
+    Image: {
         src: string,
         alt: string
     },
@@ -89,7 +66,7 @@ export function InfoCard({
               link={link}
               firstName={firstName}
               lastName={lastName}
-              profileImage={profileImage}
+              Image={Image}
               title={title} />
           </div>
         </div>
@@ -111,9 +88,9 @@ else return (
                         <h3 className="relative text-center transform duration-300 delay-150 ease-in-out uppercase text-white text-[0.8em] group-hover:text-[0.9em]">{title}</h3>
                      </div>
                 <div className="flex relative">
-                  <ImageHandler src={profileImage.src} alt={profileImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} className="object-cover" />
-                </div>
 
+                  <ImageHandler src={Image.src} alt={Image.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024} className="object-cover" />
+                </div>
                 </div>
               </button>
               </li>
