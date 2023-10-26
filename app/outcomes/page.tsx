@@ -17,7 +17,7 @@ export const metadata = {
 
 const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`
 const quoteName = `ELLEN DEGENERES`
-const quoteImgSrc = `public/Images/resident-quote.jpg`
+const quoteImgSrc = `public/Images/Quotes/resident-quote.jpg`
 const outcomesCaptionText = `Real Stories from Real Residents`
 
 export default function Outcomes() {
