@@ -6,17 +6,14 @@ import InfoSegment, {StickyInfoSegment, InfoServiceBody, InfoBody} from "@/compo
 import { NavHeader } from "@/components/header"
 import { listServices } from "@/utils/graphql/queries"
 import { API } from "@aws-amplify/api";
-
 export const metadata = {
   title: 'Services',
   description: `Our residents' trust isn't freely given.  We earn it every day`,
   bgimage: 3
 }
-
 const programServices = await API.graphql({
   query: listServices
 });
-
 const headerText =`All services we provide are based on over a decade of doing the right thing.`
 const bodyText = `We don’t believe in a “one size fits all” solution. All our treatment plans are tailored to fit the unique needs of each and every one of our residents. Staff and residents together come up with goals all of which are designed to be both determinable and measurable.
 
@@ -26,10 +23,8 @@ const infoImage = {
   alt: `image for website`
 }
 const serviceCaptionText = `Program Overview`
-
 const serviceHeaderText = `Program Components`
 const serviceImageUrl = `public/Images/program-components.jpg`
-
 const stickyHeaderText = `Additional Services`
 const stickyBodyText = `We’re committed to supporting our residents in every way possible. This means that if needed, Community Connections will ensure that other therapies, outside of our services, are provided on a fee for service basis, such as:
  
