@@ -11,9 +11,8 @@ type GeneratedQuery<InputType, OutputType> = string & {
 export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
   getIcon(id: $id) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -28,9 +27,8 @@ export const listIcons = /* GraphQL */ `query ListIcons(
   listIcons(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -47,9 +45,8 @@ export const getServices = /* GraphQL */ `query GetServices($id: ID!) {
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -76,9 +73,8 @@ export const listServices = /* GraphQL */ `query ListServices(
       serviceBodyText
       Icon {
         id
-        src
         alt
-        iconTitle
+        src
         createdAt
         updatedAt
         __typename
@@ -114,6 +110,7 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -147,6 +144,7 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
         updatedAt
         __typename
       }
+      isLeader
       createdAt
       updatedAt
       teamMemberImageId
@@ -160,8 +158,8 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
   APITypes.ListTeamMembersQueryVariables,
   APITypes.ListTeamMembersQuery
 >;
-export const getImage = /* GraphQL */ `query GetImage($id: ID!) {
-  getImage(id: $id) {
+export const getHeadshot = /* GraphQL */ `query GetHeadshot($id: ID!) {
+  getHeadshot(id: $id) {
     id
     src
     alt
@@ -171,13 +169,16 @@ export const getImage = /* GraphQL */ `query GetImage($id: ID!) {
     __typename
   }
 }
-` as GeneratedQuery<APITypes.GetImageQueryVariables, APITypes.GetImageQuery>;
-export const listImages = /* GraphQL */ `query ListImages(
-  $filter: ModelImageFilterInput
+` as GeneratedQuery<
+  APITypes.GetHeadshotQueryVariables,
+  APITypes.GetHeadshotQuery
+>;
+export const listHeadshots = /* GraphQL */ `query ListHeadshots(
+  $filter: ModelHeadshotFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listImages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listHeadshots(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       src
@@ -192,6 +193,6 @@ export const listImages = /* GraphQL */ `query ListImages(
   }
 }
 ` as GeneratedQuery<
-  APITypes.ListImagesQueryVariables,
-  APITypes.ListImagesQuery
+  APITypes.ListHeadshotsQueryVariables,
+  APITypes.ListHeadshotsQuery
 >;

@@ -5,7 +5,7 @@ import Section from "./section";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import { AccordionItem } from "./accordion-item";
+import { ServiceItem } from "./service-item";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl, icon, id}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl, icon, id}){
     const router = useRouter();
@@ -77,7 +77,7 @@ export function InfoBody({headerText, bodyText,ImageUrl,ButtonUrl }:{headerText:
     )
 }
 
-export function InfoAccordionBody({headerText, items, ImageUrl,ButtonUrl }:{headerText: string, items, ImageUrl, ButtonUrl}){
+export function InfoServiceBody({headerText, data, ImageUrl, ButtonUrl }:{headerText: string, data, ImageUrl, ButtonUrl}){
     const router = useRouter();
     return(
         <>
@@ -87,8 +87,8 @@ export function InfoAccordionBody({headerText, items, ImageUrl,ButtonUrl }:{head
                         <h2 className="text-2xl font-bold text-blue1">{headerText}</h2>
                         <hr className="border-pink border-2 w-1/2"/>
                     <div className={`flex flex-col gap-3`}>
-                {items.map(item => (
-                    <AccordionItem key={item.id} accordionTitle={item.accordionTitle} accordionBodyText={item.accordionBodyText} icon={item.icon}/>
+                {data.map(item => (
+                    <ServiceItem key={item.id} serviceTitle={item.serviceTitle} serviceBodyText={item.serviceBodyText} Icon={item.Icon}/>
                 ))}
             </div>
             {ButtonUrl == null ? <></> : <button className="transition ease-in-out duration-75 uppercase border-2 border-blue1 rounded-full px-6 py-2 mx-auto hover:bg-blue1 hover:text-white"

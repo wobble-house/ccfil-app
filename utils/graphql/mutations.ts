@@ -14,9 +14,8 @@ export const createIcon = /* GraphQL */ `mutation CreateIcon(
 ) {
   createIcon(input: $input, condition: $condition) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -32,9 +31,8 @@ export const updateIcon = /* GraphQL */ `mutation UpdateIcon(
 ) {
   updateIcon(input: $input, condition: $condition) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -50,9 +48,8 @@ export const deleteIcon = /* GraphQL */ `mutation DeleteIcon(
 ) {
   deleteIcon(input: $input, condition: $condition) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -72,9 +69,8 @@ export const createServices = /* GraphQL */ `mutation CreateServices(
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -99,9 +95,8 @@ export const updateServices = /* GraphQL */ `mutation UpdateServices(
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -126,9 +121,8 @@ export const deleteServices = /* GraphQL */ `mutation DeleteServices(
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -164,6 +158,7 @@ export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -195,6 +190,7 @@ export const updateTeamMember = /* GraphQL */ `mutation UpdateTeamMember(
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -226,6 +222,7 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -236,11 +233,11 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
   APITypes.DeleteTeamMemberMutationVariables,
   APITypes.DeleteTeamMemberMutation
 >;
-export const createImage = /* GraphQL */ `mutation CreateImage(
-  $input: CreateImageInput!
-  $condition: ModelImageConditionInput
+export const createHeadshot = /* GraphQL */ `mutation CreateHeadshot(
+  $input: CreateHeadshotInput!
+  $condition: ModelHeadshotConditionInput
 ) {
-  createImage(input: $input, condition: $condition) {
+  createHeadshot(input: $input, condition: $condition) {
     id
     src
     alt
@@ -251,14 +248,14 @@ export const createImage = /* GraphQL */ `mutation CreateImage(
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateImageMutationVariables,
-  APITypes.CreateImageMutation
+  APITypes.CreateHeadshotMutationVariables,
+  APITypes.CreateHeadshotMutation
 >;
-export const updateImage = /* GraphQL */ `mutation UpdateImage(
-  $input: UpdateImageInput!
-  $condition: ModelImageConditionInput
+export const updateHeadshot = /* GraphQL */ `mutation UpdateHeadshot(
+  $input: UpdateHeadshotInput!
+  $condition: ModelHeadshotConditionInput
 ) {
-  updateImage(input: $input, condition: $condition) {
+  updateHeadshot(input: $input, condition: $condition) {
     id
     src
     alt
@@ -269,14 +266,14 @@ export const updateImage = /* GraphQL */ `mutation UpdateImage(
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateImageMutationVariables,
-  APITypes.UpdateImageMutation
+  APITypes.UpdateHeadshotMutationVariables,
+  APITypes.UpdateHeadshotMutation
 >;
-export const deleteImage = /* GraphQL */ `mutation DeleteImage(
-  $input: DeleteImageInput!
-  $condition: ModelImageConditionInput
+export const deleteHeadshot = /* GraphQL */ `mutation DeleteHeadshot(
+  $input: DeleteHeadshotInput!
+  $condition: ModelHeadshotConditionInput
 ) {
-  deleteImage(input: $input, condition: $condition) {
+  deleteHeadshot(input: $input, condition: $condition) {
     id
     src
     alt
@@ -287,6 +284,6 @@ export const deleteImage = /* GraphQL */ `mutation DeleteImage(
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteImageMutationVariables,
-  APITypes.DeleteImageMutation
+  APITypes.DeleteHeadshotMutationVariables,
+  APITypes.DeleteHeadshotMutation
 >;

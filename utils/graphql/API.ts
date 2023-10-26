@@ -4,15 +4,13 @@
 
 export type CreateIconInput = {
   id?: string | null,
-  src?: string | null,
   alt?: string | null,
-  iconTitle?: string | null,
+  src?: string | null,
 };
 
 export type ModelIconConditionInput = {
-  src?: ModelStringInput | null,
   alt?: ModelStringInput | null,
-  iconTitle?: ModelStringInput | null,
+  src?: ModelStringInput | null,
   and?: Array< ModelIconConditionInput | null > | null,
   or?: Array< ModelIconConditionInput | null > | null,
   not?: ModelIconConditionInput | null,
@@ -61,18 +59,16 @@ export type ModelSizeInput = {
 export type Icon = {
   __typename: "Icon",
   id: string,
-  src?: string | null,
   alt?: string | null,
-  iconTitle?: string | null,
+  src?: string | null,
   createdAt: string,
   updatedAt: string,
 };
 
 export type UpdateIconInput = {
   id: string,
-  src?: string | null,
   alt?: string | null,
-  iconTitle?: string | null,
+  src?: string | null,
 };
 
 export type DeleteIconInput = {
@@ -141,6 +137,7 @@ export type CreateTeamMemberInput = {
   link?: string | null,
   title?: string | null,
   isFeatured?: boolean | null,
+  isLeader?: boolean | null,
   teamMemberImageId?: string | null,
 };
 
@@ -151,6 +148,7 @@ export type ModelTeamMemberConditionInput = {
   link?: ModelStringInput | null,
   title?: ModelStringInput | null,
   isFeatured?: ModelBooleanInput | null,
+  isLeader?: ModelBooleanInput | null,
   and?: Array< ModelTeamMemberConditionInput | null > | null,
   or?: Array< ModelTeamMemberConditionInput | null > | null,
   not?: ModelTeamMemberConditionInput | null,
@@ -173,14 +171,15 @@ export type TeamMember = {
   link?: string | null,
   title?: string | null,
   isFeatured?: boolean | null,
-  Image?: Image | null,
+  Image?: Headshot | null,
+  isLeader?: boolean | null,
   createdAt: string,
   updatedAt: string,
   teamMemberImageId?: string | null,
 };
 
-export type Image = {
-  __typename: "Image",
+export type Headshot = {
+  __typename: "Headshot",
   id: string,
   src: string,
   alt: string,
@@ -197,6 +196,7 @@ export type UpdateTeamMemberInput = {
   link?: string | null,
   title?: string | null,
   isFeatured?: boolean | null,
+  isLeader?: boolean | null,
   teamMemberImageId?: string | null,
 };
 
@@ -204,38 +204,37 @@ export type DeleteTeamMemberInput = {
   id: string,
 };
 
-export type CreateImageInput = {
+export type CreateHeadshotInput = {
   id?: string | null,
   src: string,
   alt: string,
   imageTitle?: string | null,
 };
 
-export type ModelImageConditionInput = {
+export type ModelHeadshotConditionInput = {
   src?: ModelStringInput | null,
   alt?: ModelStringInput | null,
   imageTitle?: ModelStringInput | null,
-  and?: Array< ModelImageConditionInput | null > | null,
-  or?: Array< ModelImageConditionInput | null > | null,
-  not?: ModelImageConditionInput | null,
+  and?: Array< ModelHeadshotConditionInput | null > | null,
+  or?: Array< ModelHeadshotConditionInput | null > | null,
+  not?: ModelHeadshotConditionInput | null,
 };
 
-export type UpdateImageInput = {
+export type UpdateHeadshotInput = {
   id: string,
   src?: string | null,
   alt?: string | null,
   imageTitle?: string | null,
 };
 
-export type DeleteImageInput = {
+export type DeleteHeadshotInput = {
   id: string,
 };
 
 export type ModelIconFilterInput = {
   id?: ModelIDInput | null,
-  src?: ModelStringInput | null,
   alt?: ModelStringInput | null,
-  iconTitle?: ModelStringInput | null,
+  src?: ModelStringInput | null,
   and?: Array< ModelIconFilterInput | null > | null,
   or?: Array< ModelIconFilterInput | null > | null,
   not?: ModelIconFilterInput | null,
@@ -271,6 +270,7 @@ export type ModelTeamMemberFilterInput = {
   link?: ModelStringInput | null,
   title?: ModelStringInput | null,
   isFeatured?: ModelBooleanInput | null,
+  isLeader?: ModelBooleanInput | null,
   and?: Array< ModelTeamMemberFilterInput | null > | null,
   or?: Array< ModelTeamMemberFilterInput | null > | null,
   not?: ModelTeamMemberFilterInput | null,
@@ -283,27 +283,26 @@ export type ModelTeamMemberConnection = {
   nextToken?: string | null,
 };
 
-export type ModelImageFilterInput = {
+export type ModelHeadshotFilterInput = {
   id?: ModelIDInput | null,
   src?: ModelStringInput | null,
   alt?: ModelStringInput | null,
   imageTitle?: ModelStringInput | null,
-  and?: Array< ModelImageFilterInput | null > | null,
-  or?: Array< ModelImageFilterInput | null > | null,
-  not?: ModelImageFilterInput | null,
+  and?: Array< ModelHeadshotFilterInput | null > | null,
+  or?: Array< ModelHeadshotFilterInput | null > | null,
+  not?: ModelHeadshotFilterInput | null,
 };
 
-export type ModelImageConnection = {
-  __typename: "ModelImageConnection",
-  items:  Array<Image | null >,
+export type ModelHeadshotConnection = {
+  __typename: "ModelHeadshotConnection",
+  items:  Array<Headshot | null >,
   nextToken?: string | null,
 };
 
 export type ModelSubscriptionIconFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  src?: ModelSubscriptionStringInput | null,
   alt?: ModelSubscriptionStringInput | null,
-  iconTitle?: ModelSubscriptionStringInput | null,
+  src?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionIconFilterInput | null > | null,
   or?: Array< ModelSubscriptionIconFilterInput | null > | null,
 };
@@ -354,6 +353,7 @@ export type ModelSubscriptionTeamMemberFilterInput = {
   link?: ModelSubscriptionStringInput | null,
   title?: ModelSubscriptionStringInput | null,
   isFeatured?: ModelSubscriptionBooleanInput | null,
+  isLeader?: ModelSubscriptionBooleanInput | null,
   and?: Array< ModelSubscriptionTeamMemberFilterInput | null > | null,
   or?: Array< ModelSubscriptionTeamMemberFilterInput | null > | null,
 };
@@ -363,13 +363,13 @@ export type ModelSubscriptionBooleanInput = {
   eq?: boolean | null,
 };
 
-export type ModelSubscriptionImageFilterInput = {
+export type ModelSubscriptionHeadshotFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   src?: ModelSubscriptionStringInput | null,
   alt?: ModelSubscriptionStringInput | null,
   imageTitle?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionImageFilterInput | null > | null,
-  or?: Array< ModelSubscriptionImageFilterInput | null > | null,
+  and?: Array< ModelSubscriptionHeadshotFilterInput | null > | null,
+  or?: Array< ModelSubscriptionHeadshotFilterInput | null > | null,
 };
 
 export type CreateIconMutationVariables = {
@@ -381,9 +381,8 @@ export type CreateIconMutation = {
   createIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -398,9 +397,8 @@ export type UpdateIconMutation = {
   updateIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -415,9 +413,8 @@ export type DeleteIconMutation = {
   deleteIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -437,9 +434,8 @@ export type CreateServicesMutation = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -463,9 +459,8 @@ export type UpdateServicesMutation = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -489,9 +484,8 @@ export type DeleteServicesMutation = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -517,7 +511,7 @@ export type CreateTeamMemberMutation = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -525,6 +519,7 @@ export type CreateTeamMemberMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -547,7 +542,7 @@ export type UpdateTeamMemberMutation = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -555,6 +550,7 @@ export type UpdateTeamMemberMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -577,7 +573,7 @@ export type DeleteTeamMemberMutation = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -585,20 +581,21 @@ export type DeleteTeamMemberMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
   } | null,
 };
 
-export type CreateImageMutationVariables = {
-  input: CreateImageInput,
-  condition?: ModelImageConditionInput | null,
+export type CreateHeadshotMutationVariables = {
+  input: CreateHeadshotInput,
+  condition?: ModelHeadshotConditionInput | null,
 };
 
-export type CreateImageMutation = {
-  createImage?:  {
-    __typename: "Image",
+export type CreateHeadshotMutation = {
+  createHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -608,14 +605,14 @@ export type CreateImageMutation = {
   } | null,
 };
 
-export type UpdateImageMutationVariables = {
-  input: UpdateImageInput,
-  condition?: ModelImageConditionInput | null,
+export type UpdateHeadshotMutationVariables = {
+  input: UpdateHeadshotInput,
+  condition?: ModelHeadshotConditionInput | null,
 };
 
-export type UpdateImageMutation = {
-  updateImage?:  {
-    __typename: "Image",
+export type UpdateHeadshotMutation = {
+  updateHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -625,14 +622,14 @@ export type UpdateImageMutation = {
   } | null,
 };
 
-export type DeleteImageMutationVariables = {
-  input: DeleteImageInput,
-  condition?: ModelImageConditionInput | null,
+export type DeleteHeadshotMutationVariables = {
+  input: DeleteHeadshotInput,
+  condition?: ModelHeadshotConditionInput | null,
 };
 
-export type DeleteImageMutation = {
-  deleteImage?:  {
-    __typename: "Image",
+export type DeleteHeadshotMutation = {
+  deleteHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -650,9 +647,8 @@ export type GetIconQuery = {
   getIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -670,9 +666,8 @@ export type ListIconsQuery = {
     items:  Array< {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -693,9 +688,8 @@ export type GetServicesQuery = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -722,9 +716,8 @@ export type ListServicesQuery = {
       Icon?:  {
         __typename: "Icon",
         id: string,
-        src?: string | null,
         alt?: string | null,
-        iconTitle?: string | null,
+        src?: string | null,
         createdAt: string,
         updatedAt: string,
       } | null,
@@ -751,7 +744,7 @@ export type GetTeamMemberQuery = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -759,6 +752,7 @@ export type GetTeamMemberQuery = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -784,7 +778,7 @@ export type ListTeamMembersQuery = {
       title?: string | null,
       isFeatured?: boolean | null,
       Image?:  {
-        __typename: "Image",
+        __typename: "Headshot",
         id: string,
         src: string,
         alt: string,
@@ -792,6 +786,7 @@ export type ListTeamMembersQuery = {
         createdAt: string,
         updatedAt: string,
       } | null,
+      isLeader?: boolean | null,
       createdAt: string,
       updatedAt: string,
       teamMemberImageId?: string | null,
@@ -800,13 +795,13 @@ export type ListTeamMembersQuery = {
   } | null,
 };
 
-export type GetImageQueryVariables = {
+export type GetHeadshotQueryVariables = {
   id: string,
 };
 
-export type GetImageQuery = {
-  getImage?:  {
-    __typename: "Image",
+export type GetHeadshotQuery = {
+  getHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -816,17 +811,17 @@ export type GetImageQuery = {
   } | null,
 };
 
-export type ListImagesQueryVariables = {
-  filter?: ModelImageFilterInput | null,
+export type ListHeadshotsQueryVariables = {
+  filter?: ModelHeadshotFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListImagesQuery = {
-  listImages?:  {
-    __typename: "ModelImageConnection",
+export type ListHeadshotsQuery = {
+  listHeadshots?:  {
+    __typename: "ModelHeadshotConnection",
     items:  Array< {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -846,9 +841,8 @@ export type OnCreateIconSubscription = {
   onCreateIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -862,9 +856,8 @@ export type OnUpdateIconSubscription = {
   onUpdateIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -878,9 +871,8 @@ export type OnDeleteIconSubscription = {
   onDeleteIcon?:  {
     __typename: "Icon",
     id: string,
-    src?: string | null,
     alt?: string | null,
-    iconTitle?: string | null,
+    src?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -899,9 +891,8 @@ export type OnCreateServicesSubscription = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -924,9 +915,8 @@ export type OnUpdateServicesSubscription = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -949,9 +939,8 @@ export type OnDeleteServicesSubscription = {
     Icon?:  {
       __typename: "Icon",
       id: string,
-      src?: string | null,
       alt?: string | null,
-      iconTitle?: string | null,
+      src?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null,
@@ -976,7 +965,7 @@ export type OnCreateTeamMemberSubscription = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -984,6 +973,7 @@ export type OnCreateTeamMemberSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1005,7 +995,7 @@ export type OnUpdateTeamMemberSubscription = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -1013,6 +1003,7 @@ export type OnUpdateTeamMemberSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1034,7 +1025,7 @@ export type OnDeleteTeamMemberSubscription = {
     title?: string | null,
     isFeatured?: boolean | null,
     Image?:  {
-      __typename: "Image",
+      __typename: "Headshot",
       id: string,
       src: string,
       alt: string,
@@ -1042,19 +1033,20 @@ export type OnDeleteTeamMemberSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
+    isLeader?: boolean | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
   } | null,
 };
 
-export type OnCreateImageSubscriptionVariables = {
-  filter?: ModelSubscriptionImageFilterInput | null,
+export type OnCreateHeadshotSubscriptionVariables = {
+  filter?: ModelSubscriptionHeadshotFilterInput | null,
 };
 
-export type OnCreateImageSubscription = {
-  onCreateImage?:  {
-    __typename: "Image",
+export type OnCreateHeadshotSubscription = {
+  onCreateHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -1064,13 +1056,13 @@ export type OnCreateImageSubscription = {
   } | null,
 };
 
-export type OnUpdateImageSubscriptionVariables = {
-  filter?: ModelSubscriptionImageFilterInput | null,
+export type OnUpdateHeadshotSubscriptionVariables = {
+  filter?: ModelSubscriptionHeadshotFilterInput | null,
 };
 
-export type OnUpdateImageSubscription = {
-  onUpdateImage?:  {
-    __typename: "Image",
+export type OnUpdateHeadshotSubscription = {
+  onUpdateHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,
@@ -1080,13 +1072,13 @@ export type OnUpdateImageSubscription = {
   } | null,
 };
 
-export type OnDeleteImageSubscriptionVariables = {
-  filter?: ModelSubscriptionImageFilterInput | null,
+export type OnDeleteHeadshotSubscriptionVariables = {
+  filter?: ModelSubscriptionHeadshotFilterInput | null,
 };
 
-export type OnDeleteImageSubscription = {
-  onDeleteImage?:  {
-    __typename: "Image",
+export type OnDeleteHeadshotSubscription = {
+  onDeleteHeadshot?:  {
+    __typename: "Headshot",
     id: string,
     src: string,
     alt: string,

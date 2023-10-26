@@ -11,9 +11,8 @@ type GeneratedSubscription<InputType, OutputType> = string & {
 export const onCreateIcon = /* GraphQL */ `subscription OnCreateIcon($filter: ModelSubscriptionIconFilterInput) {
   onCreateIcon(filter: $filter) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -26,9 +25,8 @@ export const onCreateIcon = /* GraphQL */ `subscription OnCreateIcon($filter: Mo
 export const onUpdateIcon = /* GraphQL */ `subscription OnUpdateIcon($filter: ModelSubscriptionIconFilterInput) {
   onUpdateIcon(filter: $filter) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -41,9 +39,8 @@ export const onUpdateIcon = /* GraphQL */ `subscription OnUpdateIcon($filter: Mo
 export const onDeleteIcon = /* GraphQL */ `subscription OnDeleteIcon($filter: ModelSubscriptionIconFilterInput) {
   onDeleteIcon(filter: $filter) {
     id
-    src
     alt
-    iconTitle
+    src
     createdAt
     updatedAt
     __typename
@@ -60,9 +57,8 @@ export const onCreateServices = /* GraphQL */ `subscription OnCreateServices($fi
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -84,9 +80,8 @@ export const onUpdateServices = /* GraphQL */ `subscription OnUpdateServices($fi
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -108,9 +103,8 @@ export const onDeleteServices = /* GraphQL */ `subscription OnDeleteServices($fi
     serviceBodyText
     Icon {
       id
-      src
       alt
-      iconTitle
+      src
       createdAt
       updatedAt
       __typename
@@ -145,6 +139,7 @@ export const onCreateTeamMember = /* GraphQL */ `subscription OnCreateTeamMember
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -175,6 +170,7 @@ export const onUpdateTeamMember = /* GraphQL */ `subscription OnUpdateTeamMember
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -205,6 +201,7 @@ export const onDeleteTeamMember = /* GraphQL */ `subscription OnDeleteTeamMember
       updatedAt
       __typename
     }
+    isLeader
     createdAt
     updatedAt
     teamMemberImageId
@@ -215,8 +212,8 @@ export const onDeleteTeamMember = /* GraphQL */ `subscription OnDeleteTeamMember
   APITypes.OnDeleteTeamMemberSubscriptionVariables,
   APITypes.OnDeleteTeamMemberSubscription
 >;
-export const onCreateImage = /* GraphQL */ `subscription OnCreateImage($filter: ModelSubscriptionImageFilterInput) {
-  onCreateImage(filter: $filter) {
+export const onCreateHeadshot = /* GraphQL */ `subscription OnCreateHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onCreateHeadshot(filter: $filter) {
     id
     src
     alt
@@ -227,11 +224,11 @@ export const onCreateImage = /* GraphQL */ `subscription OnCreateImage($filter: 
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateImageSubscriptionVariables,
-  APITypes.OnCreateImageSubscription
+  APITypes.OnCreateHeadshotSubscriptionVariables,
+  APITypes.OnCreateHeadshotSubscription
 >;
-export const onUpdateImage = /* GraphQL */ `subscription OnUpdateImage($filter: ModelSubscriptionImageFilterInput) {
-  onUpdateImage(filter: $filter) {
+export const onUpdateHeadshot = /* GraphQL */ `subscription OnUpdateHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onUpdateHeadshot(filter: $filter) {
     id
     src
     alt
@@ -242,11 +239,11 @@ export const onUpdateImage = /* GraphQL */ `subscription OnUpdateImage($filter: 
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateImageSubscriptionVariables,
-  APITypes.OnUpdateImageSubscription
+  APITypes.OnUpdateHeadshotSubscriptionVariables,
+  APITypes.OnUpdateHeadshotSubscription
 >;
-export const onDeleteImage = /* GraphQL */ `subscription OnDeleteImage($filter: ModelSubscriptionImageFilterInput) {
-  onDeleteImage(filter: $filter) {
+export const onDeleteHeadshot = /* GraphQL */ `subscription OnDeleteHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onDeleteHeadshot(filter: $filter) {
     id
     src
     alt
@@ -257,6 +254,6 @@ export const onDeleteImage = /* GraphQL */ `subscription OnDeleteImage($filter: 
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteImageSubscriptionVariables,
-  APITypes.OnDeleteImageSubscription
+  APITypes.OnDeleteHeadshotSubscriptionVariables,
+  APITypes.OnDeleteHeadshotSubscription
 >;

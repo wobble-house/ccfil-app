@@ -9,7 +9,7 @@ export function InfoCardList({data}){
   return(
           <ul className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
             >
-                {data.map(data => (<InfoCard 
+                {data.map(data => (<TeamCard 
                   id={`${data.id} card`}
                   key={data.id}
                   bio={data.bio}
@@ -24,7 +24,7 @@ export function InfoCardList({data}){
   )
 }
 
-export async function InfoCard({ 
+export async function TeamCard({ 
   id,
   bio,
   link,

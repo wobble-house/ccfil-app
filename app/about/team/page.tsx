@@ -59,7 +59,6 @@ const quoteName = `ELLEN DEGENERES`
 const quoteImgSrc = `public/Images/Quotes/resident-quote.jpg`
 const leadershipCaptionText = `Leadership`
 const teamCaptionText = `Our Team`
-
 export default function Team() {
   return (
    <>
