@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
 import { StickyInfoSegment } from "@/components/info-segment"
-import { FeaturedCardList } from "@/components/list"
+import { InfoCardList } from "@/components/list"
 import { testimonialCardListData } from "@/components/data/data"
 import ImageHandler from "@/components/image-handler"
 
@@ -36,7 +36,7 @@ export default function Outcomes() {
           </div>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           <StickyInfoSegment captionText={outcomesCaptionText} type="B" bgcolor='bg-white' id={null}>
-            <FeaturedCardList data={testimonialCardListData}/>
+            <InfoCardList data={testimonialCardListData}/>
           </StickyInfoSegment>
         </Suspense>
       </Animation>
