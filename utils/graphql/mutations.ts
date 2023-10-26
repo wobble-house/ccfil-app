@@ -8,56 +8,140 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createTodo = /* GraphQL */ `mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+export const createIcon = /* GraphQL */ `mutation CreateIcon(
+  $input: CreateIconInput!
+  $condition: ModelIconConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
+  createIcon(input: $input, condition: $condition) {
     id
-    name
-    description
+    src
+    alt
+    iconTitle
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTodoMutationVariables,
-  APITypes.CreateTodoMutation
+  APITypes.CreateIconMutationVariables,
+  APITypes.CreateIconMutation
 >;
-export const updateTodo = /* GraphQL */ `mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+export const updateIcon = /* GraphQL */ `mutation UpdateIcon(
+  $input: UpdateIconInput!
+  $condition: ModelIconConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
+  updateIcon(input: $input, condition: $condition) {
     id
-    name
-    description
+    src
+    alt
+    iconTitle
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateTodoMutationVariables,
-  APITypes.UpdateTodoMutation
+  APITypes.UpdateIconMutationVariables,
+  APITypes.UpdateIconMutation
 >;
-export const deleteTodo = /* GraphQL */ `mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+export const deleteIcon = /* GraphQL */ `mutation DeleteIcon(
+  $input: DeleteIconInput!
+  $condition: ModelIconConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
+  deleteIcon(input: $input, condition: $condition) {
     id
-    name
-    description
+    src
+    alt
+    iconTitle
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteTodoMutationVariables,
-  APITypes.DeleteTodoMutation
+  APITypes.DeleteIconMutationVariables,
+  APITypes.DeleteIconMutation
+>;
+export const createServices = /* GraphQL */ `mutation CreateServices(
+  $input: CreateServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  createServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      src
+      alt
+      iconTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateServicesMutationVariables,
+  APITypes.CreateServicesMutation
+>;
+export const updateServices = /* GraphQL */ `mutation UpdateServices(
+  $input: UpdateServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  updateServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      src
+      alt
+      iconTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateServicesMutationVariables,
+  APITypes.UpdateServicesMutation
+>;
+export const deleteServices = /* GraphQL */ `mutation DeleteServices(
+  $input: DeleteServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  deleteServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      src
+      alt
+      iconTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteServicesMutationVariables,
+  APITypes.DeleteServicesMutation
 >;
 export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
   $input: CreateTeamMemberInput!
@@ -75,6 +159,7 @@ export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
       id
       src
       alt
+      imageTitle
       createdAt
       updatedAt
       __typename
@@ -105,6 +190,7 @@ export const updateTeamMember = /* GraphQL */ `mutation UpdateTeamMember(
       id
       src
       alt
+      imageTitle
       createdAt
       updatedAt
       __typename
@@ -135,6 +221,7 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
       id
       src
       alt
+      imageTitle
       createdAt
       updatedAt
       __typename
@@ -157,6 +244,7 @@ export const createImage = /* GraphQL */ `mutation CreateImage(
     id
     src
     alt
+    imageTitle
     createdAt
     updatedAt
     __typename
@@ -174,6 +262,7 @@ export const updateImage = /* GraphQL */ `mutation UpdateImage(
     id
     src
     alt
+    imageTitle
     createdAt
     updatedAt
     __typename
@@ -191,6 +280,7 @@ export const deleteImage = /* GraphQL */ `mutation DeleteImage(
     id
     src
     alt
+    imageTitle
     createdAt
     updatedAt
     __typename

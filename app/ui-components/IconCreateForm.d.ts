@@ -12,31 +12,31 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type ImageCreateFormInputValues = {
+export declare type IconCreateFormInputValues = {
     src?: string;
     alt?: string;
-    imageTitle?: string;
+    iconTitle?: string;
 };
-export declare type ImageCreateFormValidationValues = {
+export declare type IconCreateFormValidationValues = {
     src?: ValidationFunction<string>;
     alt?: ValidationFunction<string>;
-    imageTitle?: ValidationFunction<string>;
+    iconTitle?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type ImageCreateFormOverridesProps = {
-    ImageCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type IconCreateFormOverridesProps = {
+    IconCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
     src?: PrimitiveOverrideProps<TextFieldProps>;
     alt?: PrimitiveOverrideProps<TextFieldProps>;
-    imageTitle?: PrimitiveOverrideProps<TextFieldProps>;
+    iconTitle?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type ImageCreateFormProps = React.PropsWithChildren<{
-    overrides?: ImageCreateFormOverridesProps | undefined | null;
+export declare type IconCreateFormProps = React.PropsWithChildren<{
+    overrides?: IconCreateFormOverridesProps | undefined | null;
 } & {
     clearOnSuccess?: boolean;
-    onSubmit?: (fields: ImageCreateFormInputValues) => ImageCreateFormInputValues;
-    onSuccess?: (fields: ImageCreateFormInputValues) => void;
-    onError?: (fields: ImageCreateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: ImageCreateFormInputValues) => ImageCreateFormInputValues;
-    onValidate?: ImageCreateFormValidationValues;
+    onSubmit?: (fields: IconCreateFormInputValues) => IconCreateFormInputValues;
+    onSuccess?: (fields: IconCreateFormInputValues) => void;
+    onError?: (fields: IconCreateFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: IconCreateFormInputValues) => IconCreateFormInputValues;
+    onValidate?: IconCreateFormValidationValues;
 } & React.CSSProperties>;
-export default function ImageCreateForm(props: ImageCreateFormProps): React.ReactElement;
+export default function IconCreateForm(props: IconCreateFormProps): React.ReactElement;

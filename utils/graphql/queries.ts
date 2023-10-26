@@ -8,27 +8,29 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
-export const getTodo = /* GraphQL */ `query GetTodo($id: ID!) {
-  getTodo(id: $id) {
+export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
+  getIcon(id: $id) {
     id
-    name
-    description
+    src
+    alt
+    iconTitle
     createdAt
     updatedAt
     __typename
   }
 }
-` as GeneratedQuery<APITypes.GetTodoQueryVariables, APITypes.GetTodoQuery>;
-export const listTodos = /* GraphQL */ `query ListTodos(
-  $filter: ModelTodoFilterInput
+` as GeneratedQuery<APITypes.GetIconQueryVariables, APITypes.GetIconQuery>;
+export const listIcons = /* GraphQL */ `query ListIcons(
+  $filter: ModelIconFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listIcons(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      name
-      description
+      src
+      alt
+      iconTitle
       createdAt
       updatedAt
       __typename
@@ -37,7 +39,63 @@ export const listTodos = /* GraphQL */ `query ListTodos(
     __typename
   }
 }
-` as GeneratedQuery<APITypes.ListTodosQueryVariables, APITypes.ListTodosQuery>;
+` as GeneratedQuery<APITypes.ListIconsQueryVariables, APITypes.ListIconsQuery>;
+export const getServices = /* GraphQL */ `query GetServices($id: ID!) {
+  getServices(id: $id) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      src
+      alt
+      iconTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetServicesQueryVariables,
+  APITypes.GetServicesQuery
+>;
+export const listServices = /* GraphQL */ `query ListServices(
+  $filter: ModelServicesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      serviceTitle
+      serviceBodyText
+      Icon {
+        id
+        src
+        alt
+        iconTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      servicesIconId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListServicesQueryVariables,
+  APITypes.ListServicesQuery
+>;
 export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
   getTeamMember(id: $id) {
     id
@@ -51,6 +109,7 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
       id
       src
       alt
+      imageTitle
       createdAt
       updatedAt
       __typename
@@ -83,6 +142,7 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
         id
         src
         alt
+        imageTitle
         createdAt
         updatedAt
         __typename
@@ -105,6 +165,7 @@ export const getImage = /* GraphQL */ `query GetImage($id: ID!) {
     id
     src
     alt
+    imageTitle
     createdAt
     updatedAt
     __typename
@@ -121,6 +182,7 @@ export const listImages = /* GraphQL */ `query ListImages(
       id
       src
       alt
+      imageTitle
       createdAt
       updatedAt
       __typename

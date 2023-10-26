@@ -14,10 +14,12 @@ module.exports = {
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",
       minimumCacheTTL: 60,
+      unoptimized: true,
   },
     experimental: {
       typedRoutes: true,
     },
+    swcMinify: true,
     typescript: {
       // !! WARN !!
       // Dangerously allow production builds to successfully complete even if

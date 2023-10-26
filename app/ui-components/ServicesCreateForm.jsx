@@ -10,12 +10,10 @@ import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { fetchByPath, validateField } from "./utils";
 import { API } from "aws-amplify";
-import { getImage } from "../../utils/graphql/queries";
-import { updateImage } from "../../utils/graphql/mutations";
-export default function ImageUpdateForm(props) {
+import { createServices } from "../../utils/graphql/mutations";
+export default function ServicesCreateForm(props) {
   const {
-    id: idProp,
-    image: imageModelProp,
+    clearOnSuccess = true,
     onSuccess,
     onError,
     onSubmit,
@@ -25,43 +23,24 @@ export default function ImageUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    src: "",
-    alt: "",
-    imageTitle: "",
+    serviceTitle: "",
+    serviceBodyText: "",
   };
-  const [src, setSrc] = React.useState(initialValues.src);
-  const [alt, setAlt] = React.useState(initialValues.alt);
-  const [imageTitle, setImageTitle] = React.useState(initialValues.imageTitle);
+  const [serviceTitle, setServiceTitle] = React.useState(
+    initialValues.serviceTitle
+  );
+  const [serviceBodyText, setServiceBodyText] = React.useState(
+    initialValues.serviceBodyText
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = imageRecord
-      ? { ...initialValues, ...imageRecord }
-      : initialValues;
-    setSrc(cleanValues.src);
-    setAlt(cleanValues.alt);
-    setImageTitle(cleanValues.imageTitle);
+    setServiceTitle(initialValues.serviceTitle);
+    setServiceBodyText(initialValues.serviceBodyText);
     setErrors({});
   };
-  const [imageRecord, setImageRecord] = React.useState(imageModelProp);
-  React.useEffect(() => {
-    const queryData = async () => {
-      const record = idProp
-        ? (
-            await API.graphql({
-              query: getImage.replaceAll("__typename", ""),
-              variables: { id: idProp },
-            })
-          )?.data?.getImage
-        : imageModelProp;
-      setImageRecord(record);
-    };
-    queryData();
-  }, [idProp, imageModelProp]);
-  React.useEffect(resetStateValues, [imageRecord]);
   const validations = {
-    src: [{ type: "Required" }],
-    alt: [{ type: "Required" }],
-    imageTitle: [],
+    serviceTitle: [],
+    serviceBodyText: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -89,9 +68,8 @@ export default function ImageUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          src,
-          alt,
-          imageTitle: imageTitle ?? null,
+          serviceTitle,
+          serviceBodyText,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -122,16 +100,18 @@ export default function ImageUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateImage.replaceAll("__typename", ""),
+            query: createServices.replaceAll("__typename", ""),
             variables: {
               input: {
-                id: imageRecord.id,
                 ...modelFields,
               },
             },
           });
           if (onSuccess) {
             onSuccess(modelFields);
+          }
+          if (clearOnSuccess) {
+            resetStateValues();
           }
         } catch (err) {
           if (onError) {
@@ -140,100 +120,71 @@ export default function ImageUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ImageUpdateForm")}
+      {...getOverrideProps(overrides, "ServicesCreateForm")}
       {...rest}
     >
       <TextField
-        label="Src"
-        isRequired={true}
-        isReadOnly={false}
-        value={src}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              src: value,
-              alt,
-              imageTitle,
-            };
-            const result = onChange(modelFields);
-            value = result?.src ?? value;
-          }
-          if (errors.src?.hasError) {
-            runValidationTasks("src", value);
-          }
-          setSrc(value);
-        }}
-        onBlur={() => runValidationTasks("src", src)}
-        errorMessage={errors.src?.errorMessage}
-        hasError={errors.src?.hasError}
-        {...getOverrideProps(overrides, "src")}
-      ></TextField>
-      <TextField
-        label="Alt"
-        isRequired={true}
-        isReadOnly={false}
-        value={alt}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              src,
-              alt: value,
-              imageTitle,
-            };
-            const result = onChange(modelFields);
-            value = result?.alt ?? value;
-          }
-          if (errors.alt?.hasError) {
-            runValidationTasks("alt", value);
-          }
-          setAlt(value);
-        }}
-        onBlur={() => runValidationTasks("alt", alt)}
-        errorMessage={errors.alt?.errorMessage}
-        hasError={errors.alt?.hasError}
-        {...getOverrideProps(overrides, "alt")}
-      ></TextField>
-      <TextField
-        label="Image title"
+        label="Service title"
         isRequired={false}
         isReadOnly={false}
-        value={imageTitle}
+        value={serviceTitle}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              src,
-              alt,
-              imageTitle: value,
+              serviceTitle: value,
+              serviceBodyText,
             };
             const result = onChange(modelFields);
-            value = result?.imageTitle ?? value;
+            value = result?.serviceTitle ?? value;
           }
-          if (errors.imageTitle?.hasError) {
-            runValidationTasks("imageTitle", value);
+          if (errors.serviceTitle?.hasError) {
+            runValidationTasks("serviceTitle", value);
           }
-          setImageTitle(value);
+          setServiceTitle(value);
         }}
-        onBlur={() => runValidationTasks("imageTitle", imageTitle)}
-        errorMessage={errors.imageTitle?.errorMessage}
-        hasError={errors.imageTitle?.hasError}
-        {...getOverrideProps(overrides, "imageTitle")}
+        onBlur={() => runValidationTasks("serviceTitle", serviceTitle)}
+        errorMessage={errors.serviceTitle?.errorMessage}
+        hasError={errors.serviceTitle?.hasError}
+        {...getOverrideProps(overrides, "serviceTitle")}
+      ></TextField>
+      <TextField
+        label="Service body text"
+        isRequired={false}
+        isReadOnly={false}
+        value={serviceBodyText}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              serviceTitle,
+              serviceBodyText: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.serviceBodyText ?? value;
+          }
+          if (errors.serviceBodyText?.hasError) {
+            runValidationTasks("serviceBodyText", value);
+          }
+          setServiceBodyText(value);
+        }}
+        onBlur={() => runValidationTasks("serviceBodyText", serviceBodyText)}
+        errorMessage={errors.serviceBodyText?.errorMessage}
+        hasError={errors.serviceBodyText?.hasError}
+        {...getOverrideProps(overrides, "serviceBodyText")}
       ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
-          children="Reset"
+          children="Clear"
           type="reset"
           onClick={(event) => {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || imageModelProp)}
-          {...getOverrideProps(overrides, "ResetButton")}
+          {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
         <Flex
           gap="15px"
@@ -243,10 +194,7 @@ export default function ImageUpdateForm(props) {
             children="Submit"
             type="submit"
             variation="primary"
-            isDisabled={
-              !(idProp || imageModelProp) ||
-              Object.values(errors).some((e) => e?.hasError)
-            }
+            isDisabled={Object.values(errors).some((e) => e?.hasError)}
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
         </Flex>
