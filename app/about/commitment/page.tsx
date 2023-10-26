@@ -42,7 +42,7 @@ export default function Commitment() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'/Icons/Icons/plant.svg'} id={null}/>
+          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="A" icon={'public/Icons/plant.svg'} id={null}/>
           <StickyInfoSegment captionText={captionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
           </StickyInfoSegment>
