@@ -23,7 +23,6 @@ export function DetailsCard({
     },
     title : string,
  }){
-console.log(JSON.stringify(Image?.src).replace("%22",""))
       return (
         <div className="flex flex-col bg-white bg-opacity-75 max-h-[80vh] rounded-md border-white border-[11px]">
             <div className="overscroll-contain">

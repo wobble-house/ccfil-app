@@ -9,9 +9,9 @@ export const bgimages = [
   ]
 
   export const carouselSlides = [
-    {src:`public/Images/Backgrounds/fetured.png`, title: 'Like Family', description: `We treat residents how we'd like to be treated.`, buttonText:`Learn More`, buttonLink:`/about`},
-    {src:`public/Images/Backgrounds/slide-2.jpg`, title: `It's our only standard.`, description: `Success isn't just a goal`, buttonText:`Learn How`, buttonLink:`/services`},
-    {src:`public/Images/Backgrounds/CCFILCampusLifeHeader-1.jpg` , title: `It's our commitment.`, description: 'Community is extremely important to us.', buttonText:`Learn Why`, buttonLink:`/about/commitment`}
+    {src:`public/Images/Backgrounds/fetured.png`, title: 'Like Family', description: `We treat residents how we'd like to be treated.`, headerButton: { title:`Learn More`, url:'/about/team#Leadership'}},
+    {src:`public/Images/Backgrounds/slide-2.jpg`, title: `It's our only standard.`, description: `Success isn't just a goal`, headerButton: { title:`Learn How`, url:'/services/program-components'}},
+    {src:`public/Images/Backgrounds/CCFILCampusLifeHeader-1.jpg` , title: `It's our commitment.`, description: 'Community is extremely important to us.', headerButton: { title:`Learn Why`, url:'/about/commitment'}}
   ]
 
   export const testimonialCardListData = [

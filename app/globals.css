@@ -223,14 +223,23 @@
   z-index: 0;
 }
 
+
 .carouselCard {
   position: absolute;
   opacity: 0;
   transition: 1s  ease-in-out;
 }
-
 .carouselCard-active {
   opacity: 1;
+}
+.carouselSlide {
+  position: absolute;
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+.carouselSlide-active {
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 
 .icon-scroll,

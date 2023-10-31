@@ -24,7 +24,7 @@ export function InfoCardList({data}){
   )
 }
 
-export async function TeamCard({ 
+export function TeamCard({ 
   id,
   bio,
   link,
