@@ -23,7 +23,7 @@ Sterling Heights, MI 48312`
 export default function Contact() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto py-16 z-50 bg-white w-full">

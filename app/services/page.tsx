@@ -13,7 +13,7 @@ export const metadata = {
 export default function Services() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto max-w-screen">

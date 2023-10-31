@@ -14,7 +14,7 @@ export const metadata = {
 export default function StrategicPlan() {
   return (
    <>
-   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} />
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col mx-auto justify-center items-center py-10 bg-gray1 w-full gap-10 z-50">

@@ -23,7 +23,7 @@ function handleAnchor (e, url) {
             <div className={`carousel w-full`}>
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
-                        <div key={index} className={index == current ? `w-3/4 lg:w-5/6 carouselCard carouselCard-active`: `w-3/4 lg:w-5/6 carouselCard`}>
+                        <div key={index} className={index == current ? `w-3/5 lg:w-2/3 carouselCard carouselCard-active`: `w-3/5 lg:w-2/3 carouselCard`}>
                             <div className={`flex flex-col gap-6 px-8 md:px-16 py-20 bg-white md:bg-transparent bg-opacity-50 md:bg-opacity-100 md:border-solid md:border-white md:border-[10px] justify-center w-full ${!navbar ? "visible" : "hidden"}`}>
                                     <h3 className="text-blue1 md:font-black text-2xl">{carouselSlide.description}</h3>
                                     <h1 className="md:text-6xl text-blue2 text-center md:text-left">{carouselSlide.title}</h1>
@@ -31,6 +31,7 @@ function handleAnchor (e, url) {
                                             {carouselSlide.headerButton.title}
                                         </button>
                             </div>
+                            <hr></hr>
                         </div>
                     )
                 })}

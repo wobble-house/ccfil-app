@@ -33,7 +33,7 @@ const causeCaptionText = `How We Make a difference`
 export default function Cause() {
   return (
    <>
-   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+   <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">

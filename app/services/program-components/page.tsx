@@ -40,7 +40,7 @@ const stickyImageUrl = `public/Images/additional-services.jpg`
 export default function ProgramComponents() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} />
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen">
