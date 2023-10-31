@@ -59,6 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable} ${prozaLibre.variable}`}>
+      <link rel="icon" href="/Icons/favicon.png" />
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen snap-y`}>

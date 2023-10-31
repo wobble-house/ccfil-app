@@ -62,7 +62,7 @@ export function NavHeader({description, title, metadata, headerButton}){
               <ImageHandler src={'public/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
             <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest pb-1">{`(248) 410-2715`}</h3>
             </div>
-            <p></p>
+            <div className="icon-scroll"></div>
             <Link href="/contact" >
               <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
                   Contact Us
