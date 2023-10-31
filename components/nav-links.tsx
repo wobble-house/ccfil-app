@@ -9,7 +9,7 @@ export function NavLink({path, text}){
                   <Link
                   className="font-sans uppercase font-bold text-sm whitespace-nowrap text-white md:text-blue2" 
                   href={path}
-                  prefetch={false}>
+                  >
                     {text}
                   </Link>
                 </li>

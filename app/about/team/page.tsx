@@ -9,13 +9,17 @@ import { NavHeader } from "@/components/header"
 import { API } from "@aws-amplify/api";
 import { listTeamMembers } from "@/utils/graphql/queries";
 import {ListTeamMembersQueryVariables} from "@/utils/graphql/API"
-
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+export const revalidate = 0
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
 export const metadata = {
   title: 'About Us',
   description: 'Hello. We’re Community Connections for Independent Living.',
   bgimage: 4
 }
-
 const execVariables: ListTeamMembersQueryVariables = {
   filter: {
     isFeatured: {
@@ -30,18 +34,16 @@ const teamVariables: ListTeamMembersQueryVariables = {
     }
   }
 };
-
 // List execs
 const execTeamMembers = await API.graphql({
   query: listTeamMembers,
   variables: execVariables
 });
-
+// List Team
 const teamMembers = await API.graphql({
   query: listTeamMembers,
   variables: teamVariables
 });
-
 const headerText =`We’re a thoughtful, trusted company that treats residents and staff like family.`
 const bodyText = `We respect our residents’ dignity and autonomy. That’s why all of CCFIL’s treatment plans are individualized. Instead of telling a new resident what our program includes, we take the time to discuss with them what they are interested in, what their goals are, and how we can help them. We realize catering to our residents’ individual needs is different, but it’s why our programming has been so successful.
 \\
@@ -62,7 +64,7 @@ const teamCaptionText = `Our Team`
 export default function Team() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} headerButton={null}/>
+      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="relative flex flex-col w-full">
