@@ -1,7 +1,5 @@
 'use client';
 import { useEffect, useState } from "react"
-import ImageHandler from "./image-handler";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export function HeaderSlidesCarousel({carouselSlides, navbar}){
@@ -23,7 +21,7 @@ function handleAnchor (e, url) {
             <div className={`carousel w-full`}>
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
-                        <div key={index} className={index == current ? `flex flex-row gap-10 w-3/5 lg:w-2/3 carouselCard carouselCard-active`: `flex flex-row gap-10 w-3/5 lg:w-2/3 carouselCard`}>
+                        <div key={index} className={index == current ? `flex flex-row gap-10 w-3/5 lg:w-2/3 carouselCard carouselCard-active max-h-[450px]`: `flex flex-row gap-10 w-3/5 lg:w-2/3 carouselCard max-h-[450px]`}>
                             <div className={`flex flex-col gap-6 px-8 md:px-16 py-20 bg-white md:bg-transparent bg-opacity-50 md:bg-opacity-100 md:border-solid md:border-white md:border-[10px] justify-center w-full ${!navbar ? "visible" : "hidden"}`}>
                                     <h3 className="text-blue1 md:font-black text-2xl">{carouselSlide.description}</h3>
                                     <h1 className="md:text-6xl text-blue2 text-center md:text-left">{carouselSlide.title}</h1>

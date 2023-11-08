@@ -27,7 +27,7 @@ export function NavHeader({description, title, metadata}){
             : 
             <HeaderBGCarousel carouselSlides={carouselSlides}/>}
         </div>
-        <div className={`flex flex-col md:px-16 md:pb-6 bg-white bg-opacity-25 md:bg-opacity-75 w-3/4 z-10 md:m-12 ${pathname == '/' ? 'md:min-h-[600px]' : ''}`}>
+        <div className={`flex flex-col md:px-16 md:pb-6 bg-white bg-opacity-25 md:bg-opacity-75 w-full md:w-3/4 z-10 md:m-12 ${pathname == '/' ? 'md:min-h-[600px]' : ''}`}>
           <div className={`flex flex-row-reverse md:flex-row md:justify-between w-full`}>
             <div className={`lg:hidden w-[34px] h-[39px] mr-5 md:ml-5 mt-4`}>
               <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>

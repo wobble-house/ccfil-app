@@ -14,7 +14,7 @@ const nextSlide = () => {
     setCurrent(current === carouselSlides.length - 1 ? 0 : current + 1)
 }
     return (
-            <div className={`carousel top-0 flex-auto w-full overflow-hidden max-h-[600px]`}>
+            <div className={` carousel top-0 flex-auto w-full overflow-hidden max-h-[600px]`}>
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
                         <div key={index} className={index == current ? `carouselCard carouselCard-active`: `carouselCard`}>

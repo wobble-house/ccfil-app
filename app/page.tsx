@@ -1,6 +1,4 @@
 import "server-only"
-import { Suspense } from "react"
-import Loading from "./loading"
 import InfoSegment from "@/components/info-segment"
 import QuoteSection from "@/components/quote"
 import { NavHeader } from "@/components/header"
@@ -26,13 +24,11 @@ const quoteName = `Audrey Hepburn`
 export default function Home() {
   return (
    <>
-      <NavHeader description={carouselSlides[0].description} title={carouselSlides[0].title} metadata={metadata} headerButton={{url: "/about/team#Leadership", title: "LEARN MORE"}}/>
-        <Suspense fallback={<Loading/>}>
-          <div className="flex flex-col w-full bg-white overflow-clip">
+      <NavHeader description={carouselSlides[0].description} title={carouselSlides[0].title} metadata={metadata}/>
+          <div className="flex flex-col w-full bg-white">
           <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl="/about" Type="A" icon={'public/Icons/page.svg'} id={null}/>
           <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
           </div>
-        </Suspense>
    </>
   )
 }

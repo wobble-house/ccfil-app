@@ -20,7 +20,7 @@ export default function Nav() {
     (navbar == false ? setNavbar(true): setNavbar(false))
   }
   return (
-      <nav className="flex relative z-80 md:justify-center top-0 w-full">
+      <nav className="flex z-90 md:justify-center top-0 w-full md:w-auto">
         <div className="flex flex-col-reverse md:flex-row flex-grow justify-end">
                 <button className="fixed z-99 md:hidden bg-white px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse mr-auto ml-5 mt-4" onMouseDown={handleMainNavButton}>
                   {navbar ? (
@@ -33,8 +33,8 @@ export default function Nav() {
                     </svg>
                   )}
                 </button>
-            <div ref={Navref} className={`flex mx-auto md:mx-0 bg-blue1 dark:bg-blue2 md:bg-transparent md:block  ${navbar ? 'fixed top-0 flex-col min-h-content items-center w-full justify-center py-32' : 'hidden'}`}>
-              <ul  className=" text-center flex flex-col md:grid md:grid-cols-6 md:gap-3 md:pr-10">
+            <div ref={Navref} className={`relative flex mx-auto md:mx-0 bg-blue1 dark:bg-blue2 md:bg-transparent md:block  ${navbar ? 'fixed z-90 top-0 flex flex-col flex-grow min-h-content items-center w-full justify-center py-32' : 'hidden'}`}>
+              <ul  className="text-center flex flex-col md:grid md:grid-cols-6 md:gap-3 md:pr-10">
                 <NavLink path={`/`} text={`Home`}/>
                 <NavListLink items={aboutList} path={`/about`} text={`About`} onMouseLeave={()=>setAbout(false)} onMouseOver={handleAboutMouseover} onClick={()=>setAbout(true)} listState={about}/>
                 <NavListLink items={servicesList} path={`/services`} text={`Services`} onMouseLeave={()=>setServices(false)} onMouseOver={handleServicesMouseover} onClick={()=>setServices(true)} listState={services}/>
