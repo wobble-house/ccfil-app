@@ -18,7 +18,7 @@ const nextSlide = () => {
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
                         <div key={index} className={index == current ? `carouselCard carouselCard-active overflow-hidden`: `carouselCard`}>
-                            <ImageHandler key={index} src={carouselSlide.src} width={2550} height={1440} className="bg-white min-h-screen md:min-h-[640px] object-cover object-center justify-center hidden md:flex" alt="bg image" priority/>
+                            <ImageHandler key={index} src={carouselSlide.src} width={2550} height={1440} className="bg-white min-h-screen md:min-h-[640px] md:max-h-[640px] object-cover object-center justify-center hidden md:flex" alt="bg image" priority/>
                         </div>
                     )
                 })}
