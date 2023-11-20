@@ -33,7 +33,7 @@ onClick={onClick} >
     border-r-[25px] border-r-transparent">
   </div>
   {items.map(item =>(
-    <div key={item.id} className={`transition ease-in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md`}>
+    <div key={item.id} className={`flex transition ease-in-out delay-50 duration-300 bg-blue1 hover:bg-blue2 hover:scale-[1.03] rounded-md -ml-20 md:ml-0 mr-20 md:mr-0`}>
     <NavListInnerLink linkpath={item.linkpath} text={item.text}/>
     </div>
   ))}
@@ -45,7 +45,7 @@ onClick={onClick} >
 export function NavListInnerLink({linkpath, text}){
     return(
             <Link
-            className="transition ease-in-out delay-200 block uppercase font-bold text-xs md:bg-blue1 text-white rounded-md hover:text-pink md:hover:bg-blue2 py-4 px-5 whitespace-nowrap tracking-widest w-full md:text-left bg-blue2" 
+            className="transition ease-in-out delay-200 flex uppercase font-bold text-xs md:bg-blue1 text-white rounded-md hover:text-pink md:hover:bg-blue2 py-4 px-5 md:whitespace-nowrap tracking-widest w-full md:text-left bg-blue2" 
             href={linkpath}
             prefetch
             >

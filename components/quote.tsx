@@ -2,8 +2,8 @@ import ImageHandler from "./image-handler"
 import Section from "./section"
 export default function QuoteSection({quote, quoteName, quoteImgSrc}:{quote:string, quoteName: string, quoteImgSrc}){
     return(
-        <Section initial={true} useOnce id={null}>
-        <div className="flex flex-col -z-1 overflow-hidden p-8">
+        <Section initial={true} useOnce={false} id={null}>
+        <div className="flex flex-col z-10 overflow-hidden p-8">
 
         <div className="fixed top-0 left-0 md:min-w-screen w-full ">
             <ImageHandler src={quoteImgSrc} width={2560} height={1440} alt="background image of smiling people" className="min-h-screen aspect-[16/9] object-cover "/>
