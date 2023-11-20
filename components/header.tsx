@@ -22,7 +22,7 @@ export function NavHeader({description, title, metadata}){
         <div className="flex absolute w-full justify-center">
           {pathname != '/' ? 
             <div className={`absolute top-0 w-full`}>
-              <ImageHandler key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg min-h-[300px] md:min-h-[550px] object-cover object-center justify-center" alt="bg image"/>
+              <ImageHandler key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg min-h-[300px] md:min-h-[550px] max-h-[550px] object-cover object-center justify-center" alt="bg image"/>
             </div> 
             : 
             <HeaderBGCarousel carouselSlides={carouselSlides}/>}
