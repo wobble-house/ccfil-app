@@ -30,7 +30,7 @@ export default function Section({ children, initial, useOnce, id }:{children, in
     const isInView = useInView(LoadingSectionRef, { once: false });
   
     return (
-      <motion.section layout className="overscroll-auto sticky-top-0" ref={LoadingSectionRef}>
+      <motion.section layout className="overscroll-auto sticky top-0 min-h-screen" ref={LoadingSectionRef}>
         <motion.div
         layout
         initial={false}
