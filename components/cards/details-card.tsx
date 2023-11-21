@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import ImageHandler from "./image-handler";
+import ImageHandler from "../image-handler";
 
 export function DetailsCard({ 
   bio,

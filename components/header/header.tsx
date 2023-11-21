@@ -2,14 +2,15 @@
 import React, { useState, useRef } from "react";
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import Nav from "./nav"
-import { useOnClickOutside } from './click-handler';
+import Nav from "../navigation/nav"
+import { useOnClickOutside } from '../click-handler';
 import { HeaderBGCarousel } from "./header-bg-carousel";
-import { bgimages, carouselSlides } from "./data/data";
-import ImageHandler from "./image-handler";
+import { bgimages, carouselSlides } from "../../lib/data/data";
+import ImageHandler from "../image-handler";
 import { HeaderSlidesCarousel } from "./header-slides-carousel";
+import HeaderContact from "./header-contact";
 
-export function NavHeader({description, title, metadata}){
+export default function NavHeader({description, title, bgimage}){
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname()
@@ -18,18 +19,18 @@ export function NavHeader({description, title, metadata}){
   }
   useOnClickOutside(Navref, handleNavClickOutside)
    return(
-      <div className="flex z-70 md:justify-center top-0 overflow-hidden">
+      <div className="flex z-70 md:justify-center top-0 overflow-hidden max-w-full">
         <div className="flex absolute w-full justify-center">
           {pathname != '/' ? 
             <div className={`absolute top-0 w-full`}>
-              <ImageHandler key={`${bgimages[metadata.bgimage].id}-fg`} src={bgimages[metadata.bgimage].src} width={2550} height={1440} className="slideshowbg min-h-[300px] md:min-h-[550px] max-h-[550px] object-cover object-center justify-center" alt="bg image"/>
+              <ImageHandler key={`${bgimages[bgimage]}-fg`} src={bgimages[bgimage].src} width={2550} height={1440} className="slideshowbg min-h-[300px] md:min-h-[550px] max-h-[550px] object-cover object-center justify-center" alt="bg image"/>
             </div> 
             : 
             <HeaderBGCarousel carouselSlides={carouselSlides}/>}
         </div>
-        <div className={`flex flex-col md:px-16 bg-white bg-opacity-25 md:bg-opacity-75 w-full md:w-3/4 z-10 md:m-12 ${pathname == '/' ? 'md:min-h-[550px]' : ''}`}>
+        <div className={`flex flex-col md:px-16 md:py-4 items-stretch bg-white bg-opacity-25 md:bg-opacity-75 w-full md:w-3/4 z-10 md:my-12 ${pathname == '/' ? 'md:min-h-[550px]' : ''}`}>
           <div className={`flex flex-row-reverse md:flex-row md:justify-between w-full`}>
-            <div className={`lg:hidden md:flex hidden w-[34px] h-[39px] mr-5 md:ml-5 mt-4`}>
+            <div className={`lg:hidden md:flex absolute w-[34px] h-[39px] mr-5 md:ml-5 mt-2 md:mt-4`}>
               <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>
             </div>
             <div className={`lg:visible hidden lg:flex w-72 h-auto my-3 justify-center`}>
@@ -43,23 +44,12 @@ export function NavHeader({description, title, metadata}){
               <h3 className="text-blue1 md:font-black text-2xl lg:w-4/5">{description}</h3>
             </div>
           : 
-            <HeaderSlidesCarousel carouselSlides={carouselSlides} navbar={navbar}/>
+            <>
+              <HeaderSlidesCarousel carouselSlides={carouselSlides} navbar={navbar}/>
+              <HeaderContact/>
+            </>
           }
-          {pathname != "/" ?
-            ""
-          :
-            <div className="absolute w-2/3 md:bottom-64 hidden md:flex flex-row justify-between px-4 md:px-0 mx-auto bg-white md:bg-transparent bg-opacity-50">
-              <div className={`flex flex-row gap-2 items-center`}>
-                <ImageHandler src={'public/Icons/phone.svg'} height={24} width={24} alt='phone icon'/>
-                <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest pb-1">{`(248) 410-2715`}</h3>
-              </div>
-              <div className="icon-scroll"></div>
-                <Link href="/contact" >
-                  <h3 className="uppercase font-[700] text-blue1 whitespace-nowrap tracking-widest">
-                    Contact Us
-                  </h3>
-                </Link>
-            </div>}
+
           </div>
         </div>
     )

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef } from "react";
-import {NavLink, NavListLink} from "@/components/nav-links"
-import { aboutList, servicesList } from "./data/data";
+import {NavLink, NavListLink} from "@/components/navigation/nav-links"
+import { aboutList, servicesList } from "../../lib/data/data";
 
 export default function Nav() {
   const [about, setAbout] = useState(false);

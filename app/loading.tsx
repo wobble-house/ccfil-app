@@ -1,5 +1,5 @@
 import ImageHandler from "@/components/image-handler";
-import { LoadingSection } from "@/components/section";
+import { LoadingSection } from "@/components/sections/section";
 
 export default function Loading() {
     return (

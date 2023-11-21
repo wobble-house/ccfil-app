@@ -2,28 +2,23 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import { NavHeader } from "@/components/header"
+import NavHeader from "@/components/header/header"
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import { ContactForm } from "@/components/contact-form"
+import { ContactForm } from "@/components/forms/contact-form"
 import Link from "next/link"
+import { mailingAddress } from "@/lib/data/data"
 
 export const metadata = {
   title: 'Contact Us',
-  description: '',
-  bgimage: 6
+  description: ''
 }
 
-export const mailingAddress = `We only provide our Mailing Address to respect our residents’ privacy. If you would like to take a tour of our property, please send us a message.
-
-Community Connections for Independent Living
-13335 15 Mile Road, Suite 244
-Sterling Heights, MI 48312`
 export default function Contact() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} bgimage={6}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto py-16 mt-24 z-50 bg-white w-full">
@@ -64,7 +59,7 @@ export default function Contact() {
               <h2>Have a question?</h2>
               <hr className="border-pink border-2 md:w-1/3"/>
               <ReactMarkdown className="markdown p-2 list-inside text-left max-w-4xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
-              Send us a message! We’d love to hear from you.
+              Send us a message! We&apos;d love to hear from you.
                 </ReactMarkdown>
                 <ContactForm/>
             </div>

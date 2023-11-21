@@ -2,28 +2,22 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import QuoteSection from "@/components/quote"
-import { NavHeader } from "@/components/header"
-import { StickyInfoSegment } from "@/components/info-segment"
-import { InfoCardList } from "@/components/list"
-import { testimonialCardListData } from "@/components/data/data"
+import QuoteSection from "@/components/sections/quote"
+import NavHeader from "@/components/header/header"
+import { StickyInfoSegment } from "@/components/sections/info-segment"
+import { InfoCardList } from "@/components/cards/list"
+import { testimonialCardListData, outcomesData } from "@/lib/data/data"
 import ImageHandler from "@/components/image-handler"
 
 export const metadata = {
   title: 'Outcomes',
-  description: `Improved quality of life is our set standard; we won't settle for anything less.`,
-  bgimage: 0
+  description: `Improved quality of life is our set standard; we won't settle for anything less.`
 }
-
-const quote = `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`
-const quoteName = `ELLEN DEGENERES`
-const quoteImgSrc = `public/Images/Quotes/resident-quote.jpg`
-const outcomesCaptionText = `Real Stories from Real Residents`
 
 export default function Outcomes() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata}/>
+      <NavHeader description={metadata.description} title={metadata.title} bgimage={0}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
               <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16">
@@ -34,8 +28,8 @@ export default function Outcomes() {
             priority
             className="relative"/>
           </div>
-          <QuoteSection quote={quote} quoteName={quoteName} quoteImgSrc={quoteImgSrc}/>
-          <StickyInfoSegment captionText={outcomesCaptionText} type="B" bgcolor='bg-white' id={null}>
+          <QuoteSection quote={outcomesData.quote} quoteName={outcomesData.quoteName} quoteImgSrc={outcomesData.quoteImgSrc}/>
+          <StickyInfoSegment captionText={outcomesData.outcomesCaptionText} type="B" bgcolor='bg-white' id={null}>
             <InfoCardList data={testimonialCardListData}/>
           </StickyInfoSegment>
         </Suspense>

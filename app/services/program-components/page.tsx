@@ -2,10 +2,11 @@ import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
-import InfoSegment, {StickyInfoSegment, InfoServiceBody, InfoBody} from "@/components/info-segment"
-import { NavHeader } from "@/components/header"
+import InfoSegment, {StickyInfoSegment, InfoServiceBody, InfoBody} from "@/components/sections/info-segment"
+import NavHeader from "@/components/header/header"
 import { listServices } from "@/utils/graphql/queries"
 import { API } from "@aws-amplify/api";
+import { programComponentsData } from '@/lib/data/data'
 export const dynamic = 'force-dynamic'
 export const dynamicParams = true
 export const revalidate = 0
@@ -14,40 +15,23 @@ export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const metadata = {
   title: 'Services',
-  description: `Our residents' trust isn't freely given.  We earn it every day`,
-  bgimage: 3
+  description: `Our residents' trust isn't freely given.  We earn it every day`
 }
 const programServices = await API.graphql({
   query: listServices
 });
-const headerText =`All services we provide are based on over a decade of doing the right thing.`
-const bodyText = `We don’t believe in a “one size fits all” solution. All our treatment plans are tailored to fit the unique needs of each and every one of our residents. Staff and residents together come up with goals all of which are designed to be both determinable and measurable.
-We believe in working with our residents to figure out what they need in order to move forward. At any stage of the process, we are willing to reevaluate the plan if needed. While the way forward for everyone may be different, the end result is always the same, helping our residents move forward.`
-const infoImage = {
-  url: `public/Images/services.jpg`,
-  alt: `image for website`
-}
-const serviceCaptionText = `Program Overview`
-const serviceHeaderText = `Program Components`
-const serviceImageUrl = `public/Images/program-components.jpg`
-const stickyHeaderText = `Additional Services`
-const stickyBodyText = `We’re committed to supporting our residents in every way possible. This means that if needed, Community Connections will ensure that other therapies, outside of our services, are provided on a fee for service basis, such as:
- 
-- Physical Therapy
-- Speech/Language Pathology
-`
-const stickyImageUrl = `public/Images/additional-services.jpg`
+
 export default function ProgramComponents() {
   return (
    <>
-      <NavHeader description={metadata.description} title={metadata.title} metadata={metadata} />
+      <NavHeader description={metadata.description} title={metadata.title} bgimage={3} />
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen">
-          <InfoSegment headerText={headerText} bodyText={bodyText} infoImage={infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/education.svg'} id={null}/>
-          <StickyInfoSegment captionText={serviceCaptionText} type="A" bgcolor="bg-gray1" id={null}>
-          <InfoServiceBody headerText={serviceHeaderText} data={programServices.data.listServices.items} ImageUrl={serviceImageUrl} ButtonUrl={null}/>
-          <InfoBody headerText={stickyHeaderText} bodyText={stickyBodyText} ImageUrl={stickyImageUrl} ButtonUrl={null}/>
+          <InfoSegment headerText={programComponentsData.headerText} bodyText={programComponentsData.bodyText} infoImage={programComponentsData.infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/education.svg'} id={null}/>
+          <StickyInfoSegment captionText={programComponentsData.serviceCaptionText} type="A" bgcolor="bg-gray1" id={null}>
+          <InfoServiceBody headerText={programComponentsData.serviceHeaderText} data={programServices.data.listServices.items} ImageUrl={programComponentsData.serviceImageUrl} ButtonUrl={null}/>
+          <InfoBody headerText={programComponentsData.stickyHeaderText} bodyText={programComponentsData.stickyBodyText} ImageUrl={programComponentsData.stickyImageUrl} ButtonUrl={null}/>
           <div className="flex flex-col h-64 bg-blue1 justify-center items-center p-10">
             <div className={`flex flex-col border-solid border-[8px] border-white w-full h-full justify-center gap-5`}>
             <h2 className="text-white text-2xl font-bold text-center">Ready to chat a bit more?</h2>

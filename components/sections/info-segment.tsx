@@ -1,11 +1,11 @@
 'use client';
-import ImageHandler from "./image-handler";
+import ImageHandler from "../image-handler";
 import { useRouter } from "next/navigation";
 import Section from "./section";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import { ServiceItem } from "./service-item";
+import { ServiceItem } from "../cards/service-item";
 
 export default function InfoSegment({headerText, bodyText, Type, infoImage, ButtonUrl, icon, id}:{headerText : string, bodyText: string, Type: string, infoImage, ButtonUrl, icon, id}){
     const router = useRouter();

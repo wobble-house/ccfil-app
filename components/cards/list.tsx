@@ -1,8 +1,8 @@
 'use client';
-import ImageHandler from "./image-handler";
+import ImageHandler from "../image-handler";
 import { useState, useRef } from "react";
 import { DetailsCard } from "./details-card";
-import { useOnClickOutside } from "./click-handler";
+import { useOnClickOutside } from "../click-handler";
 
 export function InfoCardList({data}){
 

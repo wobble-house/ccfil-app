@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react"
-import ImageHandler from "./image-handler";
+import ImageHandler from "../image-handler";
 
 export function HeaderBGCarousel({carouselSlides}){
     const [current, setCurrent] = useState(0);

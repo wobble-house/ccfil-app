@@ -1,4 +1,4 @@
-import ImageHandler from "./image-handler"
+import ImageHandler from "../image-handler"
 import Section from "./section"
 export default function QuoteSection({quote, quoteName, quoteImgSrc}:{quote:string, quoteName: string, quoteImgSrc}){
     return(
