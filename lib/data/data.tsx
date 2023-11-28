@@ -143,7 +143,7 @@ Community Connections provides a supportive living environment through a multidi
   commitmentCaptionText: `Real Stories from Real Residents`
 })
 
-export const teamData = ({
+export const aboutTeamData = ({
   headerText:`We’re a thoughtful, trusted company that treats residents and staff like family.`,
   bodyText: `We respect our residents’ dignity and autonomy. That’s why all of CCFIL’s treatment plans are individualized. Instead of telling a new resident what our program includes, we take the time to discuss with them what they are interested in, what their goals are, and how we can help them. We realize catering to our residents’ individual needs is different, but it’s why our programming has been so successful.
 \\

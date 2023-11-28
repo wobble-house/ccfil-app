@@ -8,9 +8,9 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import {Lato ,Paytone_One, Proza_Libre } from 'next/font/google'
-import Amplify from '@aws-amplify/core';
+import {Amplify} from '@aws-amplify/core';
 import awsconfig from './aws-exports';
-Amplify.configure({...awsconfig, ssr: true});
+Amplify.configure({...awsconfig});
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 

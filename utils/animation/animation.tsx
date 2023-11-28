@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import { AnimatePresence } from 'framer-motion'
 
 export function Animation({children, mode, initial}) {

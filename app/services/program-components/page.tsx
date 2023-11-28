@@ -4,9 +4,8 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment, {StickyInfoSegment, InfoServiceBody, InfoBody} from "@/components/sections/info-segment"
 import NavHeader from "@/components/header/header"
-import { listServices } from "@/utils/graphql/queries"
-import { API } from "@aws-amplify/api";
 import { programComponentsData } from '@/lib/data/data'
+import { getProgramServices } from '@/utils/getData/get-data'
 export const dynamic = 'force-dynamic'
 export const dynamicParams = true
 export const revalidate = 0
@@ -17,11 +16,8 @@ export const metadata = {
   title: 'Services',
   description: `Our residents' trust isn't freely given.  We earn it every day`
 }
-const programServices = await API.graphql({
-  query: listServices
-});
-
-export default function ProgramComponents() {
+export default async function ProgramComponents() {
+  const programServices = await getProgramServices();
   return (
    <>
       <NavHeader description={metadata.description} title={metadata.title} bgimage={3} />

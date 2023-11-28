@@ -2,7 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef} from "react";
 import { useOnClickOutside } from "../click-handler";
 
 export default function MyModal ({children}) {
