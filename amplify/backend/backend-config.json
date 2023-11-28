@@ -25,19 +25,51 @@
   "auth": {
     "ccfilapp": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ccfilappCreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ccfilappDefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ccfilappVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS",
-            "REQUIRES_UPPERCASE"
-          ],
+          "passwordPolicyCharacters": [],
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
@@ -61,6 +93,26 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "ccfilappCreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ccfilappCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ccfilappDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ccfilappVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -77,6 +129,102 @@
         {
           "category": "function",
           "resourceName": "ccfilapp62c969fa"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappDefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappDefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappVerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappVerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappVerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappVerifyAuthChallengeResponse"
         }
       ]
     }

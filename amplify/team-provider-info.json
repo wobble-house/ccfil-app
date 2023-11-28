@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-amplify304c2efeff3e4-staging-161600-unauthRole",
       "StackName": "amplify-amplify304c2efeff3e4-staging-161600",
       "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-amplify304c2efeff3e4-staging-161600/c99b2fc0-7351-11ee-8e0e-0a6dfb9bf873",
-      "AmplifyAppId": "dymon2l90oqk2"
+      "AmplifyAppId": "dymon2l90oqk2",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-amplify304c2efeff3e4-staging-161600-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -18,11 +19,34 @@
       "function": {
         "ccfilapp62c969fa": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilapp62c969fa-5874596d4f5734306336-build.zip"
+          "s3Key": "amplify-builds/ccfilapp62c969fa-41786e5079516a457741-build.zip"
+        },
+        "ccfilappCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-4c364951596457474944-build.zip"
+        },
+        "ccfilappCustomMessage": {
+          "REDIRECTURL": "/",
+          "EMAILSUBJECT": "confirmation",
+          "EMAILMESSAGE": "click here",
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappCustomMessage-5665326d4d36414a6d30-build.zip"
+        },
+        "ccfilappDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-7668433849686b795676-build.zip"
+        },
+        "ccfilappVerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4",
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-464e667a46424c756b4d-build.zip"
         }
       },
       "storage": {
         "s3ccfilappstorage4da25038": {}
+      },
+      "api": {
+        "ccfilapp": {}
       }
     }
   }
