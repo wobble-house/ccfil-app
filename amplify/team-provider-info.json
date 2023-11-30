@@ -47,6 +47,9 @@
       },
       "api": {
         "ccfilapp": {}
+      },
+      "analytics": {
+        "ccfilapp": {}
       }
     }
   }

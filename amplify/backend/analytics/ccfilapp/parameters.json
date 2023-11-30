@@ -1,0 +1,21 @@
+{
+    "appName": "ccfilapp",
+    "roleName": "pinpointLambdaRoleb7b3786c",
+    "cloudformationPolicyName": "cloudformationPolicyb7b3786c",
+    "cloudWatchPolicyName": "cloudWatchPolicyb7b3786c",
+    "pinpointPolicyName": "pinpointPolicyb7b3786c",
+    "authPolicyName": "pinpoint_amplify_b7b3786c",
+    "unauthPolicyName": "pinpoint_amplify_b7b3786c",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
