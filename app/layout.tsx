@@ -1,7 +1,6 @@
 import 'server-only'
 import './globals.css'
 import {GABody} from '../utils/Google/analytics/google-analytics'
-import type { Metadata } from 'next'
 import Footer from '../components/footer/footer'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -14,7 +13,7 @@ Amplify.configure({...awsconfig},{ssr: true});
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
-export const metadata: Metadata = {
+export const metadata = {
    title: {
     default: 'CCFIL',
     template: '%s | CCFIL',
@@ -26,7 +25,7 @@ const paytoneOne = Paytone_One({
   style: 'normal',
   subsets: ["latin","latin-ext"],
   variable: '--font-PaytoneOne',
-  display: 'fallback'
+  display: 'swap'
 })
 
 const prozaLibre = Proza_Libre({
@@ -56,9 +55,7 @@ export default function RootLayout({
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen snap-y`}>
-        
               {children}
-              
             </main>
             <Footer/>
             </body>

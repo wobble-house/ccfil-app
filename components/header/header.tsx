@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useRef } from "react";
-import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Nav from "../navigation/nav"
 import { useOnClickOutside } from '../click-handler';

@@ -78,7 +78,6 @@ export function ContactForm(){
         setShowFailureMessage(false);
         setButtonText("Sent!");
       }
-      console.log(name, email, phone, message);
     };
     return (
       <section>

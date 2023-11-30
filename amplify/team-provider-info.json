@@ -19,7 +19,7 @@
       "function": {
         "ccfilapp62c969fa": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilapp62c969fa-41786e5079516a457741-build.zip"
+          "s3Key": "amplify-builds/ccfilapp62c969fa-5874596d4f5734306336-build.zip"
         },
         "ccfilappCreateAuthChallenge": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",

@@ -25,56 +25,37 @@
   "auth": {
     "ccfilapp": {
       "customAuth": false,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "ccfilappCreateAuthChallenge",
-          "triggerProvider": "Cognito"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "ccfilappCustomMessage",
-          "triggerProvider": "Cognito"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "ccfilappDefineAuthChallenge",
-          "triggerProvider": "Cognito"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "ccfilappVerifyAuthChallengeResponse",
-          "triggerProvider": "Cognito"
-        }
-      ],
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
+        "mfaConfiguration": "OPTIONAL",
         "mfaTypes": [
-          "SMS"
+          "TOTP"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [],
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ],
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
           "EMAIL",
-          "NAME"
+          "NAME",
+          "PHONE_NUMBER",
+          "PICTURE",
+          "BIRTHDATE",
+          "PREFERRED_USERNAME",
+          "GIVEN_NAME",
+          "FAMILY_NAME",
+          "ADDRESS",
+          "PROFILE",
+          "WEBSITE",
+          "UPDATED_AT",
+          "LOCALE",
+          "GENDER",
+          "MIDDLE_NAME"
         ],
         "socialProviders": [],
         "usernameAttributes": [
