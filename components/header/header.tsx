@@ -25,20 +25,20 @@ export default function NavHeader({description, title, bgimage}){
               <ImageHandler key={`${bgimages[bgimage]}-fg`} src={bgimages[bgimage].src} width={2550} height={1440} className="slideshowbg min-h-[300px] md:min-h-[550px] max-h-[550px] object-cover object-center justify-center" alt="bg image"/>
             </div> 
             : 
-            <HeaderBGCarousel carouselSlides={carouselSlides}/>}
+            <HeaderBGCarousel carouselSlides={carouselSlides} position="relative"/>}
         </div>
         <div className={`flex flex-col md:px-16 md:py-4 items-stretch bg-white bg-opacity-25 md:bg-opacity-75 w-full md:w-5/6 z-10 md:my-12 ${pathname == '/' ? 'md:min-h-[550px]' : ''}`}>
           <div className={`flex flex-row-reverse md:flex-row md:justify-between w-full`}>
-            <div className={`lg:hidden md:flex visible w-[34px] h-[39px] mr-5 md:ml-5 mt-2 md:mt-4`}>
+            <div className={`lg:hidden md:flex visible w-[34px] h-[39px] mr-5 md:ml-5 mt-2`}>
               <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>
             </div>
-            <div className={`lg:visible hidden lg:flex w-72 h-auto my-3 justify-center`}>
+            <div className={`lg:visible hidden lg:flex w-72 h-auto justify-center`}>
               <ImageHandler src="public/Logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
             </div>
             <Nav/>
           </div>
           {pathname != "/" ? 
-            <div className={`flex flex-col gap-6 px-8 md:px-16 py-16 bg-white md:bg-transparent bg-opacity-50 md:bg-opacity-100 md:border-solid md:border-white md:border-[10px] justify-center mb-10 ${!navbar ? "visible" : "hidden"}`}>
+            <div className={`flex flex-col gap-6 px-8 md:px-16 py-16 bg-white md:bg-transparent bg-opacity-50 md:bg-opacity-100 md:border-solid md:border-white md:border-[10px] justify-center mb-10 rounded-md ${!navbar ? "visible" : "hidden"}`}>
               <h1 className="md:text-5xl text-blue2">{title}</h1>
               <h3 className="text-blue1 md:font-black text-2xl lg:w-4/5">{description}</h3>
             </div>

@@ -1,4 +1,5 @@
 'use client';
+import { usePathname } from "next/navigation";
 import React, { useState, useRef } from "react";
 import {NavLink, NavListLink} from "@/components/navigation/nav-links"
 import { aboutList, servicesList } from "../../lib/data/data";
@@ -19,8 +20,9 @@ export default function Nav() {
   function handleMainNavButton(){
     (navbar == false ? setNavbar(true): setNavbar(false))
   }
+  const pathname = usePathname();
   return (
-      <nav className="flex z-90 md:justify-center top-0 w-full md:w-auto">
+      <nav className={`z-90 flex md:justify-center w-full md:w-auto right-0 top-0 md:-mt-4 pb-4 ${pathname === "/signin" ? "fixed bg-white bg-opacity-75 mr-auto pl-4 rounded-md ":""} `}>
         <div className="flex flex-col-reverse md:flex-row flex-grow justify-end">
                 <button className="fixed z-90 md:hidden bg-white px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse mr-auto ml-5 mt-4" onMouseDown={handleMainNavButton}>
                   {navbar ? (

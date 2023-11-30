@@ -20,14 +20,14 @@ export default function InfoSegment({headerText, bodyText, Type, infoImage, Butt
                 <div className="relative w-14 h-14 pl-3">
                 <ImageHandler src={icon} alt="icon" width={153} height={150} style={{display: "contain"}}/>
                 </div>
-                <div className="flex flex-col gap-3 sticky top-0 md:relative bg-white z-30 p-3">
+                <div className="flex flex-col gap-3 sticky top-10 md:relative bg-white z-30 p-3">
             <h2 className=" text-blue2">{headerText}</h2>
             <hr className="border-pink border-[1.5px] md:w-2/5"/>
-            </div>
-            <ReactMarkdown className="markdown text-left px-3" remarkPlugins={[remarkGfm, remarkBreaks]}>
+            <ReactMarkdown className="markdown text-left px-3 pb-10" remarkPlugins={[remarkGfm, remarkBreaks]}>
             {bodyText}
             </ReactMarkdown>
-            {ButtonUrl == null ? <></> : <div className="text-center md:text-left w-full bg-white z-40"><button className="uppercase border-2 border-blue1 rounded-full px-10 py-2 mx-auto bg-white hover:bg-blue1 hover:text-white text-blue1 "
+            </div>
+            {ButtonUrl == null ? <></> : <div className="relative text-center md:text-left w-full bg-white z-40"><button className="uppercase border-2 border-blue1 rounded-full px-10 py-2 mx-auto bg-white hover:bg-blue1 hover:text-white text-blue1 "
             onClick={()=> router.push(ButtonUrl)}>Learn More About Us
             </button></div> }
             </div>

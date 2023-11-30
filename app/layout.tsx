@@ -54,7 +54,7 @@ export default function RootLayout({
       <link rel="icon" href="/Icons/favicon.png" />
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
         <GABody/>
-        <main className={`flex flex-col mx-auto min-h-screen snap-y`}>
+        <main className={`flex flex-col mx-auto min-h-screen snap-y mb-32`}>
               {children}
             </main>
             <Footer/>

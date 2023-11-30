@@ -14,7 +14,7 @@ export default function Footer(){
     const pathname = usePathname();
     return (
     <>
-            <div className="flex flex-col relative bottom-0 overflow-hidden px-5 pt-5 md:pt-16 pb-4 bg-white justify-center w-full items-center">
+            <div className={`flex flex-col relative bottom-0 overflow-hidden px-5 pt-5 md:pt-16 pb-4 bg-white justify-center w-full items-center`}>
 {pathname == '/' ? <div className={`relative flex flex-col-reverse md:flex-row mx-auto max-w-6xl justify-between pb-16 gap-5 md:gap-0`}>
     <div className={`flex flex-col md:w-1/2 gap-10`}>
         <p>We at Community Connections for Independent Living are proud members of these TBI advocacy organizations. Through continued collaboration and education, we strengthen our mission to serve and promote the rights and quality of life for brain injury survivors.</p>
