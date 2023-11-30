@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "ccfilaab7330bf",
+    "resourceNameTruncated": "ccfila335ec3d1",
     "userPoolName": "ccfilapp",
     "autoVerifiedAttributes": [
       "email"
@@ -25,30 +25,16 @@
       "Requires Uppercase"
     ],
     "requiredAttributes": [
-      "email",
-      "name",
-      "phone_number",
-      "picture",
-      "birthdate",
-      "preferred_username",
-      "given_name",
-      "family_name",
-      "address",
-      "profile",
-      "website",
-      "updated_at",
-      "locale",
-      "gender",
-      "middle_name"
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "ccfilaab7330bf_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "ccfila335ec3d1_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ab7330bf",
+    "sharedId": "335ec3d1",
     "resourceName": "ccfilapp",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
