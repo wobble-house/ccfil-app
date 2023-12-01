@@ -7,9 +7,7 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import {Lato ,Paytone_One, Proza_Libre } from 'next/font/google'
-import {Amplify} from 'aws-amplify';
-import awsExports from './aws-exports';
-Amplify.configure({...awsExports});
+import ConfigureAmplifyClientSide from '@/components/ConfigureAmplifyClientSide';
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -53,8 +51,10 @@ export default function RootLayout({
     <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable} ${prozaLibre.variable}`}>
       <link rel="icon" href="/Icons/favicon.png" />
       <body className="mx-auto no-scrollbar max-w-screen overflow-y-auto">
+        <ConfigureAmplifyClientSide />
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen snap-y mb-32`}>
+        
               {children}
             </main>
             <Footer/>

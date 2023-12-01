@@ -14,7 +14,6 @@ export const metadata = {
 export default async function Signin() {
   return (
    <div className="relative flex flex-col top-0 justify-center items-center">
-    <h2>hello</h2>
    <div className="absolute flex z-20 pb-32 mx-auto justify-center overscroll-auto">
     
       <AuthForm/>

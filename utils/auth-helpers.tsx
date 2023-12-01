@@ -10,7 +10,7 @@ const authConfig: ResourcesConfig['Auth'] = {
   
   Amplify.configure({
     Auth: authConfig
-  });
+  },{ssr: true});
 type SignUpParameters = {
     username: string;
     password: string;

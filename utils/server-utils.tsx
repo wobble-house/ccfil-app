@@ -1,8 +1,6 @@
 import { cookies } from "next/headers";
 import { createServerRunner } from "@aws-amplify/adapter-nextjs";
 import { generateServerClientUsingCookies } from "@aws-amplify/adapter-nextjs/api";
-import { defaultStorage } from 'aws-amplify/utils';
-import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
 import config from "@/amplifyconfiguration.json"
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
 const authConfig: ResourcesConfig['Auth'] = {
@@ -11,9 +9,7 @@ const authConfig: ResourcesConfig['Auth'] = {
     userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
   }
 };
-cognitoUserPoolsTokenProvider.setAuthConfig(authConfig);
-cognitoUserPoolsTokenProvider.setKeyValueStorage(defaultStorage);
-Amplify.configure({ Auth: authConfig });
+Amplify.configure({ Auth: authConfig },{ssr: true});
 
 export const serverClient = generateServerClientUsingCookies({
   config,
