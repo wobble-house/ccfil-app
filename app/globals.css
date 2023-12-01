@@ -41,6 +41,21 @@
     font-size: 1.1rem;
     letter-spacing: 1px;
   }
+  button[type=submit] {
+    font-family: var(--font-Lato), sans-serif;
+    color: rgb(var(--color-blue1));
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-width: 2px;
+    border-color: rgb(var(--color-blue1));
+    border-radius: 9999px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  div .amplify-visually-hidden {
+    display: none;
+  }
 
   /* width */
 ::-webkit-scrollbar {
@@ -278,3 +293,4 @@
     transform: translateY(30px);
   }
 }
+

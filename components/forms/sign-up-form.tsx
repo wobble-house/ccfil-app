@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useAuthenticator, useTheme, View, Text, Heading, Button, Authenticator } from "@aws-amplify/ui-react";
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
+import { I18n } from 'aws-amplify/utils';
 
 const authConfig: ResourcesConfig['Auth'] = {
   Cognito: {
@@ -12,6 +13,15 @@ const authConfig: ResourcesConfig['Auth'] = {
 
 Amplify.configure({
   Auth: authConfig
+});
+
+I18n.putVocabulariesForLanguage('en', {
+  'Sign In': 'Sign In', // Tab header
+  'Sign in': 'Sign In', // Button label
+  'Sign in to your account': 'Welcome Back!',
+  Username: 'Enter your username', // Username label
+  Password: 'Enter your password', // Password label
+  'Forgot your password?': 'Reset Password',
 });
 
 const components = {
@@ -51,7 +61,6 @@ const components = {
           padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
           level={3}
         >
-          Sign in to your account
         </Heading>
       );
     },
@@ -65,6 +74,7 @@ const components = {
             onClick={toForgotPassword}
             size="small"
             variation="link"
+            className="border-2 border-solid border-slate-500 bg-white opacity-75 rounded-full px-3 my-8 hover:scale-105"
           >
             Reset Password
           </Button>
@@ -78,11 +88,8 @@ const components = {
       const { tokens } = useTheme();
 
       return (
-        <Heading
-          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-          level={3}
-        >
-          Create a new account
+        <Heading>
+          <h3 className="font-bold text-blue1 uppercase">Create a new account</h3>
         </Heading>
       );
     },
@@ -191,15 +198,18 @@ const formFields = {
       },
     },
     signUp: {
+      username: {
+        order: 1,
+      },
       password: {
         label: 'Password:',
         placeholder: 'Enter your Password:',
-        isRequired: false,
+        isRequired: true,
         order: 2,
       },
       confirm_password: {
         label: 'Confirm Password:',
-        order: 1,
+        order: 3,
       },
     },
     forceNewPassword: {
@@ -241,10 +251,10 @@ const formFields = {
       },
     },
   };
-export default function AuthForm() {
+export default function SignupForm() {
     return (
-      <div className="absolute flex bg-white bg-opacity-75 p-8 mx-auto top-32 items-center rounded-md">
-      <Authenticator formFields={formFields} components={components} className={`flex p-8 border-[10px] border-white rounded-md overflow-none`}>
+      <div className="absolute flex bg-white bg-opacity-75 mt-10 right-0 rounded-md">
+      <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>
         {({ signOut }) => <button onClick={signOut}>Sign out</button>}
       </Authenticator>
       </div>

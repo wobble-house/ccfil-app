@@ -42,9 +42,13 @@
       "email"
     ],
     "useDefault": "manual",
-    "userPoolGroups": false,
-    "userPoolGroupList": [],
-    "adminQueries": false,
+    "userPoolGroups": true,
+    "userPoolGroupList": [
+      "admin",
+      "staff",
+      "contractor"
+    ],
+    "adminQueries": true,
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
@@ -62,6 +66,13 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": []
+    "dependsOn": [],
+    "triggers": {},
+    "hostedUI": false,
+    "adminQueryGroup": "admin",
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "permissions": []
   }
 }

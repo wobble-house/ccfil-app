@@ -14,7 +14,8 @@
     },
     "categories": {
       "auth": {
-        "ccfilapp": {}
+        "ccfilapp": {},
+        "userPoolGroups": {}
       },
       "function": {
         "ccfilapp62c969fa": {
@@ -40,15 +41,38 @@
           "RECAPTCHASECRET": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
           "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-464e667a46424c756b4d-build.zip"
+        },
+        "AdminQueriesd838de2e": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/AdminQueriesd838de2e-725470335a7544725247-build.zip"
         }
       },
       "storage": {
         "s3ccfilappstorage4da25038": {}
       },
       "api": {
-        "ccfilapp": {}
+        "ccfilapp": {},
+        "AdminQueries": {}
       },
       "analytics": {
+        "ccfilapp": {}
+      }
+    }
+  },
+  "auth": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ccfilapp-auth-112030-authRole",
+      "UnauthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-auth-112030-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-auth-112030-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ccfilapp-auth-112030-deployment",
+      "UnauthRoleName": "amplify-ccfilapp-auth-112030-unauthRole",
+      "StackName": "amplify-ccfilapp-auth-112030",
+      "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-ccfilapp-auth-112030/8c04b740-9065-11ee-be06-0a0e59c736bd",
+      "AmplifyAppId": "dymon2l90oqk2"
+    },
+    "categories": {
+      "auth": {
         "ccfilapp": {}
       }
     }

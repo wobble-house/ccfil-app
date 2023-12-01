@@ -1,8 +1,8 @@
 import "server-only"
 import NavHeader from "@/components/header/header"
 import { carouselSlides } from "@/lib/data/data"
-import SignInButton from "@/components/signin"
-import AuthForm from "@/components/forms/auth-form"
+import SignInButton from "@/components/forms/signin"
+import AuthForm from "@/components/forms/sign-in-form"
 import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 
@@ -13,12 +13,11 @@ export const metadata = {
 
 export default async function Signin() {
   return (
-   <div className="relative flex flex-col top-0 justify-center items-center">
-   <div className="absolute flex z-20 pb-32 mx-auto justify-center overscroll-auto">
+   <div className="relative flex flex-col top-0 ">
     
-      <AuthForm/>
-    </div>
+
     <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
+    <SignInButton/>
   <Nav/>
    </div>
   )

@@ -1,5 +1,6 @@
 import "server-only"
 import Nav from "@/components/navigation/nav"
+import SignInButton from "@/components/forms/signin"
 
 export const dynamic = 'force-dynamic'
 
@@ -10,9 +11,11 @@ export const metadata = {
 
 export default async function Dashboard() {
   return (
-   <div className="relative flex flex-col top-0 justify-center items-center">
-<h2 className="bg-white text-black">Dashboard</h2>
-  <Nav/>
+     <div className="relative top-0">
+<Nav/>
+<SignInButton/>
+<h2 className="bg-white text-black text-center">Dashboard</h2>
+
    </div>
   )
 }

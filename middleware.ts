@@ -18,7 +18,6 @@ export async function middleware(request: NextRequest) {
     },
   });
   if (authenticated) {
-    console.log(response)
     return response
   }
   return NextResponse.redirect(new URL('/signin', request.url));
