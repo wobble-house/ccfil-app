@@ -24,7 +24,7 @@ export default function Nav() {
   return (
       <nav className={`z-90 flex md:justify-center w-full md:w-auto right-0 top-0 md:-mt-4 pb-4 ${pathname === "/signin" ? "fixed bg-white bg-opacity-75 mr-auto pl-4 rounded-md ":""} `}>
         <div className="flex flex-col-reverse md:flex-row flex-grow justify-end">
-                <button className="fixed z-90 md:hidden bg-white px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse mr-auto ml-5 mt-4" onMouseDown={handleMainNavButton}>
+                <button className="fixed z-90 md:hidden bg-white px-2 border-2 rounded-md border-blue1 focus:border-2 focus:animate-pulse right-0 mr-5 mt-4" onMouseDown={handleMainNavButton}>
                   {navbar ? (
                     <svg xmlns="http://www.w3.org/2000/svg"className="w-6 h-6 border-solid text-blue2"viewBox="0 0 20 20"fill="currentColor">
                       <path fillRule="evenodd"d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"clipRule="evenodd"/>

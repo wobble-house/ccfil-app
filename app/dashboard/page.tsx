@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function Dashboard() {
   return (
-     <div className="relative top-0">
+     <div className="">
 <Nav/>
 <SignInButton/>
 <h2 className="bg-white text-black text-center">Dashboard</h2>

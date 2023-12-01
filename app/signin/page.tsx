@@ -5,6 +5,7 @@ import SignInButton from "@/components/forms/signin"
 import AuthForm from "@/components/forms/sign-in-form"
 import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
+import SigninForm from "@/components/forms/sign-in-form"
 
 export const metadata = {
   title: 'Login',
@@ -13,11 +14,11 @@ export const metadata = {
 
 export default async function Signin() {
   return (
-   <div className="relative flex flex-col top-0 ">
-    
-
+   <div className="relative flex flex-col top-0 justify-center items-center">
     <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
-    <SignInButton/>
+    <div className="relative mx-auto justify-center items-center">
+    <SigninForm/>
+    </div>
   <Nav/>
    </div>
   )

@@ -178,10 +178,9 @@ const formFields = {
   };
 export default function SigninForm() {
     return (
-      <div className="absolute flex bg-white bg-opacity-75 mt-12 left-0 rounded-md">
+      <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">
       <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>
         {({ signOut }) => <button onClick={signOut}>Sign out</button>}
-
       </Authenticator>
       </div>
     );
