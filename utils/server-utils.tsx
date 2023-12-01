@@ -3,7 +3,7 @@ import { createServerRunner } from "@aws-amplify/adapter-nextjs";
 import { generateServerClientUsingCookies } from "@aws-amplify/adapter-nextjs/api";
 import { defaultStorage } from 'aws-amplify/utils';
 import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
-import config from "@/app/amplifyconfiguration.json"
+import config from "@/.next/amplifyconfiguration.json"
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
 const authConfig: ResourcesConfig['Auth'] = {
   Cognito: {
