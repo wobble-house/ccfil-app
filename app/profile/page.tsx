@@ -14,7 +14,7 @@ export default async function Profile() {
    <div className="relative top-0">
     <Nav/>
 <SignInButton/>
-<h2 className="bg-white text-black text-center">Dashboard</h2>
+<h2 className="bg-white text-black text-center">Profile</h2>
 
    </div>
   )
