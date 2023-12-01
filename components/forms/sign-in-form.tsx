@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-import Link from "next/link";
 import { useAuthenticator, useTheme, View, Text, Heading, Button, Authenticator } from "@aws-amplify/ui-react";
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
 import { I18n } from 'aws-amplify/utils';
