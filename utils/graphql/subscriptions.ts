@@ -8,6 +8,321 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
+export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+  onCreateUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateUserSubscriptionVariables,
+  APITypes.OnCreateUserSubscription
+>;
+export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+  onUpdateUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateUserSubscriptionVariables,
+  APITypes.OnUpdateUserSubscription
+>;
+export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+  onDeleteUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteUserSubscriptionVariables,
+  APITypes.OnDeleteUserSubscription
+>;
+export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onCreateReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateReferralsSubscriptionVariables,
+  APITypes.OnCreateReferralsSubscription
+>;
+export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onUpdateReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateReferralsSubscriptionVariables,
+  APITypes.OnUpdateReferralsSubscription
+>;
+export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onDeleteReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteReferralsSubscriptionVariables,
+  APITypes.OnDeleteReferralsSubscription
+>;
 export const onCreateIcon = /* GraphQL */ `subscription OnCreateIcon($filter: ModelSubscriptionIconFilterInput) {
   onCreateIcon(filter: $filter) {
     id
@@ -256,4 +571,193 @@ export const onDeleteHeadshot = /* GraphQL */ `subscription OnDeleteHeadshot($fi
 ` as GeneratedSubscription<
   APITypes.OnDeleteHeadshotSubscriptionVariables,
   APITypes.OnDeleteHeadshotSubscription
+>;
+export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onCreateUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateUserReferralsSubscriptionVariables,
+  APITypes.OnCreateUserReferralsSubscription
+>;
+export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onUpdateUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateUserReferralsSubscriptionVariables,
+  APITypes.OnUpdateUserReferralsSubscription
+>;
+export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onDeleteUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteUserReferralsSubscriptionVariables,
+  APITypes.OnDeleteUserReferralsSubscription
 >;

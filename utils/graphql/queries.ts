@@ -8,6 +8,180 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
+export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.GetUserQueryVariables, APITypes.GetUserQuery>;
+export const listUsers = /* GraphQL */ `query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.ListUsersQueryVariables, APITypes.ListUsersQuery>;
+export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
+  getReferrals(id: $id) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetReferralsQueryVariables,
+  APITypes.GetReferralsQuery
+>;
+export const listReferrals = /* GraphQL */ `query ListReferrals(
+  $filter: ModelReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListReferralsQueryVariables,
+  APITypes.ListReferralsQuery
+>;
 export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
   getIcon(id: $id) {
     id
@@ -195,4 +369,240 @@ export const listHeadshots = /* GraphQL */ `query ListHeadshots(
 ` as GeneratedQuery<
   APITypes.ListHeadshotsQueryVariables,
   APITypes.ListHeadshotsQuery
+>;
+export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) {
+  getUserReferrals(id: $id) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetUserReferralsQueryVariables,
+  APITypes.GetUserReferralsQuery
+>;
+export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUserReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListUserReferralsQueryVariables,
+  APITypes.ListUserReferralsQuery
+>;
+export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userReferralsByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.UserReferralsByUserIdQueryVariables,
+  APITypes.UserReferralsByUserIdQuery
+>;
+export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByReferralsId(
+  $referralsId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userReferralsByReferralsId(
+    referralsId: $referralsId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.UserReferralsByReferralsIdQueryVariables,
+  APITypes.UserReferralsByReferralsIdQuery
 >;
