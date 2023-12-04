@@ -8,7 +8,7 @@ export default function ImageHandler(props){
     return (
         <Image
             {...rest}
-            src={`https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET}.s3.${process.env.NEXT_PUBLIC_AWS_REGION_CODE}.amazonaws.com/${imgSrc}`}
+            src={`https://${process.env.S3_BUCKET}.s3.${process.env.REGION_CODE}.amazonaws.com/${imgSrc}`}
             alt={alt}
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,

@@ -3,7 +3,7 @@
  * Please refrain from making any modifications to this file.              *
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
-'use client'
+
 import * as React from "react";
 import { GridProps, SwitchFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { Referrals } from "../../utils/graphql/API.ts";
