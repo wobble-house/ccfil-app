@@ -12,7 +12,7 @@ export const metadata = {
 export default async function Profile() {
   return (
    <div className="relative top-0">
-    <Nav/>
+    <Nav mini/>
 <SignInButton/>
 <h2 className="bg-white text-black text-center">Profile</h2>
 

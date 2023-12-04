@@ -2,18 +2,18 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateIconInput = {
+export type CreateUserInput = {
   id?: string | null,
-  alt?: string | null,
-  src?: string | null,
+  username?: string | null,
+  email?: string | null,
 };
 
-export type ModelIconConditionInput = {
-  alt?: ModelStringInput | null,
-  src?: ModelStringInput | null,
-  and?: Array< ModelIconConditionInput | null > | null,
-  or?: Array< ModelIconConditionInput | null > | null,
-  not?: ModelIconConditionInput | null,
+export type ModelUserConditionInput = {
+  username?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  and?: Array< ModelUserConditionInput | null > | null,
+  or?: Array< ModelUserConditionInput | null > | null,
+  not?: ModelUserConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -54,6 +54,126 @@ export type ModelSizeInput = {
   ge?: number | null,
   gt?: number | null,
   between?: Array< number | null > | null,
+};
+
+export type User = {
+  __typename: "User",
+  id: string,
+  username?: string | null,
+  email?: string | null,
+  Referrals?: ModelUserReferralsConnection | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type ModelUserReferralsConnection = {
+  __typename: "ModelUserReferralsConnection",
+  items:  Array<UserReferrals | null >,
+  nextToken?: string | null,
+};
+
+export type UserReferrals = {
+  __typename: "UserReferrals",
+  id: string,
+  userId: string,
+  referralsId: string,
+  user: User,
+  referrals: Referrals,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type Referrals = {
+  __typename: "Referrals",
+  id: string,
+  date?: string | null,
+  source?: string | null,
+  name?: string | null,
+  followUp?: string | null,
+  DOA?: boolean | null,
+  DOADate?: string | null,
+  reasonForDecline?: string | null,
+  howDidYouHearAboutUs?: string | null,
+  assistanceProvided?: string | null,
+  users?: ModelUserReferralsConnection | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateUserInput = {
+  id: string,
+  username?: string | null,
+  email?: string | null,
+};
+
+export type DeleteUserInput = {
+  id: string,
+};
+
+export type CreateReferralsInput = {
+  id?: string | null,
+  date?: string | null,
+  source?: string | null,
+  name?: string | null,
+  followUp?: string | null,
+  DOA?: boolean | null,
+  DOADate?: string | null,
+  reasonForDecline?: string | null,
+  howDidYouHearAboutUs?: string | null,
+  assistanceProvided?: string | null,
+};
+
+export type ModelReferralsConditionInput = {
+  date?: ModelStringInput | null,
+  source?: ModelStringInput | null,
+  name?: ModelStringInput | null,
+  followUp?: ModelStringInput | null,
+  DOA?: ModelBooleanInput | null,
+  DOADate?: ModelStringInput | null,
+  reasonForDecline?: ModelStringInput | null,
+  howDidYouHearAboutUs?: ModelStringInput | null,
+  assistanceProvided?: ModelStringInput | null,
+  and?: Array< ModelReferralsConditionInput | null > | null,
+  or?: Array< ModelReferralsConditionInput | null > | null,
+  not?: ModelReferralsConditionInput | null,
+};
+
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type UpdateReferralsInput = {
+  id: string,
+  date?: string | null,
+  source?: string | null,
+  name?: string | null,
+  followUp?: string | null,
+  DOA?: boolean | null,
+  DOADate?: string | null,
+  reasonForDecline?: string | null,
+  howDidYouHearAboutUs?: string | null,
+  assistanceProvided?: string | null,
+};
+
+export type DeleteReferralsInput = {
+  id: string,
+};
+
+export type CreateIconInput = {
+  id?: string | null,
+  alt?: string | null,
+  src?: string | null,
+};
+
+export type ModelIconConditionInput = {
+  alt?: ModelStringInput | null,
+  src?: ModelStringInput | null,
+  and?: Array< ModelIconConditionInput | null > | null,
+  or?: Array< ModelIconConditionInput | null > | null,
+  not?: ModelIconConditionInput | null,
 };
 
 export type Icon = {
@@ -155,13 +275,6 @@ export type ModelTeamMemberConditionInput = {
   teamMemberImageId?: ModelIDInput | null,
 };
 
-export type ModelBooleanInput = {
-  ne?: boolean | null,
-  eq?: boolean | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
 export type TeamMember = {
   __typename: "TeamMember",
   id: string,
@@ -229,6 +342,67 @@ export type UpdateHeadshotInput = {
 
 export type DeleteHeadshotInput = {
   id: string,
+};
+
+export type CreateUserReferralsInput = {
+  id?: string | null,
+  userId: string,
+  referralsId: string,
+};
+
+export type ModelUserReferralsConditionInput = {
+  userId?: ModelIDInput | null,
+  referralsId?: ModelIDInput | null,
+  and?: Array< ModelUserReferralsConditionInput | null > | null,
+  or?: Array< ModelUserReferralsConditionInput | null > | null,
+  not?: ModelUserReferralsConditionInput | null,
+};
+
+export type UpdateUserReferralsInput = {
+  id: string,
+  userId?: string | null,
+  referralsId?: string | null,
+};
+
+export type DeleteUserReferralsInput = {
+  id: string,
+};
+
+export type ModelUserFilterInput = {
+  id?: ModelIDInput | null,
+  username?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  and?: Array< ModelUserFilterInput | null > | null,
+  or?: Array< ModelUserFilterInput | null > | null,
+  not?: ModelUserFilterInput | null,
+};
+
+export type ModelUserConnection = {
+  __typename: "ModelUserConnection",
+  items:  Array<User | null >,
+  nextToken?: string | null,
+};
+
+export type ModelReferralsFilterInput = {
+  id?: ModelIDInput | null,
+  date?: ModelStringInput | null,
+  source?: ModelStringInput | null,
+  name?: ModelStringInput | null,
+  followUp?: ModelStringInput | null,
+  DOA?: ModelBooleanInput | null,
+  DOADate?: ModelStringInput | null,
+  reasonForDecline?: ModelStringInput | null,
+  howDidYouHearAboutUs?: ModelStringInput | null,
+  assistanceProvided?: ModelStringInput | null,
+  and?: Array< ModelReferralsFilterInput | null > | null,
+  or?: Array< ModelReferralsFilterInput | null > | null,
+  not?: ModelReferralsFilterInput | null,
+};
+
+export type ModelReferralsConnection = {
+  __typename: "ModelReferralsConnection",
+  items:  Array<Referrals | null >,
+  nextToken?: string | null,
 };
 
 export type ModelIconFilterInput = {
@@ -299,12 +473,27 @@ export type ModelHeadshotConnection = {
   nextToken?: string | null,
 };
 
-export type ModelSubscriptionIconFilterInput = {
+export type ModelUserReferralsFilterInput = {
+  id?: ModelIDInput | null,
+  userId?: ModelIDInput | null,
+  referralsId?: ModelIDInput | null,
+  and?: Array< ModelUserReferralsFilterInput | null > | null,
+  or?: Array< ModelUserReferralsFilterInput | null > | null,
+  not?: ModelUserReferralsFilterInput | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
+export type ModelSubscriptionUserFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  alt?: ModelSubscriptionStringInput | null,
-  src?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionIconFilterInput | null > | null,
-  or?: Array< ModelSubscriptionIconFilterInput | null > | null,
+  username?: ModelSubscriptionStringInput | null,
+  email?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionUserFilterInput | null > | null,
+  or?: Array< ModelSubscriptionUserFilterInput | null > | null,
 };
 
 export type ModelSubscriptionIDInput = {
@@ -337,6 +526,34 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array< string | null > | null,
 };
 
+export type ModelSubscriptionReferralsFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  date?: ModelSubscriptionStringInput | null,
+  source?: ModelSubscriptionStringInput | null,
+  name?: ModelSubscriptionStringInput | null,
+  followUp?: ModelSubscriptionStringInput | null,
+  DOA?: ModelSubscriptionBooleanInput | null,
+  DOADate?: ModelSubscriptionStringInput | null,
+  reasonForDecline?: ModelSubscriptionStringInput | null,
+  howDidYouHearAboutUs?: ModelSubscriptionStringInput | null,
+  assistanceProvided?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionReferralsFilterInput | null > | null,
+  or?: Array< ModelSubscriptionReferralsFilterInput | null > | null,
+};
+
+export type ModelSubscriptionBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+};
+
+export type ModelSubscriptionIconFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  alt?: ModelSubscriptionStringInput | null,
+  src?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionIconFilterInput | null > | null,
+  or?: Array< ModelSubscriptionIconFilterInput | null > | null,
+};
+
 export type ModelSubscriptionServicesFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   serviceTitle?: ModelSubscriptionStringInput | null,
@@ -358,11 +575,6 @@ export type ModelSubscriptionTeamMemberFilterInput = {
   or?: Array< ModelSubscriptionTeamMemberFilterInput | null > | null,
 };
 
-export type ModelSubscriptionBooleanInput = {
-  ne?: boolean | null,
-  eq?: boolean | null,
-};
-
 export type ModelSubscriptionHeadshotFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   src?: ModelSubscriptionStringInput | null,
@@ -370,6 +582,341 @@ export type ModelSubscriptionHeadshotFilterInput = {
   imageTitle?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionHeadshotFilterInput | null > | null,
   or?: Array< ModelSubscriptionHeadshotFilterInput | null > | null,
+};
+
+export type ModelSubscriptionUserReferralsFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  userId?: ModelSubscriptionIDInput | null,
+  referralsId?: ModelSubscriptionIDInput | null,
+  and?: Array< ModelSubscriptionUserReferralsFilterInput | null > | null,
+  or?: Array< ModelSubscriptionUserReferralsFilterInput | null > | null,
+};
+
+export type CreateUserMutationVariables = {
+  input: CreateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type CreateUserMutation = {
+  createUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateUserMutationVariables = {
+  input: UpdateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type UpdateUserMutation = {
+  updateUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteUserMutationVariables = {
+  input: DeleteUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type DeleteUserMutation = {
+  deleteUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateReferralsMutationVariables = {
+  input: CreateReferralsInput,
+  condition?: ModelReferralsConditionInput | null,
+};
+
+export type CreateReferralsMutation = {
+  createReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateReferralsMutationVariables = {
+  input: UpdateReferralsInput,
+  condition?: ModelReferralsConditionInput | null,
+};
+
+export type UpdateReferralsMutation = {
+  updateReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteReferralsMutationVariables = {
+  input: DeleteReferralsInput,
+  condition?: ModelReferralsConditionInput | null,
+};
+
+export type DeleteReferralsMutation = {
+  deleteReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
 };
 
 export type CreateIconMutationVariables = {
@@ -639,6 +1186,375 @@ export type DeleteHeadshotMutation = {
   } | null,
 };
 
+export type CreateUserReferralsMutationVariables = {
+  input: CreateUserReferralsInput,
+  condition?: ModelUserReferralsConditionInput | null,
+};
+
+export type CreateUserReferralsMutation = {
+  createUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateUserReferralsMutationVariables = {
+  input: UpdateUserReferralsInput,
+  condition?: ModelUserReferralsConditionInput | null,
+};
+
+export type UpdateUserReferralsMutation = {
+  updateUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteUserReferralsMutationVariables = {
+  input: DeleteUserReferralsInput,
+  condition?: ModelUserReferralsConditionInput | null,
+};
+
+export type DeleteUserReferralsMutation = {
+  deleteUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type GetUserQueryVariables = {
+  id: string,
+};
+
+export type GetUserQuery = {
+  getUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListUsersQueryVariables = {
+  filter?: ModelUserFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListUsersQuery = {
+  listUsers?:  {
+    __typename: "ModelUserConnection",
+    items:  Array< {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetReferralsQueryVariables = {
+  id: string,
+};
+
+export type GetReferralsQuery = {
+  getReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListReferralsQueryVariables = {
+  filter?: ModelReferralsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListReferralsQuery = {
+  listReferrals?:  {
+    __typename: "ModelReferralsConnection",
+    items:  Array< {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
 export type GetIconQueryVariables = {
   id: string,
 };
@@ -830,6 +1746,549 @@ export type ListHeadshotsQuery = {
       updatedAt: string,
     } | null >,
     nextToken?: string | null,
+  } | null,
+};
+
+export type GetUserReferralsQueryVariables = {
+  id: string,
+};
+
+export type GetUserReferralsQuery = {
+  getUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListUserReferralsQueryVariables = {
+  filter?: ModelUserReferralsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListUserReferralsQuery = {
+  listUserReferrals?:  {
+    __typename: "ModelUserReferralsConnection",
+    items:  Array< {
+      __typename: "UserReferrals",
+      id: string,
+      userId: string,
+      referralsId: string,
+      user:  {
+        __typename: "User",
+        id: string,
+        username?: string | null,
+        email?: string | null,
+        Referrals?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      referrals:  {
+        __typename: "Referrals",
+        id: string,
+        date?: string | null,
+        source?: string | null,
+        name?: string | null,
+        followUp?: string | null,
+        DOA?: boolean | null,
+        DOADate?: string | null,
+        reasonForDecline?: string | null,
+        howDidYouHearAboutUs?: string | null,
+        assistanceProvided?: string | null,
+        users?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type UserReferralsByUserIdQueryVariables = {
+  userId: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelUserReferralsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type UserReferralsByUserIdQuery = {
+  userReferralsByUserId?:  {
+    __typename: "ModelUserReferralsConnection",
+    items:  Array< {
+      __typename: "UserReferrals",
+      id: string,
+      userId: string,
+      referralsId: string,
+      user:  {
+        __typename: "User",
+        id: string,
+        username?: string | null,
+        email?: string | null,
+        Referrals?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      referrals:  {
+        __typename: "Referrals",
+        id: string,
+        date?: string | null,
+        source?: string | null,
+        name?: string | null,
+        followUp?: string | null,
+        DOA?: boolean | null,
+        DOADate?: string | null,
+        reasonForDecline?: string | null,
+        howDidYouHearAboutUs?: string | null,
+        assistanceProvided?: string | null,
+        users?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type UserReferralsByReferralsIdQueryVariables = {
+  referralsId: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelUserReferralsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type UserReferralsByReferralsIdQuery = {
+  userReferralsByReferralsId?:  {
+    __typename: "ModelUserReferralsConnection",
+    items:  Array< {
+      __typename: "UserReferrals",
+      id: string,
+      userId: string,
+      referralsId: string,
+      user:  {
+        __typename: "User",
+        id: string,
+        username?: string | null,
+        email?: string | null,
+        Referrals?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      referrals:  {
+        __typename: "Referrals",
+        id: string,
+        date?: string | null,
+        source?: string | null,
+        name?: string | null,
+        followUp?: string | null,
+        DOA?: boolean | null,
+        DOADate?: string | null,
+        reasonForDecline?: string | null,
+        howDidYouHearAboutUs?: string | null,
+        assistanceProvided?: string | null,
+        users?:  {
+          __typename: "ModelUserReferralsConnection",
+          nextToken?: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      },
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type OnCreateUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
+};
+
+export type OnCreateUserSubscription = {
+  onCreateUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
+};
+
+export type OnUpdateUserSubscription = {
+  onUpdateUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteUserSubscriptionVariables = {
+  filter?: ModelSubscriptionUserFilterInput | null,
+};
+
+export type OnDeleteUserSubscription = {
+  onDeleteUser?:  {
+    __typename: "User",
+    id: string,
+    username?: string | null,
+    email?: string | null,
+    Referrals?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionReferralsFilterInput | null,
+};
+
+export type OnCreateReferralsSubscription = {
+  onCreateReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionReferralsFilterInput | null,
+};
+
+export type OnUpdateReferralsSubscription = {
+  onUpdateReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionReferralsFilterInput | null,
+};
+
+export type OnDeleteReferralsSubscription = {
+  onDeleteReferrals?:  {
+    __typename: "Referrals",
+    id: string,
+    date?: string | null,
+    source?: string | null,
+    name?: string | null,
+    followUp?: string | null,
+    DOA?: boolean | null,
+    DOADate?: string | null,
+    reasonForDecline?: string | null,
+    howDidYouHearAboutUs?: string | null,
+    assistanceProvided?: string | null,
+    users?:  {
+      __typename: "ModelUserReferralsConnection",
+      items:  Array< {
+        __typename: "UserReferrals",
+        id: string,
+        userId: string,
+        referralsId: string,
+        user:  {
+          __typename: "User",
+          id: string,
+          username?: string | null,
+          email?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        referrals:  {
+          __typename: "Referrals",
+          id: string,
+          date?: string | null,
+          source?: string | null,
+          name?: string | null,
+          followUp?: string | null,
+          DOA?: boolean | null,
+          DOADate?: string | null,
+          reasonForDecline?: string | null,
+          howDidYouHearAboutUs?: string | null,
+          assistanceProvided?: string | null,
+          createdAt: string,
+          updatedAt: string,
+        },
+        createdAt: string,
+        updatedAt: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -1083,6 +2542,192 @@ export type OnDeleteHeadshotSubscription = {
     src: string,
     alt: string,
     imageTitle?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateUserReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserReferralsFilterInput | null,
+};
+
+export type OnCreateUserReferralsSubscription = {
+  onCreateUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateUserReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserReferralsFilterInput | null,
+};
+
+export type OnUpdateUserReferralsSubscription = {
+  onUpdateUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteUserReferralsSubscriptionVariables = {
+  filter?: ModelSubscriptionUserReferralsFilterInput | null,
+};
+
+export type OnDeleteUserReferralsSubscription = {
+  onDeleteUserReferrals?:  {
+    __typename: "UserReferrals",
+    id: string,
+    userId: string,
+    referralsId: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username?: string | null,
+      email?: string | null,
+      Referrals?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    referrals:  {
+      __typename: "Referrals",
+      id: string,
+      date?: string | null,
+      source?: string | null,
+      name?: string | null,
+      followUp?: string | null,
+      DOA?: boolean | null,
+      DOADate?: string | null,
+      reasonForDecline?: string | null,
+      howDidYouHearAboutUs?: string | null,
+      assistanceProvided?: string | null,
+      users?:  {
+        __typename: "ModelUserReferralsConnection",
+        items:  Array< {
+          __typename: "UserReferrals",
+          id: string,
+          userId: string,
+          referralsId: string,
+          createdAt: string,
+          updatedAt: string,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
     createdAt: string,
     updatedAt: string,
   } | null,

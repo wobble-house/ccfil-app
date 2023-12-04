@@ -1,98 +1,65 @@
 'use client';
-import ImageHandler from "../image-handler";
-import { useState, useRef } from "react";
-import { DetailsCard } from "./details-card";
-import { useOnClickOutside } from "../click-handler";
+import ReferralsCard from "./referrals-card";
+import TeamCard from "./team-card";
+import Link from "next/link";
 
 export function InfoCardList({data}){
 
   return(
           <ul className="relative flex flex-col md:grid md:grid-cols-2 gap-8 mx-auto text-center place-content-center z-60"
             >
-                {data.map(data => (<TeamCard 
-                  id={`${data.id} card`}
-                  key={data.id}
-                  bio={data.bio}
-                  link={data.link != null ? data.link : null}
-                  firstName={data.firstName}
-                  lastName={data.lastName}
-                  Image={data.Image}
-                  title={data.title}
-                />
-              ))}
+                {data.map(data => (
+                              <TeamCard 
+                              id={`${data.id} card`}
+                              key={data.id}
+                              bio={data.bio}
+                              link={data.link != null ? data.link : null}
+                              firstName={data.firstName}
+                              lastName={data.lastName}
+                              Image={data.Image}
+                              title={data.title}
+                            />
+                ))}
           </ul>
   )
 }
 
-export function TeamCard({ 
-  id,
-  bio,
-  link,
-  firstName,
-  lastName,
-  Image,
-  title
- }:{ 
-  id,
-    bio: string,
-    link: any,
-    firstName: string,
-    lastName: string,
-    Image: {
-        src: string,
-        alt: string
-    },
-    title: string
- }){
-  const ref = useRef();
-  const [isModalOpen, setModalOpen] = useState(false)
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
-  useOnClickOutside(ref, () => setModalOpen(false));
- if (isModalOpen) return (
-  <li
-    id={id}
-    key={`${id} modal open`} 
-    className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-50 overscroll-contain px-7 pt-10`}
-    >
-      <div className={`flex transform details-card justify-center items-center overscroll-contain mx-auto ${isModalOpen ? "animate-slideUpEnter":"animate-slideUpLeave"}`}>
-        <div className="flex flex-col transform duration-300 ease-in-out ">
-          <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-pink rounded-full pb-1 mx-auto" onClick={!isModalOpen ? close : open }>
-            <span className="text-xl hover:animate-pulse m-3 text-white">x</span>
-          </button>
-          <div ref={ref} className="">
-            <DetailsCard
-              bio={bio}
-              link={link}
-              firstName={firstName}
-              lastName={lastName}
-              Image={Image}
-              title={title} />
-          </div>
-        </div>
+export function ReferralsList({data}){
+  return(
+    <div className='relative bg-white bg-opacity-75 px-12 pt-6 pb-12 rounded-lg'>
+      <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">Referrals List</h2>
+      <button className={`border-2 border-blue2 rounded-full px-4 my-2 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95`}><Link href="/forms/referrals">Submit Referral</Link></button>
+    <div className="border-2 border-solid rounded-lg overflow-hidden">
+    <ul className={`relative grid grid-cols-10 w-full pr-8 bg-blue2 text-white items-center overscroll-x-auto overflow-auto`}>
+      <input id="default-radio-1" type="radio" value="" name="default-radio" className="justify-self-center w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+      <li className="border-l px-2 text-center font-bold">Date</li>
+      <li className="border-l px-2 text-center font-bold">Source</li>
+      <li className="border-l px-2 text-center font-bold">Name </li>
+      <li className="border-l px-2 text-center font-bold">Follow Up</li>
+      <li className="border-l px-2 text-center font-bold">DOA</li>
+      <li className="border-l px-2 text-center font-bold">DOA Date</li>
+      <li className="border-l px-2 text-center font-bold">Reason For Decline</li>
+      <li className="border-l px-2 text-center font-bold">how Did You Hear About Us</li>
+      <li className="border-l px-2 text-center font-bold">Assistance Provided</li>
+    </ul>
+    <ul className={`relative flex flex-col w-full pr-8 bg-opacity-75 items-center`}>
+      {data.map(data => ( 
+      <ReferralsCard
+        key={data.id}
+        id={data.id}
+        date={data.date}
+        source={data.source}
+        name={data.name}
+        followUp={data.followUp}
+        DOA={data.DOA}
+        DOADate={data.DOADate}
+        reasonForDecline={data.reasonForDecline}
+        howDidYouHearAboutUs={data.howDidYouHearAboutUs}
+        assistanceProvided={data.assistanceProvided}
+        />
+        ))}
+      </ul>
       </div>
-    </li>
-                )
-else return (
-  <li
-    key={`${id} modal closed`}
-    id={id}
-    className={`transform ease-in-out delay-200 duration-300 flex flex-col hover:scale-105 relative grow shrink z-40 px-8 md:px-0`}
-    >
-                <button 
-                className={`save-button group transform ease-in-out duration-300 modal open`}
-                onClick={!isModalOpen ? open : close }>
-                    <div className="flex flex-col justify-end w-full shadow-2xl mx-auto transform duration-100 ease-in-out group-hover:shadow-4xl">
-                    <div className="absolute px-4 py-2 z-30 w-full bg-blue1 bg-opacity-80 group-hover:bg-opacity-100 align-middle">
-                        <h2 className="relative text-center transform duration-300 delay-100 ease-in-out font-[500] text-white text-[1.3em] group-hover:text-[1.6em]">{firstName}&nbsp;{lastName}</h2>
-                        <h3 className="relative text-center transform duration-300 delay-150 ease-in-out uppercase text-white text-[0.8em] group-hover:text-[0.9em]">{title}</h3>
-                     </div>
-                <div className="flex relative">
-
-                  <ImageHandler src={Image.src} alt={Image.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024} className="object-cover" />
-                </div>
-                </div>
-              </button>
-              </li>
-                )
-              }
+      </div>
+  )
+}
