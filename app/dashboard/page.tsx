@@ -19,12 +19,12 @@ export const metadata = {
 export default async function Dashboard() {
   const referralsData = await getReferrals()
   return (
-     <div className="">
+     <div className="max-w-screen">
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
       <Nav mini/>
       <SignInButton/>
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4">Dashboard</h2>
-      <div className=" px-4 md:px-20 lg:px-32 mx-auto rounded-lg overflow-hidden">
+      <div className="relative flex justify-center items-center rounded-lg overscroll-auto overflow-x-auto">
         <ReferralsList data={referralsData.data.listReferrals.items}/>
         </div>
    </div>
