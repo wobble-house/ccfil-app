@@ -1,6 +1,7 @@
 'use client';
 import ReferralsCard from "./referrals-card";
 import TeamCard from "./team-card";
+import Link from "next/link";
 
 export function InfoCardList({data}){
 
@@ -25,8 +26,9 @@ export function InfoCardList({data}){
 
 export function ReferralsList({data}){
   return(
-    <div className='relative'>
-      <h2 className="text-4xl uppercase text-center mx-auto">Referrals List</h2>
+    <div className='relative bg-white bg-opacity-75 px-12 pt-6 pb-12 rounded-lg'>
+      <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">Referrals List</h2>
+      <button className={`border-2 border-blue2 rounded-full px-4 my-2 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95`}><Link href="/forms/referrals">Submit Referral</Link></button>
     <div className="border-2 border-solid rounded-lg overflow-hidden">
     <ul className={`relative grid grid-cols-10 w-full pr-8 bg-blue2 text-white items-center overscroll-x-auto overflow-auto`}>
       <input id="default-radio-1" type="radio" value="" name="default-radio" className="justify-self-center w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
@@ -40,7 +42,8 @@ export function ReferralsList({data}){
       <li className="border-l px-2 text-center font-bold">how Did You Hear About Us</li>
       <li className="border-l px-2 text-center font-bold">Assistance Provided</li>
     </ul>
-    <ul className={`relative flex flex-col w-full pr-8 bg-gray1 bg-opacity-75 items-center`}>{data.map(data => ( 
+    <ul className={`relative flex flex-col w-full pr-8 bg-opacity-75 items-center`}>
+      {data.map(data => ( 
       <ReferralsCard
         key={data.id}
         id={data.id}

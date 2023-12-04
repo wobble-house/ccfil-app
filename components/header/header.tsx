@@ -35,7 +35,7 @@ export default function NavHeader({description, title, bgimage}){
             <div className={`lg:visible hidden lg:flex w-72 h-auto justify-center`}>
               <ImageHandler src="public/Logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
             </div>
-            <Nav/>
+            <Nav mini={false}/>
           </div>
           {pathname != "/" ? 
             <div className={`flex flex-col gap-6 px-8 md:px-16 py-16 bg-white md:bg-transparent bg-opacity-50 md:bg-opacity-100 md:border-solid md:border-white md:border-[10px] justify-center mb-10 rounded-md ${!navbar ? "visible" : "hidden"}`}>

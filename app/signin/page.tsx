@@ -20,7 +20,7 @@ export default async function Signin() {
       <h2>this is a dev site</h2>
     <SigninForm/>
     </div>
-  <Nav/>
+  <Nav mini/>
    </div>
   )
 }

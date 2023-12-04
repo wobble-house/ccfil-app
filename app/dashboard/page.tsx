@@ -21,10 +21,10 @@ export default async function Dashboard() {
   return (
      <div className="">
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
-      <Nav/>
+      <Nav mini/>
       <SignInButton/>
-      <h2 className="relative text-6xl uppercase text-black text-center">Dashboard</h2>
-      <div className="max-w-5xl mx-auto">
+      <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4">Dashboard</h2>
+      <div className=" px-4 md:px-20 lg:px-32 mx-auto rounded-lg overflow-hidden">
         <ReferralsList data={referralsData.data.listReferrals.items}/>
         </div>
    </div>
