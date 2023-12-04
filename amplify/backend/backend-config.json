@@ -189,6 +189,30 @@
         }
       ]
     },
+    "AMPLIFY_function_ccfilappCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappCustomMessage"
+        }
+      ]
+    },
     "AMPLIFY_function_ccfilappCustomMessage_deploymentBucketName": {
       "usedBy": [
         {
@@ -218,6 +242,14 @@
         {
           "category": "function",
           "resourceName": "ccfilappDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ccfilappVerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ccfilappVerifyAuthChallengeResponse"
         }
       ]
     },

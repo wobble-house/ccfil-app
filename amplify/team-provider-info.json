@@ -75,27 +75,27 @@
       "function": {
         "ccfilapp62c969fa": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilapp62c969fa-5874596d4f5734306336-build.zip"
+          "s3Key": "amplify-builds/ccfilapp62c969fa-6c3645547875526c5432-build.zip"
         },
         "ccfilappCreateAuthChallenge": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-4c364951596457474944-build.zip"
+          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-424536634958382f7179-build.zip"
         },
         "ccfilappCustomMessage": {
           "REDIRECTURL": "/",
           "EMAILSUBJECT": "confirmation",
           "EMAILMESSAGE": "click here",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappCustomMessage-5665326d4d36414a6d30-build.zip"
+          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
         },
         "ccfilappDefineAuthChallenge": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-7668433849686b795676-build.zip"
+          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-6d753571317365455848-build.zip"
         },
         "ccfilappVerifyAuthChallengeResponse": {
           "RECAPTCHASECRET": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-464e667a46424c756b4d-build.zip"
+          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip"
         },
         "AdminQueriesd838de2e": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
