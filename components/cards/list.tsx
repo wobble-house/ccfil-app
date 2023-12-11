@@ -1,5 +1,5 @@
 'use client';
-import {NewReferralsCard} from "./referrals-card";
+import {ReferralsCard} from "./referrals-card";
 import TeamCard from "./team-card";
 import Link from "next/link";
 
@@ -46,7 +46,7 @@ export function ReferralsList({data}){
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-3 text-sm">Assistance Provided</th>
             </tr>
       {data.map(data => ( 
-      <NewReferralsCard
+      <ReferralsCard
         key={data.id}
         id={data.id}
         date={data.date}

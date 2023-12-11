@@ -2,7 +2,7 @@ import "server-only"
 import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
-import SignInButton from "@/components/forms/signin"
+import SignInButton from "@/components/forms/signin-button"
 import { ReferralsList } from "@/components/cards/list"
 import { getReferrals } from '@/utils/getData/get-data'
 export const dynamic = 'force-dynamic'

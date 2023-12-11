@@ -1,6 +1,6 @@
 import "server-only"
 import Nav from "@/components/navigation/nav"
-import ReferralsCreateForm from "@/app/ui-components/ReferralsCreateForm"
+import ReferralsCreateForm from "@/components/forms/ReferralsCreateForm"
 import Link from "next/link"
 
 export const dynamic = 'force-dynamic'
