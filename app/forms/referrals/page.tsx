@@ -4,8 +4,8 @@ import ReferralsCreateForm from "@/components/forms/ReferralsCreateForm"
 import Link from "next/link"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
-import SignOutButton from "@/components/forms/signout-button"
-import DashboardButton from "@/components/forms/dashboard-button"
+import SignOutButton from "@/components/buttons/signout-button"
+import DashboardButton from "@/components/buttons/dashboard-button"
 
 export const dynamic = 'force-dynamic'
 

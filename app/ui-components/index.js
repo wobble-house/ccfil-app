@@ -14,6 +14,4 @@ export { default as ServicesCreateForm } from "./ServicesCreateForm";
 export { default as ServicesUpdateForm } from "./ServicesUpdateForm";
 export { default as TeamMemberCreateForm } from "./TeamMemberCreateForm";
 export { default as TeamMemberUpdateForm } from "./TeamMemberUpdateForm";
-export { default as UserCreateForm } from "./UserCreateForm";
-export { default as UserUpdateForm } from "./UserUpdateForm";
 export { default as studioTheme } from "./studioTheme";

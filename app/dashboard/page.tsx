@@ -4,7 +4,7 @@ import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
 import { ReferralsList } from "@/components/cards/list"
 import { getReferrals } from '@/utils/getData/get-data'
-import SignOutButton from "@/components/forms/signout-button"
+import SignOutButton from "@/components/buttons/signout-button"
 export const dynamic = 'force-dynamic'
 export const dynamicParams = true
 export const revalidate = 0

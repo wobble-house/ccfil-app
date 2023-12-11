@@ -22,16 +22,16 @@ export default function SigninForm(){
     const [password, setPassword] = useState("");
     
         //   Handling signin
-        const handleSignIn = async (e) => {
-        const formData = {username: username, password: password};
-          e.preventDefault();
-            try {
-            const { isSignedIn, nextStep } = await signIn(formData as SignInInput);
-            router.push("/dashboard");
-          } catch (error) {
-            console.log('error signing in', error);
-          }
-        }
+    const handleSignIn = async (e) => {
+    const formData = {username: username, password: password};
+      e.preventDefault();
+        try {
+        const { isSignedIn, nextStep } = await signIn(formData as SignInInput);
+        router.push("/dashboard");
+      } catch (error) {
+        console.log('error signing in', error);
+      }
+    }
       
     return (
       <section className='bg-white p-4 rounded-lg bg-opacity-75'>

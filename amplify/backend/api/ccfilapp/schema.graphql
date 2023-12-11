@@ -1,10 +1,3 @@
-type User @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  username: String
-  email: String
-  Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
-}
-
 type Referrals @model @auth(rules: [{allow: public}]) {
   id: ID!
   date: AWSDate
@@ -16,7 +9,6 @@ type Referrals @model @auth(rules: [{allow: public}]) {
   reasonForDecline: String
   howDidYouHearAboutUs: String
   assistanceProvided: String
-  users: [User] @manyToMany(relationName: "UserReferrals")
 }
 
 type Icon @model @auth(rules: [{allow: public}]) {
