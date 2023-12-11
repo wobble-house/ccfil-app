@@ -2,6 +2,10 @@ import "server-only"
 import Nav from "@/components/navigation/nav"
 import ReferralsCreateForm from "@/components/forms/ReferralsCreateForm"
 import Link from "next/link"
+import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
+import { carouselSlides } from "@/lib/data/data"
+import SignOutButton from "@/components/forms/signout-button"
+import DashboardButton from "@/components/forms/dashboard-button"
 
 export const dynamic = 'force-dynamic'
 
@@ -12,10 +16,11 @@ export const metadata = {
 
 export default async function Referrals() {
   return (
-   <div className="relative flex flex-col top-0 justify-center items-center">
-  <Nav mini/>
-  <h2 className="bg-white text-black">Referrals</h2>
-  <button className={`border-2 border-blue2 rounded-full px-4 my-2 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95`}><Link href="/dashboard">Dashboard</Link></button>
+   <div className="max-w-screen">
+      <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
+      <Nav mini/>
+      <DashboardButton/>
+      <SignOutButton/>
 <ReferralsCreateForm/>
    </div>
   )

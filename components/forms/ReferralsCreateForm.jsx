@@ -8,11 +8,13 @@ import {
   SwitchField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "@/app/ui-components/utils";
 import { generateClient } from "aws-amplify/api";
 import { createReferrals } from "../../utils/graphql/mutations";
+import { useRouter } from "next/navigation";
 const client = generateClient();
 export default function ReferralsCreateForm(props) {
+  const router = useRouter();
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -91,7 +93,9 @@ export default function ReferralsCreateForm(props) {
     return validationResponse;
   };
   return (
-    <Grid
+    <div className="mx-auto flex justify-center">
+    <form
+      className="relative bg-white bg-opacity-75 p-4 rounded-md shadow-md"
       as="form"
       rowGap="15px"
       columnGap="15px"
@@ -157,10 +161,13 @@ export default function ReferralsCreateForm(props) {
             onError(modelFields, messages);
           }
         }
+        router.push("/dashboard");
       }}
       {...getOverrideProps(overrides, "ReferralsCreateForm")}
       {...rest}
     >
+      <h2 className="pb-2">Submit Referrals</h2>
+      <hr className="border-pink border-1 py-2"/>
       <TextField
         label="Date"
         isRequired={false}
@@ -456,7 +463,7 @@ export default function ReferralsCreateForm(props) {
         {...getOverrideProps(overrides, "assistanceProvided")}
       ></TextField>
       <Flex
-        justifyContent="space-between"
+      className="flex flex-row py-4 justify-evenly"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
@@ -481,6 +488,7 @@ export default function ReferralsCreateForm(props) {
           ></Button>
         </Flex>
       </Flex>
-    </Grid>
+    </form>
+    </div>
   );
 }
