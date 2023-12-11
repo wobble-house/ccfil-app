@@ -1,6 +1,10 @@
 import "server-only"
 import Nav from "@/components/navigation/nav"
-import SignInButton from "@/components/forms/signin"
+import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
+import { carouselSlides } from "@/lib/data/data"
+import SignOutButton from "@/components/forms/signout-button"
+import DashboardButton from "@/components/forms/dashboard-button"
+
 
 export const dynamic = 'force-dynamic'
 
@@ -11,11 +15,14 @@ export const metadata = {
 
 export default async function Profile() {
   return (
-   <div className="relative top-0">
+    <div className="max-w-screen">
+    <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
     <Nav mini/>
-<SignInButton/>
-<h2 className="bg-white text-black text-center">Profile</h2>
-
-   </div>
+    <DashboardButton/>
+    <SignOutButton/>
+    <div className="flex relative mx-auto">
+    <h2 className="relative mx-auto text-center bg-white bg-opacity-75 p-4 rounded-md">My Profile</h2>
+    </div>
+ </div>
   )
 }
