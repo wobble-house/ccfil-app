@@ -1,7 +1,7 @@
 import "server-only"
 import Nav from "@/components/navigation/nav"
 import ReferralsCreateForm from "@/components/forms/ReferralsCreateForm"
-import Link from "next/link"
+import ProfileButton from "@/components/buttons/profile-button"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
 import SignOutButton from "@/components/buttons/signout-button"
@@ -20,6 +20,7 @@ export default async function Referrals() {
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
       <Nav mini/>
       <DashboardButton/>
+      <ProfileButton/>
       <SignOutButton/>
 <ReferralsCreateForm/>
    </div>
