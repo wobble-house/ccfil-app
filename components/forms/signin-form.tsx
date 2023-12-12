@@ -1,5 +1,5 @@
 "use client";
-import React, { useId, useState } from 'react'
+import React, { useState } from 'react'
 import { signIn, type SignInInput } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
 import { Amplify, type ResourcesConfig } from 'aws-amplify';

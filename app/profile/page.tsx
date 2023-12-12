@@ -4,6 +4,7 @@ import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
 import SignOutButton from "@/components/buttons/signout-button"
 import DashboardButton from "@/components/buttons/dashboard-button"
+import AuthGetCurrentUserServer from "@/components/cards/user-profile"
 
 export const dynamic = 'force-dynamic'
 
@@ -11,7 +12,6 @@ export const metadata = {
   title: 'Profile',
   description: `Improved quality of life is our set standard; we won't settle for anything less.`
 }
-
 
 export default async function Profile() {
 
@@ -21,6 +21,7 @@ export default async function Profile() {
     <Nav mini/>
     <DashboardButton/>
     <SignOutButton/>
+    <AuthGetCurrentUserServer/>
     <div className="flex relative mx-auto">
     <h2 className="relative mx-auto text-center bg-white bg-opacity-75 p-4 rounded-md">My Profile</h2>
     </div>
