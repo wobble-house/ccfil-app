@@ -42,5 +42,4 @@ type Headshot @model @auth(rules: [{allow: public}]) {
   src: String!
   alt: String!
   imageTitle: String
-}
- 
+} 

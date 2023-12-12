@@ -15,7 +15,7 @@ module.exports = {
       domains: [
         'firebasestorage.googleapis.com',
         'ccfil.com',
-        'ccfil-app-storage-4da25038161600-staging.s3.us-east-1.amazonaws.com'
+        'amazonaws.com'
       ],
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",

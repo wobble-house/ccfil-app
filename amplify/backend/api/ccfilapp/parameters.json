@@ -2,5 +2,5 @@
   "AppSyncApiName": "ccfilapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-10-25T19:44:31.288Z"
+  "AuthModeLastUpdated": "2023-12-12T21:20:15.040Z"
 }
