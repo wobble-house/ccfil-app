@@ -3,7 +3,18 @@ import { getCurrentUser } from '@aws-amplify/auth/server';
 import { runWithAmplifyServerContext } from '@/utils/server-utils';
 import { ListTeamMembersQueryVariables } from '@/utils/graphql/API';
 import { getTeamData } from '@/utils/getData/get-data';
+import { Amplify, type ResourcesConfig } from 'aws-amplify';
 
+const authConfig: ResourcesConfig['Auth'] = {
+  Cognito: {
+    userPoolId: process.env.COGNITO_USER_POOL_ID,
+    userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
+  }
+};
+
+Amplify.configure({
+  Auth: authConfig
+},{ssr: true});
 // This page always dynamically renders per request
 export const dynamic = 'force-dynamic';
 
