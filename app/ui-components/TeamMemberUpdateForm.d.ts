@@ -30,6 +30,7 @@ export declare type TeamMemberUpdateFormInputValues = {
     title?: string;
     isFeatured?: boolean;
     isLeader?: boolean;
+    userId?: string;
 };
 export declare type TeamMemberUpdateFormValidationValues = {
     firstName?: ValidationFunction<string>;
@@ -39,6 +40,7 @@ export declare type TeamMemberUpdateFormValidationValues = {
     title?: ValidationFunction<string>;
     isFeatured?: ValidationFunction<boolean>;
     isLeader?: ValidationFunction<boolean>;
+    userId?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type TeamMemberUpdateFormOverridesProps = {
@@ -50,6 +52,7 @@ export declare type TeamMemberUpdateFormOverridesProps = {
     title?: PrimitiveOverrideProps<TextFieldProps>;
     isFeatured?: PrimitiveOverrideProps<SwitchFieldProps>;
     isLeader?: PrimitiveOverrideProps<SwitchFieldProps>;
+    userId?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type TeamMemberUpdateFormProps = React.PropsWithChildren<{
     overrides?: TeamMemberUpdateFormOverridesProps | undefined | null;

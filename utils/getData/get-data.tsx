@@ -1,9 +1,16 @@
 import { serverClient } from "@/utils/server-utils";
-import { listHeadshots,listIcons,listServices,listTeamMembers, listReferrals} from "@/utils/graphql/queries";
+import { listHeadshots,listIcons,listServices,listTeamMembers, listReferrals, getTeamMember} from "@/utils/graphql/queries";
 
 export async function getTeamData(variables?){
     const {data, errors} = await serverClient.graphql({
       query: listTeamMembers,
+      variables: (variables || null)
+    })
+    return {data, errors}
+  };
+export async function getSingleTeamMember(variables?){
+    const {data, errors} = await serverClient.graphql({
+      query: getTeamMember,
       variables: (variables || null)
     })
     return {data, errors}

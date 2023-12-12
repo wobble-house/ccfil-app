@@ -34,6 +34,7 @@ type TeamMember @model @auth(rules: [{allow: public}]) {
   isFeatured: Boolean
   Image: Headshot @hasOne
   isLeader: Boolean
+  userId: ID
 }
 
 type Headshot @model @auth(rules: [{allow: public}]) {

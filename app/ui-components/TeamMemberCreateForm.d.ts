@@ -29,6 +29,7 @@ export declare type TeamMemberCreateFormInputValues = {
     title?: string;
     isFeatured?: boolean;
     isLeader?: boolean;
+    userId?: string;
 };
 export declare type TeamMemberCreateFormValidationValues = {
     firstName?: ValidationFunction<string>;
@@ -38,6 +39,7 @@ export declare type TeamMemberCreateFormValidationValues = {
     title?: ValidationFunction<string>;
     isFeatured?: ValidationFunction<boolean>;
     isLeader?: ValidationFunction<boolean>;
+    userId?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type TeamMemberCreateFormOverridesProps = {
@@ -49,6 +51,7 @@ export declare type TeamMemberCreateFormOverridesProps = {
     title?: PrimitiveOverrideProps<TextFieldProps>;
     isFeatured?: PrimitiveOverrideProps<SwitchFieldProps>;
     isLeader?: PrimitiveOverrideProps<SwitchFieldProps>;
+    userId?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type TeamMemberCreateFormProps = React.PropsWithChildren<{
     overrides?: TeamMemberCreateFormOverridesProps | undefined | null;

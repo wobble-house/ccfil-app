@@ -203,6 +203,7 @@ export const onCreateTeamMember = /* GraphQL */ `subscription OnCreateTeamMember
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId
@@ -234,6 +235,7 @@ export const onUpdateTeamMember = /* GraphQL */ `subscription OnUpdateTeamMember
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId
@@ -265,6 +267,7 @@ export const onDeleteTeamMember = /* GraphQL */ `subscription OnDeleteTeamMember
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId

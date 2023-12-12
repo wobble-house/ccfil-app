@@ -231,6 +231,7 @@ export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId
@@ -263,6 +264,7 @@ export const updateTeamMember = /* GraphQL */ `mutation UpdateTeamMember(
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId
@@ -295,6 +297,7 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId

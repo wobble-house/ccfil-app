@@ -161,6 +161,7 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
       __typename
     }
     isLeader
+    userId
     createdAt
     updatedAt
     teamMemberImageId
@@ -195,6 +196,7 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
         __typename
       }
       isLeader
+      userId
       createdAt
       updatedAt
       teamMemberImageId

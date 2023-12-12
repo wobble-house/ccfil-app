@@ -38,6 +38,7 @@ export default function TeamMemberUpdateForm(props) {
     title: "",
     isFeatured: false,
     isLeader: false,
+    userId: "",
   };
   const [firstName, setFirstName] = React.useState(initialValues.firstName);
   const [lastName, setLastName] = React.useState(initialValues.lastName);
@@ -46,6 +47,7 @@ export default function TeamMemberUpdateForm(props) {
   const [title, setTitle] = React.useState(initialValues.title);
   const [isFeatured, setIsFeatured] = React.useState(initialValues.isFeatured);
   const [isLeader, setIsLeader] = React.useState(initialValues.isLeader);
+  const [userId, setUserId] = React.useState(initialValues.userId);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = teamMemberRecord
@@ -58,6 +60,7 @@ export default function TeamMemberUpdateForm(props) {
     setTitle(cleanValues.title);
     setIsFeatured(cleanValues.isFeatured);
     setIsLeader(cleanValues.isLeader);
+    setUserId(cleanValues.userId);
     setErrors({});
   };
   const [teamMemberRecord, setTeamMemberRecord] =
@@ -85,6 +88,7 @@ export default function TeamMemberUpdateForm(props) {
     title: [],
     isFeatured: [],
     isLeader: [],
+    userId: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -119,6 +123,7 @@ export default function TeamMemberUpdateForm(props) {
           title: title ?? null,
           isFeatured: isFeatured ?? null,
           isLeader: isLeader ?? null,
+          userId: userId ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -186,6 +191,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.firstName ?? value;
@@ -216,6 +222,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.lastName ?? value;
@@ -246,6 +253,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.bio ?? value;
@@ -276,6 +284,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.link ?? value;
@@ -306,6 +315,7 @@ export default function TeamMemberUpdateForm(props) {
               title: value,
               isFeatured,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -336,6 +346,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured: value,
               isLeader,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.isFeatured ?? value;
@@ -366,6 +377,7 @@ export default function TeamMemberUpdateForm(props) {
               title,
               isFeatured,
               isLeader: value,
+              userId,
             };
             const result = onChange(modelFields);
             value = result?.isLeader ?? value;
@@ -380,6 +392,37 @@ export default function TeamMemberUpdateForm(props) {
         hasError={errors.isLeader?.hasError}
         {...getOverrideProps(overrides, "isLeader")}
       ></SwitchField>
+      <TextField
+        label="User id"
+        isRequired={false}
+        isReadOnly={false}
+        value={userId}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              firstName,
+              lastName,
+              bio,
+              link,
+              title,
+              isFeatured,
+              isLeader,
+              userId: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.userId ?? value;
+          }
+          if (errors.userId?.hasError) {
+            runValidationTasks("userId", value);
+          }
+          setUserId(value);
+        }}
+        onBlur={() => runValidationTasks("userId", userId)}
+        errorMessage={errors.userId?.errorMessage}
+        hasError={errors.userId?.hasError}
+        {...getOverrideProps(overrides, "userId")}
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
