@@ -8,6 +8,444 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
+export const createInsuranceOrderType = /* GraphQL */ `mutation CreateInsuranceOrderType(
+  $input: CreateInsuranceOrderTypeInput!
+  $condition: ModelInsuranceOrderTypeConditionInput
+) {
+  createInsuranceOrderType(input: $input, condition: $condition) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateInsuranceOrderTypeMutationVariables,
+  APITypes.CreateInsuranceOrderTypeMutation
+>;
+export const updateInsuranceOrderType = /* GraphQL */ `mutation UpdateInsuranceOrderType(
+  $input: UpdateInsuranceOrderTypeInput!
+  $condition: ModelInsuranceOrderTypeConditionInput
+) {
+  updateInsuranceOrderType(input: $input, condition: $condition) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateInsuranceOrderTypeMutationVariables,
+  APITypes.UpdateInsuranceOrderTypeMutation
+>;
+export const deleteInsuranceOrderType = /* GraphQL */ `mutation DeleteInsuranceOrderType(
+  $input: DeleteInsuranceOrderTypeInput!
+  $condition: ModelInsuranceOrderTypeConditionInput
+) {
+  deleteInsuranceOrderType(input: $input, condition: $condition) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteInsuranceOrderTypeMutationVariables,
+  APITypes.DeleteInsuranceOrderTypeMutation
+>;
+export const createMedicalInsurance = /* GraphQL */ `mutation CreateMedicalInsurance(
+  $input: CreateMedicalInsuranceInput!
+  $condition: ModelMedicalInsuranceConditionInput
+) {
+  createMedicalInsurance(input: $input, condition: $condition) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateMedicalInsuranceMutationVariables,
+  APITypes.CreateMedicalInsuranceMutation
+>;
+export const updateMedicalInsurance = /* GraphQL */ `mutation UpdateMedicalInsurance(
+  $input: UpdateMedicalInsuranceInput!
+  $condition: ModelMedicalInsuranceConditionInput
+) {
+  updateMedicalInsurance(input: $input, condition: $condition) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateMedicalInsuranceMutationVariables,
+  APITypes.UpdateMedicalInsuranceMutation
+>;
+export const deleteMedicalInsurance = /* GraphQL */ `mutation DeleteMedicalInsurance(
+  $input: DeleteMedicalInsuranceInput!
+  $condition: ModelMedicalInsuranceConditionInput
+) {
+  deleteMedicalInsurance(input: $input, condition: $condition) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteMedicalInsuranceMutationVariables,
+  APITypes.DeleteMedicalInsuranceMutation
+>;
+export const createMedicalHistory = /* GraphQL */ `mutation CreateMedicalHistory(
+  $input: CreateMedicalHistoryInput!
+  $condition: ModelMedicalHistoryConditionInput
+) {
+  createMedicalHistory(input: $input, condition: $condition) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateMedicalHistoryMutationVariables,
+  APITypes.CreateMedicalHistoryMutation
+>;
+export const updateMedicalHistory = /* GraphQL */ `mutation UpdateMedicalHistory(
+  $input: UpdateMedicalHistoryInput!
+  $condition: ModelMedicalHistoryConditionInput
+) {
+  updateMedicalHistory(input: $input, condition: $condition) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateMedicalHistoryMutationVariables,
+  APITypes.UpdateMedicalHistoryMutation
+>;
+export const deleteMedicalHistory = /* GraphQL */ `mutation DeleteMedicalHistory(
+  $input: DeleteMedicalHistoryInput!
+  $condition: ModelMedicalHistoryConditionInput
+) {
+  deleteMedicalHistory(input: $input, condition: $condition) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteMedicalHistoryMutationVariables,
+  APITypes.DeleteMedicalHistoryMutation
+>;
 export const createAdmissions = /* GraphQL */ `mutation CreateAdmissions(
   $input: CreateAdmissionsInput!
   $condition: ModelAdmissionsConditionInput
@@ -155,6 +593,9 @@ export const createAdmissions = /* GraphQL */ `mutation CreateAdmissions(
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -193,8 +634,14 @@ export const createAdmissions = /* GraphQL */ `mutation CreateAdmissions(
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber
@@ -356,6 +803,9 @@ export const updateAdmissions = /* GraphQL */ `mutation UpdateAdmissions(
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -394,8 +844,14 @@ export const updateAdmissions = /* GraphQL */ `mutation UpdateAdmissions(
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber
@@ -557,6 +1013,9 @@ export const deleteAdmissions = /* GraphQL */ `mutation DeleteAdmissions(
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -595,8 +1054,14 @@ export const deleteAdmissions = /* GraphQL */ `mutation DeleteAdmissions(
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber

@@ -1,6 +1,6 @@
 import "server-only"
 import Nav from "@/components/navigation/nav"
-import ReferralsCreateForm from "@/components/forms/ReferralsCreateForm"
+import AdmissionsCreateForm from "@/components/forms/AdmissionsCreateForm"
 import ProfileButton from "@/components/buttons/profile-button"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
@@ -10,11 +10,11 @@ import DashboardButton from "@/components/buttons/dashboard-button"
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Referrals',
+  title: 'Admissions',
   description: `Improved quality of life is our set standard; we won't settle for anything less.`
 }
 
-export default async function Referrals() {
+export default async function Admissions() {
   return (
    <div className="max-w-screen">
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
@@ -22,7 +22,7 @@ export default async function Referrals() {
       <DashboardButton/>
       <ProfileButton/>
       <SignOutButton/>
-      <ReferralsCreateForm/>
+      <AdmissionsCreateForm/>
    </div>
   )
 }

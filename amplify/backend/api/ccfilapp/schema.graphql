@@ -118,12 +118,12 @@ enum State {
   WYOMING
 }
 
-type InsuranceOrderType {
+type InsuranceOrderType @model @auth(rules: [{allow: public}]) {
   primary: Boolean
   secondary: Boolean
 }
 
-type MedicalInsurance {
+type MedicalInsurance @model @auth(rules: [{allow: public}]) {
   companyName: String
   address: String
   phone: String
@@ -137,7 +137,7 @@ type MedicalInsurance {
   orderType: InsuranceOrderType
 }
 
-type MedicalHistory {
+type MedicalHistory @model @auth(rules: [{allow: public}]) {
   allergies: Boolean
   anaphylacticShock: Boolean
   anemia: Boolean

@@ -8,6 +8,435 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
+export const onCreateInsuranceOrderType = /* GraphQL */ `subscription OnCreateInsuranceOrderType(
+  $filter: ModelSubscriptionInsuranceOrderTypeFilterInput
+) {
+  onCreateInsuranceOrderType(filter: $filter) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateInsuranceOrderTypeSubscriptionVariables,
+  APITypes.OnCreateInsuranceOrderTypeSubscription
+>;
+export const onUpdateInsuranceOrderType = /* GraphQL */ `subscription OnUpdateInsuranceOrderType(
+  $filter: ModelSubscriptionInsuranceOrderTypeFilterInput
+) {
+  onUpdateInsuranceOrderType(filter: $filter) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateInsuranceOrderTypeSubscriptionVariables,
+  APITypes.OnUpdateInsuranceOrderTypeSubscription
+>;
+export const onDeleteInsuranceOrderType = /* GraphQL */ `subscription OnDeleteInsuranceOrderType(
+  $filter: ModelSubscriptionInsuranceOrderTypeFilterInput
+) {
+  onDeleteInsuranceOrderType(filter: $filter) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteInsuranceOrderTypeSubscriptionVariables,
+  APITypes.OnDeleteInsuranceOrderTypeSubscription
+>;
+export const onCreateMedicalInsurance = /* GraphQL */ `subscription OnCreateMedicalInsurance(
+  $filter: ModelSubscriptionMedicalInsuranceFilterInput
+) {
+  onCreateMedicalInsurance(filter: $filter) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateMedicalInsuranceSubscriptionVariables,
+  APITypes.OnCreateMedicalInsuranceSubscription
+>;
+export const onUpdateMedicalInsurance = /* GraphQL */ `subscription OnUpdateMedicalInsurance(
+  $filter: ModelSubscriptionMedicalInsuranceFilterInput
+) {
+  onUpdateMedicalInsurance(filter: $filter) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateMedicalInsuranceSubscriptionVariables,
+  APITypes.OnUpdateMedicalInsuranceSubscription
+>;
+export const onDeleteMedicalInsurance = /* GraphQL */ `subscription OnDeleteMedicalInsurance(
+  $filter: ModelSubscriptionMedicalInsuranceFilterInput
+) {
+  onDeleteMedicalInsurance(filter: $filter) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteMedicalInsuranceSubscriptionVariables,
+  APITypes.OnDeleteMedicalInsuranceSubscription
+>;
+export const onCreateMedicalHistory = /* GraphQL */ `subscription OnCreateMedicalHistory(
+  $filter: ModelSubscriptionMedicalHistoryFilterInput
+) {
+  onCreateMedicalHistory(filter: $filter) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateMedicalHistorySubscriptionVariables,
+  APITypes.OnCreateMedicalHistorySubscription
+>;
+export const onUpdateMedicalHistory = /* GraphQL */ `subscription OnUpdateMedicalHistory(
+  $filter: ModelSubscriptionMedicalHistoryFilterInput
+) {
+  onUpdateMedicalHistory(filter: $filter) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateMedicalHistorySubscriptionVariables,
+  APITypes.OnUpdateMedicalHistorySubscription
+>;
+export const onDeleteMedicalHistory = /* GraphQL */ `subscription OnDeleteMedicalHistory(
+  $filter: ModelSubscriptionMedicalHistoryFilterInput
+) {
+  onDeleteMedicalHistory(filter: $filter) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteMedicalHistorySubscriptionVariables,
+  APITypes.OnDeleteMedicalHistorySubscription
+>;
 export const onCreateAdmissions = /* GraphQL */ `subscription OnCreateAdmissions(
   $filter: ModelSubscriptionAdmissionsFilterInput
 ) {
@@ -154,6 +583,9 @@ export const onCreateAdmissions = /* GraphQL */ `subscription OnCreateAdmissions
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -192,8 +624,14 @@ export const onCreateAdmissions = /* GraphQL */ `subscription OnCreateAdmissions
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber
@@ -354,6 +792,9 @@ export const onUpdateAdmissions = /* GraphQL */ `subscription OnUpdateAdmissions
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -392,8 +833,14 @@ export const onUpdateAdmissions = /* GraphQL */ `subscription OnUpdateAdmissions
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber
@@ -554,6 +1001,9 @@ export const onDeleteAdmissions = /* GraphQL */ `subscription OnDeleteAdmissions
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -592,8 +1042,14 @@ export const onDeleteAdmissions = /* GraphQL */ `subscription OnDeleteAdmissions
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber

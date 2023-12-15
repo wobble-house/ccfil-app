@@ -8,6 +8,308 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
+export const getInsuranceOrderType = /* GraphQL */ `query GetInsuranceOrderType($id: ID!) {
+  getInsuranceOrderType(id: $id) {
+    primary
+    secondary
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetInsuranceOrderTypeQueryVariables,
+  APITypes.GetInsuranceOrderTypeQuery
+>;
+export const listInsuranceOrderTypes = /* GraphQL */ `query ListInsuranceOrderTypes(
+  $filter: ModelInsuranceOrderTypeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInsuranceOrderTypes(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListInsuranceOrderTypesQueryVariables,
+  APITypes.ListInsuranceOrderTypesQuery
+>;
+export const getMedicalInsurance = /* GraphQL */ `query GetMedicalInsurance($id: ID!) {
+  getMedicalInsurance(id: $id) {
+    companyName
+    address
+    phone
+    groupNumber
+    policyNumber
+    policyholdersFirstName
+    policyholdersLastName
+    employer
+    DOB
+    SSN
+    orderType {
+      primary
+      secondary
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetMedicalInsuranceQueryVariables,
+  APITypes.GetMedicalInsuranceQuery
+>;
+export const listMedicalInsurances = /* GraphQL */ `query ListMedicalInsurances(
+  $filter: ModelMedicalInsuranceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMedicalInsurances(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      companyName
+      address
+      phone
+      groupNumber
+      policyNumber
+      policyholdersFirstName
+      policyholdersLastName
+      employer
+      DOB
+      SSN
+      orderType {
+        primary
+        secondary
+        id
+        createdAt
+        updatedAt
+        __typename
+      }
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListMedicalInsurancesQueryVariables,
+  APITypes.ListMedicalInsurancesQuery
+>;
+export const getMedicalHistory = /* GraphQL */ `query GetMedicalHistory($id: ID!) {
+  getMedicalHistory(id: $id) {
+    allergies
+    anaphylacticShock
+    anemia
+    ankleProblem
+    anorexiaBulimia
+    appendicitis
+    armProblem
+    arthritis
+    asthma
+    backProblems
+    bedwetting
+    bladderKidneyProblems
+    bleedingDisorder
+    boneCondition
+    bowelProblems
+    brokenBones
+    cancer
+    chestPains
+    chronicCough
+    circulationIssues
+    coldsFrequent
+    constipation
+    cystsTumors
+    dermatitis
+    diabetes
+    diarrhea
+    difficultyWalking
+    earInfections
+    endocrineProblems
+    excessiveSweating
+    faintingDizziness
+    heartDisease
+    footProblem
+    frequentColdsSoreThroats
+    frequentHeartburn
+    frequentMuscleCramps
+    frequentShortnessOfBreath
+    frostbite
+    gasBloating
+    HIVAIDS
+    headTraumas
+    headachesMigraines
+    hearingImpairment
+    heartProblemsMurmurs
+    hepatitisABC
+    hernia
+    highBloodPressure
+    hypoglycemia
+    intoleranceToCold
+    intoleranceToHeat
+    irregularHeartbeat
+    jointInjuries
+    kidneyProblems
+    kneeProblem
+    legProblem
+    liverProblems
+    lungInfections
+    medicalEquipmentDevices
+    meningitis
+    menstrualProblems
+    mononucleosis
+    motionSickness
+    obesity
+    other
+    PMSSevereSymptoms
+    pneumoniaBronchitis
+    pregnancy
+    recurrentInjurySurgery
+    STDs
+    scoliosis
+    seizuresEpilepsy
+    shoulderProblem
+    skinDiseasesProblems
+    sleepwalking
+    TBPositive
+    TBRecentExposure
+    tuberculosis
+    thyroidProblems
+    ulcers
+    unexpectedWeightLoss
+    urinationProblem
+    id
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetMedicalHistoryQueryVariables,
+  APITypes.GetMedicalHistoryQuery
+>;
+export const listMedicalHistories = /* GraphQL */ `query ListMedicalHistories(
+  $filter: ModelMedicalHistoryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMedicalHistories(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      allergies
+      anaphylacticShock
+      anemia
+      ankleProblem
+      anorexiaBulimia
+      appendicitis
+      armProblem
+      arthritis
+      asthma
+      backProblems
+      bedwetting
+      bladderKidneyProblems
+      bleedingDisorder
+      boneCondition
+      bowelProblems
+      brokenBones
+      cancer
+      chestPains
+      chronicCough
+      circulationIssues
+      coldsFrequent
+      constipation
+      cystsTumors
+      dermatitis
+      diabetes
+      diarrhea
+      difficultyWalking
+      earInfections
+      endocrineProblems
+      excessiveSweating
+      faintingDizziness
+      heartDisease
+      footProblem
+      frequentColdsSoreThroats
+      frequentHeartburn
+      frequentMuscleCramps
+      frequentShortnessOfBreath
+      frostbite
+      gasBloating
+      HIVAIDS
+      headTraumas
+      headachesMigraines
+      hearingImpairment
+      heartProblemsMurmurs
+      hepatitisABC
+      hernia
+      highBloodPressure
+      hypoglycemia
+      intoleranceToCold
+      intoleranceToHeat
+      irregularHeartbeat
+      jointInjuries
+      kidneyProblems
+      kneeProblem
+      legProblem
+      liverProblems
+      lungInfections
+      medicalEquipmentDevices
+      meningitis
+      menstrualProblems
+      mononucleosis
+      motionSickness
+      obesity
+      other
+      PMSSevereSymptoms
+      pneumoniaBronchitis
+      pregnancy
+      recurrentInjurySurgery
+      STDs
+      scoliosis
+      seizuresEpilepsy
+      shoulderProblem
+      skinDiseasesProblems
+      sleepwalking
+      TBPositive
+      TBRecentExposure
+      tuberculosis
+      thyroidProblems
+      ulcers
+      unexpectedWeightLoss
+      urinationProblem
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListMedicalHistoriesQueryVariables,
+  APITypes.ListMedicalHistoriesQuery
+>;
 export const getAdmissions = /* GraphQL */ `query GetAdmissions($id: ID!) {
   getAdmissions(id: $id) {
     id
@@ -152,6 +454,9 @@ export const getAdmissions = /* GraphQL */ `query GetAdmissions($id: ID!) {
       ulcers
       unexpectedWeightLoss
       urinationProblem
+      id
+      createdAt
+      updatedAt
       __typename
     }
     allergiesAsthma
@@ -190,8 +495,14 @@ export const getAdmissions = /* GraphQL */ `query GetAdmissions($id: ID!) {
       orderType {
         primary
         secondary
+        id
+        createdAt
+        updatedAt
         __typename
       }
+      id
+      createdAt
+      updatedAt
       __typename
     }
     workersCompClaimNumber
@@ -355,6 +666,9 @@ export const listAdmissions = /* GraphQL */ `query ListAdmissions(
         ulcers
         unexpectedWeightLoss
         urinationProblem
+        id
+        createdAt
+        updatedAt
         __typename
       }
       allergiesAsthma
@@ -393,8 +707,14 @@ export const listAdmissions = /* GraphQL */ `query ListAdmissions(
         orderType {
           primary
           secondary
+          id
+          createdAt
+          updatedAt
           __typename
         }
+        id
+        createdAt
+        updatedAt
         __typename
       }
       workersCompClaimNumber
