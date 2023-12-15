@@ -1,3 +1,316 @@
+enum Pronouns {
+  HEHIM
+  SHEHER
+  THEYTHEM
+  OTHER
+}
+
+enum Sex {
+  MALE
+  FEMALE
+  DECLINETOANSWER
+}
+
+enum Gender {
+  AGENDER
+  ANDROGYNE
+  BIGENDER
+  BUTCH
+  CISGENDER
+  GENDEREXPANSIVE
+  GENDERFLUID
+  GENDEROUTLAW
+  GENDERQUEER
+  MASCULINEOFCENTER
+  NONBINARY
+  OMNIGENDER
+  POLYGENDERANDPANGENDER
+  TRANSGENDER
+  TRANS
+  TWOSPIRIT
+  DECLINETOANSWER
+}
+
+enum Ethnicity {
+  AFRICAN
+  CARIBBEAN
+  INDIAN
+  MELANESIAN
+  AUSTRALASIANABORIGINAL
+  CHINESE
+  GUAMANIAN
+  JAPANESE
+  KOREAN
+  EUROPEANANGLOSAXON
+  OTHERPACIFICISLANDER
+  LATINAMERICAN
+  ARABIC
+  VIETNAMESE
+  MICRONESIAN
+  DECLINEDTORESPOND
+  OTHERHISPANIC
+  USORCANADIANINDIAN
+  OTHERASIAN
+  PUERTORICAN
+  FILIPINO
+  MEXICAN
+  ALASKANNATIVE
+  CUBAN
+}
+
+enum State {
+  ALABAMA
+  ALASKA
+  ARIZONA
+  ARKANSAS
+  AMERICANSAMOA
+  CALIFORNIA
+  COLORADO
+  CONNECTICUT
+  DELAWARE
+  DISTRICTOFCOLUMBIA
+  FLORIDA
+  GEORGIA
+  GUAM
+  HAWAII
+  IDAHO
+  ILLINOIS
+  INDIANA
+  IOWA
+  KANSAS
+  KENTUCKY
+  LOUISIANA
+  MAINE
+  MARYLAND
+  MASSACHUSETTS
+  MICHIGAN
+  MINNESOTA
+  MISSISSIPPI
+  MISSOURI
+  MONTANA
+  NEBRASKA
+  NEVADA
+  NEWHAMPSHIRE
+  NEWJERSEY
+  NEWMEXICO
+  NEWYORK
+  NORTHCAROLINA
+  NORTHDAKOTA
+  NORTHERNMARIANAISLANDS
+  OHIO
+  OKLAHOMA
+  OREGON
+  PENNSYLVANIA
+  PUERTORICO
+  RHODEISLAND
+  SOUTHCAROLINA
+  SOUTHDAKOTA
+  TENNESSEE
+  TEXAS
+  TRUSTTERRITORIES
+  UTAH
+  VERMONT
+  VIRGINIA
+  VIRGINISLANDS
+  WASHINGTON
+  WESTVIRGINIA
+  WISCONSIN
+  WYOMING
+}
+
+type InsuranceOrderType {
+  primary: Boolean
+  secondary: Boolean
+}
+
+type MedicalInsurance {
+  companyName: String
+  address: String
+  phone: String
+  groupNumber: String
+  policyNumber: String
+  policyholdersFirstName: String
+  policyholdersLastName: String
+  employer: String
+  DOB: AWSDate
+  SSN: Int
+  orderType: InsuranceOrderType
+}
+
+type MedicalHistory {
+  allergies: Boolean
+  anaphylacticShock: Boolean
+  anemia: Boolean
+  ankleProblem: Boolean
+  anorexiaBulimia: Boolean
+  appendicitis: Boolean
+  armProblem: Boolean
+  arthritis: Boolean
+  asthma: Boolean
+  backProblems: Boolean
+  bedwetting: Boolean
+  bladderKidneyProblems: Boolean
+  bleedingDisorder: Boolean
+  boneCondition: Boolean
+  bowelProblems: Boolean
+  brokenBones: Boolean
+  cancer: Boolean
+  chestPains: Boolean
+  chronicCough: Boolean
+  circulationIssues: Boolean
+  coldsFrequent: Boolean
+  constipation: Boolean
+  cystsTumors: Boolean
+  dermatitis: Boolean
+  diabetes: Boolean
+  diarrhea: Boolean
+  difficultyWalking: Boolean
+  earInfections: Boolean
+  endocrineProblems: Boolean
+  excessiveSweating: Boolean
+  faintingDizziness: Boolean
+  heartDisease: Boolean
+  footProblem: Boolean
+  frequentColdsSoreThroats: Boolean
+  frequentHeartburn: Boolean
+  frequentMuscleCramps: Boolean
+  frequentShortnessOfBreath: Boolean
+  frostbite: Boolean
+  gasBloating: Boolean
+  HIVAIDS: Boolean
+  headTraumas: Boolean
+  headachesMigraines: Boolean
+  hearingImpairment: Boolean
+  heartProblemsMurmurs: Boolean
+  hepatitisABC: Boolean
+  hernia: Boolean
+  highBloodPressure: Boolean
+  hypoglycemia: Boolean
+  intoleranceToCold: Boolean
+  intoleranceToHeat: Boolean
+  irregularHeartbeat: Boolean
+  jointInjuries: Boolean
+  kidneyProblems: Boolean
+  kneeProblem: Boolean
+  legProblem: Boolean
+  liverProblems: Boolean
+  lungInfections: Boolean
+  medicalEquipmentDevices: Boolean
+  meningitis: Boolean
+  menstrualProblems: Boolean
+  mononucleosis: Boolean
+  motionSickness: Boolean
+  obesity: Boolean
+  other: Boolean
+  PMSSevereSymptoms: Boolean
+  pneumoniaBronchitis: Boolean
+  pregnancy: Boolean
+  recurrentInjurySurgery: Boolean
+  STDs: Boolean
+  scoliosis: Boolean
+  seizuresEpilepsy: Boolean
+  shoulderProblem: Boolean
+  skinDiseasesProblems: Boolean
+  sleepwalking: Boolean
+  TBPositive: Boolean
+  TBRecentExposure: Boolean
+  tuberculosis: Boolean
+  thyroidProblems: Boolean
+  ulcers: Boolean
+  unexpectedWeightLoss: Boolean
+  urinationProblem: Boolean
+}
+
+type Admissions @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  expectToEnroll: AWSDate
+  pronouns: Pronouns
+  sex: Sex
+  SSN: Int
+  address: String
+  gender: Gender
+  ethnicity: Ethnicity
+  zip: Int
+  country: String
+  homePhone: AWSPhone
+  mobilePhone: AWSPhone
+  email: AWSEmail
+  city: String
+  DOB: AWSDate
+  emergencyContactRelationship: String
+  emergencyContactPhone: AWSPhone
+  emergencyContactAddress: String
+  emergencyContactCity: String
+  emergencyContactState: State
+  emergencyContactZip: Int
+  emergencyContactFirstName: String
+  PGSFirstName: String
+  PGSLastName: String
+  PGSAddress: String
+  PGSHomePhone: AWSPhone
+  emergencyContactLastName: String
+  PGSEmail: AWSEmail
+  PGSFax: AWSPhone
+  state: State
+  PGSSponsor: String
+  PGSLegalCustody: String
+  PGSPhysicalCustody: String
+  PGSEmergencyContact: String
+  PGSParentGuardian: String
+  PGSRelationship: String
+  PGSMobilePhone: AWSPhone
+  PGSWorkPhone: AWSPhone
+  PGSWorkEmail: AWSEmail
+  PGSWorkFax: AWSPhone
+  howDIdYouHearAboutCCFIL: String
+  referralSource: String
+  whatEventsLeadToSeekTreatment: String
+  PGSEmployer: String
+  applicantsStrengths: String
+  applicantsWeaknesses: String
+  currentPlacementLocation: String
+  currentPlacementDates: String
+  currentPlacementProvider: String
+  PGSJobTitle: String
+  psychAnger: String
+  psychSuicidality: String
+  psychSexualActivity: String
+  whatGoalsReceivingTreatment: String
+  psychLegalProblems: String
+  medicalSurgeriesIllnessesHospitalizations: String
+  medicalPrescriptions: String
+  medicalVitaminsSupplements: String
+  medicalHistory: MedicalHistory
+  allergiesAsthma: String
+  inhalerEpiPen: String
+  inhalerType: String
+  autoInsurance: String
+  currentPlacementReason: String
+  autoInsuranceClaimNumber: String
+  psychSubstanceIssues: String
+  autoInsuranceClaimAdjuster: String
+  autoInsuranceAddress: String
+  autoInsuranceCity: String
+  autoInsuranceState: State
+  autoInsuranceZip: Int
+  autoInsurancePhone: AWSPhone
+  workersCompInsurance: String
+  workersCompInsuranceCarrier: String
+  autoInsuranceDOL: AWSDate
+  workersCompClaimAdjuster: String
+  workersCompAddress: String
+  autoInsuranceCarrier: String
+  PGSContactMethod: String
+  workersCompZip: String
+  workersCompPhone: AWSPhone
+  medicalInsurance: MedicalInsurance
+  workersCompClaimNumber: String
+  workersCompCity: String
+  workersCompState: State
+}
+
 type Referrals @model @auth(rules: [{allow: public}]) {
   id: ID!
   date: AWSDate
@@ -42,4 +355,4 @@ type Headshot @model @auth(rules: [{allow: public}]) {
   src: String!
   alt: String!
   imageTitle: String
-} 
+}
