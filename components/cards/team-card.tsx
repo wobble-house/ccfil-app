@@ -1,5 +1,5 @@
 'use client';
-import ImageHandler from "../image-handler";
+import {HeadshotHandler} from "../image-handler";
 import { useState, useRef } from "react";
 import { DetailsCard } from "./details-card";
 import { useOnClickOutside } from "../click-handler";
@@ -68,7 +68,7 @@ export default function TeamCard({
                        </div>
                   <div className="flex relative">
   
-                    <ImageHandler src={Image.src} alt={Image.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024} className="object-cover" />
+                    <HeadshotHandler src={Image.src} alt={Image.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024} className="object-cover" />
                   </div>
                   </div>
                 </button>
