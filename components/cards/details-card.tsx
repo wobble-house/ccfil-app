@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import ImageHandler from "../image-handler";
+import {HeadshotHandler} from "../image-handler";
 
 export function DetailsCard({ 
   bio,
@@ -29,7 +29,7 @@ export function DetailsCard({
               <div className="relative flex flex-col gap-2"> 
                     <div className=" md:flex gap-8 align-middle max-w-3xl justify-end ">
                           <div className="relative md:fixed top-0 md:top-3 md:left-8 max-w-[300px] mx-auto pt-3 md:pt-9">
-                            <ImageHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024}/>
+                            <HeadshotHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'public/Images/oof.png'} height={768} width={1024}/>
                           </div>
                         <div className="flex flex-col gap-2  md:w-1/2 md:pt-5 px-5 mb-8 ">
                           <h2 className="text-left md:text-[2.2em] whitespace-normal">{firstName}&nbsp;{lastName}</h2>

@@ -28,7 +28,7 @@ export const bgimages = [
     firstName: `Brandon`,
     lastName: ``,
     Image: {
-        src: `public/Images/Headshots/brandon-featured-img.jpg`,
+        src: `brandon-featured-img.jpg`,
         alt: "Brandon headshot"
     },
     title: ``,
@@ -44,7 +44,7 @@ export const bgimages = [
     firstName: `David`,
     lastName: ``,
     Image: {
-        src: 'public/Images/Headshots/david-featured-img.jpg',
+        src: 'david-featured-img.jpg',
         alt: "David headshot"
     },
     title: ``,
@@ -62,7 +62,7 @@ export const bgimages = [
     firstName: `Heather`,
     lastName: ``,
     Image: {
-        src: `public/Images/Headshots/heather-painting.jpg`,
+        src: `heather-painting.jpg`,
         alt: "Heather headshot"
     },
     title: ``,
