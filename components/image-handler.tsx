@@ -24,22 +24,25 @@ export default function ImageHandler(props){
 };
 
 export function HeadshotHandler(props){
-    const { src, fallbackSrc, alt, ...rest } = props;
+    const { src, fallbackSrc, alt, isCover, ...rest } = props;
     const [imgSrc, setImgSrc] = useState(src);
     return (
+        <div className={`flex relative ${isCover == true ? 'w-[300px] h-[300px] md:w-96 md:h-96': 'mx-auto justify-center w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-md' } overflow-hidden`}>
         <Image
             {...rest}
+            className='object-top'
             src={`https://${process.env.S3_BUCKET}.s3.${process.env.REGION_CODE}.amazonaws.com/public/Images/Headshots/${imgSrc}`}
             alt={alt}
-            sizes="(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            33vw"
+            fill
+            quality={30}
             style={{
                 objectFit: "cover"
             }}
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
+            sizes="(max-width: 768px) 90vw, 33vw"
         />
+        </div>
     );
 };
