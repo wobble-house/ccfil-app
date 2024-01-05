@@ -8,7 +8,7 @@ export default function ImageHandler(props){
     return (
         <Image
             {...rest}
-            src={`https://${process.env.S3_BUCKET}.s3.${process.env.REGION_CODE}.amazonaws.com/${imgSrc}`}
+            src={`${process.env.S3_BUCKET_URL}/${imgSrc}`}
             alt={alt}
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
@@ -31,9 +31,10 @@ export function HeadshotHandler(props){
         <Image
             {...rest}
             className='object-top'
-            src={`https://${process.env.S3_BUCKET}.s3.${process.env.REGION_CODE}.amazonaws.com/public/Images/Headshots/${imgSrc}`}
+            src={`${process.env.S3_BUCKET_URL}/public/Images/Headshots/${imgSrc}`}
             alt={alt}
-            fill
+            width={400}
+            height={600}
             quality={50}
             style={{
                 objectFit: "cover"
@@ -41,7 +42,7 @@ export function HeadshotHandler(props){
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
-            sizes="(max-width: 768px) 90vw, 33vw"
+            sizes="(max-width: 768px) 50vw, 33vw"
         />
         </div>
     );
