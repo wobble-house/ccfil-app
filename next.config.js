@@ -19,6 +19,7 @@ module.exports = {
         process.env.S3_BUCKET_DOMAIN
       ],
       dangerouslyAllowSVG: true,
+      contentSecurityPolicy: "default-src 'self'; sandbox;",
       minimumCacheTTL: 60,
   },
     experimental: {
