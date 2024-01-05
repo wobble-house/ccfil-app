@@ -9,16 +9,13 @@ import NavHeader from "@/components/header/header"
 import {ListTeamMembersQueryVariables} from "@/utils/graphql/API"
 import { aboutTeamData } from '@/lib/data/data'
 import { getTeamData } from '@/utils/getData/get-data'
-export const dynamic = 'force-dynamic'
-export const dynamicParams = true
-export const revalidate = 0
-export const fetchCache = 'auto'
-export const runtime = 'nodejs'
-export const preferredRegion = 'auto'
 export const metadata = {
   title: 'About Us',
-  description: 'Hello. We’re Community Connections for Independent Living.'
+  description: 'Hello, We are Community Connections for Independent Living.'
 };
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
+
 const execVariables: ListTeamMembersQueryVariables = {
   filter: {
     isFeatured: {
@@ -42,11 +39,11 @@ export default async function Team() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="relative flex flex-col w-full">
-          <InfoSegment headerText={aboutTeamData.headerText} bodyText={aboutTeamData.bodyText} infoImage={aboutTeamData.infoImage} ButtonUrl={null} Type="A" icon={'public/Icons/compassion.svg'} id={null}/>
+          <InfoSegment headerText={aboutTeamData.headerText} bodyText={aboutTeamData.bodyText} infoImage={aboutTeamData.infoImage} ButtonUrl={null} Type="A" icon={'public/Icons/compassion.svg'} id={null} overscroll={false}/>
           <StickyInfoSegment captionText={aboutTeamData.leadershipCaptionText} type="B" bgcolor='bg-gray1' id={'Leadership'}>
             <InfoCardList data={execData.data.listTeamMembers.items}/>
           </StickyInfoSegment>
-          <QuoteSection quote={aboutTeamData.quote} quoteName={aboutTeamData.quoteName} quoteImgSrc={aboutTeamData.quoteImgSrc}/>
+          <QuoteSection id={`teamquote`} quote={aboutTeamData.quote} quoteName={aboutTeamData.quoteName} quoteImgSrc={aboutTeamData.quoteImgSrc}/>
           <StickyInfoSegment captionText={aboutTeamData.teamCaptionText} type="A" bgcolor="bg-white" id={'Team'}>
             <InfoCardList data={teamData.data.listTeamMembers.items}/>
           </StickyInfoSegment>

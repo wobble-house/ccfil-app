@@ -13,8 +13,11 @@ library.add(fas, faFontAwesome)
 
 export const metadata = {
    title: {
-    default: 'CCFIL',
-    template: '%s | CCFIL',
+    default: "CCFIL",
+    template: "%s | CCFIL",
+  },
+  description: {
+    default: "Learn More About CCFIL",
   },
 }
 
@@ -50,10 +53,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable} ${prozaLibre.variable}`}>
       <link rel="icon" href="/Icons/favicon.png" />
-      <body className="mx-auto no-scrollbar overflow-y-auto">
+      <body className="mx-auto no-scrollbar">
         <ConfigureAmplifyClientSide />
         <GABody/>
-        <main className={`flex flex-col mx-auto min-h-screen snap-y mb-32`}>
+        <main className={`flex flex-col mx-auto min-h-screen`}>
         
               {children}
             </main>

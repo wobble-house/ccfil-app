@@ -18,7 +18,7 @@ function handleAnchor (e, url) {
     router.push(url)
 }
     return (
-            <div className={`carousel w-full h-14 md:h-[400px]`}>
+            <div className={`carousel w-full h-14 md:h-[400px] pt-4`}>
                 {carouselSlides.map((carouselSlide, index)=>{
                     return (
                         <div key={index} className={index == current ? `md:flex flex-row gap-10 w-3/5 md:w-2/3 lg:w-3/4 carouselCard carouselCard-active max-h-[420px] hidden`: `flex flex-row gap-10 w-2/3 lg:w-3/4 carouselCard max-h-[420px]`}>

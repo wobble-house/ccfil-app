@@ -1,4 +1,4 @@
-import "server-only"
+import 'server-only'
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
@@ -6,8 +6,8 @@ import NavHeader from "@/components/header/header"
 import ImageHandler from "@/components/image-handler"
 
 export const metadata = {
-  title: 'Strategic Plan',
-  description: ''
+  title: "Strategic Plan",
+  description: "Learn More about CCFIL",
 }
 
 export default function StrategicPlan() {

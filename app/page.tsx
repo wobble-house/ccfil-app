@@ -14,8 +14,8 @@ export default function Home() {
    <>
       <NavHeader description={carouselSlides[0].description} title={carouselSlides[0].title} bgimage={1}/>
           <div className="flex flex-col w-full bg-white">
-          <InfoSegment headerText={homeData.headerText} bodyText={homeData.bodyText} infoImage={homeData.infoImage} ButtonUrl="/about" Type="A" icon={'public/Icons/page.svg'} id={null}/>
-          <QuoteSection quote={homeData.quote} quoteName={homeData.quoteName} quoteImgSrc={homeData.quoteImgSrc}/>
+          <InfoSegment headerText={homeData.headerText} bodyText={homeData.bodyText} infoImage={homeData.infoImage} ButtonUrl="/about" Type="A" icon={'public/Icons/page.svg'} id={null} overscroll={false}/>
+          <QuoteSection id={'quotesection'} quote={homeData.quote} quoteName={homeData.quoteName} quoteImgSrc={homeData.quoteImgSrc}/>
           </div>
    </>
   )

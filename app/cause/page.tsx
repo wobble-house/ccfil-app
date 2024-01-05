@@ -20,8 +20,8 @@ export default function Cause() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="flex flex-col w-full">
-          <InfoSegment headerText={causeData.headerText} bodyText={causeData.bodyText} infoImage={causeData.infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/shirt.svg'} id={null}/>
-          <QuoteSection quote={causeData.quote} quoteName={causeData.quoteName} quoteImgSrc={causeData.quoteImgSrc}/>
+          <InfoSegment headerText={causeData.headerText} bodyText={causeData.bodyText} infoImage={causeData.infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/shirt.svg'} id={null} overscroll/>
+          <QuoteSection id={'causequote'} quote={causeData.quote} quoteName={causeData.quoteName} quoteImgSrc={causeData.quoteImgSrc}/>
           <StickyInfoSegment captionText={causeData.causeCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoBody headerText={causeData.stickyHeaderText} bodyText={causeData.stickyBodyText} ImageUrl={causeData.stickyImageUrl} ButtonUrl={null}/>
           <div className="flex flex-col h-64 bg-blue1 justify-center items-center p-10">

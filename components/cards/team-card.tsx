@@ -32,11 +32,11 @@ export default function TeamCard({
     <li
       id={id}
       key={`${id} modal open`} 
-      className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-50 overscroll-contain px-7 pt-10`}
+      className={`fixed top-0 left-0 w-full h-full grow max-h-screen mx-auto place-content-center bg-blue2 bg-opacity-75 z-99 overflow-auto overscroll-contain`}
       >
-        <div className={`flex transform details-card justify-center items-center overscroll-contain mx-auto ${isModalOpen ? "animate-slideUpEnter":"animate-slideUpLeave"}`}>
-          <div className="flex flex-col transform duration-300 ease-in-out ">
-            <button className="justify-self-end relative -mb-4 -mr-4 hover:scale-105 bg-pink rounded-full pb-1 mx-auto" onClick={!isModalOpen ? close : open }>
+        <div className={`flex transform justify-center items-center overscroll-contain px-3 pt-3 ${isModalOpen ? "animate-slideUpEnter":"animate-slideUpLeave"}`}>
+          <div className="flex flex-col transform duration-300 ease-in-out p-2">
+            <button className="absolute justify-self-end right-0 top-0 hover:scale-105 bg-pink rounded-full pb-1 mx-auto" onClick={!isModalOpen ? close : open }>
               <span className="text-xl hover:animate-pulse m-3 text-white">x</span>
             </button>
             <div ref={ref} className="">

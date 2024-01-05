@@ -8,8 +8,9 @@ import { bgimages, carouselSlides } from "../../lib/data/data";
 import ImageHandler from "../image-handler";
 import { HeaderSlidesCarousel } from "./header-slides-carousel";
 import HeaderContact from "./header-contact";
+import Link from "next/link";
 
-export default function NavHeader({description, title, bgimage}){
+export default function NavHeader({ description, title, bgimage}: {description: string, title: string, bgimage: number}){
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const pathname = usePathname()
@@ -28,13 +29,17 @@ export default function NavHeader({description, title, bgimage}){
             <HeaderBGCarousel carouselSlides={carouselSlides} position="relative"/>}
         </div>
         <div className={`flex flex-col md:px-16 md:py-4 items-stretch bg-white bg-opacity-25 md:bg-opacity-75 w-full md:w-5/6 z-10 md:my-12 ${pathname == '/' ? 'md:min-h-[550px]' : ''}`}>
-          <div className={`flex flex-row-reverse md:flex-row md:justify-between w-full`}>
-            <div className={`absolute lg:hidden md:flex visible w-[34px] h-[39px] left-0 mr-5 ml-5 mt-2`}>
-              <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" width={34} height={39} priority/>
+          <div className={`relative flex flex-row-reverse md:flex-row md:justify-between w-full`}>
+            <Link href="/">
+              <div className={`absolute lg:hidden md:flex w-[34px] h-[39px] left-0 mr-5 ml-5 mt-2`}>
+              <ImageHandler src="public/Logos/min-logo.svg" alt="CCFIL logo" fill priority/>
             </div>
-            <div className={`lg:visible hidden lg:flex w-72 h-auto justify-center`}>
-              <ImageHandler src="public/Logos/main-logo.svg" alt="CCFIL logo" width={225} height={58} priority/>
+            </Link>
+            <Link href="/">
+            <div className={`absolute left-0 lg:visible hidden lg:flex w-[225px] h-[58px] justify-center`}>
+              <ImageHandler src="public/Logos/main-logo.svg" alt="CCFIL logo" fill priority/>
             </div>
+            </Link>
             <Nav mini={false}/>
           </div>
           {pathname != "/" ? 

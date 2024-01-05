@@ -137,7 +137,7 @@ In addition to numerous opportunities to participate in peer support groups and 
 \\
 Community Connections provides a supportive living environment through a multidisciplinary approach to community integration. We are committed to excellence to enrich the lives of our residents and the community in which they live.`,
   stickyImageUrl: `public/Images/CCFILCampusLifeTile.jpg`,
-  quote: `It&apos;s good to push yourself and do what you don&apos;t necessarily want to do, that if you&apos;re not automatically good at it, you should try. Trying is so important.`,
+  quote: `It's good to push yourself and do what you don't necessarily want to do, that if you're not automatically good at it, you should try. Trying is so important.`,
   quoteName: `Meryl Streep`,
   quoteImgSrc: `public/Images/Quotes/happiness-quote.jpg`,
   commitmentCaptionText: `Real Stories from Real Residents`
@@ -173,7 +173,7 @@ export const causeData = ({
   quote: `It's our challenges and obstacles that give us layers of depth and make us interesting. Are they fun when they happen? No. But they are what make us unique.`,
   quoteName: `ELLEN DEGENERES`,
   quoteImgSrc: `public/Images/Quotes/resident-quote-3.jpg`,
-  stickyHeaderText: `We Are Always Looking for Ways to Improve People&apos;s Lives`,
+  stickyHeaderText: `We Are Always Looking for Ways to Improve People's Lives`,
   stickyBodyText: `Residents and staff meet weekly to discuss innovative ideas to positively impact their community. In addition to participating with surrounding shelters, food banks, retirement homes, and non-profit organizations, CC Cares is frequently providing happiness to individuals through “Random Acts of Kindness”.
 
 CC Cares is a structured, philanthropic group that highlights the importance of teamwork, appropriate social interactions, generosity, and charity. Opportunities to make a difference are endless; CC Cares allows residents to advocate for their organizations of interest, which helps build confidence that will ultimately restore their independence

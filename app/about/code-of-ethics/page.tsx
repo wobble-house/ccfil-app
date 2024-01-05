@@ -1,4 +1,4 @@
-import "server-only"
+import 'server-only'
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"

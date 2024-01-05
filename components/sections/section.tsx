@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function Section({ children, initial, useOnce, id }:{children, initial: boolean, useOnce: boolean, id}) {
+export default function Section({ children, className, initial, useOnce, id }:{children, className, initial: boolean, useOnce: boolean, id}) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: useOnce });
     return (
-      <motion.section layout className={`${id} overscroll-auto`} ref={sectionRef} id={id}>
+      <motion.section layout className={`${id} ${className} relative`} ref={sectionRef} id={id}>
         <motion.div
-        className="overscroll-contain"
+        className={``}
         layout
         initial={initial}
         style={{
@@ -30,7 +30,7 @@ export default function Section({ children, initial, useOnce, id }:{children, in
     const isInView = useInView(LoadingSectionRef, { once: false });
   
     return (
-      <motion.section layout className="overscroll-auto sticky top-0 min-h-screen" ref={LoadingSectionRef}>
+      <motion.section layout className="top-0 min-h-screen" ref={LoadingSectionRef}>
         <motion.div
         layout
         initial={false}
@@ -49,7 +49,7 @@ export function Spacer(){
   const spacerRef = useRef(null);
   const isInView = useInView(spacerRef, { margin: "0px 0px 0px 0px", once: false });
   return (
-<motion.section layout className="overscroll-auto py-64 mx-auto" ref={spacerRef} >
+<motion.section layout className="py-64 mx-auto" ref={spacerRef} >
         <motion.div
         layout
         initial={true}

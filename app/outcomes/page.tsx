@@ -28,7 +28,7 @@ export default function Outcomes() {
             priority
             className="relative"/>
           </div>
-          <QuoteSection quote={outcomesData.quote} quoteName={outcomesData.quoteName} quoteImgSrc={outcomesData.quoteImgSrc}/>
+          <QuoteSection id={`outcomesquote`} quote={outcomesData.quote} quoteName={outcomesData.quoteName} quoteImgSrc={outcomesData.quoteImgSrc}/>
           <StickyInfoSegment captionText={outcomesData.outcomesCaptionText} type="B" bgcolor='bg-white' id={null}>
             <InfoCardList data={testimonialCardListData}/>
           </StickyInfoSegment>

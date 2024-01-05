@@ -1,20 +1,40 @@
+'use client';
 import ImageHandler from "../image-handler"
 import Section from "./section"
-export default function QuoteSection({quote, quoteName, quoteImgSrc}:{quote:string, quoteName: string, quoteImgSrc}){
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
+export default function QuoteSection({id, quote, quoteName, quoteImgSrc}:{id, quote:string, quoteName: string, quoteImgSrc}){
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { margin: "0px 100px -50px 0px", once: false });
     return(
-        <Section initial={true} useOnce={false} id={null}>
-        <div className="flex flex-col z-10 overflow-hidden p-8 h-[280px]">
+        <motion.section layout className={`${id} relative`}  id={id}>
+        <motion.div
+        className={``}
+        layout
+        initial={false}
+        >
+        <div className="flex flex-col overflow-hidden px-8 max-h-[380px]">
 
-        <div className="fixed top-0 left-0 md:min-w-screen w-full ">
+        <motion.div
+        layout
+        initial={true}
+        style={{
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.5s cubic-bezier(0.01, 0, 0, 1) 0s"
+          }}
+        className="fixed top-0 left-0 md:min-w-screen w-full z-0">
             <ImageHandler src={quoteImgSrc} width={2560} height={1440} alt="background image of smiling people" className="min-h-screen aspect-[16/9] object-cover "/>
-        </div>
-                <div className="flex flex-col max-w-6xl bg-transparent mx-auto h-[500px] z-1 justify-center gap-14 -mt-14 pb-10">
-                    <h4 className="text-[180px] font-bold text-white text-right rotate-180 -my-14">&quot;</h4>
-        <h3 className="text-left italic font-300 text-3xl text-white">{quote}</h3>
+        </motion.div>
+                <div className="flex flex-col max-w-6xl bg-transparent mx-auto z-1 justify-center m-10" ref={sectionRef}>
+                    <h4 className="text-6xl md:text-[150px] font-bold text-white text-right rotate-180 md:-mt-20">&quot;</h4>
+        <h3 className="text-left italic font-300 text-xl md:text-3xl text-white">{quote}</h3>
                     <h3 className="text-left font-bold uppercase text-white">
                 {quoteName}
             </h3></div>
+            
         </div>
-        </Section>
+        </motion.div>
+        </motion.section>
     )
 }

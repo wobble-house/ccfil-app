@@ -10,7 +10,7 @@ export function InfoCardList({data}){
             >
                 {data.map(data => (
                               <TeamCard 
-                              id={`${data.id} card`}
+                              id={`${data.firstName+data.lastName} card`}
                               key={data.id}
                               bio={data.bio}
                               link={data.link != null ? data.link : null}

@@ -6,12 +6,9 @@ import InfoSegment, {StickyInfoSegment, InfoServiceBody, InfoBody} from "@/compo
 import NavHeader from "@/components/header/header"
 import { programComponentsData } from '@/lib/data/data'
 import { getProgramServices } from '@/utils/getData/get-data'
-export const dynamic = 'force-dynamic'
-export const dynamicParams = true
-export const revalidate = 0
-export const fetchCache = 'auto'
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
+
 export const metadata = {
   title: 'Services',
   description: `Our residents' trust isn't freely given.  We earn it every day`
@@ -24,7 +21,7 @@ export default async function ProgramComponents() {
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <div className="mx-auto w-full max-w-screen">
-          <InfoSegment headerText={programComponentsData.headerText} bodyText={programComponentsData.bodyText} infoImage={programComponentsData.infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/education.svg'} id={null}/>
+          <InfoSegment headerText={programComponentsData.headerText} bodyText={programComponentsData.bodyText} infoImage={programComponentsData.infoImage} ButtonUrl={null} Type="B" icon={'public/Icons/education.svg'} id={null} overscroll={false}/>
           <StickyInfoSegment captionText={programComponentsData.serviceCaptionText} type="A" bgcolor="bg-gray1" id={null}>
           <InfoServiceBody headerText={programComponentsData.serviceHeaderText} data={programServices.data.listServices.items} ImageUrl={programComponentsData.serviceImageUrl} ButtonUrl={null}/>
           <InfoBody headerText={programComponentsData.stickyHeaderText} bodyText={programComponentsData.stickyBodyText} ImageUrl={programComponentsData.stickyImageUrl} ButtonUrl={null}/>

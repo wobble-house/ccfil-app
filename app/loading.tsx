@@ -6,13 +6,12 @@ export default function Loading() {
     <>
       <LoadingSection>
         <div className="flex flex-col relative justify-center align-middle items-center min-h-screen mx-auto pt-20">
-          <div className="flex items-center w-[100px] h-[100px] mx-auto animate-pulse">
+          <div className="relative flex items-center w-[100px] h-[100px] mx-auto animate-pulse">
             <ImageHandler
               className="relative"
               src="public/Logos/min-logo.svg"
               alt="CCFIL Logo"
-              width={100}
-              height={100}
+              fill
               priority
             />
           </div>
