@@ -33,16 +33,15 @@ export function HeadshotHandler(props){
             className='object-top'
             src={`${process.env.S3_BUCKET_URL}/public/Images/Headshots/${imgSrc}`}
             alt={alt}
-            width={400}
-            height={600}
-            quality={50}
+            fill
+            quality={75}
             style={{
                 objectFit: "cover"
             }}
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
-            sizes="(max-width: 768px) 50vw, 33vw"
+            sizes="(max-width: 390px) 50vw, 33vw"
         />
         </div>
     );

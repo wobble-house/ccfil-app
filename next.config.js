@@ -16,7 +16,7 @@ module.exports = {
     images: {
       domains: [
         'ccfil.com',
-        'ccfil-app-storage-4da25038161600-staging.s3.amazonaws.com'
+        process.env.S3_BUCKET_DOMAIN
       ],
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",
