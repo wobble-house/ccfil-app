@@ -18,10 +18,17 @@ module.exports = {
         'ccfil.com',
         'ccfil-app-storage-4da25038161600-staging.s3.amazonaws.com',
       ],
+      remotePatterns: [
+        {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+        port: '',
+        pathname: '/ccfil-app-storage-4da25038161600-staging/public/**',
+        },
+    ],
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",
       minimumCacheTTL: 60,
-      unoptimized: true,
   },
     experimental: {
       typedRoutes: true,

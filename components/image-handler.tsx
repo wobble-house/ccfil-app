@@ -41,7 +41,7 @@ export function HeadshotHandler(props){
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
-            sizes="(max-width: 390px) 50vw, 33vw"
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
         />
         </div>
     );
