@@ -6,7 +6,10 @@ export async function getTeamData(variables?){
       query: listTeamMembers,
       variables: (variables || null)
     })
+    const members = data?.listTeamMembers?.items
+    members.sort((a,b) => (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0))
     return {data, errors}
+    
   };
 export async function getProgramServices(variables?){
     const {data, errors} = await serverClient.graphql({
