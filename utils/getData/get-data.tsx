@@ -6,8 +6,7 @@ export async function getTeamData(variables?){
       query: listTeamMembers,
       variables: (variables || null)
     })
-    const members = data?.listTeamMembers?.items
-    members.sort((a,b) => (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0))
+    data?.listTeamMembers?.items.sort((a,b) => (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0)).sort((a,b) => (a.isFeatured > b.isFeatured) ? -1 : ((b.isFeatured > a.isFeatured) ? 1 : 0))
     return {data, errors}
     
   };

@@ -4,7 +4,6 @@ import TeamCard from "./team-card";
 import Link from "next/link";
 
 export function InfoCardList({data}){
-
   return(
           <ul className="relative flex flex-col md:grid md:grid-cols-2 md: gap-4 lg:gap-8 mx-auto text-center place-content-center z-60"
             >
