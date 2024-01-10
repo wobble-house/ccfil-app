@@ -27,7 +27,7 @@ export function HeadshotHandler(props){
     const { src, fallbackSrc, alt, isCover, ...rest } = props;
     const [imgSrc, setImgSrc] = useState(src);
     return (
-        <div className={`flex relative ${isCover == true ? 'w-[300px] h-[300px] md:w-96 md:h-96': 'mx-auto justify-center w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-md' } overflow-hidden`}>
+        <div className={`flex relative ${isCover == true ? 'w-[300px] h-[300px]': 'w-[200px] h-[200px] md:w-[300px] md:h-[300px] mx-auto justify-center rounded-md' }  overflow-hidden`}>
         <Image
             {...rest}
             className='object-top'

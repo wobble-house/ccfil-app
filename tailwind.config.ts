@@ -835,9 +835,9 @@ const config: Config = {
       150: '1.5',
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
+      sm: '380px',
+      md: '440px',
+      lg: '728px',
       xl: '1280px',
       '2xl': '1536px',
       '3xl': '1920px',

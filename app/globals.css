@@ -26,6 +26,9 @@
     line-height: 1.7rem;
     color: rgb(var(--color-blue1));
   }
+  h3 {
+    font-family: var(--font-PaytoneOne), sans-serif;
+  }
   h4 {
     font-family: var(--font-ProzaLibre), sans-serif;
   }
