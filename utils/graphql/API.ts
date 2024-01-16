@@ -256,8 +256,8 @@ export type CreateTeamMemberInput = {
   bio?: string | null,
   link?: string | null,
   title?: string | null,
-  isFeatured?: boolean | null,
   isLeader?: boolean | null,
+  featurePosition?: number | null,
   teamMemberImageId?: string | null,
 };
 
@@ -267,12 +267,24 @@ export type ModelTeamMemberConditionInput = {
   bio?: ModelStringInput | null,
   link?: ModelStringInput | null,
   title?: ModelStringInput | null,
-  isFeatured?: ModelBooleanInput | null,
   isLeader?: ModelBooleanInput | null,
+  featurePosition?: ModelIntInput | null,
   and?: Array< ModelTeamMemberConditionInput | null > | null,
   or?: Array< ModelTeamMemberConditionInput | null > | null,
   not?: ModelTeamMemberConditionInput | null,
   teamMemberImageId?: ModelIDInput | null,
+};
+
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
 };
 
 export type TeamMember = {
@@ -283,9 +295,9 @@ export type TeamMember = {
   bio?: string | null,
   link?: string | null,
   title?: string | null,
-  isFeatured?: boolean | null,
   Image?: Headshot | null,
   isLeader?: boolean | null,
+  featurePosition?: number | null,
   createdAt: string,
   updatedAt: string,
   teamMemberImageId?: string | null,
@@ -308,8 +320,8 @@ export type UpdateTeamMemberInput = {
   bio?: string | null,
   link?: string | null,
   title?: string | null,
-  isFeatured?: boolean | null,
   isLeader?: boolean | null,
+  featurePosition?: number | null,
   teamMemberImageId?: string | null,
 };
 
@@ -443,8 +455,8 @@ export type ModelTeamMemberFilterInput = {
   bio?: ModelStringInput | null,
   link?: ModelStringInput | null,
   title?: ModelStringInput | null,
-  isFeatured?: ModelBooleanInput | null,
   isLeader?: ModelBooleanInput | null,
+  featurePosition?: ModelIntInput | null,
   and?: Array< ModelTeamMemberFilterInput | null > | null,
   or?: Array< ModelTeamMemberFilterInput | null > | null,
   not?: ModelTeamMemberFilterInput | null,
@@ -569,10 +581,22 @@ export type ModelSubscriptionTeamMemberFilterInput = {
   bio?: ModelSubscriptionStringInput | null,
   link?: ModelSubscriptionStringInput | null,
   title?: ModelSubscriptionStringInput | null,
-  isFeatured?: ModelSubscriptionBooleanInput | null,
   isLeader?: ModelSubscriptionBooleanInput | null,
+  featurePosition?: ModelSubscriptionIntInput | null,
   and?: Array< ModelSubscriptionTeamMemberFilterInput | null > | null,
   or?: Array< ModelSubscriptionTeamMemberFilterInput | null > | null,
+};
+
+export type ModelSubscriptionIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  in?: Array< number | null > | null,
+  notIn?: Array< number | null > | null,
 };
 
 export type ModelSubscriptionHeadshotFilterInput = {
@@ -1056,7 +1080,6 @@ export type CreateTeamMemberMutation = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -1067,6 +1090,7 @@ export type CreateTeamMemberMutation = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1087,7 +1111,6 @@ export type UpdateTeamMemberMutation = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -1098,6 +1121,7 @@ export type UpdateTeamMemberMutation = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1118,7 +1142,6 @@ export type DeleteTeamMemberMutation = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -1129,6 +1152,7 @@ export type DeleteTeamMemberMutation = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1658,7 +1682,6 @@ export type GetTeamMemberQuery = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -1669,6 +1692,7 @@ export type GetTeamMemberQuery = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -1692,7 +1716,6 @@ export type ListTeamMembersQuery = {
       bio?: string | null,
       link?: string | null,
       title?: string | null,
-      isFeatured?: boolean | null,
       Image?:  {
         __typename: "Headshot",
         id: string,
@@ -1703,6 +1726,7 @@ export type ListTeamMembersQuery = {
         updatedAt: string,
       } | null,
       isLeader?: boolean | null,
+      featurePosition?: number | null,
       createdAt: string,
       updatedAt: string,
       teamMemberImageId?: string | null,
@@ -2422,7 +2446,6 @@ export type OnCreateTeamMemberSubscription = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -2433,6 +2456,7 @@ export type OnCreateTeamMemberSubscription = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -2452,7 +2476,6 @@ export type OnUpdateTeamMemberSubscription = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -2463,6 +2486,7 @@ export type OnUpdateTeamMemberSubscription = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,
@@ -2482,7 +2506,6 @@ export type OnDeleteTeamMemberSubscription = {
     bio?: string | null,
     link?: string | null,
     title?: string | null,
-    isFeatured?: boolean | null,
     Image?:  {
       __typename: "Headshot",
       id: string,
@@ -2493,6 +2516,7 @@ export type OnDeleteTeamMemberSubscription = {
       updatedAt: string,
     } | null,
     isLeader?: boolean | null,
+    featurePosition?: number | null,
     createdAt: string,
     updatedAt: string,
     teamMemberImageId?: string | null,

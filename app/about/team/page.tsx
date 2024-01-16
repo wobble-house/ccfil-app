@@ -34,7 +34,6 @@ const teamVariables: ListTeamMembersQueryVariables = {
 export default async function Team() {
   const teamData = await getTeamData(teamVariables);
   const execData = await getTeamData(execVariables);
-  console.log(teamData.data.listTeamMembers.items)
   return (
    <>
       <NavHeader description={metadata.description} title={metadata.title} bgimage={4}/>

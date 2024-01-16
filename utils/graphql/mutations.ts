@@ -481,7 +481,6 @@ export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -492,6 +491,7 @@ export const createTeamMember = /* GraphQL */ `mutation CreateTeamMember(
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId
@@ -513,7 +513,6 @@ export const updateTeamMember = /* GraphQL */ `mutation UpdateTeamMember(
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -524,6 +523,7 @@ export const updateTeamMember = /* GraphQL */ `mutation UpdateTeamMember(
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId
@@ -545,7 +545,6 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -556,6 +555,7 @@ export const deleteTeamMember = /* GraphQL */ `mutation DeleteTeamMember(
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId

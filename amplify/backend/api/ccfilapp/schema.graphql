@@ -39,9 +39,9 @@ type TeamMember @model @auth(rules: [{allow: public}]) {
   bio: String
   link: String
   title: String
-  isFeatured: Boolean
   Image: Headshot @hasOne
   isLeader: Boolean
+  featurePosition: Int
 }
 
 type Headshot @model @auth(rules: [{allow: public}]) {

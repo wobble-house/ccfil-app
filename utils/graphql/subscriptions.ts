@@ -444,7 +444,6 @@ export const onCreateTeamMember = /* GraphQL */ `subscription OnCreateTeamMember
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -455,6 +454,7 @@ export const onCreateTeamMember = /* GraphQL */ `subscription OnCreateTeamMember
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId
@@ -475,7 +475,6 @@ export const onUpdateTeamMember = /* GraphQL */ `subscription OnUpdateTeamMember
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -486,6 +485,7 @@ export const onUpdateTeamMember = /* GraphQL */ `subscription OnUpdateTeamMember
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId
@@ -506,7 +506,6 @@ export const onDeleteTeamMember = /* GraphQL */ `subscription OnDeleteTeamMember
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -517,6 +516,7 @@ export const onDeleteTeamMember = /* GraphQL */ `subscription OnDeleteTeamMember
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId

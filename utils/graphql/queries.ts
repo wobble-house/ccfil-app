@@ -274,7 +274,6 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
     bio
     link
     title
-    isFeatured
     Image {
       id
       src
@@ -285,6 +284,7 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
       __typename
     }
     isLeader
+    featurePosition
     createdAt
     updatedAt
     teamMemberImageId
@@ -308,7 +308,6 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
       bio
       link
       title
-      isFeatured
       Image {
         id
         src
@@ -319,6 +318,7 @@ export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
         __typename
       }
       isLeader
+      featurePosition
       createdAt
       updatedAt
       teamMemberImageId
