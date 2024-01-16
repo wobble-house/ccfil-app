@@ -1,4 +1,4 @@
-import ImageHandler from "@/components/image-handler";
+import ImageHandler from "@/utils/image-handler";
 import { LoadingSection } from "@/components/sections/section";
 
 export default function Loading() {

@@ -2,10 +2,10 @@
 import React, { useState, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation"
 import Nav from "../navigation/nav"
-import { useOnClickOutside } from '../click-handler';
+import { useOnClickOutside } from '../../utils/click-handler';
 import { HeaderBGCarousel } from "./header-bg-carousel";
 import { bgimages, carouselSlides } from "../../lib/data/data";
-import ImageHandler from "../image-handler";
+import ImageHandler from "../../utils/image-handler";
 import { HeaderSlidesCarousel } from "./header-slides-carousel";
 import HeaderContact from "./header-contact";
 import Link from "next/link";

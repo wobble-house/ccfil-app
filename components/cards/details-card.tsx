@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import {HeadshotHandler} from "../image-handler";
+import {HeadshotHandler} from "../../utils/image-handler";
 
 export function DetailsCard({ 
   bio,
@@ -28,8 +28,8 @@ export function DetailsCard({
             <div className="overscroll-y-contain overflow-auto">
               <div className="flex flex-col"> 
                     <div className="flex flex-col md:flex-row gap-2 md:gap-5 justify-evenly align-middle max-w-3xl pt-3 md:pt-5 md:pb-5">
-                          <div className="flex top-0 md:top-3 md:left-8 max-w-[300px] mx-auto shadow-md hover:scale-[1.02] active:scale-100 transition-all ease-in-out">
-                            <HeadshotHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'public/Images/oof.png'} isCover={false}/>
+                          <div className="relative flex w-[300px] h-[300px] top-0 md:top-3 mx-auto shadow-md hover:scale-[1.02] active:scale-100 transition-all ease-in-out overflow-hidden">
+                            <HeadshotHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'oof.png'} className="object-top"/>
                           </div>
                         <div className="flex flex-col gap-2 md:w-1/2 px-5">
                             <h2 className={`text-left ${(lastName.length > 10) ? 'text-[1.6em] md:text-[1.8em]': 'text-[1.9em] md:text-[2.2em]'} whitespace-normal`}>{firstName}&nbsp;{lastName}</h2>

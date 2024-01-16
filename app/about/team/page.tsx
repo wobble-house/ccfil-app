@@ -16,6 +16,7 @@ export const metadata = {
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
+export const revalidate = 60 * 60;
 
 const execVariables: ListTeamMembersQueryVariables = {
   filter: {

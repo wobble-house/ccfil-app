@@ -1,4 +1,4 @@
-import ImageHandler from "../image-handler"
+import ImageHandler from "../../utils/image-handler"
 import Link from "next/link"
 export default function HeaderContact(){
     return(

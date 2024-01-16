@@ -2,7 +2,7 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import ImageHandler from "@/components/image-handler";
+import ImageHandler from "@/utils/image-handler";
 import { usePathname } from "next/navigation";
 
 const whoWeAre = `

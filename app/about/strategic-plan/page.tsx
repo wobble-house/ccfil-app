@@ -3,7 +3,7 @@ import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
 import Loading from "@/app/loading"
 import NavHeader from "@/components/header/header"
-import ImageHandler from "@/components/image-handler"
+import ImageHandler from "@/utils/image-handler"
 
 export const metadata = {
   title: "Strategic Plan",

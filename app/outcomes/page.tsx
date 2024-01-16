@@ -7,7 +7,7 @@ import NavHeader from "@/components/header/header"
 import { StickyInfoSegment } from "@/components/sections/info-segment"
 import { InfoCardList } from "@/components/cards/list"
 import { testimonialCardListData, outcomesData } from "@/lib/data/data"
-import ImageHandler from "@/components/image-handler"
+import ImageHandler from "@/utils/image-handler"
 
 export const metadata = {
   title: 'Outcomes',

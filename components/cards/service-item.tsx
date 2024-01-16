@@ -3,7 +3,7 @@ import { useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkBreaks from "remark-breaks"
 import remarkGfm from "remark-gfm"
-import ImageHandler from "../image-handler"
+import ImageHandler from "../../utils/image-handler"
 
 export function ServiceItem({serviceTitle, serviceBodyText, Icon}){
     const [open, setOpen] = useState(false)

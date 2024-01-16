@@ -1,5 +1,5 @@
 'use client';
-import ImageHandler from "../image-handler";
+import ImageHandler from "../../utils/image-handler";
 import { useRouter } from "next/navigation";
 import Section from "./section";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown"

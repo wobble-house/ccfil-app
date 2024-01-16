@@ -1,5 +1,5 @@
 'use client';
-import ImageHandler from "../image-handler"
+import ImageHandler from "../../utils/image-handler"
 import Section from "./section"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"

@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react"
-import ImageHandler from "../image-handler";
+import ImageHandler from "../../utils/image-handler";
 
 export function HeaderBGCarousel({carouselSlides, position}){
     const [current, setCurrent] = useState(0);
