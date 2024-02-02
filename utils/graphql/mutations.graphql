@@ -1,0 +1,742 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateReferrals(
+  $input: CreateReferralsInput!
+  $condition: ModelReferralsConditionInput
+) {
+  createReferrals(input: $input, condition: $condition) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateReferrals(
+  $input: UpdateReferralsInput!
+  $condition: ModelReferralsConditionInput
+) {
+  updateReferrals(input: $input, condition: $condition) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteReferrals(
+  $input: DeleteReferralsInput!
+  $condition: ModelReferralsConditionInput
+) {
+  deleteReferrals(input: $input, condition: $condition) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateIcon(
+  $input: CreateIconInput!
+  $condition: ModelIconConditionInput
+) {
+  createIcon(input: $input, condition: $condition) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateIcon(
+  $input: UpdateIconInput!
+  $condition: ModelIconConditionInput
+) {
+  updateIcon(input: $input, condition: $condition) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteIcon(
+  $input: DeleteIconInput!
+  $condition: ModelIconConditionInput
+) {
+  deleteIcon(input: $input, condition: $condition) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateServices(
+  $input: CreateServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  createServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+mutation UpdateServices(
+  $input: UpdateServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  updateServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+mutation DeleteServices(
+  $input: DeleteServicesInput!
+  $condition: ModelServicesConditionInput
+) {
+  deleteServices(input: $input, condition: $condition) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+mutation CreateTeamMember(
+  $input: CreateTeamMemberInput!
+  $condition: ModelTeamMemberConditionInput
+) {
+  createTeamMember(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+mutation UpdateTeamMember(
+  $input: UpdateTeamMemberInput!
+  $condition: ModelTeamMemberConditionInput
+) {
+  updateTeamMember(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+mutation DeleteTeamMember(
+  $input: DeleteTeamMemberInput!
+  $condition: ModelTeamMemberConditionInput
+) {
+  deleteTeamMember(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+mutation CreateHeadshot(
+  $input: CreateHeadshotInput!
+  $condition: ModelHeadshotConditionInput
+) {
+  createHeadshot(input: $input, condition: $condition) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateHeadshot(
+  $input: UpdateHeadshotInput!
+  $condition: ModelHeadshotConditionInput
+) {
+  updateHeadshot(input: $input, condition: $condition) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteHeadshot(
+  $input: DeleteHeadshotInput!
+  $condition: ModelHeadshotConditionInput
+) {
+  deleteHeadshot(input: $input, condition: $condition) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateUserReferrals(
+  $input: CreateUserReferralsInput!
+  $condition: ModelUserReferralsConditionInput
+) {
+  createUserReferrals(input: $input, condition: $condition) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateUserReferrals(
+  $input: UpdateUserReferralsInput!
+  $condition: ModelUserReferralsConditionInput
+) {
+  updateUserReferrals(input: $input, condition: $condition) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteUserReferrals(
+  $input: DeleteUserReferralsInput!
+  $condition: ModelUserReferralsConditionInput
+) {
+  deleteUserReferrals(input: $input, condition: $condition) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}

@@ -41,7 +41,7 @@ type TeamMember @model @auth(rules: [{allow: public}]) {
   title: String
   Image: Headshot @hasOne
   isLeader: Boolean
-  featurePosition: Int! @default(value: "1")
+  featurePosition: Int!
 }
 
 type Headshot @model @auth(rules: [{allow: public}]) {

@@ -1,59 +1,4 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-ccfilapp-dev-205746-authRole",
-      "UnauthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-dev-205746-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-dev-205746-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-      "UnauthRoleName": "amplify-ccfilapp-dev-205746-unauthRole",
-      "StackName": "amplify-ccfilapp-dev-205746",
-      "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-ccfilapp-dev-205746/1d282930-8fc3-11ee-93ab-0a6d33c16a7f",
-      "AmplifyAppId": "dymon2l90oqk2"
-    },
-    "categories": {
-      "auth": {
-        "ccfilapp": {},
-        "userPoolGroups": {}
-      },
-      "function": {
-        "AdminQueriesd838de2e": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/AdminQueriesd838de2e-725470335a7544725247-build.zip"
-        },
-        "ccfilapp62c969fa": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/ccfilapp62c969fa-6c3645547875526c5432-build.zip"
-        },
-        "ccfilappCreateAuthChallenge": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-424536634958382f7179-build.zip"
-        },
-        "ccfilappCustomMessage": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
-        },
-        "ccfilappDefineAuthChallenge": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-6d753571317365455848-build.zip"
-        },
-        "ccfilappVerifyAuthChallengeResponse": {
-          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
-          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip"
-        }
-      },
-      "storage": {
-        "s3ccfilappstorage4da25038": {}
-      },
-      "analytics": {
-        "ccfilapp": {}
-      },
-      "api": {
-        "AdminQueries": {},
-        "ccfilapp": {}
-      }
-    }
-  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplify304c2efeff3e4-staging-161600-authRole",
@@ -64,33 +9,16 @@
       "UnauthRoleName": "amplify-amplify304c2efeff3e4-staging-161600-unauthRole",
       "StackName": "amplify-amplify304c2efeff3e4-staging-161600",
       "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-amplify304c2efeff3e4-staging-161600/c99b2fc0-7351-11ee-8e0e-0a6dfb9bf873",
-      "AmplifyAppId": "dymon2l90oqk2",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-amplify304c2efeff3e4-staging-161600-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AmplifyAppId": "dymon2l90oqk2"
     },
     "categories": {
-      "auth": {
-        "ccfilapp": {},
-        "userPoolGroups": {}
-      },
       "function": {
-        "ccfilapp62c969fa": {
-          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilapp62c969fa-6c3645547875526c5432-build.zip"
-        },
-        "ccfilappCreateAuthChallenge": {
-          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-424536634958382f7179-build.zip"
-        },
         "ccfilappCustomMessage": {
-          "REDIRECTURL": "/",
-          "EMAILSUBJECT": "confirmation",
           "EMAILMESSAGE": "click here",
+          "EMAILSUBJECT": "confirmation",
+          "REDIRECTURL": "/",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
           "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
-        },
-        "ccfilappDefineAuthChallenge": {
-          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-6d753571317365455848-build.zip"
         },
         "ccfilappVerifyAuthChallengeResponse": {
           "RECAPTCHASECRET": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4",
@@ -100,35 +28,26 @@
         "AdminQueriesd838de2e": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
           "s3Key": "amplify-builds/AdminQueriesd838de2e-725470335a7544725247-build.zip"
+        },
+        "ccfilapp62c969fa": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilapp62c969fa-6c3645547875526c5432-build.zip"
+        },
+        "ccfilappCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-424536634958382f7179-build.zip"
+        },
+        "ccfilappDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
+          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-6d753571317365455848-build.zip"
         }
+      },
+      "auth": {
+        "ccfilapp": {},
+        "userPoolGroups": {}
       },
       "storage": {
         "s3ccfilappstorage4da25038": {}
-      },
-      "api": {
-        "ccfilapp": {},
-        "AdminQueries": {}
-      },
-      "analytics": {
-        "ccfilapp": {}
-      }
-    }
-  },
-  "auth": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-ccfilapp-auth-112030-authRole",
-      "UnauthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-auth-112030-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-auth-112030-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-ccfilapp-auth-112030-deployment",
-      "UnauthRoleName": "amplify-ccfilapp-auth-112030-unauthRole",
-      "StackName": "amplify-ccfilapp-auth-112030",
-      "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-ccfilapp-auth-112030/8c04b740-9065-11ee-be06-0a0e59c736bd",
-      "AmplifyAppId": "dymon2l90oqk2"
-    },
-    "categories": {
-      "auth": {
-        "ccfilapp": {}
       }
     }
   }

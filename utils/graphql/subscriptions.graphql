@@ -1,0 +1,691 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+  onCreateUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+  onUpdateUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+  onDeleteUser(filter: $filter) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onCreateReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onUpdateReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteReferrals($filter: ModelSubscriptionReferralsFilterInput) {
+  onDeleteReferrals(filter: $filter) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateIcon($filter: ModelSubscriptionIconFilterInput) {
+  onCreateIcon(filter: $filter) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateIcon($filter: ModelSubscriptionIconFilterInput) {
+  onUpdateIcon(filter: $filter) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteIcon($filter: ModelSubscriptionIconFilterInput) {
+  onDeleteIcon(filter: $filter) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateServices($filter: ModelSubscriptionServicesFilterInput) {
+  onCreateServices(filter: $filter) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+subscription OnUpdateServices($filter: ModelSubscriptionServicesFilterInput) {
+  onUpdateServices(filter: $filter) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+subscription OnDeleteServices($filter: ModelSubscriptionServicesFilterInput) {
+  onDeleteServices(filter: $filter) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+subscription OnCreateTeamMember(
+  $filter: ModelSubscriptionTeamMemberFilterInput
+) {
+  onCreateTeamMember(filter: $filter) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+subscription OnUpdateTeamMember(
+  $filter: ModelSubscriptionTeamMemberFilterInput
+) {
+  onUpdateTeamMember(filter: $filter) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+subscription OnDeleteTeamMember(
+  $filter: ModelSubscriptionTeamMemberFilterInput
+) {
+  onDeleteTeamMember(filter: $filter) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+subscription OnCreateHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onCreateHeadshot(filter: $filter) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onUpdateHeadshot(filter: $filter) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteHeadshot($filter: ModelSubscriptionHeadshotFilterInput) {
+  onDeleteHeadshot(filter: $filter) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onCreateUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onUpdateUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteUserReferrals(
+  $filter: ModelSubscriptionUserReferralsFilterInput
+) {
+  onDeleteUserReferrals(filter: $filter) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}

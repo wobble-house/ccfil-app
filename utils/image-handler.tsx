@@ -27,7 +27,7 @@ export function HeadshotHandler(props){
     const { src, fallbackSrc, alt, ...rest } = props;
     const [imgSrc, setImgSrc] = useState(src);
     return (
-        <div className={`flex relative overflow-hidden w-[300px] h-[300px] mx-auto justify-center rounded-md`}>
+        <div className={`flex relative overflow-hidden w-[300px] h-[450px] mx-auto justify-center rounded-md`}>
         <Image
             {...rest}
             src={`${process.env.IMAGES_URL}/public/Images/Headshots/${imgSrc}`}

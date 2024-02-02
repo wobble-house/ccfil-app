@@ -28,7 +28,7 @@ export function DetailsCard({
             <div className="overscroll-y-contain overflow-auto">
               <div className="flex flex-col"> 
                     <div className="flex flex-col md:flex-row gap-2 md:gap-5 justify-evenly align-middle max-w-3xl pt-3 md:pt-5 md:pb-5">
-                          <div className="relative flex w-[300px] h-[300px] top-0 md:top-3 mx-auto shadow-md hover:scale-[1.02] active:scale-100 transition-all ease-in-out overflow-hidden">
+                          <div className="relative flex w-[300px] h-[450px] top-0 md:top-3 mx-auto shadow-md hover:scale-[1.02] active:scale-100 transition-all ease-in-out overflow-hidden mb-8">
                             <HeadshotHandler src={Image?.src} alt={Image?.alt} fallbackSrc={'oof.png'} className="object-top"/>
                           </div>
                         <div className="flex flex-col gap-2 md:w-1/2 px-5">

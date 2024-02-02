@@ -1,0 +1,563 @@
+# this is an auto generated file. This will be overwritten
+
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    username
+    email
+    Referrals {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetReferrals($id: ID!) {
+  getReferrals(id: $id) {
+    id
+    date
+    source
+    name
+    followUp
+    DOA
+    DOADate
+    reasonForDecline
+    howDidYouHearAboutUs
+    assistanceProvided
+    users {
+      items {
+        id
+        userId
+        referralsId
+        user {
+          id
+          username
+          email
+          createdAt
+          updatedAt
+          __typename
+        }
+        referrals {
+          id
+          date
+          source
+          name
+          followUp
+          DOA
+          DOADate
+          reasonForDecline
+          howDidYouHearAboutUs
+          assistanceProvided
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListReferrals(
+  $filter: ModelReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetIcon($id: ID!) {
+  getIcon(id: $id) {
+    id
+    alt
+    src
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListIcons(
+  $filter: ModelIconFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listIcons(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetServices($id: ID!) {
+  getServices(id: $id) {
+    id
+    serviceTitle
+    serviceBodyText
+    Icon {
+      id
+      alt
+      src
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    servicesIconId
+    __typename
+  }
+}
+
+query ListServices(
+  $filter: ModelServicesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      serviceTitle
+      serviceBodyText
+      Icon {
+        id
+        alt
+        src
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      servicesIconId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetTeamMember($id: ID!) {
+  getTeamMember(id: $id) {
+    id
+    firstName
+    lastName
+    bio
+    link
+    title
+    Image {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    isLeader
+    featurePosition
+    createdAt
+    updatedAt
+    teamMemberImageId
+    __typename
+  }
+}
+
+query ListTeamMembers(
+  $filter: ModelTeamMemberFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTeamMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      firstName
+      lastName
+      bio
+      link
+      title
+      Image {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      isLeader
+      featurePosition
+      createdAt
+      updatedAt
+      teamMemberImageId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetHeadshot($id: ID!) {
+  getHeadshot(id: $id) {
+    id
+    src
+    alt
+    imageTitle
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListHeadshots(
+  $filter: ModelHeadshotFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHeadshots(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetUserReferrals($id: ID!) {
+  getUserReferrals(id: $id) {
+    id
+    userId
+    referralsId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    referrals {
+      id
+      date
+      source
+      name
+      followUp
+      DOA
+      DOADate
+      reasonForDecline
+      howDidYouHearAboutUs
+      assistanceProvided
+      users {
+        items {
+          id
+          userId
+          referralsId
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListUserReferrals(
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUserReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query UserReferralsByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userReferralsByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query UserReferralsByReferralsId(
+  $referralsId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserReferralsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userReferralsByReferralsId(
+    referralsId: $referralsId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      referralsId
+      user {
+        id
+        username
+        email
+        Referrals {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      referrals {
+        id
+        date
+        source
+        name
+        followUp
+        DOA
+        DOADate
+        reasonForDecline
+        howDidYouHearAboutUs
+        assistanceProvided
+        users {
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
