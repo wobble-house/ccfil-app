@@ -3,6 +3,11 @@ import Image from "next/image";
 import { useAuthenticator, useTheme, View, Text, Heading, Button, Authenticator } from "@aws-amplify/ui-react";
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
 import { I18n } from 'aws-amplify/utils';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { currentAuthenticatedUser } from "../../utils/auth-helpers";
+import { Hub } from 'aws-amplify/utils';
+
 
 const authConfig: ResourcesConfig['Auth'] = {
   Cognito: {
@@ -176,7 +181,25 @@ const formFields = {
       },
     },
   };
+
+  
+
 export default function SigninForm() {
+  const router = useRouter();
+  // State to track the current authentication state
+  const [authState, setAuthState] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    // Add an event listener to handle changes in authentication state
+    Hub.listen('auth', (data) => {
+      if (data.payload.event === "signedIn") {
+        // Redirect the user to the /dashboard route upon successful sign-in
+        router.push("/dashboard");
+      }
+      setAuthState(data.payload.event);
+    });
+
+  }, []);
     return (
       <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">
       <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>

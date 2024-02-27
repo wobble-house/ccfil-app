@@ -1,4 +1,7 @@
 'use client';
+import { set } from "date-fns";
+import { useState } from "react";
+import { updateReferrals } from "@/utils/graphql/mutations";
 export default function ReferralsCard({
     id,
     date, 
@@ -46,7 +49,6 @@ export function NewReferralsCard({
     source, 
     name, 
     followUp, 
-    currentResident, 
     DOADate, 
     reasonForDecline,
     howDidYouHearAboutUs, 
@@ -57,12 +59,21 @@ export function NewReferralsCard({
         source: string, 
         name: string, 
         followUp: string, 
-        currentResident: boolean, 
         DOADate: string, 
         reasonForDecline: string,
         howDidYouHearAboutUs: string, 
         assistanceProvided: string,
         listType?: any}){
+    const [admit, setAdmit] = useState(false);
+
+    const admitReferral = (e) => {
+        setAdmit(true);
+    }
+    const declineReferral = (e) => {
+        setAdmit(false);
+    }
+    const editReferral = (e) => {
+    }
 
     return(
         <tr id={id} className={`grid grid-flow-row ${listType === 'referral' ? "grid-cols-21":"grid-cols-18"} gap-2 odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center`}>
@@ -81,13 +92,13 @@ export function NewReferralsCard({
             <td className="flex items-center border-l text-sm px-2 h-full col-span-3 border-gray-400">{assistanceProvided}</td>
             
             {listType === 'referral' ? <><td className="flex items-center border-l text-xs h-full border-gray-400 px-1">
-                <button className="flex justify-center items-center px-2 h-full align-middle bg-green-700 rounded-xl text-white text-xs">Admit</button>
+                <button className="flex justify-center items-center px-2 h-full align-middle bg-green-700 rounded-xl text-white text-xs" onClick={admitReferral}>Admit</button>
             </td>
             <td className="flex items-center border-l text-xs h-full border-gray-400 px-1">
-                <button className="flex justify-center items-center px-2 h-full align-middle bg-red-700 rounded-xl text-white text-xs">Decline</button>
+                <button className="flex justify-center items-center px-2 h-full align-middle bg-red-700 rounded-xl text-white text-xs" onClick={declineReferral}>Decline</button>
             </td>
             <td className="flex items-center border-l text-xs h-full border-gray-400 px-1">
-                <button className="flex justify-center items-center px-2 h-full align-middle bg-gray-400 rounded-xl text-white text-xs">Edit</button>
+                <button className="flex justify-center items-center px-2 h-full align-middle bg-gray-400 rounded-xl text-white text-xs" onClick={editReferral}>Edit</button>
             </td>
             </>:<></>
             }

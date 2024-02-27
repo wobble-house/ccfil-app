@@ -63,7 +63,6 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
         source={data.source}
         name={data.name}
         followUp={data.followUp}
-        currentResident={data.currentResident}
         DOADate={data.DOADate}
         reasonForDecline={data.reasonForDecline}
         howDidYouHearAboutUs={data.howDidYouHearAboutUs}
