@@ -37,7 +37,7 @@ const components = {
       <View textAlign="center" padding={tokens.space.large} className={`mb-10`}>
         <Image
           alt="CCFIL logo"
-          src="/Logos/main-logo.svg"
+          src="/logos/main-logo.svg"
           width={300}
           height={77}
         />
