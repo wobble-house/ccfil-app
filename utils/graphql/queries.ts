@@ -32,7 +32,7 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -92,7 +92,7 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -116,7 +116,7 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -153,7 +153,7 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -401,7 +401,7 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -459,7 +459,7 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
         source
         name
         followUp
-        DOA
+        currentResident
         DOADate
         reasonForDecline
         howDidYouHearAboutUs
@@ -520,7 +520,7 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
         source
         name
         followUp
-        DOA
+        currentResident
         DOADate
         reasonForDecline
         howDidYouHearAboutUs
@@ -581,7 +581,7 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
         source
         name
         followUp
-        DOA
+        currentResident
         DOADate
         reasonForDecline
         howDidYouHearAboutUs

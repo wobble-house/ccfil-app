@@ -32,7 +32,7 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -81,7 +81,7 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -130,7 +130,7 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -162,7 +162,7 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -186,7 +186,7 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -218,7 +218,7 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -242,7 +242,7 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -274,7 +274,7 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -298,7 +298,7 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -605,7 +605,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -668,7 +668,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -731,7 +731,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs

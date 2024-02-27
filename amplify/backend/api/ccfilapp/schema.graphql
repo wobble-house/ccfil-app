@@ -11,7 +11,7 @@ type Referrals @model @auth(rules: [{allow: public}]) {
   source: String
   name: String
   followUp: String
-  DOA: Boolean
+  currentResident: Boolean
   DOADate: AWSDate
   reasonForDecline: String
   howDidYouHearAboutUs: String

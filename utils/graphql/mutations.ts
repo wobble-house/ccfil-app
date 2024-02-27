@@ -35,7 +35,7 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -87,7 +87,7 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -139,7 +139,7 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -174,7 +174,7 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -198,7 +198,7 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -233,7 +233,7 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -257,7 +257,7 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -292,7 +292,7 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
     source
     name
     followUp
-    DOA
+    currentResident
     DOADate
     reasonForDecline
     howDidYouHearAboutUs
@@ -316,7 +316,7 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
           source
           name
           followUp
-          DOA
+          currentResident
           DOADate
           reasonForDecline
           howDidYouHearAboutUs
@@ -654,7 +654,7 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -718,7 +718,7 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
@@ -782,7 +782,7 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
       source
       name
       followUp
-      DOA
+      currentResident
       DOADate
       reasonForDecline
       howDidYouHearAboutUs
