@@ -5,7 +5,7 @@ type User @model @auth(rules: [{allow: public}]) {
   Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
 }
 
-type Referrals @model @auth(rules: [{allow: public}]) {
+type Referrals @model @auth(rules: [{ allow: public }, { allow: owner, operations: [create, update, delete] }]) {
   id: ID!
   date: AWSDate
   source: String

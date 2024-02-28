@@ -1,8 +1,5 @@
 import "server-only"
-import NavHeader from "@/components/header/header"
 import { carouselSlides } from "@/lib/data/data"
-import SignInButton from "@/components/forms/signin"
-import AuthForm from "@/components/forms/sign-in-form"
 import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import SigninForm from "@/components/forms/sign-in-form"

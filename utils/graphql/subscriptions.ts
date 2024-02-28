@@ -39,10 +39,12 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -88,10 +90,12 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -137,10 +141,12 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -193,10 +199,12 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -204,6 +212,7 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -249,10 +258,12 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -260,6 +271,7 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -305,10 +317,12 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -316,6 +330,7 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -590,6 +605,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -617,6 +633,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -624,10 +641,12 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -653,6 +672,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -680,6 +700,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -687,10 +708,12 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -716,6 +739,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -743,6 +767,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -750,10 +775,12 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }

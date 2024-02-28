@@ -42,10 +42,12 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -94,10 +96,12 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -146,10 +150,12 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -205,10 +211,12 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -216,6 +224,7 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -264,10 +273,12 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -275,6 +286,7 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -323,10 +335,12 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -334,6 +348,7 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -639,6 +654,7 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -666,6 +682,7 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -673,10 +690,12 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -703,6 +722,7 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -730,6 +750,7 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -737,10 +758,12 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -767,6 +790,7 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -794,6 +818,7 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -801,10 +826,12 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }

@@ -5,7 +5,6 @@ import { Amplify, type ResourcesConfig } from 'aws-amplify';
 import { I18n } from 'aws-amplify/utils';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { currentAuthenticatedUser } from "../../utils/auth-helpers";
 import { Hub } from 'aws-amplify/utils';
 
 
@@ -196,10 +195,10 @@ export default function SigninForm() {
         // Redirect the user to the /dashboard route upon successful sign-in
         router.push("/dashboard");
       }
-      setAuthState(data.payload.event);
+      return;
     });
 
-  }, []);
+  });
     return (
       <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">
       <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>

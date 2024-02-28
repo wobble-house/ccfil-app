@@ -1,7 +1,20 @@
 'use client';
-import { set } from "date-fns";
 import { useState } from "react";
+import { generateClient } from "aws-amplify/api";
+import { Amplify, type ResourcesConfig } from 'aws-amplify';
+import * as mutations from '@/utils/graphql/mutations';
 import { updateReferrals } from "@/utils/graphql/mutations";
+const authConfig: ResourcesConfig['Auth'] = {
+  Cognito: {
+    userPoolId: process.env.COGNITO_USER_POOL_ID,
+    userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
+  }
+};
+
+Amplify.configure({ Auth: authConfig },{ssr: true});
+
+const client = generateClient();
+
 export default function ReferralsCard({
     id,
     date, 
@@ -45,6 +58,7 @@ export default function ReferralsCard({
 
 export function NewReferralsCard({
     id,
+    currentResident,
     date, 
     source, 
     name, 
@@ -54,7 +68,8 @@ export function NewReferralsCard({
     howDidYouHearAboutUs, 
     assistanceProvided,
     listType}:{
-        id,
+        id: string,
+        currentResident?: boolean,
         date: string, 
         source: string, 
         name: string, 
@@ -63,15 +78,52 @@ export function NewReferralsCard({
         reasonForDecline: string,
         howDidYouHearAboutUs: string, 
         assistanceProvided: string,
-        listType?: any}){
-    const [admit, setAdmit] = useState(false);
+        listType?: any}){   
 
-    const admitReferral = (e) => {
+    const [admit, setAdmit] = useState(null);
+    
+    const timestamp = new Date()
+    const today = ((timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+timestamp.getFullYear()).toString();
+    const [todaysDate, setTodaysDate] = useState(DOADate);
+    console.log(today)
+    const referralDetails = {
+        id: id,
+        currentResident: admit,
+        DOADate: todaysDate
+      };
+
+    const admitReferral = async(e) => {
         setAdmit(true);
+        setTodaysDate(today);
+        const queryData = async () => {
+            try {
+            await client.graphql({
+                query: updateReferrals.replaceAll("__typename", ""),
+                variables: {
+                  input: {
+                    id: id,
+                    currentResident: admit,
+                    DOADate: todaysDate
+                  },
+                },
+              });
+            } catch (error) {
+                console.log('error', error);
+        };
     }
-    const declineReferral = (e) => {
+        return queryData();
+    };
+
+    const declineReferral = async(e) => {
         setAdmit(false);
-    }
+        setTodaysDate(()=>Date());
+        const updateReferral = await client.graphql({
+            query: mutations.updateReferrals,
+            variables: { input: referralDetails }
+          });
+        return updateReferral
+        };
+
     const editReferral = (e) => {
     }
 

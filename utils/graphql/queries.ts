@@ -39,10 +39,12 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -71,6 +73,7 @@ export const listUsers = /* GraphQL */ `query ListUsers(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -123,10 +126,12 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           assistanceProvided
           createdAt
           updatedAt
+          owner
           __typename
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -134,6 +139,7 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -165,6 +171,7 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -172,6 +179,7 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -386,6 +394,7 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -413,6 +422,7 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
           referralsId
           createdAt
           updatedAt
+          owner
           __typename
         }
         nextToken
@@ -420,10 +430,12 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -470,10 +482,12 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -531,10 +545,12 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -592,10 +608,12 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
         }
         createdAt
         updatedAt
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken

@@ -2,6 +2,8 @@ module.exports = {
     output: 'standalone',
     env: {
       REGION_CODE: process.env.REGION_CODE,
+      API_ENDPOINT: process.env.API_ENDPOINT,
+      API_KEY: process.env.API_KEY,
       S3_BUCKET: process.env.S3_BUCKET,
       S3_BUCKET_URL: process.env.S3_BUCKET_URL,
       S3_BUCKET_DOMAIN: process.env.S3_BUCKET_DOMAIN,
