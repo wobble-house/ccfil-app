@@ -26,34 +26,37 @@ export function InfoCardList({data}){
 
 export function ReferralsList({data, title, listType}:{data, title, listType?}){
   return(
-    <div className='overflow-x-auto flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg'>
+    <div className='overflow-x-auto flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg max-w-4xl w-full'>
       <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">{title}</h2>
       {listType === 'referral' ? 
       <div className="absolute ml-2">
           <Button text={'Add Referral'} link={'/forms/referrals'}/>
         </div>:<></>
       } 
-        <table className="relative inline border-2 border-solid rounded-lg overscroll-x-auto">
-          <tbody>
-            <tr className={`relative grid ${listType === 'referral' ? "grid-cols-21":"grid-cols-18"} gap-2 w-full bg-blue2 text-white items-center overscroll-contain overflow-auto`}>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm">
-                  <input id="default-radio-1" type="radio" value="" name="default-radio" className="justify-self-center w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              </th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm ">Date</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-2 text-sm">Source</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-2 text-sm">Name </th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-2 text-sm">Follow Up</th>
+        <table className="relative inline border-2 border-solid rounded-lg overscroll-x-auto w-full">
+          <tbody className="w-full flex flex-col flex-grow mx-auto">
+            <tr className={`relative flex flex-row gap-2 w-full bg-blue2 text-white items-center overscroll-contain overflow-auto`}>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-20">Date</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Source</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">Name </th>
+              {listType === 'approved' ? <>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Follow Up</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-20">DOA Date</th>
+               </> :null}
+                {listType === 'declined' ?
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">Reason For Decline</th>
+              :null}
+              {listType === 'referral' ?
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">how Did You Hear About Us</th>
+              :null}
               {listType === 'approved' ?
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm">DOA Date</th>
-                :<></>}
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-3 text-sm">Reason For Decline</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-3 text-sm">how Did You Hear About Us</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold col-span-3 text-sm">Assistance Provided</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">Assistance Provided</th>
+              :null}
               {listType === 'referral' ? <>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm">Admit</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm">Decline</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm">Edit</th>
-              </>:<></>}
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-12">Admit</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-12">Decline</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-12">Edit</th>
+              </>:null}
             </tr>
       {data.map(data => ( 
       <NewReferralsCard

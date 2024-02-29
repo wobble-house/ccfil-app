@@ -47,7 +47,7 @@ export default async function Dashboard() {
       <Nav mini/>
       <SignInButton/>
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4">Dashboard</h2>
-      <div className="relative flex flex-col gap-20 justify-center items-center rounded-lg overscroll-auto overflow-x-auto">
+      <div className="relative flex flex-col gap-20 justify-center items-center rounded-lg overscroll-auto overflow-x-auto pb-20">
         <ReferralsList data={newReferralsData.data.listReferrals.items} title={'Referrals'} listType={'referral'}/>
         <ReferralsList data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>
         <ReferralsList data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>
