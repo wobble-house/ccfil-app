@@ -78,11 +78,9 @@ export function NewReferralsCard({
     const [todaysDate, setTodaysDate] = useState(today);
     const [admit, setAdmit] = useState(currentResident);
 
-    function admitReferral(e){
-        
+    function admitReferral(e){  
         setAdmit(true);
         setTodaysDate(today);
-        console.log(todaysDate)
         const queryData = async () => {
             try {
             await client.graphql({
@@ -90,7 +88,7 @@ export function NewReferralsCard({
                 variables: {
                   input: {
                     id: id,
-                    currentResident: admit,
+                    currentResident: true,
                     DOADate: todaysDate
                   },
                 },
@@ -112,7 +110,7 @@ export function NewReferralsCard({
                 variables: {
                   input: {
                     id: id,
-                    currentResident: admit,
+                    currentResident: false,
                     DOADate: todaysDate
                   },
                 },
