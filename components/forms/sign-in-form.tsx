@@ -1,23 +1,11 @@
 "use client"
 import Image from "next/image";
 import { useAuthenticator, useTheme, View, Text, Heading, Button, Authenticator } from "@aws-amplify/ui-react";
-import { Amplify, type ResourcesConfig } from 'aws-amplify';
 import { I18n } from 'aws-amplify/utils';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Hub } from 'aws-amplify/utils';
 
-
-const authConfig: ResourcesConfig['Auth'] = {
-  Cognito: {
-    userPoolId: process.env.COGNITO_USER_POOL_ID,
-    userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
-  }
-};
-
-Amplify.configure({
-  Auth: authConfig
-});
 
 I18n.putVocabulariesForLanguage('en', {
   'Sign In': 'Sign In', // Tab header

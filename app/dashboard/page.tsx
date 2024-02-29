@@ -1,4 +1,3 @@
-import "server-only"
 import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
@@ -6,10 +5,6 @@ import SignInButton from "@/components/forms/signin"
 import { ReferralsList } from "@/components/cards/list"
 import { getReferrals } from '@/utils/getData/get-data'
 import { ListReferralsQueryVariables } from "@/utils/graphql/API"
-export const metadata = {
-  title: 'Dashboard',
-  description: `Improved quality of life is our set standard; we won't settle for anything less.`
-}
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
@@ -17,12 +12,9 @@ export const revalidate = 60 * 60;
 
 const newVariables: ListReferralsQueryVariables = {
   filter: {
-    currentResident: {
-      eq: false
-    },
     DOADate: {
-      attributeExists: false
-    }
+      eq: null
+    },
   }
 };
 
@@ -36,12 +28,12 @@ const approvedVariables: ListReferralsQueryVariables = {
 
 const deniedVariables: ListReferralsQueryVariables = {
   filter: {
+    DOADate: {
+      ne: null
+    },
     currentResident: {
       eq: false
     },
-    DOADate: {
-      attributeExists: false
-    }
   }
 };
 

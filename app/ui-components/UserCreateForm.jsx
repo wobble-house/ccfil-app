@@ -5,6 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
+'use client';
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";

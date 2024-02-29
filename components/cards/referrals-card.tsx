@@ -1,20 +1,11 @@
 'use client';
 import { useState } from "react";
-import { generateClient } from "aws-amplify/api";
-import { Amplify, type ResourcesConfig } from 'aws-amplify';
 import * as mutations from '@/utils/graphql/mutations';
 import { updateReferrals } from "@/utils/graphql/mutations";
-const authConfig: ResourcesConfig['Auth'] = {
-  Cognito: {
-    userPoolId: process.env.COGNITO_USER_POOL_ID,
-    userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
-  }
-};
-
-Amplify.configure({ Auth: authConfig },{ssr: true});
+import { generateClient } from "aws-amplify/api";
+import { useRouter } from "next/navigation";
 
 const client = generateClient();
-
 export default function ReferralsCard({
     id,
     date, 
@@ -80,20 +71,39 @@ export function NewReferralsCard({
         assistanceProvided: string,
         listType?: any}){   
 
-    const [admit, setAdmit] = useState(null);
-    
+    const router = useRouter();
     const timestamp = new Date()
-    const today = ((timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+timestamp.getFullYear()).toString();
-    const [todaysDate, setTodaysDate] = useState(DOADate);
-    console.log(today)
-    const referralDetails = {
-        id: id,
-        currentResident: admit,
-        DOADate: todaysDate
-      };
+    const month = ((timestamp.getMonth()+1) <= 10 ? "0"+(timestamp.getMonth()+1) : timestamp.getMonth()+1).toString()
+    const today = (timestamp.getFullYear()+"-"+month+"-"+timestamp.getDate()).toString();
+    const [todaysDate, setTodaysDate] = useState(today);
+    const [admit, setAdmit] = useState(currentResident);
 
-    const admitReferral = async(e) => {
+    function admitReferral(e){
+        
         setAdmit(true);
+        setTodaysDate(today);
+        console.log(todaysDate)
+        const queryData = async () => {
+            try {
+            await client.graphql({
+                query: updateReferrals.replaceAll("__typename", ""),
+                variables: {
+                  input: {
+                    id: id,
+                    currentResident: admit,
+                    DOADate: todaysDate
+                  },
+                },
+              });
+            } catch (error) {
+                console.log('error', error);
+        };       
+    }
+    return queryData().then(()=>router.refresh())  
+    };
+
+    function declineReferral(e){
+        setAdmit(false);
         setTodaysDate(today);
         const queryData = async () => {
             try {
@@ -109,19 +119,9 @@ export function NewReferralsCard({
               });
             } catch (error) {
                 console.log('error', error);
-        };
+        }; 
     }
-        return queryData();
-    };
-
-    const declineReferral = async(e) => {
-        setAdmit(false);
-        setTodaysDate(()=>Date());
-        const updateReferral = await client.graphql({
-            query: mutations.updateReferrals,
-            variables: { input: referralDetails }
-          });
-        return updateReferral
+    return queryData().then(()=>router.refresh())
         };
 
     const editReferral = (e) => {

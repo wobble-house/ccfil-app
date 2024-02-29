@@ -1,12 +1,12 @@
 type User @model @auth(rules: [{allow: public}]) {
-  id: ID!
+  id: ID! @primaryKey
   username: String
   email: String
   Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
 }
 
-type Referrals @model @auth(rules: [{ allow: public }, { allow: owner, operations: [create, update, delete] }]) {
-  id: ID!
+type Referrals @model @auth(rules: [{ allow: public}]) {
+  id: ID! @primaryKey
   date: AWSDate
   source: String
   name: String
@@ -20,20 +20,20 @@ type Referrals @model @auth(rules: [{ allow: public }, { allow: owner, operation
 }
 
 type Icon @model @auth(rules: [{allow: public}]) {
-  id: ID!
+  id: ID! @primaryKey
   alt: String
   src: String
 }
 
 type Services @model @auth(rules: [{allow: public}]) {
-  id: ID!
+  id: ID! @primaryKey
   serviceTitle: String
   serviceBodyText: String
   Icon: Icon @hasOne
 }
 
 type TeamMember @model @auth(rules: [{allow: public}]) {
-  id: ID!
+  id: ID! @primaryKey
   firstName: String!
   lastName: String
   bio: String
@@ -45,7 +45,7 @@ type TeamMember @model @auth(rules: [{allow: public}]) {
 }
 
 type Headshot @model @auth(rules: [{allow: public}]) {
-  id: ID!
+  id: ID! @primaryKey
   src: String!
   alt: String!
   imageTitle: String

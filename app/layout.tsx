@@ -54,13 +54,14 @@ export default function RootLayout({
     <html lang="en" className={`${paytoneOne.variable} ${latoLite.variable} ${prozaLibre.variable}`}>
       <link rel="icon" href="/Icons/favicon.png" />
       <body className="mx-auto no-scrollbar">
-        <ConfigureAmplifyClientSide />
+        <ConfigureAmplifyClientSide>
         <GABody/>
         <main className={`flex flex-col mx-auto min-h-screen`}>
         
               {children}
             </main>
             <Footer/>
+            </ConfigureAmplifyClientSide>
             </body>
     </html>
   )

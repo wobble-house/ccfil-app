@@ -22,6 +22,10 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -37,14 +41,16 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -57,11 +63,19 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
 }
 ` as GeneratedQuery<APITypes.GetUserQueryVariables, APITypes.GetUserQuery>;
 export const listUsers = /* GraphQL */ `query ListUsers(
+  $id: ID
   $filter: ModelUserFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listUsers(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       username
@@ -71,9 +85,31 @@ export const listUsers = /* GraphQL */ `query ListUsers(
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -109,6 +145,10 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -124,14 +164,16 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -139,7 +181,6 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -148,11 +189,19 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
   APITypes.GetReferralsQuery
 >;
 export const listReferrals = /* GraphQL */ `query ListReferrals(
+  $id: ID
   $filter: ModelReferralsFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listReferrals(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       date
@@ -169,9 +218,31 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -179,7 +250,6 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     nextToken
@@ -202,11 +272,19 @@ export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
 }
 ` as GeneratedQuery<APITypes.GetIconQueryVariables, APITypes.GetIconQuery>;
 export const listIcons = /* GraphQL */ `query ListIcons(
+  $id: ID
   $filter: ModelIconFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listIcons(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listIcons(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       alt
@@ -244,11 +322,19 @@ export const getServices = /* GraphQL */ `query GetServices($id: ID!) {
   APITypes.GetServicesQuery
 >;
 export const listServices = /* GraphQL */ `query ListServices(
+  $id: ID
   $filter: ModelServicesFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listServices(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       serviceTitle
@@ -304,11 +390,19 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
   APITypes.GetTeamMemberQuery
 >;
 export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
+  $id: ID
   $filter: ModelTeamMemberFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listTeamMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listTeamMembers(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       firstName
@@ -356,11 +450,19 @@ export const getHeadshot = /* GraphQL */ `query GetHeadshot($id: ID!) {
   APITypes.GetHeadshotQuery
 >;
 export const listHeadshots = /* GraphQL */ `query ListHeadshots(
+  $id: ID
   $filter: ModelHeadshotFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listHeadshots(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listHeadshots(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       src
@@ -392,9 +494,31 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -420,9 +544,31 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -430,12 +576,10 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -458,6 +602,14 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
         username
         email
         Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
@@ -477,17 +629,23 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
         howDidYouHearAboutUs
         assistanceProvided
         users {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     nextToken
@@ -521,6 +679,14 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
         username
         email
         Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
@@ -540,17 +706,23 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
         howDidYouHearAboutUs
         assistanceProvided
         users {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     nextToken
@@ -584,6 +756,14 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
         username
         email
         Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
@@ -603,17 +783,23 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
         howDidYouHearAboutUs
         assistanceProvided
         users {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
           nextToken
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     nextToken

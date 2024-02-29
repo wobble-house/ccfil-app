@@ -22,6 +22,10 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -37,14 +41,16 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -73,6 +79,10 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -88,14 +98,16 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -124,6 +136,10 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -139,14 +155,16 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -182,6 +200,10 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -197,14 +219,16 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -212,7 +236,6 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -241,6 +264,10 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -256,14 +283,16 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -271,7 +300,6 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -300,6 +328,10 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           id
           username
           email
+          Referrals {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -315,14 +347,16 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          users {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -330,7 +364,6 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -603,9 +636,31 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -631,9 +686,31 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -641,12 +718,10 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -670,9 +745,31 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -698,9 +795,31 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -708,12 +827,10 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }
@@ -737,9 +854,31 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -765,9 +904,31 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
           id
           userId
           referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
           createdAt
           updatedAt
-          owner
           __typename
         }
         nextToken
@@ -775,12 +936,10 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
       }
       createdAt
       updatedAt
-      owner
       __typename
     }
     createdAt
     updatedAt
-    owner
     __typename
   }
 }

@@ -6,12 +6,13 @@ projects:
       - ./utils/graphql/**/*.ts
     excludes:
       - ./amplify/**
+      - ./utils/graphql/API.ts
     extensions:
       amplify:
         codeGenTarget: typescript
         generatedFileName: ./utils/graphql/API.ts
         docsFilePath: ./utils/graphql
-        maxDepth: 4
+        maxDepth: 5
 extensions:
   amplify:
     version: 3
