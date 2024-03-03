@@ -86,21 +86,30 @@ export default function ReferralsCard({
         };
 
     const deleteReferral = (e) => {
-        const queryData = async () => {
-            try {
-            await client.graphql({
-                query: deleteReferrals.replaceAll("__typename", ""),
-                variables: {
-                  input: {
-                    id: id,
-                  },
-                },
-              });
-            } catch (error) {
-                console.log('error', error);
-        };       
-    }
-    return queryData().then(()=>router.refresh())  
+        function confirmDelete(){
+        if (confirm("Do you really want to delete?")) {
+            const queryData = async () => {
+                try {
+                await client.graphql({
+                    query: deleteReferrals.replaceAll("__typename", ""),
+                    variables: {
+                      input: {
+                        id: id,
+                      },
+                    },
+                  });
+                
+                } catch (error) {
+                    console.log('error', error);
+                };     
+            } 
+            return queryData().then(()=>router.refresh())
+        }
+        else {  
+            console.log('cancelled')
+          }
+        }
+        confirmDelete();
     };
 
 

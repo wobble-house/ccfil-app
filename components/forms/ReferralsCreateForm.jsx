@@ -1,10 +1,3 @@
-/***************************************************************************
- * The contents of this file were generated with Amplify Studio.           *
- * Please refrain from making any modifications to this file.              *
- * Any changes to this file will be overwritten when running amplify pull. *
- **************************************************************************/
-
-/* eslint-disable */
 'use client';
 import * as React from "react";
 import {
@@ -14,7 +7,7 @@ import {
   SwitchField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { fetchByPath, getOverrideProps, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "@/app/ui-components/utils";
 import { generateClient } from "aws-amplify/api";
 import { createReferrals } from "../../utils/graphql/mutations";
 const client = generateClient();
@@ -104,6 +97,7 @@ export default function ReferralsCreateForm(props) {
       rowGap="15px"
       columnGap="15px"
       padding="20px"
+      className="bg-white bg-opacity-75 rounded-md"
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
@@ -169,6 +163,7 @@ export default function ReferralsCreateForm(props) {
       {...getOverrideProps(overrides, "ReferralsCreateForm")}
       {...rest}
     >
+      <h2>Referrals</h2>
       <TextField
         label="Date"
         isRequired={false}
@@ -267,135 +262,6 @@ export default function ReferralsCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Follow up"
-        isRequired={false}
-        isReadOnly={false}
-        value={followUp}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              source,
-              name,
-              followUp: value,
-              currentResident,
-              DOADate,
-              reasonForDecline,
-              howDidYouHearAboutUs,
-              assistanceProvided,
-            };
-            const result = onChange(modelFields);
-            value = result?.followUp ?? value;
-          }
-          if (errors.followUp?.hasError) {
-            runValidationTasks("followUp", value);
-          }
-          setFollowUp(value);
-        }}
-        onBlur={() => runValidationTasks("followUp", followUp)}
-        errorMessage={errors.followUp?.errorMessage}
-        hasError={errors.followUp?.hasError}
-        {...getOverrideProps(overrides, "followUp")}
-      ></TextField>
-      <SwitchField
-        label="Current resident"
-        defaultChecked={false}
-        isDisabled={false}
-        isChecked={currentResident}
-        onChange={(e) => {
-          let value = e.target.checked;
-          if (onChange) {
-            const modelFields = {
-              date,
-              source,
-              name,
-              followUp,
-              currentResident: value,
-              DOADate,
-              reasonForDecline,
-              howDidYouHearAboutUs,
-              assistanceProvided,
-            };
-            const result = onChange(modelFields);
-            value = result?.currentResident ?? value;
-          }
-          if (errors.currentResident?.hasError) {
-            runValidationTasks("currentResident", value);
-          }
-          setCurrentResident(value);
-        }}
-        onBlur={() => runValidationTasks("currentResident", currentResident)}
-        errorMessage={errors.currentResident?.errorMessage}
-        hasError={errors.currentResident?.hasError}
-        {...getOverrideProps(overrides, "currentResident")}
-      ></SwitchField>
-      <TextField
-        label="Doa date"
-        isRequired={false}
-        isReadOnly={false}
-        type="date"
-        value={DOADate}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              source,
-              name,
-              followUp,
-              currentResident,
-              DOADate: value,
-              reasonForDecline,
-              howDidYouHearAboutUs,
-              assistanceProvided,
-            };
-            const result = onChange(modelFields);
-            value = result?.DOADate ?? value;
-          }
-          if (errors.DOADate?.hasError) {
-            runValidationTasks("DOADate", value);
-          }
-          setDOADate(value);
-        }}
-        onBlur={() => runValidationTasks("DOADate", DOADate)}
-        errorMessage={errors.DOADate?.errorMessage}
-        hasError={errors.DOADate?.hasError}
-        {...getOverrideProps(overrides, "DOADate")}
-      ></TextField>
-      <TextField
-        label="Reason for decline"
-        isRequired={false}
-        isReadOnly={false}
-        value={reasonForDecline}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              source,
-              name,
-              followUp,
-              currentResident,
-              DOADate,
-              reasonForDecline: value,
-              howDidYouHearAboutUs,
-              assistanceProvided,
-            };
-            const result = onChange(modelFields);
-            value = result?.reasonForDecline ?? value;
-          }
-          if (errors.reasonForDecline?.hasError) {
-            runValidationTasks("reasonForDecline", value);
-          }
-          setReasonForDecline(value);
-        }}
-        onBlur={() => runValidationTasks("reasonForDecline", reasonForDecline)}
-        errorMessage={errors.reasonForDecline?.errorMessage}
-        hasError={errors.reasonForDecline?.hasError}
-        {...getOverrideProps(overrides, "reasonForDecline")}
-      ></TextField>
-      <TextField
         label="How did you hear about us"
         isRequired={false}
         isReadOnly={false}
@@ -429,44 +295,7 @@ export default function ReferralsCreateForm(props) {
         hasError={errors.howDidYouHearAboutUs?.hasError}
         {...getOverrideProps(overrides, "howDidYouHearAboutUs")}
       ></TextField>
-      <TextField
-        label="Assistance provided"
-        isRequired={false}
-        isReadOnly={false}
-        value={assistanceProvided}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              source,
-              name,
-              followUp,
-              currentResident,
-              DOADate,
-              reasonForDecline,
-              howDidYouHearAboutUs,
-              assistanceProvided: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.assistanceProvided ?? value;
-          }
-          if (errors.assistanceProvided?.hasError) {
-            runValidationTasks("assistanceProvided", value);
-          }
-          setAssistanceProvided(value);
-        }}
-        onBlur={() =>
-          runValidationTasks("assistanceProvided", assistanceProvided)
-        }
-        errorMessage={errors.assistanceProvided?.errorMessage}
-        hasError={errors.assistanceProvided?.hasError}
-        {...getOverrideProps(overrides, "assistanceProvided")}
-      ></TextField>
-      <Flex
-        justifyContent="space-between"
-        {...getOverrideProps(overrides, "CTAFlex")}
-      >
+      <div className={`flex flex-row justify-between p-4`}>
         <Button
           children="Clear"
           type="reset"
@@ -476,10 +305,6 @@ export default function ReferralsCreateForm(props) {
           }}
           {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
-        <Flex
-          gap="15px"
-          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
-        >
           <Button
             children="Submit"
             type="submit"
@@ -487,8 +312,8 @@ export default function ReferralsCreateForm(props) {
             isDisabled={Object.values(errors).some((e) => e?.hasError)}
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
-        </Flex>
-      </Flex>
+        </div>
+      
     </Grid>
   );
 }
