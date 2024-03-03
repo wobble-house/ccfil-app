@@ -54,6 +54,7 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
               {listType === 'approved' ?
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">Assistance Provided</th>
               :null}
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-16">Delete</th>
             </tr>
       {data.map(data => ( 
       <ReferralsCard

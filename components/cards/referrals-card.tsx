@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { updateReferrals } from "@/utils/graphql/mutations";
+import { deleteReferrals, updateReferrals } from "@/utils/graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { useRouter } from "next/navigation";
 import NotesCard from "./notes-card";
@@ -36,7 +36,8 @@ export default function ReferralsCard({
     const router = useRouter();
     const timestamp = new Date()
     const month = ((timestamp.getMonth()+1) <= 10 ? "0"+(timestamp.getMonth()+1) : timestamp.getMonth()+1).toString()
-    const today = (timestamp.getFullYear()+"-"+month+"-"+timestamp.getDate()).toString();
+    const day = (timestamp.getDate() <= 10 ? "0"+timestamp.getDate() : timestamp.getDate()).toString()
+    const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
     const [todaysDate, setTodaysDate] = useState(today);
     const [admit, setAdmit] = useState(currentResident);
 
@@ -84,8 +85,24 @@ export default function ReferralsCard({
     return queryData().then(()=>router.refresh())
         };
 
-    const editReferral = (e) => {
+    const deleteReferral = (e) => {
+        const queryData = async () => {
+            try {
+            await client.graphql({
+                query: deleteReferrals.replaceAll("__typename", ""),
+                variables: {
+                  input: {
+                    id: id,
+                  },
+                },
+              });
+            } catch (error) {
+                console.log('error', error);
+        };       
     }
+    return queryData().then(()=>router.refresh())  
+    };
+
 
     return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center`}>
@@ -114,6 +131,9 @@ export default function ReferralsCard({
             {listType === 'approved' ? 
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{assistanceProvided}</td>
             :null}
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16">
+                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={deleteReferral}>x</button>
+            </td>
 
 
         </tr>

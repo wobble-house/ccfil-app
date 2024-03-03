@@ -1,7 +1,8 @@
 'use client';
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { generateClient } from "aws-amplify/api";
 import { createNote } from "@/utils/graphql/mutations";
+import { currentAuthenticatedUser } from "@/utils/auth-helpers";
 
 const client = generateClient();
 export default function NotesCard({id, name, notes}:{id: string,name: string, notes}){
@@ -9,19 +10,23 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
         const [noteModal, setNoteModal] = useState(true);
         const timestamp = new Date()
         const month = ((timestamp.getMonth()+1) <= 10 ? "0"+(timestamp.getMonth()+1) : timestamp.getMonth()+1).toString()
-        const today = (timestamp.getFullYear()+"-"+month+"-"+timestamp.getDate()).toString();
+        const day = (timestamp.getDate() <= 10 ? "0"+timestamp.getDate() : timestamp.getDate()).toString()
+        const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
         const [todaysDate, setTodaysDate] = useState(today);
-        
+        const [user, setUser] = useState(undefined);
+        const [email, setEmail] = useState(undefined);
         function handleNoteSubmit(e){
             e.preventDefault();
+            const currentUser = currentAuthenticatedUser().then((user) => {user});
+            setUser(currentUser);
             setTodaysDate(today);
+            console.log(todaysDate, newNote, user, id)
             const queryData = async () => {
                 try {
                 await client.graphql({
                     query: createNote.replaceAll("__typename", ""),
                     variables: {
                       input: {
-                        author: user.username,
                         date: todaysDate,
                         text: newNote,
                         referralsNotesId: id
@@ -45,9 +50,8 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
             <textarea className="h-[300px] w-[300px] p-2 bg-white text-black text-lg" placeholder={'Enter a new Note'} onChange={e => setNewNote(e.target.value)}></textarea>
             <ol className={`flex flex-col`}>
                 {notes.items.map((notes, index) => (
-                <li key={index}>
-                <p>{notes.author}</p>
-                <p>{notes.date}</p>
+                <li key={index} className={`flex flex-row gap-2`}>
+                <p>{notes.date} : </p>
                 <p>{notes.text}</p>
             </li>
                 ))}
