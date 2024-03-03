@@ -4,6 +4,7 @@ import { deleteReferrals, updateReferrals } from "@/utils/graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { useRouter } from "next/navigation";
 import NotesCard from "./notes-card";
+import { set } from "date-fns";
 
 const client = generateClient();
 
@@ -40,8 +41,14 @@ export default function ReferralsCard({
     const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
     const [todaysDate, setTodaysDate] = useState(today);
     const [admit, setAdmit] = useState(currentResident);
+    const [declineReason, setDeclineReason] = useState(undefined);
+    const [newAssistanceProvided, setNewAssistanceProvided] = useState(assistanceProvided);
 
     function admitReferral(e){  
+      function confirmAdmit(){
+        const admitPrompt = prompt('Enter assistance provided')
+        if (confirm("Do you really want to approve?")){
+        setNewAssistanceProvided(admitPrompt);
         setAdmit(true);
         setTodaysDate(today);
         const queryData = async () => {
@@ -52,21 +59,33 @@ export default function ReferralsCard({
                   input: {
                     id: id,
                     currentResident: true,
-                    DOADate: todaysDate
+                    DOADate: todaysDate,
+                    assistanceProvided: newAssistanceProvided
                   },
                 },
               });
             } catch (error) {
                 console.log('error', error);
-        };       
+            };
+          }
+          return queryData().then(()=>router.refresh())  
+        }
+        else {  
+          console.log('cancelled')
     }
-    return queryData().then(()=>router.refresh())  
-    };
+    <input type="text" placeholder="Assistance Provided" />
+  }
+  confirmAdmit();
+  }
 
     function declineReferral(e){
-        setAdmit(false);
-        setTodaysDate(today);
-        const queryData = async () => {
+      function confirmDecline(){
+        const declinePrompt = prompt('Enter a reason for Decline')
+        if (confirm("Do you really want to decline?")){
+          setDeclineReason(declinePrompt);
+          setAdmit(false);
+          setTodaysDate(today);
+          const queryData = async () => {
             try {
             await client.graphql({
                 query: updateReferrals.replaceAll("__typename", ""),
@@ -74,16 +93,24 @@ export default function ReferralsCard({
                   input: {
                     id: id,
                     currentResident: false,
-                    DOADate: todaysDate
+                    DOADate: todaysDate,
+                    reasonForDecline: declinePrompt
                   },
                 },
               });
             } catch (error) {
                 console.log('error', error);
-        }; 
+            }; 
+          }
+          return queryData().then(()=>router.refresh())
+        }
+        else {  
+            console.log('cancelled')
+      }
+      <input type="text" placeholder="Reason for Decline" />
     }
-    return queryData().then(()=>router.refresh())
-        };
+    confirmDecline();
+    }
 
     const deleteReferral = (e) => {
         function confirmDelete(){
@@ -128,7 +155,6 @@ export default function ReferralsCard({
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{source}</td>
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{name} </td>
             {listType === 'approved' ? <>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{followUp}</td>
             <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{DOADate}</td>
             </>:null}
             {listType === 'declined' ? 

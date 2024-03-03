@@ -8,7 +8,7 @@ import { ListReferralsQueryVariables } from "@/utils/graphql/API"
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
-export const revalidate = 60 * 60;
+export const revalidate = 0;
 
 const newVariables: ListReferralsQueryVariables = {
   filter: {

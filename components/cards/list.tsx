@@ -42,7 +42,6 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Source</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Name </th>
               {listType === 'approved' ? <>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Follow Up</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-28">DOA</th>
                </> :null}
                 {listType === 'declined' ?
