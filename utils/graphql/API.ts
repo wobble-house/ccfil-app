@@ -95,9 +95,27 @@ export type Referrals = {
   reasonForDecline?: string | null,
   howDidYouHearAboutUs?: string | null,
   assistanceProvided?: string | null,
+  notes?: ModelNoteConnection | null,
   users?: ModelUserReferralsConnection | null,
   createdAt: string,
   updatedAt: string,
+};
+
+export type ModelNoteConnection = {
+  __typename: "ModelNoteConnection",
+  items:  Array<Note | null >,
+  nextToken?: string | null,
+};
+
+export type Note = {
+  __typename: "Note",
+  id: string,
+  date?: string | null,
+  author?: string | null,
+  text?: string | null,
+  createdAt: string,
+  updatedAt: string,
+  referralsNotesId?: string | null,
 };
 
 export type UpdateUserInput = {
@@ -162,6 +180,52 @@ export type DeleteReferralsInput = {
   id: string,
 };
 
+export type CreateNoteInput = {
+  id?: string | null,
+  date?: string | null,
+  author?: string | null,
+  text?: string | null,
+  referralsNotesId?: string | null,
+};
+
+export type ModelNoteConditionInput = {
+  date?: ModelStringInput | null,
+  author?: ModelStringInput | null,
+  text?: ModelStringInput | null,
+  and?: Array< ModelNoteConditionInput | null > | null,
+  or?: Array< ModelNoteConditionInput | null > | null,
+  not?: ModelNoteConditionInput | null,
+  referralsNotesId?: ModelIDInput | null,
+};
+
+export type ModelIDInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+  size?: ModelSizeInput | null,
+};
+
+export type UpdateNoteInput = {
+  id: string,
+  date?: string | null,
+  author?: string | null,
+  text?: string | null,
+  referralsNotesId?: string | null,
+};
+
+export type DeleteNoteInput = {
+  id: string,
+};
+
 export type CreateIconInput = {
   id?: string | null,
   alt?: string | null,
@@ -209,22 +273,6 @@ export type ModelServicesConditionInput = {
   or?: Array< ModelServicesConditionInput | null > | null,
   not?: ModelServicesConditionInput | null,
   servicesIconId?: ModelIDInput | null,
-};
-
-export type ModelIDInput = {
-  ne?: string | null,
-  eq?: string | null,
-  le?: string | null,
-  lt?: string | null,
-  ge?: string | null,
-  gt?: string | null,
-  contains?: string | null,
-  notContains?: string | null,
-  between?: Array< string | null > | null,
-  beginsWith?: string | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-  size?: ModelSizeInput | null,
 };
 
 export type Services = {
@@ -423,6 +471,17 @@ export type ModelReferralsConnection = {
   nextToken?: string | null,
 };
 
+export type ModelNoteFilterInput = {
+  id?: ModelIDInput | null,
+  date?: ModelStringInput | null,
+  author?: ModelStringInput | null,
+  text?: ModelStringInput | null,
+  and?: Array< ModelNoteFilterInput | null > | null,
+  or?: Array< ModelNoteFilterInput | null > | null,
+  not?: ModelNoteFilterInput | null,
+  referralsNotesId?: ModelIDInput | null,
+};
+
 export type ModelIconFilterInput = {
   id?: ModelIDInput | null,
   alt?: ModelStringInput | null,
@@ -558,6 +617,15 @@ export type ModelSubscriptionBooleanInput = {
   eq?: boolean | null,
 };
 
+export type ModelSubscriptionNoteFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  date?: ModelSubscriptionStringInput | null,
+  author?: ModelSubscriptionStringInput | null,
+  text?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionNoteFilterInput | null > | null,
+  or?: Array< ModelSubscriptionNoteFilterInput | null > | null,
+};
+
 export type ModelSubscriptionIconFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   alt?: ModelSubscriptionStringInput | null,
@@ -658,6 +726,10 @@ export type CreateUserMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -717,6 +789,10 @@ export type UpdateUserMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -776,6 +852,10 @@ export type DeleteUserMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -811,6 +891,20 @@ export type CreateReferralsMutation = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -842,6 +936,10 @@ export type CreateReferralsMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -877,6 +975,20 @@ export type UpdateReferralsMutation = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -908,6 +1020,10 @@ export type UpdateReferralsMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -943,6 +1059,20 @@ export type DeleteReferralsMutation = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -974,6 +1104,10 @@ export type DeleteReferralsMutation = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -988,6 +1122,60 @@ export type DeleteReferralsMutation = {
     } | null,
     createdAt: string,
     updatedAt: string,
+  } | null,
+};
+
+export type CreateNoteMutationVariables = {
+  input: CreateNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type CreateNoteMutation = {
+  createNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
+  } | null,
+};
+
+export type UpdateNoteMutationVariables = {
+  input: UpdateNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type UpdateNoteMutation = {
+  updateNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
+  } | null,
+};
+
+export type DeleteNoteMutationVariables = {
+  input: DeleteNoteInput,
+  condition?: ModelNoteConditionInput | null,
+};
+
+export type DeleteNoteMutation = {
+  deleteNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
   } | null,
 };
 
@@ -1324,6 +1512,20 @@ export type CreateUserReferralsMutation = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -1433,6 +1635,20 @@ export type UpdateUserReferralsMutation = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -1542,6 +1758,20 @@ export type DeleteUserReferralsMutation = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -1626,6 +1856,10 @@ export type GetUserQuery = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -1718,6 +1952,20 @@ export type GetReferralsQuery = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -1749,6 +1997,10 @@ export type GetReferralsQuery = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -1789,6 +2041,20 @@ export type ListReferralsQuery = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -1826,6 +2092,48 @@ export type ListReferralsQuery = {
       } | null,
       createdAt: string,
       updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetNoteQueryVariables = {
+  id: string,
+};
+
+export type GetNoteQuery = {
+  getNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
+  } | null,
+};
+
+export type ListNotesQueryVariables = {
+  id?: string | null,
+  filter?: ModelNoteFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListNotesQuery = {
+  listNotes?:  {
+    __typename: "ModelNoteConnection",
+    items:  Array< {
+      __typename: "Note",
+      id: string,
+      date?: string | null,
+      author?: string | null,
+      text?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      referralsNotesId?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -2098,6 +2406,20 @@ export type GetUserReferralsQuery = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -2187,6 +2509,20 @@ export type ListUserReferralsQuery = {
         reasonForDecline?: string | null,
         howDidYouHearAboutUs?: string | null,
         assistanceProvided?: string | null,
+        notes?:  {
+          __typename: "ModelNoteConnection",
+          items:  Array< {
+            __typename: "Note",
+            id: string,
+            date?: string | null,
+            author?: string | null,
+            text?: string | null,
+            createdAt: string,
+            updatedAt: string,
+            referralsNotesId?: string | null,
+          } | null >,
+          nextToken?: string | null,
+        } | null,
         users?:  {
           __typename: "ModelUserReferralsConnection",
           items:  Array< {
@@ -2257,6 +2593,20 @@ export type UserReferralsByUserIdQuery = {
         reasonForDecline?: string | null,
         howDidYouHearAboutUs?: string | null,
         assistanceProvided?: string | null,
+        notes?:  {
+          __typename: "ModelNoteConnection",
+          items:  Array< {
+            __typename: "Note",
+            id: string,
+            date?: string | null,
+            author?: string | null,
+            text?: string | null,
+            createdAt: string,
+            updatedAt: string,
+            referralsNotesId?: string | null,
+          } | null >,
+          nextToken?: string | null,
+        } | null,
         users?:  {
           __typename: "ModelUserReferralsConnection",
           items:  Array< {
@@ -2327,6 +2677,20 @@ export type UserReferralsByReferralsIdQuery = {
         reasonForDecline?: string | null,
         howDidYouHearAboutUs?: string | null,
         assistanceProvided?: string | null,
+        notes?:  {
+          __typename: "ModelNoteConnection",
+          items:  Array< {
+            __typename: "Note",
+            id: string,
+            date?: string | null,
+            author?: string | null,
+            text?: string | null,
+            createdAt: string,
+            updatedAt: string,
+            referralsNotesId?: string | null,
+          } | null >,
+          nextToken?: string | null,
+        } | null,
         users?:  {
           __typename: "ModelUserReferralsConnection",
           items:  Array< {
@@ -2390,6 +2754,10 @@ export type OnCreateUserSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2448,6 +2816,10 @@ export type OnUpdateUserSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2506,6 +2878,10 @@ export type OnDeleteUserSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2540,6 +2916,20 @@ export type OnCreateReferralsSubscription = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -2571,6 +2961,10 @@ export type OnCreateReferralsSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2605,6 +2999,20 @@ export type OnUpdateReferralsSubscription = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -2636,6 +3044,10 @@ export type OnUpdateReferralsSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2670,6 +3082,20 @@ export type OnDeleteReferralsSubscription = {
     reasonForDecline?: string | null,
     howDidYouHearAboutUs?: string | null,
     assistanceProvided?: string | null,
+    notes?:  {
+      __typename: "ModelNoteConnection",
+      items:  Array< {
+        __typename: "Note",
+        id: string,
+        date?: string | null,
+        author?: string | null,
+        text?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        referralsNotesId?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     users?:  {
       __typename: "ModelUserReferralsConnection",
       items:  Array< {
@@ -2701,6 +3127,10 @@ export type OnDeleteReferralsSubscription = {
           reasonForDecline?: string | null,
           howDidYouHearAboutUs?: string | null,
           assistanceProvided?: string | null,
+          notes?:  {
+            __typename: "ModelNoteConnection",
+            nextToken?: string | null,
+          } | null,
           users?:  {
             __typename: "ModelUserReferralsConnection",
             nextToken?: string | null,
@@ -2715,6 +3145,57 @@ export type OnDeleteReferralsSubscription = {
     } | null,
     createdAt: string,
     updatedAt: string,
+  } | null,
+};
+
+export type OnCreateNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+};
+
+export type OnCreateNoteSubscription = {
+  onCreateNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
+  } | null,
+};
+
+export type OnUpdateNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+};
+
+export type OnUpdateNoteSubscription = {
+  onUpdateNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
+  } | null,
+};
+
+export type OnDeleteNoteSubscriptionVariables = {
+  filter?: ModelSubscriptionNoteFilterInput | null,
+};
+
+export type OnDeleteNoteSubscription = {
+  onDeleteNote?:  {
+    __typename: "Note",
+    id: string,
+    date?: string | null,
+    author?: string | null,
+    text?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    referralsNotesId?: string | null,
   } | null,
 };
 
@@ -3038,6 +3519,20 @@ export type OnCreateUserReferralsSubscription = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -3146,6 +3641,20 @@ export type OnUpdateUserReferralsSubscription = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {
@@ -3254,6 +3763,20 @@ export type OnDeleteUserReferralsSubscription = {
       reasonForDecline?: string | null,
       howDidYouHearAboutUs?: string | null,
       assistanceProvided?: string | null,
+      notes?:  {
+        __typename: "ModelNoteConnection",
+        items:  Array< {
+          __typename: "Note",
+          id: string,
+          date?: string | null,
+          author?: string | null,
+          text?: string | null,
+          createdAt: string,
+          updatedAt: string,
+          referralsNotesId?: string | null,
+        } | null >,
+        nextToken?: string | null,
+      } | null,
       users?:  {
         __typename: "ModelUserReferralsConnection",
         items:  Array< {

@@ -41,6 +41,10 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -136,6 +140,20 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -164,6 +182,10 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -213,6 +235,20 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -260,6 +296,48 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
   APITypes.ListReferralsQueryVariables,
   APITypes.ListReferralsQuery
 >;
+export const getNote = /* GraphQL */ `query GetNote($id: ID!) {
+  getNote(id: $id) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.GetNoteQueryVariables, APITypes.GetNoteQuery>;
+export const listNotes = /* GraphQL */ `query ListNotes(
+  $id: ID
+  $filter: ModelNoteFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listNotes(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      date
+      author
+      text
+      createdAt
+      updatedAt
+      referralsNotesId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<APITypes.ListNotesQueryVariables, APITypes.ListNotesQuery>;
 export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
   getIcon(id: $id) {
     id
@@ -539,6 +617,20 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -628,6 +720,20 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
         reasonForDecline
         howDidYouHearAboutUs
         assistanceProvided
+        notes {
+          items {
+            id
+            date
+            author
+            text
+            createdAt
+            updatedAt
+            referralsNotesId
+            __typename
+          }
+          nextToken
+          __typename
+        }
         users {
           items {
             id
@@ -705,6 +811,20 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
         reasonForDecline
         howDidYouHearAboutUs
         assistanceProvided
+        notes {
+          items {
+            id
+            date
+            author
+            text
+            createdAt
+            updatedAt
+            referralsNotesId
+            __typename
+          }
+          nextToken
+          __typename
+        }
         users {
           items {
             id
@@ -782,6 +902,20 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
         reasonForDecline
         howDidYouHearAboutUs
         assistanceProvided
+        notes {
+          items {
+            id
+            date
+            author
+            text
+            createdAt
+            updatedAt
+            referralsNotesId
+            __typename
+          }
+          nextToken
+          __typename
+        }
         users {
           items {
             id

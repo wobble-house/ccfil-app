@@ -32,12 +32,12 @@ export default function MyModal ({children}) {
 
     return (
         <>
-            <div className=" flex fixed bottom-20 right-10 w-14 h-14 bg-rosspurple dark:bg-rossdarkpurple border-4 border-rossblue dark:border-rossdarkblue z-[99]">
+            <div className=" flex fixed bottom-20 right-10 w-14 h-14  z-[99]">
             {isModalOpen ? (
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="flex fixed bg-rossblue dark:bg-rossdarkblue border-rosspurple dark:border-rossdarkpurple p-5 right-0 shadow-2xl bottom-32 md:right-24 max-w-xl border-r-4 border-b-4 overflow-hidden"
+                className="flex fixed  p-5 right-0 shadow-2xl bottom-32 md:right-24 max-w-xl border-r-4 border-b-4 overflow-hidden"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"

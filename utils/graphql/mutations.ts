@@ -44,6 +44,10 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -104,6 +108,10 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -164,6 +172,10 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -203,6 +215,20 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -231,6 +257,10 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -270,6 +300,20 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -298,6 +342,10 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -337,6 +385,20 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -365,6 +427,10 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -388,6 +454,63 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
 ` as GeneratedMutation<
   APITypes.DeleteReferralsMutationVariables,
   APITypes.DeleteReferralsMutation
+>;
+export const createNote = /* GraphQL */ `mutation CreateNote(
+  $input: CreateNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  createNote(input: $input, condition: $condition) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateNoteMutationVariables,
+  APITypes.CreateNoteMutation
+>;
+export const updateNote = /* GraphQL */ `mutation UpdateNote(
+  $input: UpdateNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  updateNote(input: $input, condition: $condition) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateNoteMutationVariables,
+  APITypes.UpdateNoteMutation
+>;
+export const deleteNote = /* GraphQL */ `mutation DeleteNote(
+  $input: DeleteNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  deleteNote(input: $input, condition: $condition) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteNoteMutationVariables,
+  APITypes.DeleteNoteMutation
 >;
 export const createIcon = /* GraphQL */ `mutation CreateIcon(
   $input: CreateIconInput!
@@ -730,6 +853,20 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -840,6 +977,20 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -950,6 +1101,20 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id

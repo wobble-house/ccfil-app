@@ -5,7 +5,8 @@ import { I18n } from 'aws-amplify/utils';
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Hub } from 'aws-amplify/utils';
-
+import {createUsers} from "@/utils/createData/create-data";
+import { getUserData } from "@/utils/getData/get-user-data";
 
 I18n.putVocabulariesForLanguage('en', {
   'Sign In': 'Sign In', // Tab header
@@ -175,17 +176,48 @@ export default function SigninForm() {
   const router = useRouter();
   // State to track the current authentication state
   const [authState, setAuthState] = useState<string | undefined>(undefined);
-
+  const [myUser, setMyUser] = useState<any | undefined>(undefined);
   useEffect(() => {
     // Add an event listener to handle changes in authentication state
     Hub.listen('auth', (data) => {
-      if (data.payload.event === "signedIn") {
-        // Redirect the user to the /dashboard route upon successful sign-in
-        router.push("/dashboard");
-      }
-      return;
-    });
+      
+      if ((data.payload.event === "signedIn")) {
+        const userData = data.payload.data.userId
+        const userEmail = data.payload.data?.signInDetails?.loginId
+      try {  
 
+        const signedInUser = async () => {
+          await getUserData(userData).then((data) => setMyUser(data.getUser.id.toString()));
+        }
+        signedInUser();
+        console.log("signed in user is:", myUser)
+
+        if (myUser == undefined){
+            try {
+              const user = data.payload.data;
+              const userDetails = JSON.stringify(data.payload.data)
+              const usersDetails = JSON.parse(userDetails)
+              createUsers({id: user.userId, username: userEmail, email: userEmail});
+              console.log('created user!', usersDetails)
+            }
+            catch (error){
+              console.log(error)
+            }
+
+        } else return console.log('user exists', myUser)
+        
+      }
+      
+      catch (error) {
+          console.log('error', error);
+      }
+
+      finally {
+        console.log('logged in')
+        router.push(`/dashboard`)
+      }
+      }
+      })
   });
     return (
       <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">

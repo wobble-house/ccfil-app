@@ -16,7 +16,15 @@ type Referrals @model @auth(rules: [{ allow: public}]) {
   reasonForDecline: String
   howDidYouHearAboutUs: String
   assistanceProvided: String
+  notes: [Note] @hasMany
   users: [User] @manyToMany(relationName: "UserReferrals")
+}
+
+type Note @model @auth(rules: [{ allow: public}]) {
+  id: ID! @primaryKey
+  date: AWSDate
+  author: String
+  text: String
 }
 
 type Icon @model @auth(rules: [{allow: public}]) {

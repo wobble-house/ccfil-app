@@ -41,6 +41,10 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -98,6 +102,10 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -155,6 +163,10 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -191,6 +203,20 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -219,6 +245,10 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -255,6 +285,20 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -283,6 +327,10 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -319,6 +367,20 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
     reasonForDecline
     howDidYouHearAboutUs
     assistanceProvided
+    notes {
+      items {
+        id
+        date
+        author
+        text
+        createdAt
+        updatedAt
+        referralsNotesId
+        __typename
+      }
+      nextToken
+      __typename
+    }
     users {
       items {
         id
@@ -347,6 +409,10 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           reasonForDecline
           howDidYouHearAboutUs
           assistanceProvided
+          notes {
+            nextToken
+            __typename
+          }
           users {
             nextToken
             __typename
@@ -370,6 +436,54 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
 ` as GeneratedSubscription<
   APITypes.OnDeleteReferralsSubscriptionVariables,
   APITypes.OnDeleteReferralsSubscription
+>;
+export const onCreateNote = /* GraphQL */ `subscription OnCreateNote($filter: ModelSubscriptionNoteFilterInput) {
+  onCreateNote(filter: $filter) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateNoteSubscriptionVariables,
+  APITypes.OnCreateNoteSubscription
+>;
+export const onUpdateNote = /* GraphQL */ `subscription OnUpdateNote($filter: ModelSubscriptionNoteFilterInput) {
+  onUpdateNote(filter: $filter) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateNoteSubscriptionVariables,
+  APITypes.OnUpdateNoteSubscription
+>;
+export const onDeleteNote = /* GraphQL */ `subscription OnDeleteNote($filter: ModelSubscriptionNoteFilterInput) {
+  onDeleteNote(filter: $filter) {
+    id
+    date
+    author
+    text
+    createdAt
+    updatedAt
+    referralsNotesId
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteNoteSubscriptionVariables,
+  APITypes.OnDeleteNoteSubscription
 >;
 export const onCreateIcon = /* GraphQL */ `subscription OnCreateIcon($filter: ModelSubscriptionIconFilterInput) {
   onCreateIcon(filter: $filter) {
@@ -681,6 +795,20 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -790,6 +918,20 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id
@@ -899,6 +1041,20 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
       reasonForDecline
       howDidYouHearAboutUs
       assistanceProvided
+      notes {
+        items {
+          id
+          date
+          author
+          text
+          createdAt
+          updatedAt
+          referralsNotesId
+          __typename
+        }
+        nextToken
+        __typename
+      }
       users {
         items {
           id

@@ -1,5 +1,5 @@
 import { serverClient } from "@/utils/server-utils";
-import { listHeadshots,listIcons,listServices,listTeamMembers, listReferrals} from "@/utils/graphql/queries";
+import { listHeadshots,listIcons,listServices,listTeamMembers, listReferrals, getUser} from "@/utils/graphql/queries";
 
 export async function getTeamData(variables?){
     const {data, errors} = await serverClient.graphql({
@@ -38,3 +38,11 @@ export async function getReferrals(variables?){
     })
     return {data, errors}
   };
+
+export async function getCurrentUserFromServer(variables?){
+    const {data, errors} = await serverClient.graphql({
+        query: getUser,
+        variables: (variables || null)
+    })
+    return {data, errors}
+}

@@ -1,16 +1,5 @@
-import { Amplify, type ResourcesConfig } from 'aws-amplify';
-import { autoSignIn, confirmSignUp, fetchAuthSession, getCurrentUser, signIn , signOut, signUp, type ConfirmSignUpInput, type SignInInput } from 'aws-amplify/auth';
+import { autoSignIn, confirmSignUp, fetchAuthSession, getCurrentUser,signIn , signOut, signUp, type ConfirmSignUpInput, type SignInInput } from 'aws-amplify/auth';
 
-const authConfig: ResourcesConfig['Auth'] = {
-    Cognito: {
-      userPoolId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID,
-      userPoolClientId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_CLIENT_ID
-    }
-  };
-  
-  Amplify.configure({
-    Auth: authConfig
-  },{ssr: true});
 type SignUpParameters = {
     username: string;
     password: string;
@@ -126,10 +115,11 @@ export async function currentAuthenticatedUser() {
       const { username, userId, signInDetails } = await getCurrentUser();
       console.log(`The username: ${username}`);
       console.log(`The userId: ${userId}`);
-      console.log(`The signInDetails: ${signInDetails}`);
+      console.log(`The email: ${signInDetails.loginId}`);
+      console.log(`The signInDetails: ${signInDetails.toString()}`);
     } catch (err) {
       console.log(err);
-    }
+    } 
   }
 
 export async function currentSession() {

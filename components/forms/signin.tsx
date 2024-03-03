@@ -1,6 +1,5 @@
 'use client'
 import { useState } from "react";
-import AuthForm from "./sign-in-form";
 import SigninForm from "./sign-in-form";
 
 export default function SignInButton({}) {
