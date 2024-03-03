@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Hub } from 'aws-amplify/utils';
 import {createUsers} from "@/utils/createData/create-data";
 import { getUserData } from "@/utils/getData/get-user-data";
+import { signOut } from "aws-amplify/auth";
 
 I18n.putVocabulariesForLanguage('en', {
   'Sign In': 'Sign In', // Tab header
@@ -219,10 +220,13 @@ export default function SigninForm() {
       }
       })
   });
+    function handleSignout() {  
+      signOut().then(()=>router.refresh())
+    }
     return (
       <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">
       <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>
-        {({ signOut }) => <button onClick={signOut}>Sign out</button>}
+        {({ signOut }) => <button onClick={handleSignout} className={`z-90 fixed ml-2 -mt-10 bg-blue1 text-white rounded-lg px-4 py-2 text-nowrap`}>Sign out</button>}
       </Authenticator>
       </div>
     );

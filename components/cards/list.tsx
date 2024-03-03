@@ -55,6 +55,7 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
               :null}
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-16">Delete</th>
             </tr>
+            {data.length < 1 ? <tr className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
       {data.map(data => ( 
       <ReferralsCard
         key={data.id}
@@ -62,7 +63,6 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
         date={data.date}
         source={data.source}
         name={data.name}
-        followUp={data.followUp}
         DOADate={data.DOADate}
         reasonForDecline={data.reasonForDecline}
         howDidYouHearAboutUs={data.howDidYouHearAboutUs}

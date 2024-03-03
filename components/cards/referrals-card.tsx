@@ -14,7 +14,6 @@ export default function ReferralsCard({
     date, 
     source, 
     name, 
-    followUp, 
     DOADate, 
     reasonForDecline,
     howDidYouHearAboutUs, 
@@ -26,7 +25,6 @@ export default function ReferralsCard({
         date: string, 
         source: string, 
         name: string, 
-        followUp: string, 
         DOADate: string, 
         reasonForDecline: string,
         howDidYouHearAboutUs: string, 
@@ -140,6 +138,7 @@ export default function ReferralsCard({
     };
 
 
+
     return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center`}>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16 ">
@@ -169,8 +168,6 @@ export default function ReferralsCard({
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16">
                 <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={deleteReferral}>x</button>
             </td>
-
-
         </tr>
     )
 };

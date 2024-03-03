@@ -10,8 +10,10 @@ import {
 import { fetchByPath, getOverrideProps, validateField } from "@/app/ui-components/utils";
 import { generateClient } from "aws-amplify/api";
 import { createReferrals } from "../../utils/graphql/mutations";
+import { useRouter } from "next/navigation";
 const client = generateClient();
 export default function ReferralsCreateForm(props) {
+  const router = useRouter();
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -152,6 +154,7 @@ export default function ReferralsCreateForm(props) {
           }
           if (clearOnSuccess) {
             resetStateValues();
+            router.push('/dashboard')
           }
         } catch (err) {
           if (onError) {
