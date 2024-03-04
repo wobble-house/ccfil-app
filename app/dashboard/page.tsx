@@ -5,10 +5,19 @@ import SignInForm from "@/components/forms/sign-in-form"
 import { ReferralsList } from "@/components/cards/list"
 import { getReferrals } from '@/utils/getData/get-data'
 import { ListReferralsQueryVariables } from "@/utils/graphql/API"
+import CSVButton from "@/components/buttons/csv-button"
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0;
+
+const allVariables: ListReferralsQueryVariables = {
+  filter: {
+    id: {
+      ne: null
+    }
+  }
+};
 
 const newVariables: ListReferralsQueryVariables = {
   filter: {
@@ -38,6 +47,7 @@ const deniedVariables: ListReferralsQueryVariables = {
 };
 
 export default async function Dashboard() {
+  const allReferralsData = await getReferrals(allVariables)
   const newReferralsData = await getReferrals(newVariables)
   const approvedReferralsData = await getReferrals(approvedVariables)
   const declinedReferralsData = await getReferrals(deniedVariables)
@@ -47,7 +57,10 @@ export default async function Dashboard() {
       <Nav mini/>
       <SignInForm/>
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4 mt-16">Dashboard</h2>
-      <div className="relative flex flex-col gap-20 justify-center items-center rounded-lg pb-20">
+      
+      <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
+      {allReferralsData.data.listReferrals.items.length > 0 ? 
+        <CSVButton data={allReferralsData.data.listReferrals.items}/>:null}
         <ReferralsList data={newReferralsData.data.listReferrals.items} title={'Referrals'} listType={'referral'}/>
         {approvedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>:null}
         {declinedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>:null}

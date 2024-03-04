@@ -176,8 +176,6 @@ const formFields = {
 
 export default function SigninForm() {
   const router = useRouter();
-  // State to track the current authentication state
-  const [authState, setAuthState] = useState<string | undefined>(undefined);
   const [myUser, setMyUser] = useState<any | undefined>(undefined);
   useEffect(() => {
     // Add an event listener to handle changes in authentication state

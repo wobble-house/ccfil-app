@@ -131,8 +131,6 @@ export default function ReferralsCard({
         confirmDelete();
     };
 
-
-
     return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center`}>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16 ">
