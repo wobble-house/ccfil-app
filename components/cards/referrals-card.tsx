@@ -62,14 +62,14 @@ export default function ReferralsCard({
                 console.log('error', error);
             };
           }
-          return queryData().then(()=>router.refresh())  
+          return queryData()
         }
         else {  
           console.log('cancelled')
     }
     <input type="text" placeholder="Assistance Provided" />
   }
-  confirmAdmit();
+  confirmAdmit().then(()=>router.refresh());
   }
 
     function declineReferral(e){
@@ -94,14 +94,14 @@ export default function ReferralsCard({
                 console.log('error', error);
             }; 
           }
-          return queryData().then(()=>router.refresh())
+          return queryData()
         }
         else {  
             console.log('cancelled')
       }
       <input type="text" placeholder="Reason for Decline" />
     }
-    confirmDecline();
+    confirmDecline().then(()=>router.refresh());
     }
 
     const deleteReferral = (e) => {
@@ -122,13 +122,13 @@ export default function ReferralsCard({
                     console.log('error', error);
                 };     
             } 
-            return queryData().then(()=>router.refresh())
+            return queryData()
         }
         else {  
             console.log('cancelled')
           }
         }
-        confirmDelete();
+        confirmDelete().then(()=>router.refresh());
     };
 
     return(

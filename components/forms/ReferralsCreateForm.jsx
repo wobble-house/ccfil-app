@@ -1,6 +1,7 @@
 'use client';
 /* eslint-disable */
 import * as React from "react";
+import { revalidatePath } from "next/cache";
 import {
   Button,
   Flex,
@@ -152,9 +153,11 @@ export default function ReferralsCreateForm(props) {
           });
           if (onSuccess) {
             onSuccess(modelFields);
+
           }
           if (clearOnSuccess) {
             resetStateValues();
+            revalidatePath('/dashboard', 'page')
             router.push('/dashboard')
           }
         } catch (err) {

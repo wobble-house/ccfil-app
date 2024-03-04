@@ -3,9 +3,11 @@ import { useState,useEffect } from "react"
 import { generateClient } from "aws-amplify/api";
 import { createNote } from "@/utils/graphql/mutations";
 import { currentAuthenticatedUser } from "@/utils/auth-helpers";
+import { useRouter } from "next/navigation";
 
 const client = generateClient();
 export default function NotesCard({id, name, notes}:{id: string,name: string, notes}){
+        const router = useRouter();
         const [newNote, setNewNote] = useState('');
         const [noteModal, setNoteModal] = useState(true);
         const timestamp = new Date()
@@ -37,7 +39,7 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
                     console.log('error', error);
             }; 
         }
-        return queryData().then(()=>setNoteModal(!noteModal))
+        return queryData().then(()=>setNoteModal(!noteModal)).then(()=>router.refresh())
         }
         if (noteModal) return(
             <button className="flex justify-center items-center h-full align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setNoteModal(!noteModal)}>Notes</button>
