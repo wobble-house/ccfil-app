@@ -38,16 +38,12 @@ export default function ReferralsCard({
     const day = (timestamp.getDate() <= 10 ? "0"+timestamp.getDate() : timestamp.getDate()).toString()
     const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
     const [todaysDate, setTodaysDate] = useState(today);
-    const [admit, setAdmit] = useState(currentResident);
-    const [declineReason, setDeclineReason] = useState(undefined);
-    const [newAssistanceProvided, setNewAssistanceProvided] = useState(assistanceProvided);
+
 
     function admitReferral(e){  
       function confirmAdmit(){
         const admitPrompt = prompt('Enter assistance provided')
         if (confirm("Do you really want to approve?")){
-        setNewAssistanceProvided(admitPrompt);
-        setAdmit(true);
         setTodaysDate(today);
         const queryData = async () => {
             try {
@@ -58,7 +54,7 @@ export default function ReferralsCard({
                     id: id,
                     currentResident: true,
                     DOADate: todaysDate,
-                    assistanceProvided: newAssistanceProvided
+                    assistanceProvided: admitPrompt
                   },
                 },
               });
@@ -80,8 +76,6 @@ export default function ReferralsCard({
       function confirmDecline(){
         const declinePrompt = prompt('Enter a reason for Decline')
         if (confirm("Do you really want to decline?")){
-          setDeclineReason(declinePrompt);
-          setAdmit(false);
           setTodaysDate(today);
           const queryData = async () => {
             try {
