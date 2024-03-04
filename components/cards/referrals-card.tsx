@@ -132,14 +132,14 @@ export default function ReferralsCard({
     };
 
     return(
-        <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center`}>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16 ">
+        <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
                 <button className="flex h-full align-middle bg-green-700 text-white text-xs p-1 rounded-md" onClick={admitReferral}>Admit</button>
             </td>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16">
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
                 <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={declineReferral}>Decline</button>
             </td>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16">
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
                 <NotesCard id={id} notes={notes} name={name}/>
             </td>
             <td className="flex items-center border-l text-xs h-full border-gray-400 w-28 px-2">{date}</td>
@@ -157,7 +157,7 @@ export default function ReferralsCard({
             {listType === 'approved' ? 
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{assistanceProvided}</td>
             :null}
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-16">
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-12 items-center">
                 <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={deleteReferral}>x</button>
             </td>
         </tr>

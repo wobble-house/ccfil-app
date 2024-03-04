@@ -2,9 +2,11 @@
 import { useEffect, useState } from "react";
 export default function CSVButton({data}:{data}){
     const [buttonText, setButtonText] = useState('')
-    useEffect(() => {
+    const changeButtonText = () => {
         setButtonText('')
-        setButtonText('Download CSV')
+    }
+    useEffect(() => {
+        
         const header = Object.keys(data[0]);
         const refinedData = []
         refinedData.push(header)
@@ -22,8 +24,11 @@ export default function CSVButton({data}:{data}){
         link.setAttribute('download', 'CCFIL_Referrals.csv')
         link.textContent = buttonText
         document.querySelector('#csv-button').append(link)
-    },[buttonText, data])
+        setButtonText('')
+        setButtonText('Download CSV')
+    },[buttonText])
+
     return (
-            <button id={`csv-button`} className={`csv-button relative flex text-center justify-center items-center border-2 border-blue2 bg-white bg-opacity-75 rounded-full px-4 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95 text-nowrap`}/>
+            <button id={`csv-button`} className={`csv-button relative flex text-center justify-center items-center border-2 border-blue2 bg-white bg-opacity-75 rounded-full px-4 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95 text-nowrap`} onChange={changeButtonText}/>
     )
 }

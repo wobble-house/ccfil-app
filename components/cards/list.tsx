@@ -34,10 +34,10 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
       } 
         <table className="relative inline border-2 border-solid rounded-lg w-full">
           <tbody className="w-full flex flex-col flex-grow mx-auto">
-            <tr className={`relative flex flex-row w-full bg-blue2 text-white items-center`}>
-              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-16">Admit</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-16">Decline</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-16">Notes</th>
+            <tr className={`relative flex flex-row w-full bg-blue2 text-white items-center justify-between`}>
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-10">Admit</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-10">Decline</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-10">Notes</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-28">Date</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Source</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-48">Name </th>
@@ -53,9 +53,9 @@ export function ReferralsList({data, title, listType}:{data, title, listType?}){
               {listType === 'approved' ?
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">Assistance Provided</th>
               :null}
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-16">Delete</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-12">Delete</th>
             </tr>
-            {data.length < 1 ? <tr className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
+            {data.length < 1 ? <tr className={`relative flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
       {data.map(data => ( 
       <ReferralsCard
         key={data.id}
