@@ -1,29 +1,7 @@
-'use client';
 import Button from "../buttons/button";
-import ReferralsCard from "./referrals-card";
-import TeamCard from "./team-card";
+import ReferralsCard from "../cards/referrals-card";
 
-export function InfoCardList({data}){
-  return(
-          <ul className="relative flex flex-col md:grid md:grid-cols-2 md: gap-4 lg:gap-8 mx-auto text-center place-content-center z-60"
-            >
-                {data.map(data => (
-                              <TeamCard 
-                              id={`${data.firstName+data.lastName} card`}
-                              key={data.id}
-                              bio={data.bio}
-                              link={data.link != null ? data.link : null}
-                              firstName={data.firstName}
-                              lastName={data.lastName}
-                              Image={data.Image}
-                              title={data.title}
-                            />
-                ))}
-          </ul>
-  )
-}
-
-export function ReferralsList({data, title, listType}:{data, title, listType?}){
+export default function ReferralsList({data, title, listType}:{data, title, listType?}){
   return(
     <div className='flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg max-w-6xl w-full my-10'>
       <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">{title}</h2>

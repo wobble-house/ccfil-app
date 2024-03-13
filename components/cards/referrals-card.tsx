@@ -4,7 +4,6 @@ import { deleteReferrals, updateReferrals } from "@/utils/graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { useRouter } from "next/navigation";
 import NotesCard from "./notes-card";
-import { set } from "date-fns";
 
 const client = generateClient();
 

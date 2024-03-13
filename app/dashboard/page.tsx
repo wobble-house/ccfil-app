@@ -2,7 +2,7 @@ import Nav from "@/components/navigation/nav"
 import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
 import SignInForm from "@/components/forms/sign-in-form"
-import { ReferralsList } from "@/components/cards/list"
+import ReferralsList from "@/components/lists/referrals-list"
 import { getReferrals } from '@/utils/getData/get-data'
 import { ListReferralsQueryVariables } from "@/utils/graphql/API"
 import CSVButton from "@/components/buttons/csv-button"

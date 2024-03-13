@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import InfoSegment, { StickyInfoSegment, InfoBody } from "@/components/sections/info-segment"
 import QuoteSection from "@/components/sections/quote"
 import NavHeader from "@/components/header/header"
-import { InfoCardList } from "@/components/cards/list"
+import InfoCardList from "@/components/lists/infoCard-list"
 import { testimonialCardListData, commitmentData } from "@/lib/data/data"
 
 export const metadata = {

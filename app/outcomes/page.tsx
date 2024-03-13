@@ -5,7 +5,7 @@ import Loading from "@/app/loading"
 import QuoteSection from "@/components/sections/quote"
 import NavHeader from "@/components/header/header"
 import { StickyInfoSegment } from "@/components/sections/info-segment"
-import { InfoCardList } from "@/components/cards/list"
+import InfoCardList from "@/components/lists/infoCard-list"
 import { testimonialCardListData, outcomesData } from "@/lib/data/data"
 import ImageHandler from "@/utils/image-handler"
 

@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import Loading from "@/app/loading"
 import InfoSegment,{ StickyInfoSegment} from "@/components/sections/info-segment"
 import QuoteSection from "@/components/sections/quote"
-import { InfoCardList } from "@/components/cards/list"
+import InfoCardList from "@/components/lists/infoCard-list"
 import NavHeader from "@/components/header/header"
 import {ListTeamMembersQueryVariables} from "@/utils/graphql/API"
 import { aboutTeamData } from '@/lib/data/data'
