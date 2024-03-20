@@ -3,6 +3,7 @@ type User @model @auth(rules: [{allow: public}]) {
   username: String
   email: String
   Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
+  FeatureFeedback: [FeatureFeedback] @manyToMany(relationName: "UserFeatureFeedback")
 }
 
 type Referrals @model @auth(rules: [{ allow: public}]) {
@@ -58,4 +59,15 @@ type Headshot @model @auth(rules: [{allow: public}]) {
   alt: String!
   imageTitle: String
 }
- 
+
+type FeatureFeedback @model @auth(rules: [{allow: public}]) {
+  id: ID! @primaryKey
+  date: AWSDate
+  layoutDesign: String
+  functionality: String
+  formFields: String
+  featureRequest: String
+  other: String
+  isComplete: Boolean
+  users: [User] @manyToMany(relationName: "UserFeatureFeedback")
+}

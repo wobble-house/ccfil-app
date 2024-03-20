@@ -29,6 +29,10 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -48,6 +52,51 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -93,6 +142,10 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -112,6 +165,51 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -157,6 +255,10 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -176,6 +278,51 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -239,6 +386,10 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
           username
           email
           Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
             nextToken
             __typename
           }
@@ -327,6 +478,10 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -409,6 +564,10 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
           username
           email
           Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
             nextToken
             __typename
           }
@@ -791,6 +950,207 @@ export const deleteHeadshot = /* GraphQL */ `mutation DeleteHeadshot(
   APITypes.DeleteHeadshotMutationVariables,
   APITypes.DeleteHeadshotMutation
 >;
+export const createFeatureFeedback = /* GraphQL */ `mutation CreateFeatureFeedback(
+  $input: CreateFeatureFeedbackInput!
+  $condition: ModelFeatureFeedbackConditionInput
+) {
+  createFeatureFeedback(input: $input, condition: $condition) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateFeatureFeedbackMutationVariables,
+  APITypes.CreateFeatureFeedbackMutation
+>;
+export const updateFeatureFeedback = /* GraphQL */ `mutation UpdateFeatureFeedback(
+  $input: UpdateFeatureFeedbackInput!
+  $condition: ModelFeatureFeedbackConditionInput
+) {
+  updateFeatureFeedback(input: $input, condition: $condition) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateFeatureFeedbackMutationVariables,
+  APITypes.UpdateFeatureFeedbackMutation
+>;
+export const deleteFeatureFeedback = /* GraphQL */ `mutation DeleteFeatureFeedback(
+  $input: DeleteFeatureFeedbackInput!
+  $condition: ModelFeatureFeedbackConditionInput
+) {
+  deleteFeatureFeedback(input: $input, condition: $condition) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteFeatureFeedbackMutationVariables,
+  APITypes.DeleteFeatureFeedbackMutation
+>;
 export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
   $input: CreateUserReferralsInput!
   $condition: ModelUserReferralsConditionInput
@@ -827,6 +1187,39 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             reasonForDecline
             howDidYouHearAboutUs
             assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
             createdAt
             updatedAt
             __typename
@@ -962,6 +1355,39 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
         nextToken
         __typename
       }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1086,6 +1512,39 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
         nextToken
         __typename
       }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1162,4 +1621,421 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
 ` as GeneratedMutation<
   APITypes.DeleteUserReferralsMutationVariables,
   APITypes.DeleteUserReferralsMutation
+>;
+export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatureFeedback(
+  $input: CreateUserFeatureFeedbackInput!
+  $condition: ModelUserFeatureFeedbackConditionInput
+) {
+  createUserFeatureFeedback(input: $input, condition: $condition) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateUserFeatureFeedbackMutationVariables,
+  APITypes.CreateUserFeatureFeedbackMutation
+>;
+export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatureFeedback(
+  $input: UpdateUserFeatureFeedbackInput!
+  $condition: ModelUserFeatureFeedbackConditionInput
+) {
+  updateUserFeatureFeedback(input: $input, condition: $condition) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateUserFeatureFeedbackMutationVariables,
+  APITypes.UpdateUserFeatureFeedbackMutation
+>;
+export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatureFeedback(
+  $input: DeleteUserFeatureFeedbackInput!
+  $condition: ModelUserFeatureFeedbackConditionInput
+) {
+  deleteUserFeatureFeedback(input: $input, condition: $condition) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteUserFeatureFeedbackMutationVariables,
+  APITypes.DeleteUserFeatureFeedbackMutation
 >;

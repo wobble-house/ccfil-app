@@ -4,5 +4,6 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as FeatureFeedbackForm } from "./FeatureFeedbackForm";
 export { default as ReferralsCreateForm } from "./ReferralsCreateForm";
 export { default as studioTheme } from "./studioTheme";

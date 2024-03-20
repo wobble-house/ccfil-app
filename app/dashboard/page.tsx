@@ -65,6 +65,9 @@ export default async function Dashboard() {
         {approvedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>:null}
         {declinedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>:null}
         </div>
+
+        <h2>Feature Feedback</h2>
+        
    </div>
   )
 }

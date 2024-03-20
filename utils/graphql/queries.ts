@@ -26,6 +26,10 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -45,6 +49,51 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -119,6 +168,39 @@ export const listUsers = /* GraphQL */ `query ListUsers(
         nextToken
         __typename
       }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -164,6 +246,10 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
           username
           email
           Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
             nextToken
             __typename
           }
@@ -558,6 +644,138 @@ export const listHeadshots = /* GraphQL */ `query ListHeadshots(
   APITypes.ListHeadshotsQueryVariables,
   APITypes.ListHeadshotsQuery
 >;
+export const getFeatureFeedback = /* GraphQL */ `query GetFeatureFeedback($id: ID!) {
+  getFeatureFeedback(id: $id) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetFeatureFeedbackQueryVariables,
+  APITypes.GetFeatureFeedbackQuery
+>;
+export const listFeatureFeedbacks = /* GraphQL */ `query ListFeatureFeedbacks(
+  $id: ID
+  $filter: ModelFeatureFeedbackFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listFeatureFeedbacks(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListFeatureFeedbacksQueryVariables,
+  APITypes.ListFeatureFeedbacksQuery
+>;
 export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) {
   getUserReferrals(id: $id) {
     id
@@ -591,6 +809,39 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             reasonForDecline
             howDidYouHearAboutUs
             assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
             createdAt
             updatedAt
             __typename
@@ -705,6 +956,18 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
           nextToken
           __typename
         }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
         createdAt
         updatedAt
         __typename
@@ -789,6 +1052,18 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
             id
             userId
             referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
             createdAt
             updatedAt
             __typename
@@ -887,6 +1162,18 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
           nextToken
           __typename
         }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
         createdAt
         updatedAt
         __typename
@@ -943,4 +1230,397 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
 ` as GeneratedQuery<
   APITypes.UserReferralsByReferralsIdQueryVariables,
   APITypes.UserReferralsByReferralsIdQuery
+>;
+export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedback($id: ID!) {
+  getUserFeatureFeedback(id: $id) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetUserFeatureFeedbackQueryVariables,
+  APITypes.GetUserFeatureFeedbackQuery
+>;
+export const listUserFeatureFeedbacks = /* GraphQL */ `query ListUserFeatureFeedbacks(
+  $filter: ModelUserFeatureFeedbackFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUserFeatureFeedbacks(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      featureFeedbackId
+      user {
+        id
+        username
+        email
+        Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      featureFeedback {
+        id
+        date
+        layoutDesign
+        functionality
+        formFields
+        featureRequest
+        other
+        isComplete
+        users {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListUserFeatureFeedbacksQueryVariables,
+  APITypes.ListUserFeatureFeedbacksQuery
+>;
+export const userFeatureFeedbacksByUserId = /* GraphQL */ `query UserFeatureFeedbacksByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserFeatureFeedbackFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userFeatureFeedbacksByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      featureFeedbackId
+      user {
+        id
+        username
+        email
+        Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      featureFeedback {
+        id
+        date
+        layoutDesign
+        functionality
+        formFields
+        featureRequest
+        other
+        isComplete
+        users {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.UserFeatureFeedbacksByUserIdQueryVariables,
+  APITypes.UserFeatureFeedbacksByUserIdQuery
+>;
+export const userFeatureFeedbacksByFeatureFeedbackId = /* GraphQL */ `query UserFeatureFeedbacksByFeatureFeedbackId(
+  $featureFeedbackId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelUserFeatureFeedbackFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  userFeatureFeedbacksByFeatureFeedbackId(
+    featureFeedbackId: $featureFeedbackId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      featureFeedbackId
+      user {
+        id
+        username
+        email
+        Referrals {
+          items {
+            id
+            userId
+            referralsId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        FeatureFeedback {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      featureFeedback {
+        id
+        date
+        layoutDesign
+        functionality
+        formFields
+        featureRequest
+        other
+        isComplete
+        users {
+          items {
+            id
+            userId
+            featureFeedbackId
+            createdAt
+            updatedAt
+            __typename
+          }
+          nextToken
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.UserFeatureFeedbacksByFeatureFeedbackIdQueryVariables,
+  APITypes.UserFeatureFeedbacksByFeatureFeedbackIdQuery
 >;

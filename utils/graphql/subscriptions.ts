@@ -26,6 +26,10 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -45,6 +49,51 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -87,6 +136,10 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -106,6 +159,51 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -148,6 +246,10 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -167,6 +269,51 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             nextToken
             __typename
           }
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    FeatureFeedback {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
           users {
             nextToken
             __typename
@@ -227,6 +374,10 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
           username
           email
           Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
             nextToken
             __typename
           }
@@ -312,6 +463,10 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
             nextToken
             __typename
           }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
           createdAt
           updatedAt
           __typename
@@ -391,6 +546,10 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
           username
           email
           Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
             nextToken
             __typename
           }
@@ -734,6 +893,204 @@ export const onDeleteHeadshot = /* GraphQL */ `subscription OnDeleteHeadshot($fi
   APITypes.OnDeleteHeadshotSubscriptionVariables,
   APITypes.OnDeleteHeadshotSubscription
 >;
+export const onCreateFeatureFeedback = /* GraphQL */ `subscription OnCreateFeatureFeedback(
+  $filter: ModelSubscriptionFeatureFeedbackFilterInput
+) {
+  onCreateFeatureFeedback(filter: $filter) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateFeatureFeedbackSubscriptionVariables,
+  APITypes.OnCreateFeatureFeedbackSubscription
+>;
+export const onUpdateFeatureFeedback = /* GraphQL */ `subscription OnUpdateFeatureFeedback(
+  $filter: ModelSubscriptionFeatureFeedbackFilterInput
+) {
+  onUpdateFeatureFeedback(filter: $filter) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateFeatureFeedbackSubscriptionVariables,
+  APITypes.OnUpdateFeatureFeedbackSubscription
+>;
+export const onDeleteFeatureFeedback = /* GraphQL */ `subscription OnDeleteFeatureFeedback(
+  $filter: ModelSubscriptionFeatureFeedbackFilterInput
+) {
+  onDeleteFeatureFeedback(filter: $filter) {
+    id
+    date
+    layoutDesign
+    functionality
+    formFields
+    featureRequest
+    other
+    isComplete
+    users {
+      items {
+        id
+        userId
+        featureFeedbackId
+        user {
+          id
+          username
+          email
+          Referrals {
+            nextToken
+            __typename
+          }
+          FeatureFeedback {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        featureFeedback {
+          id
+          date
+          layoutDesign
+          functionality
+          formFields
+          featureRequest
+          other
+          isComplete
+          users {
+            nextToken
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteFeatureFeedbackSubscriptionVariables,
+  APITypes.OnDeleteFeatureFeedbackSubscription
+>;
 export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserReferrals(
   $filter: ModelSubscriptionUserReferralsFilterInput
 ) {
@@ -769,6 +1126,39 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             reasonForDecline
             howDidYouHearAboutUs
             assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
             createdAt
             updatedAt
             __typename
@@ -903,6 +1293,39 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
         nextToken
         __typename
       }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1026,6 +1449,39 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
         nextToken
         __typename
       }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1102,4 +1558,418 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
 ` as GeneratedSubscription<
   APITypes.OnDeleteUserReferralsSubscriptionVariables,
   APITypes.OnDeleteUserReferralsSubscription
+>;
+export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateUserFeatureFeedback(
+  $filter: ModelSubscriptionUserFeatureFeedbackFilterInput
+) {
+  onCreateUserFeatureFeedback(filter: $filter) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateUserFeatureFeedbackSubscriptionVariables,
+  APITypes.OnCreateUserFeatureFeedbackSubscription
+>;
+export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateUserFeatureFeedback(
+  $filter: ModelSubscriptionUserFeatureFeedbackFilterInput
+) {
+  onUpdateUserFeatureFeedback(filter: $filter) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateUserFeatureFeedbackSubscriptionVariables,
+  APITypes.OnUpdateUserFeatureFeedbackSubscription
+>;
+export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteUserFeatureFeedback(
+  $filter: ModelSubscriptionUserFeatureFeedbackFilterInput
+) {
+  onDeleteUserFeatureFeedback(filter: $filter) {
+    id
+    userId
+    featureFeedbackId
+    user {
+      id
+      username
+      email
+      Referrals {
+        items {
+          id
+          userId
+          referralsId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          referrals {
+            id
+            date
+            source
+            name
+            followUp
+            currentResident
+            DOADate
+            reasonForDecline
+            howDidYouHearAboutUs
+            assistanceProvided
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      FeatureFeedback {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    featureFeedback {
+      id
+      date
+      layoutDesign
+      functionality
+      formFields
+      featureRequest
+      other
+      isComplete
+      users {
+        items {
+          id
+          userId
+          featureFeedbackId
+          user {
+            id
+            username
+            email
+            createdAt
+            updatedAt
+            __typename
+          }
+          featureFeedback {
+            id
+            date
+            layoutDesign
+            functionality
+            formFields
+            featureRequest
+            other
+            isComplete
+            createdAt
+            updatedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteUserFeatureFeedbackSubscriptionVariables,
+  APITypes.OnDeleteUserFeatureFeedbackSubscription
 >;
