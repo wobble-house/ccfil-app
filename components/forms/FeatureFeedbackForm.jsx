@@ -1,12 +1,14 @@
 'use client';
 /* eslint-disable */
 import * as React from "react";
-import { Button, Flex, Grid, TextAreaField } from "@aws-amplify/ui-react";
+import { Button, Grid, TextAreaField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "@/app/ui-components/utils";
 import { generateClient } from "aws-amplify/api";
 import { createFeatureFeedback } from "../../utils/graphql/mutations";
+import { useRouter } from "next/navigation";
 const client = generateClient();
 export default function FeatureFeedbackForm(props) {
+  const router = useRouter();
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -125,6 +127,8 @@ export default function FeatureFeedbackForm(props) {
           }
           if (clearOnSuccess) {
             resetStateValues();
+
+            router.push('/dashboard')
           }
         } catch (err) {
           if (onError) {

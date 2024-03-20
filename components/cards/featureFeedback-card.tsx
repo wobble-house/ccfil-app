@@ -25,25 +25,19 @@ export default function FeatueFeedbackCard({
         other: string,
         isComplete: boolean}){   
 
-    const router = useRouter();
-    const timestamp = new Date()
-    const month = ((timestamp.getMonth()+1) <= 10 ? "0"+(timestamp.getMonth()+1) : timestamp.getMonth()+1).toString()
-    const day = (timestamp.getDate() <= 10 ? "0"+timestamp.getDate() : timestamp.getDate()).toString()
-    const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
-    const [todaysDate, setTodaysDate] = useState(today);
+    const cleanDate = date.split('T')[0]
 
-    if (isComplete == false || null) return(
+    return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
-            <td className="flex items-center border-l text-xs h-full border-gray-400 w-28 px-2">{date}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{layoutDesign}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{functionality} </td>
-            <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{formFields}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{featureRequest}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{other}</td>
-        </tr>
-    )
-    else return(
-        null
+        <td className="flex items-center border-l text-xs h-full border-gray-400 w-20 px-2">{cleanDate}</td>
+        <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{layoutDesign}</td>
+        <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{functionality} </td>
+        <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-48">{formFields}</td>
+        <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{featureRequest}</td>
+        <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{other}</td>
+        <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-16">
+            <input type="checkbox" disabled checked={isComplete}></input></td>
+    </tr>
     )
 };
 
