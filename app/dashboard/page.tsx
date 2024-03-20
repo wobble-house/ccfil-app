@@ -3,7 +3,8 @@ import { HeaderBGCarousel } from "@/components/header/header-bg-carousel"
 import { carouselSlides } from "@/lib/data/data"
 import SignInForm from "@/components/forms/sign-in-form"
 import ReferralsList from "@/components/lists/referrals-list"
-import { getReferrals } from '@/utils/getData/get-data'
+import FeatureFeedbackList from "@/components/lists/featureFeedback-list"
+import { getfeatureFeedback, getReferrals } from '@/utils/getData/get-data'
 import { ListReferralsQueryVariables } from "@/utils/graphql/API"
 import CSVButton from "@/components/buttons/csv-button"
 export const runtime = 'nodejs'
@@ -51,6 +52,7 @@ export default async function Dashboard() {
   const newReferralsData = await getReferrals(newVariables)
   const approvedReferralsData = await getReferrals(approvedVariables)
   const declinedReferralsData = await getReferrals(deniedVariables)
+  const feedbackData = await getfeatureFeedback()
   return (
      <div className="max-w-screen">
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
@@ -64,9 +66,8 @@ export default async function Dashboard() {
         <ReferralsList data={newReferralsData.data.listReferrals.items} title={'Referrals'} listType={'referral'}/>
         {approvedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>:null}
         {declinedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>:null}
+        <FeatureFeedbackList data={feedbackData.data.listFeatureFeedbacks.items} title={'Feature Feedback'}/>
         </div>
-
-        <h2>Feature Feedback</h2>
         
    </div>
   )
