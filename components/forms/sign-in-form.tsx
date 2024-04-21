@@ -224,7 +224,7 @@ export default function SigninForm() {
     }
     return (
       <div className="md:absolute flex bg-white bg-opacity-75 mt-12 md:left-0 rounded-md">
-      <Authenticator formFields={formFields} components={components} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>
+      <Authenticator formFields={formFields} components={components} hideSignUp={true} className={`flex flex-grow w-full p-8 border-[6px] border-blue1 rounded-md overflow-auto`}>
         {({ signOut }) => <div className={`fixed top-0 flex flex-row bg-white bg-opacity-75 py-1 px-2 rounded-br-lg gap-2 items-center z-90`}><button onClick={handleSignout} className={` hover:bg-white hover:bg-opacity-75 hover:border-2 hover:text-blue1 hover:border-blue1 bg-blue1 text-white rounded-full px-4 text-nowrap h-8`}>Sign out</button><button className={`border-2 border-blue2 rounded-full px-4 my-2 hover:scale-[1.02] hover:bg-blue2 hover:text-white active:scale-95`}><Link href="/dashboard">Dashboard</Link></button></div>}
       </Authenticator>
       </div>
