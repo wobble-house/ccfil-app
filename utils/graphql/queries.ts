@@ -116,19 +116,11 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
 }
 ` as GeneratedQuery<APITypes.GetUserQueryVariables, APITypes.GetUserQuery>;
 export const listUsers = /* GraphQL */ `query ListUsers(
-  $id: ID
   $filter: ModelUserFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listUsers(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       username
@@ -297,19 +289,11 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
   APITypes.GetReferralsQuery
 >;
 export const listReferrals = /* GraphQL */ `query ListReferrals(
-  $id: ID
   $filter: ModelReferralsFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listReferrals(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listReferrals(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       date
@@ -396,19 +380,11 @@ export const getNote = /* GraphQL */ `query GetNote($id: ID!) {
 }
 ` as GeneratedQuery<APITypes.GetNoteQueryVariables, APITypes.GetNoteQuery>;
 export const listNotes = /* GraphQL */ `query ListNotes(
-  $id: ID
   $filter: ModelNoteFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listNotes(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       date
@@ -436,19 +412,11 @@ export const getIcon = /* GraphQL */ `query GetIcon($id: ID!) {
 }
 ` as GeneratedQuery<APITypes.GetIconQueryVariables, APITypes.GetIconQuery>;
 export const listIcons = /* GraphQL */ `query ListIcons(
-  $id: ID
   $filter: ModelIconFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listIcons(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listIcons(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       alt
@@ -486,19 +454,11 @@ export const getServices = /* GraphQL */ `query GetServices($id: ID!) {
   APITypes.GetServicesQuery
 >;
 export const listServices = /* GraphQL */ `query ListServices(
-  $id: ID
   $filter: ModelServicesFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listServices(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       serviceTitle
@@ -554,19 +514,11 @@ export const getTeamMember = /* GraphQL */ `query GetTeamMember($id: ID!) {
   APITypes.GetTeamMemberQuery
 >;
 export const listTeamMembers = /* GraphQL */ `query ListTeamMembers(
-  $id: ID
   $filter: ModelTeamMemberFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listTeamMembers(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listTeamMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       firstName
@@ -614,19 +566,11 @@ export const getHeadshot = /* GraphQL */ `query GetHeadshot($id: ID!) {
   APITypes.GetHeadshotQuery
 >;
 export const listHeadshots = /* GraphQL */ `query ListHeadshots(
-  $id: ID
   $filter: ModelHeadshotFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listHeadshots(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listHeadshots(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       src
@@ -709,19 +653,11 @@ export const getFeatureFeedback = /* GraphQL */ `query GetFeatureFeedback($id: I
   APITypes.GetFeatureFeedbackQuery
 >;
 export const listFeatureFeedbacks = /* GraphQL */ `query ListFeatureFeedbacks(
-  $id: ID
   $filter: ModelFeatureFeedbackFilterInput
   $limit: Int
   $nextToken: String
-  $sortDirection: ModelSortDirection
 ) {
-  listFeatureFeedbacks(
-    id: $id
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    sortDirection: $sortDirection
-  ) {
+  listFeatureFeedbacks(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       date

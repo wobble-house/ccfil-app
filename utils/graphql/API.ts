@@ -533,12 +533,6 @@ export type ModelUserFilterInput = {
   not?: ModelUserFilterInput | null,
 };
 
-export enum ModelSortDirection {
-  ASC = "ASC",
-  DESC = "DESC",
-}
-
-
 export type ModelUserConnection = {
   __typename: "ModelUserConnection",
   items:  Array<User | null >,
@@ -674,6 +668,12 @@ export type ModelUserReferralsFilterInput = {
   or?: Array< ModelUserReferralsFilterInput | null > | null,
   not?: ModelUserReferralsFilterInput | null,
 };
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
 
 export type ModelUserFeatureFeedbackFilterInput = {
   id?: ModelIDInput | null,
@@ -2943,11 +2943,9 @@ export type GetUserQuery = {
 };
 
 export type ListUsersQueryVariables = {
-  id?: string | null,
   filter?: ModelUserFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListUsersQuery = {
@@ -3121,11 +3119,9 @@ export type GetReferralsQuery = {
 };
 
 export type ListReferralsQueryVariables = {
-  id?: string | null,
   filter?: ModelReferralsFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListReferralsQuery = {
@@ -3217,11 +3213,9 @@ export type GetNoteQuery = {
 };
 
 export type ListNotesQueryVariables = {
-  id?: string | null,
   filter?: ModelNoteFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListNotesQuery = {
@@ -3257,11 +3251,9 @@ export type GetIconQuery = {
 };
 
 export type ListIconsQueryVariables = {
-  id?: string | null,
   filter?: ModelIconFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListIconsQuery = {
@@ -3304,11 +3296,9 @@ export type GetServicesQuery = {
 };
 
 export type ListServicesQueryVariables = {
-  id?: string | null,
   filter?: ModelServicesFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListServicesQuery = {
@@ -3366,11 +3356,9 @@ export type GetTeamMemberQuery = {
 };
 
 export type ListTeamMembersQueryVariables = {
-  id?: string | null,
   filter?: ModelTeamMemberFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListTeamMembersQuery = {
@@ -3420,11 +3408,9 @@ export type GetHeadshotQuery = {
 };
 
 export type ListHeadshotsQueryVariables = {
-  id?: string | null,
   filter?: ModelHeadshotFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListHeadshotsQuery = {
@@ -3509,11 +3495,9 @@ export type GetFeatureFeedbackQuery = {
 };
 
 export type ListFeatureFeedbacksQueryVariables = {
-  id?: string | null,
   filter?: ModelFeatureFeedbackFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListFeatureFeedbacksQuery = {
