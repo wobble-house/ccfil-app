@@ -30,8 +30,25 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -81,8 +98,25 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -109,8 +143,25 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -140,8 +191,25 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -191,8 +259,25 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -219,8 +304,25 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -250,8 +352,25 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -301,8 +420,25 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -329,8 +465,25 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -381,8 +534,25 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -467,8 +637,25 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -553,8 +740,25 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -922,8 +1126,25 @@ export const onCreateFeatureFeedback = /* GraphQL */ `subscription OnCreateFeatu
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -988,8 +1209,25 @@ export const onUpdateFeatureFeedback = /* GraphQL */ `subscription OnUpdateFeatu
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -1054,8 +1292,25 @@ export const onDeleteFeatureFeedback = /* GraphQL */ `subscription OnDeleteFeatu
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -1111,8 +1366,16 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1146,8 +1409,16 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1170,8 +1441,25 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1208,8 +1496,16 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1267,8 +1563,16 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1302,8 +1606,16 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1326,8 +1638,25 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1364,8 +1693,16 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1423,8 +1760,16 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1458,8 +1803,16 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1482,8 +1835,25 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1520,8 +1890,16 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1579,8 +1957,16 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1614,8 +2000,16 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1638,8 +2032,25 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1660,8 +2071,16 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1717,8 +2136,16 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1752,8 +2179,16 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1776,8 +2211,25 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1798,8 +2250,16 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1855,8 +2315,16 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1890,8 +2358,16 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1914,8 +2390,25 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1936,8 +2429,16 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {

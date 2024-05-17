@@ -33,8 +33,25 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -84,8 +101,25 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -112,8 +146,25 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -146,8 +197,25 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -197,8 +265,25 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -225,8 +310,25 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -259,8 +361,25 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -310,8 +429,25 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -338,8 +474,25 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -393,8 +546,25 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -482,8 +652,25 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -571,8 +758,25 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -980,8 +1184,25 @@ export const createFeatureFeedback = /* GraphQL */ `mutation CreateFeatureFeedba
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -1047,8 +1268,25 @@ export const updateFeatureFeedback = /* GraphQL */ `mutation UpdateFeatureFeedba
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -1114,8 +1352,25 @@ export const deleteFeatureFeedback = /* GraphQL */ `mutation DeleteFeatureFeedba
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -1172,8 +1427,16 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1207,8 +1470,16 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1231,8 +1502,25 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1269,8 +1557,16 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1329,8 +1625,16 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1364,8 +1668,16 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1388,8 +1700,25 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1426,8 +1755,16 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1486,8 +1823,16 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1521,8 +1866,16 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1545,8 +1898,25 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -1583,8 +1953,16 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1643,8 +2021,16 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1678,8 +2064,16 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1702,8 +2096,25 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1724,8 +2135,16 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1782,8 +2201,16 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1817,8 +2244,16 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1841,8 +2276,25 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1863,8 +2315,16 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1921,8 +2381,16 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1956,8 +2424,16 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1980,8 +2456,25 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -2002,8 +2495,16 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {

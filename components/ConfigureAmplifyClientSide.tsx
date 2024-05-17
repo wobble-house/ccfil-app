@@ -7,6 +7,6 @@ import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
 
 Amplify.configure(config, { ssr: true });
 cognitoUserPoolsTokenProvider.setKeyValueStorage(new CookieStorage());
-export default function ConfigureAmplifyClientSide({children}: {children: React.ReactNode}) {
-  return <>{children}</>;
+export default function ConfigureAmplifyClientSide() {
+  return null;
 }

@@ -30,8 +30,25 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -81,8 +98,25 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -109,8 +143,25 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
       nextToken
       __typename
     }
+    title
+    bio
+    firstName
+    lastName
+    isLeader
+    featurePosition
+    Headshot {
+      id
+      src
+      alt
+      imageTitle
+      createdAt
+      updatedAt
+      __typename
+    }
+    link
     createdAt
     updatedAt
+    userHeadshotId
     __typename
   }
 }
@@ -134,8 +185,16 @@ export const listUsers = /* GraphQL */ `query ListUsers(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -169,8 +228,16 @@ export const listUsers = /* GraphQL */ `query ListUsers(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -193,8 +260,25 @@ export const listUsers = /* GraphQL */ `query ListUsers(
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     nextToken
@@ -245,8 +329,25 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         referrals {
@@ -328,8 +429,16 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -615,8 +724,25 @@ export const getFeatureFeedback = /* GraphQL */ `query GetFeatureFeedback($id: I
             nextToken
             __typename
           }
+          title
+          bio
+          firstName
+          lastName
+          isLeader
+          featurePosition
+          Headshot {
+            id
+            src
+            alt
+            imageTitle
+            createdAt
+            updatedAt
+            __typename
+          }
+          link
           createdAt
           updatedAt
+          userHeadshotId
           __typename
         }
         featureFeedback {
@@ -676,8 +802,16 @@ export const listFeatureFeedbacks = /* GraphQL */ `query ListFeatureFeedbacks(
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -730,8 +864,16 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -765,8 +907,16 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -789,8 +939,25 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     referrals {
@@ -827,8 +994,16 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -904,8 +1079,25 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       referrals {
@@ -1007,8 +1199,25 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       referrals {
@@ -1110,8 +1319,25 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       referrals {
@@ -1185,8 +1411,16 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           referrals {
@@ -1220,8 +1454,16 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1244,8 +1486,25 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
         nextToken
         __typename
       }
+      title
+      bio
+      firstName
+      lastName
+      isLeader
+      featurePosition
+      Headshot {
+        id
+        src
+        alt
+        imageTitle
+        createdAt
+        updatedAt
+        __typename
+      }
+      link
       createdAt
       updatedAt
+      userHeadshotId
       __typename
     }
     featureFeedback {
@@ -1266,8 +1525,16 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             id
             username
             email
+            title
+            bio
+            firstName
+            lastName
+            isLeader
+            featurePosition
+            link
             createdAt
             updatedAt
+            userHeadshotId
             __typename
           }
           featureFeedback {
@@ -1345,8 +1612,25 @@ export const listUserFeatureFeedbacks = /* GraphQL */ `query ListUserFeatureFeed
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       featureFeedback {
@@ -1432,8 +1716,25 @@ export const userFeatureFeedbacksByUserId = /* GraphQL */ `query UserFeatureFeed
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       featureFeedback {
@@ -1519,8 +1820,25 @@ export const userFeatureFeedbacksByFeatureFeedbackId = /* GraphQL */ `query User
           nextToken
           __typename
         }
+        title
+        bio
+        firstName
+        lastName
+        isLeader
+        featurePosition
+        Headshot {
+          id
+          src
+          alt
+          imageTitle
+          createdAt
+          updatedAt
+          __typename
+        }
+        link
         createdAt
         updatedAt
+        userHeadshotId
         __typename
       }
       featureFeedback {
