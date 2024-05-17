@@ -19,6 +19,14 @@ export default async function Dashboard() {
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4 mt-16">Dashboard</h2>
       
       <div className="relative flex flex-col justify-center items-center rounded-lg py-20 bg-white/75 max-w-xl mx-auto gap-20">
+          <div>
+            <h3 className="flex text-2xl">
+              Hi _______, 
+            </h3>
+            <p>
+              Welcome to your CCFIL Dashboard!
+            </p>
+          </div>
           <Button link={'/dashboard/referrals'} text={'referrals'}/>
           <Button link={'/dashboard/profile'} text={'profile'}/>
           <Button link={'/dashboard/reports'} text={'reports'}/>
