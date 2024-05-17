@@ -4,9 +4,17 @@ type User @model @auth(rules: [{allow: public}]) {
   email: String
   Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
   FeatureFeedback: [FeatureFeedback] @manyToMany(relationName: "UserFeatureFeedback")
+  title: String
+  bio: String
+  firstName: String
+  lastName: String
+  isLeader: Boolean
+  featurePosition: Int
+  Headshot: Headshot @hasOne
+  link: String
 }
 
-type Referrals @model @auth(rules: [{ allow: public}]) {
+type Referrals @model @auth(rules: [{allow: public}]) {
   id: ID!
   date: AWSDate
   source: String
@@ -21,7 +29,7 @@ type Referrals @model @auth(rules: [{ allow: public}]) {
   users: [User] @manyToMany(relationName: "UserReferrals")
 }
 
-type Note @model @auth(rules: [{ allow: public}]) {
+type Note @model @auth(rules: [{allow: public}]) {
   id: ID!
   date: AWSDate
   author: String
@@ -71,3 +79,4 @@ type FeatureFeedback @model @auth(rules: [{allow: public}]) {
   isComplete: Boolean
   users: [User] @manyToMany(relationName: "UserFeatureFeedback")
 }
+ 

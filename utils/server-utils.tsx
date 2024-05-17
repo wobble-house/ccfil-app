@@ -5,8 +5,8 @@ import config from "../app/aws-exports"
 import { Amplify, type ResourcesConfig } from 'aws-amplify';
 const authConfig: ResourcesConfig['Auth'] = {
   Cognito: {
-    userPoolId: process.env.COGNITO_USER_POOL_ID,
-    userPoolClientId: process.env.COGNITO_USER_POOL_CLIENT_ID
+    userPoolId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID,
+    userPoolClientId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_CLIENT_ID
   }
 };
 Amplify.configure({ Auth: authConfig },{ssr: true});

@@ -2,11 +2,5 @@
   "AppSyncApiName": "ccfilapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-10-25T19:44:31.288Z",
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authccfilapp",
-      "Outputs.UserPoolId"
-    ]
-  }
+  "AuthModeLastUpdated": "2024-05-17T14:42:59.056Z"
 }

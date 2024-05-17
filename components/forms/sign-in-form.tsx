@@ -195,7 +195,7 @@ export default function SigninForm() {
         if (myUser == undefined){
             try {
               const user = data.payload.data;
-              const userDetails = JSON.stringify(data.payload.data)
+              const userDetails = JSON.stringify(user)
               const usersDetails = JSON.parse(userDetails)
               createUsers({id: user.userId, username: userEmail, email: userEmail});
               console.log('created user!', usersDetails)
