@@ -66,7 +66,6 @@ export default async function Referrals() {
         <ReferralsList data={newReferralsData.data.listReferrals.items} title={'Referrals'} listType={'referral'}/>
         {approvedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>:null}
         {declinedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>:null}
-        <FeatureFeedbackList data={feedbackData.data.listFeatureFeedbacks.items} title={'Feature Feedback'}/>
         </div>
         
    </div>
