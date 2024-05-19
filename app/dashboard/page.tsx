@@ -27,9 +27,11 @@ export default async function Dashboard() {
               Welcome to your CCFIL Dashboard!
             </p>
           </div>
-          <Button link={'/dashboard/referrals'} text={'referrals'}/>
-          <Button link={'/dashboard/profile'} text={'profile'}/>
-          <Button link={'/dashboard/reports'} text={'reports'}/>
+          <div className="flex gap-8">
+            <Button link={'/dashboard/profile'} text={'profile'}/>
+            <Button link={'/dashboard/referrals'} text={'referrals'}/>
+            <Button link={'/dashboard/reports'} text={'reports'}/>
+          </div>
         </div>
         
    </div>
