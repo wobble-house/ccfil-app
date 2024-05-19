@@ -1,12 +1,12 @@
 'use client';
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import { generateClient } from "aws-amplify/api";
 import { createNote } from "@/utils/graphql/mutations";
 import { currentAuthenticatedUser } from "@/utils/auth-helpers";
 import { useRouter } from "next/navigation";
 
 const client = generateClient();
-export default function NotesCard({id, name, notes}:{id: string,name: string, notes}){
+export default function NotesCard({id, name, notes, author}:{id: string,name: string, notes, author: string}){
         const router = useRouter();
         const [newNote, setNewNote] = useState('');
         const [noteModal, setNoteModal] = useState(true);
@@ -16,7 +16,6 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
         const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
         const [todaysDate, setTodaysDate] = useState(today);
         const [user, setUser] = useState(undefined);
-        const [email, setEmail] = useState(undefined);
         function handleNoteSubmit(e){
             e.preventDefault();
             const currentUser = currentAuthenticatedUser().then((user) => {user});
@@ -31,7 +30,8 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
                       input: {
                         date: todaysDate,
                         text: newNote,
-                        referralsNotesId: id
+                        referralsNotesId: id,
+                        author: author
                       },
                     },
                   });
@@ -50,11 +50,16 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
                 <button className="relative bg-blue1 rounded-xl text-white text-xs w-16 p-2" onClick={handleNoteSubmit}>Save</button>
             </div>
             <textarea className="h-[300px] w-[300px] p-2 bg-white text-black text-lg" placeholder={'Enter a new Note'} onChange={e => setNewNote(e.target.value)}></textarea>
-            <ol className={`flex flex-col`}>
+            <ol className={`flex flex-col odd:bg-gray-100 even:bg-gray-300`}>
                 {notes.items.map((notes, index) => (
-                <li key={index} className={`flex flex-row gap-2`}>
-                <p>{notes.date} : </p>
-                <p>{notes.text}</p>
+                <li key={index} className={`flex flex-col gap-2 border-b p-1`}>
+                    <p>{notes.text}</p>
+                    <div className={`flex flex-row justify-end gap-1`}>
+                        <p>{notes.author}</p>
+                        <p>@</p>
+                        <p>{notes.date}</p>
+                    </div>
+                
             </li>
                 ))}
 

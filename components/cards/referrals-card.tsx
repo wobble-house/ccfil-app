@@ -4,11 +4,13 @@ import { deleteReferrals, updateReferrals } from "@/utils/graphql/mutations";
 import { generateClient } from "aws-amplify/api";
 import { useRouter } from "next/navigation";
 import NotesCard from "./notes-card";
+import Image from 'next/image';
 
 const client = generateClient();
 
 export default function ReferralsCard({
     id,
+    author,
     currentResident,
     date, 
     source, 
@@ -20,6 +22,7 @@ export default function ReferralsCard({
     listType,
     notes}:{
         id: string,
+        author: string,
         currentResident?: boolean,
         date: string, 
         source: string, 
@@ -133,13 +136,13 @@ export default function ReferralsCard({
     return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <button className="flex h-full align-middle bg-green-700 text-white text-xs p-1 rounded-md" onClick={admitReferral}>Admit</button>
+                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={admitReferral}><Image src={`/Icons/Icons/thumbsup.png`} alt={`thumbsup`} width={25} height={25}/></button>
             </td>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={declineReferral}>Decline</button>
+                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={declineReferral}><Image src={`/Icons/Icons/thumbsdown.png`} alt={`thumbsdown`} width={25} height={25}/></button>
             </td>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <NotesCard id={id} notes={notes} name={name}/>
+                <NotesCard id={id} notes={notes} name={name} author={author}/>
             </td>
             <td className="flex items-center border-l text-xs h-full border-gray-400 w-28 px-2">{date}</td>
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{source}</td>
@@ -157,7 +160,7 @@ export default function ReferralsCard({
             <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{assistanceProvided}</td>
             :null}
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-12 items-center">
-                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md" onClick={deleteReferral}>x</button>
+                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
             </td>
         </tr>
     )

@@ -1,7 +1,13 @@
 import Button from "../buttons/button";
 import ReferralsCard from "../cards/referrals-card";
+import { getCurrentUserFromServer } from "@/utils/getData/get-data";
+import { GetUserQueryVariables } from "@/utils/graphql/API";
 
-export default function ReferralsList({data, title, listType}:{data, title, listType?}){
+export default async function ReferralsList({userId, data, title, listType}:{userId, data, title, listType?}){
+  const userVariables: GetUserQueryVariables = {
+    id: userId
+};
+const user = await getCurrentUserFromServer(userVariables)
   return(
     <div className='flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg max-w-6xl w-full my-10'>
       <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">{title}</h2>
@@ -38,6 +44,7 @@ export default function ReferralsList({data, title, listType}:{data, title, list
       <ReferralsCard
         key={data.id}
         id={data.id}
+        author={user.data.getUser.email}
         date={data.date}
         source={data.source}
         name={data.name}
