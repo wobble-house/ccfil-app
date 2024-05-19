@@ -44,7 +44,7 @@ export default function NotesCard({id, name, notes}:{id: string,name: string, no
         if (noteModal) return(
             <button className="flex justify-center items-center h-full align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setNoteModal(!noteModal)}>Notes</button>
        ); else return(
-        <div className="absolute flex flex-col-reverse h-[400px] w-[310px] bg-white bg-opacity-75 rounded-xl text-xs p-1 top-0 z-90">
+        <div className="absolute flex flex-col-reverse h-[400px] w-[310px] bg-gray1 rounded-xl text-xs p-1 top-0 z-90">
             <div className={`flex flex-row gap-2 justify-end p-2`}>
                 <button className="relative bg-gray-400  rounded-xl text-white text-xs w-16 p-2" onClick={()=>setNoteModal(!noteModal)}>Cancel</button>
                 <button className="relative bg-blue1 rounded-xl text-white text-xs w-16 p-2" onClick={handleNoteSubmit}>Save</button>
