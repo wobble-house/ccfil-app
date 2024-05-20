@@ -12,6 +12,7 @@ type User @model @auth(rules: [{allow: public}]) {
   featurePosition: Int
   Headshot: Headshot @hasOne
   link: String
+  userHeadshot: ID
 }
 
 type Referrals @model @auth(rules: [{allow: public}]) {

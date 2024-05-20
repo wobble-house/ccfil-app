@@ -11,7 +11,7 @@ export default async function ProfileCard({id}:{id: string}){
 
     return(
         <div className="relative flex bg-white/75 max-w-xl mx-auto gap-6 p-10 justify-evenly">
-          <ProfileHeadshot src={user.data.getUser.Headshot.src} alt={user.data.getUser.Headshot.alt}/>
+          <ProfileHeadshot user={user.data.getUser} src={user.data.getUser.Headshot.src} alt={user.data.getUser.Headshot.alt}/>
           <div className="flex flex-col">
             <p>First Name:</p>
               <input placeholder={user.data.getUser.firstName}>

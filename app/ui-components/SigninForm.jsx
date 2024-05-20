@@ -40,6 +40,7 @@ export default function SigninForm(props) {
     isLeader: false,
     featurePosition: "",
     link: "",
+    userHeadshot: "",
   };
   const [username, setUsername] = React.useState(initialValues.username);
   const [email, setEmail] = React.useState(initialValues.email);
@@ -52,6 +53,9 @@ export default function SigninForm(props) {
     initialValues.featurePosition
   );
   const [link, setLink] = React.useState(initialValues.link);
+  const [userHeadshot, setUserHeadshot] = React.useState(
+    initialValues.userHeadshot
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = userRecord
@@ -66,6 +70,7 @@ export default function SigninForm(props) {
     setIsLeader(cleanValues.isLeader);
     setFeaturePosition(cleanValues.featurePosition);
     setLink(cleanValues.link);
+    setUserHeadshot(cleanValues.userHeadshot);
     setErrors({});
   };
   const [userRecord, setUserRecord] = React.useState(userModelProp);
@@ -94,6 +99,7 @@ export default function SigninForm(props) {
     isLeader: [],
     featurePosition: [],
     link: [],
+    userHeadshot: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -130,6 +136,7 @@ export default function SigninForm(props) {
           isLeader: isLeader ?? null,
           featurePosition: featurePosition ?? null,
           link: link ?? null,
+          userHeadshot: userHeadshot ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -199,6 +206,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.username ?? value;
@@ -231,6 +239,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.email ?? value;
@@ -263,6 +272,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -295,6 +305,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.bio ?? value;
@@ -327,6 +338,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.firstName ?? value;
@@ -359,6 +371,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.lastName ?? value;
@@ -391,6 +404,7 @@ export default function SigninForm(props) {
               isLeader: value,
               featurePosition,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.isLeader ?? value;
@@ -427,6 +441,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition: value,
               link,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.featurePosition ?? value;
@@ -459,6 +474,7 @@ export default function SigninForm(props) {
               isLeader,
               featurePosition,
               link: value,
+              userHeadshot,
             };
             const result = onChange(modelFields);
             value = result?.link ?? value;
@@ -472,6 +488,39 @@ export default function SigninForm(props) {
         errorMessage={errors.link?.errorMessage}
         hasError={errors.link?.hasError}
         {...getOverrideProps(overrides, "link")}
+      ></TextField>
+      <TextField
+        label="User headshot"
+        isRequired={false}
+        isReadOnly={false}
+        value={userHeadshot}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              username,
+              email,
+              title,
+              bio,
+              firstName,
+              lastName,
+              isLeader,
+              featurePosition,
+              link,
+              userHeadshot: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.userHeadshot ?? value;
+          }
+          if (errors.userHeadshot?.hasError) {
+            runValidationTasks("userHeadshot", value);
+          }
+          setUserHeadshot(value);
+        }}
+        onBlur={() => runValidationTasks("userHeadshot", userHeadshot)}
+        errorMessage={errors.userHeadshot?.errorMessage}
+        hasError={errors.userHeadshot?.hasError}
+        {...getOverrideProps(overrides, "userHeadshot")}
       ></TextField>
       <Flex
         justifyContent="space-between"

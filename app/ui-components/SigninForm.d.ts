@@ -32,6 +32,7 @@ export declare type SigninFormInputValues = {
     isLeader?: boolean;
     featurePosition?: number;
     link?: string;
+    userHeadshot?: string;
 };
 export declare type SigninFormValidationValues = {
     username?: ValidationFunction<string>;
@@ -43,6 +44,7 @@ export declare type SigninFormValidationValues = {
     isLeader?: ValidationFunction<boolean>;
     featurePosition?: ValidationFunction<number>;
     link?: ValidationFunction<string>;
+    userHeadshot?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type SigninFormOverridesProps = {
@@ -56,6 +58,7 @@ export declare type SigninFormOverridesProps = {
     isLeader?: PrimitiveOverrideProps<SwitchFieldProps>;
     featurePosition?: PrimitiveOverrideProps<TextFieldProps>;
     link?: PrimitiveOverrideProps<TextFieldProps>;
+    userHeadshot?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type SigninFormProps = React.PropsWithChildren<{
     overrides?: SigninFormOverridesProps | undefined | null;

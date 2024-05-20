@@ -151,8 +151,8 @@ export default function ReferralsCreateForm(props) {
           }
           if (clearOnSuccess) {
             resetStateValues();
-            revalidatePath('/dashboard', 'page')
-            router.push('/dashboard')
+            revalidatePath('/dashboard/referrals', 'page')
+            router.push('/dashboard/referrals')
           }
         } catch (err) {
           if (onError) {
