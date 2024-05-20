@@ -1,6 +1,6 @@
-import { ThumbnailHandler } from "@/utils/image-handler";
 import { getCurrentUserFromServer } from "@/utils/getData/get-data";
 import { GetUserQueryVariables } from "@/utils/graphql/API";
+import ProfileHeadshot from "./profile-heashot";
  
 export default async function ProfileCard({id}:{id: string}){
 
@@ -8,15 +8,10 @@ export default async function ProfileCard({id}:{id: string}){
       id: id
   };
   const user = await getCurrentUserFromServer(userVariables)
+
     return(
         <div className="relative flex bg-white/75 max-w-xl mx-auto gap-6 p-10 justify-evenly">
-          <div className="flex flex-col">
-            <ThumbnailHandler src={user.data.getUser.Headshot.src} alt={user.data.getUser.Headshot.alt} fallbackSrc={'oof.png'} className="object-top"/>
-            <button>
-              update
-              </button>
-          </div>
-
+          <ProfileHeadshot src={user.data.getUser.Headshot.src} alt={user.data.getUser.Headshot.alt}/>
           <div className="flex flex-col">
             <p>First Name:</p>
               <input placeholder={user.data.getUser.firstName}>
