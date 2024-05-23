@@ -133,7 +133,7 @@ export default function ReferralsCard({
         confirmDelete().then(()=>router.refresh());
     };
 
-    return(
+    if (listType != 'report') return(
         <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
                 <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={admitReferral}><Image src={`/Icons/Icons/thumbsup.png`} alt={`thumbsup`} width={25} height={25}/></button>
@@ -163,6 +163,21 @@ export default function ReferralsCard({
                 <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
             </td>
         </tr>
-    )
+    );
+    else return (
+      <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
+            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
+          <NotesCard id={id} notes={notes} name={name} author={author}/>
+      </td>
+      <td className="flex items-center border-l text-xs h-full border-gray-400 w-24 px-2">{date}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-32">{source}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-40">{name} </td>
+      <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{DOADate}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-60">{reasonForDecline}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{howDidYouHearAboutUs}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-60">{assistanceProvided}</td>
+
+  </tr>
+    );
 };
 
