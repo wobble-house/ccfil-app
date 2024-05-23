@@ -19,7 +19,7 @@ const user = await getCurrentUserFromServer(userVariables)
       } 
         <table className="relative inline border-2 border-solid rounded-lg w-full">
           <tbody className="w-full flex flex-col mx-auto">
-            <tr className={`relative grid grid-flow-row ${listType == 'approved' ? 'grid-cols-12': ''} ${listType == 'declined' ? 'grid-cols-17': ''} ${listType == 'referral' ? 'grid-cols-11': ''} ${listType == 'report' ? 'grid-cols-6': ''} bg-blue2 text-white items-center justify-between`}>
+            <tr className={`relative grid grid-flow-row ${listType == 'approved' ? 'grid-cols-13': ''} ${listType == 'declined' ? 'grid-cols-18': ''} ${listType == 'referral' ? 'grid-cols-12': ''} ${listType == 'report' ? 'grid-cols-6': ''} bg-blue2 text-white items-center justify-between`}>
               <th className="admit justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Admit</th>
               <th className="decline justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Decline</th>
               <th className="notes flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Notes</th>
@@ -40,6 +40,9 @@ const user = await getCurrentUserFromServer(userVariables)
               :null}
               {listType === 'declined' ?
               <th className="assistanceProvided flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">Assistance Provided</th>
+              :null}
+              {listType !== 'report' ?
+              <th className="edit flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs">edit</th>
               :null}
               <th className="delete flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs">Delete</th>
             </tr>
