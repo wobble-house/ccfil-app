@@ -132,39 +132,7 @@ export default function ReferralsCard({
         }
         confirmDelete().then(()=>router.refresh());
     };
-
-    if (listType != 'report') return(
-        <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={admitReferral}><Image src={`/Icons/Icons/thumbsup.png`} alt={`thumbsup`} width={25} height={25}/></button>
-            </td>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={declineReferral}><Image src={`/Icons/Icons/thumbsdown.png`} alt={`thumbsdown`} width={25} height={25}/></button>
-            </td>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-                <NotesCard id={id} notes={notes} name={name} author={author}/>
-            </td>
-            <td className="flex items-center border-l text-xs h-full border-gray-400 w-28 px-2">{date}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{source}</td>
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-48">{name} </td>
-            {listType === 'approved' ? <>
-            <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{DOADate}</td>
-            </>:null}
-            {listType === 'declined' ? 
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{reasonForDecline}</td>
-            :null}
-            {listType === 'referral' ? 
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{howDidYouHearAboutUs}</td>
-            :null}
-            {listType === 'approved' ? 
-            <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{assistanceProvided}</td>
-            :null}
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-12 items-center">
-                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
-            </td>
-        </tr>
-    );
-    else return (
+    if (listType == 'report') return (
       <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
             <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
           <NotesCard id={id} notes={notes} name={name} author={author}/>
@@ -179,5 +147,37 @@ export default function ReferralsCard({
 
   </tr>
     );
+    else return(
+        <tr id={id} className={`grid ${listType == 'approved' ? 'grid-cols-12': ''} ${listType == 'declined' ? 'grid-cols-17': ''} ${listType == 'referral' ? 'grid-cols-11': ''} ${listType == 'report' ? 'grid-cols-6': ''}  w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
+            <td className="admit flex justify-center border-l text-xs h-full border-gray-400 items-center">
+                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={admitReferral}><Image src={`/Icons/Icons/thumbsup.png`} alt={`thumbsup`} width={25} height={25}/></button>
+            </td>
+            <td className="decline flex justify-center border-l text-xs h-full border-gray-400 items-center">
+                <button className="flex h-full align-middle text-white text-xs p-1 rounded-md hover:scale-105" onClick={declineReferral}><Image src={`/Icons/Icons/thumbsdown.png`} alt={`thumbsdown`} width={25} height={25}/></button>
+            </td>
+            <td className="notes flex justify-center border-l text-xs h-full border-gray-400 items-center">
+                <NotesCard id={id} notes={notes} name={name} author={author}/>
+            </td>
+            <td className="date flex items-center border-l text-xs h-full border-gray-400 px-2">{date}</td>
+            <td className="source flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-2">{source}</td>
+            <td className="name flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-2">{name} </td>
+            {listType != 'referral' ? <>
+            <td className="doa flex items-center border-l text-xs px-2 h-full border-gray-400">{DOADate}</td>
+            </>:null}
+            {listType === 'declined' ? 
+            <td className="reasonForDecline flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-3">{reasonForDecline}</td>
+            :null}
+            {listType === 'referral' || 'approved' ? 
+            <td className="how flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-2">{howDidYouHearAboutUs}</td>
+            :null}
+            {listType === 'declined' ? 
+            <td className="assistanceProvided flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-2">{assistanceProvided}</td>
+            :null}
+            <td className="delete flex justify-center border-l text-xs h-full border-gray-400 items-center">
+                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
+            </td>
+        </tr>
+    );
+
 };
 
