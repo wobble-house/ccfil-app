@@ -65,7 +65,7 @@ export default function HeadshotUpload(props) {
   }, [idProp, userModelProp]);
   React.useEffect(resetStateValues, [userRecord]);
   const validations = {
-    Field0: [],
+    Field0: [{ type: "Required" }],
     userHeadshot: [],
   };
   const runValidationTasks = async (
@@ -94,7 +94,7 @@ export default function HeadshotUpload(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          Field0: Field0 ?? null,
+          Field0,
           userHeadshot: userHeadshot ?? null,
         };
         const validationResponses = await Promise.all(
@@ -154,7 +154,7 @@ export default function HeadshotUpload(props) {
         errorMessage={errors.Field0?.errorMessage}
         hasError={errors.Field0?.hasError}
         label={"Headshot"}
-        isRequired={false}
+        isRequired={true}
       >
         {userRecord && (
           <StorageManager

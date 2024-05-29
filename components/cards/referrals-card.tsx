@@ -12,7 +12,6 @@ const client = generateClient();
 export default function ReferralsCard({
     id,
     author,
-    currentResident,
     date, 
     source, 
     name, 
@@ -24,7 +23,6 @@ export default function ReferralsCard({
     notes}:{
         id: string,
         author: string,
-        currentResident?: boolean,
         date: string, 
         source: string, 
         name: string, 
@@ -41,6 +39,7 @@ export default function ReferralsCard({
     const day = (timestamp.getDate() <= 10 ? "0"+timestamp.getDate() : timestamp.getDate()).toString()
     const today = (timestamp.getFullYear()+"-"+month+"-"+day).toString();
     const [todaysDate, setTodaysDate] = useState(today);
+    const [referralModal, setReferralModal] = useState(false)
 
 
     function admitReferral(e){  
@@ -79,6 +78,8 @@ export default function ReferralsCard({
       function confirmDecline(){
         const declinePrompt = prompt('Enter a reason for Decline')
         if (confirm("Do you really want to decline?")){
+          const assistanceProvidedPrompt = prompt('enter assistance provided')
+          if (confirm("Click to submit"))
           setTodaysDate(today);
           const queryData = async () => {
             try {
@@ -89,7 +90,8 @@ export default function ReferralsCard({
                     id: id,
                     currentResident: false,
                     DOADate: todaysDate,
-                    reasonForDecline: declinePrompt
+                    reasonForDecline: declinePrompt,
+                    assistanceProvided: assistanceProvidedPrompt
                   },
                 },
               });
@@ -175,57 +177,18 @@ export default function ReferralsCard({
             <td className="assistanceProvided flex items-center border-l text-sm px-2 h-full border-gray-400 col-span-2">{assistanceProvided}</td>
             :null}
             <td className="notes flex justify-center border-l text-xs h-full border-gray-400 items-center">
-                <ReferralsEditModal
-                id={id}
-                date={date}
-                source={source}
-                name={name}
-                DOADate={DOADate}
-                reasonForDecline={reasonForDecline}
-                howDidYouHearAboutUs={howDidYouHearAboutUs}
-                assistanceProvided={assistanceProvided}
-                />
+            {referralModal ? <div className={`absolute flex flex-col-reverse h-[324px] bg-gray2 rounded-xl text-xs p-1 top-0 z-90`}>
+                                <ReferralsUpdateForm id={id}/>
+                                <button className={`text-right mr-1 bg-red-400 rounded-md ml-auto p-2 text-white`}onClick={()=>setReferralModal(false)}>x</button>
+                              </div>:<button className="flex justify-center items-center align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setReferralModal(true)}>
+                                      edit
+                                      </button>}
             </td>
             
             <td className="delete flex justify-center border-l text-xs h-full border-gray-400 items-center">
-                <button className="flex h-full align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
+                <button className="flex align-middle bg-red-700 text-white text-xs p-1 rounded-md hover:scale-105" onClick={deleteReferral}>x</button>
             </td>
         </tr>
     );
 
 };
-
-export function ReferralsEditModal ({
-  id,
-  date, 
-  source, 
-  name, 
-  DOADate, 
-  reasonForDecline,
-  howDidYouHearAboutUs, 
-  assistanceProvided,
-  }:{
-      id: string,
-      date: string, 
-      source: string, 
-      name: string, 
-      DOADate: string, 
-      reasonForDecline: string,
-      howDidYouHearAboutUs: string, 
-      assistanceProvided: string,
-    }){
-  const [referralModal, setReferralModal] = useState(false)
-  if (referralModal == false) return (
-    <button className="flex justify-center items-center h-full align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setReferralModal(true)}>
-      e
-    </button>
-  )
-  else return (
-    <div className={`absolute flex flex-col-reverse h-[400px] bg-gray1 rounded-xl text-xs p-1 top-0 z-90`}>
-      <ReferralsUpdateForm 
-      id={id} 
-      />
-      <button className={`text-right mr-1 bg-red-400 rounded-md ml-auto p-2 text-white`}onClick={()=>setReferralModal(false)}>x</button>
-    </div>
-  )
-}

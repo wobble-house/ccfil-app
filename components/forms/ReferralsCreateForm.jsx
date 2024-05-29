@@ -147,12 +147,12 @@ export default function ReferralsCreateForm(props) {
           });
           if (onSuccess) {
             onSuccess(modelFields);
-
+            revalidatePath('/dashboard/referrals', 'page')
+            router.push('/dashboard/referrals')
           }
           if (clearOnSuccess) {
             resetStateValues();
-            revalidatePath('/dashboard/referrals', 'page')
-            router.push('/dashboard/referrals')
+
           }
         } catch (err) {
           if (onError) {

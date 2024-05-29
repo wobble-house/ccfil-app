@@ -40,7 +40,7 @@ const approvedVariables: ListReferralsQueryVariables = {
 
 const deniedVariables: ListReferralsQueryVariables = {
   filter: {
-    DOADate: {
+    reasonForDecline: {
       ne: null
     },
     currentResident: {

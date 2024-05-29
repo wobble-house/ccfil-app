@@ -42,7 +42,7 @@ export default function NotesCard({id, name, notes, author}:{id: string,name: st
         return queryData().then(()=>setNoteModal(!noteModal)).then(()=>router.refresh())
         }
         if (noteModal) return(
-            <button className="flex justify-center items-center h-full align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setNoteModal(!noteModal)}>Notes</button>
+            <button className="flex justify-center items-center align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setNoteModal(!noteModal)}>Notes</button>
        ); else return(
         <div className="absolute flex flex-col-reverse h-[400px] w-[310px] bg-gray1 rounded-xl text-xs p-1 top-0 z-90">
             <div className={`flex flex-row gap-2 justify-end p-2`}>

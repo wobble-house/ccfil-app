@@ -5,7 +5,6 @@
  **************************************************************************/
 
 /* eslint-disable */
-'use client';
 import * as React from "react";
 import {
   Button,
@@ -36,7 +35,7 @@ export default function ReferralsUpdateForm(props) {
     source: "",
     name: "",
     followUp: "",
-    DOA: false,
+    currentResident: false,
     DOADate: "",
     reasonForDecline: "",
     howDidYouHearAboutUs: "",
@@ -46,7 +45,9 @@ export default function ReferralsUpdateForm(props) {
   const [source, setSource] = React.useState(initialValues.source);
   const [name, setName] = React.useState(initialValues.name);
   const [followUp, setFollowUp] = React.useState(initialValues.followUp);
-  const [DOA, setDOA] = React.useState(initialValues.DOA);
+  const [currentResident, setCurrentResident] = React.useState(
+    initialValues.currentResident
+  );
   const [DOADate, setDOADate] = React.useState(initialValues.DOADate);
   const [reasonForDecline, setReasonForDecline] = React.useState(
     initialValues.reasonForDecline
@@ -66,7 +67,7 @@ export default function ReferralsUpdateForm(props) {
     setSource(cleanValues.source);
     setName(cleanValues.name);
     setFollowUp(cleanValues.followUp);
-    setDOA(cleanValues.DOA);
+    setCurrentResident(cleanValues.currentResident);
     setDOADate(cleanValues.DOADate);
     setReasonForDecline(cleanValues.reasonForDecline);
     setHowDidYouHearAboutUs(cleanValues.howDidYouHearAboutUs);
@@ -95,7 +96,7 @@ export default function ReferralsUpdateForm(props) {
     source: [],
     name: [],
     followUp: [],
-    DOA: [],
+    currentResident: [],
     DOADate: [],
     reasonForDecline: [],
     howDidYouHearAboutUs: [],
@@ -131,7 +132,7 @@ export default function ReferralsUpdateForm(props) {
           source: source ?? null,
           name: name ?? null,
           followUp: followUp ?? null,
-          DOA: DOA ?? null,
+          currentResident: currentResident ?? null,
           DOADate: DOADate ?? null,
           reasonForDecline: reasonForDecline ?? null,
           howDidYouHearAboutUs: howDidYouHearAboutUs ?? null,
@@ -201,7 +202,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -233,7 +234,7 @@ export default function ReferralsUpdateForm(props) {
               source: value,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -265,7 +266,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name: value,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -297,7 +298,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp: value,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -317,10 +318,10 @@ export default function ReferralsUpdateForm(props) {
         {...getOverrideProps(overrides, "followUp")}
       ></TextField>
       <SwitchField
-        label="Doa"
+        label="Current resident"
         defaultChecked={false}
         isDisabled={false}
-        isChecked={DOA}
+        isChecked={currentResident}
         onChange={(e) => {
           let value = e.target.checked;
           if (onChange) {
@@ -329,24 +330,24 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA: value,
+              currentResident: value,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
               assistanceProvided,
             };
             const result = onChange(modelFields);
-            value = result?.DOA ?? value;
+            value = result?.currentResident ?? value;
           }
-          if (errors.DOA?.hasError) {
-            runValidationTasks("DOA", value);
+          if (errors.currentResident?.hasError) {
+            runValidationTasks("currentResident", value);
           }
-          setDOA(value);
+          setCurrentResident(value);
         }}
-        onBlur={() => runValidationTasks("DOA", DOA)}
-        errorMessage={errors.DOA?.errorMessage}
-        hasError={errors.DOA?.hasError}
-        {...getOverrideProps(overrides, "DOA")}
+        onBlur={() => runValidationTasks("currentResident", currentResident)}
+        errorMessage={errors.currentResident?.errorMessage}
+        hasError={errors.currentResident?.hasError}
+        {...getOverrideProps(overrides, "currentResident")}
       ></SwitchField>
       <TextField
         label="Doa date"
@@ -362,7 +363,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate: value,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -394,7 +395,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline: value,
               howDidYouHearAboutUs,
@@ -426,7 +427,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs: value,
@@ -460,7 +461,7 @@ export default function ReferralsUpdateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -485,22 +486,12 @@ export default function ReferralsUpdateForm(props) {
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}
       >
-        <Button
-          children="Reset"
-          type="reset"
-          onClick={(event) => {
-            event.preventDefault();
-            resetStateValues();
-          }}
-          isDisabled={!(idProp || referralsModelProp)}
-          {...getOverrideProps(overrides, "ResetButton")}
-        ></Button>
         <Flex
           gap="15px"
           {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button
-            children="Submit"
+            children="Update"
             type="submit"
             variation="primary"
             isDisabled={
