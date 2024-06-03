@@ -13,14 +13,6 @@ export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0;
 
-const allVariables: ListReferralsQueryVariables = {
-  filter: {
-    id: {
-      ne: null
-    }
-  }
-};
-
 const newVariables: ListReferralsQueryVariables = {
   filter: {
     DOADate: {
@@ -49,7 +41,6 @@ const deniedVariables: ListReferralsQueryVariables = {
 };
 
 export default async function Referrals() {
-  const allReferralsData = await getReferrals(allVariables)
   const newReferralsData = await getReferrals(newVariables)
   const approvedReferralsData = await getReferrals(approvedVariables)
   const declinedReferralsData = await getReferrals(deniedVariables)
