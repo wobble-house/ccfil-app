@@ -50,6 +50,36 @@ export default async function Reports() {
     nextServerContext: { cookies },
     operation: (contextSpec) => getCurrentUser(contextSpec)
   });
+
+  function calculateTurnoverData(){
+    let newData = []
+    allReferralsData.data.listReferrals.items.forEach(element => {
+      if (element.DOADate != null) {
+      const startDate = new Date(element.date);
+      const endDate = new Date(element.DOADate);
+      const timeDifference = endDate.getTime() - startDate.getTime()
+      const turnover = Math.round(timeDifference / (1000 * 3600 * 24))
+      var obj = {
+        id: element.id,
+        date: element.date,
+        source: element.source,
+        name: element.name,
+        followUp: element.followUp,
+        currentResident: element.currentResident,
+        DOADate: element.DOADate,
+        reasonForDecline: element.reasonForDecline,
+        howDidYouHearAboutUs: element.howDidYouHearAboutUs,
+        assistanceProvided: element.assistanceProvided,
+        turnover: turnover
+      }
+      newData.push(obj)
+    } else {
+      newData.push(element)
+    }
+    });
+    return newData
+  } 
+  const turnoverData = await calculateTurnoverData();
   return (
      <div className="max-w-screen">
       <HeaderBGCarousel carouselSlides={carouselSlides} position={"fixed"}/>
@@ -63,8 +93,8 @@ export default async function Reports() {
         />
       <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
       {allReferralsData.data.listReferrals.items.length > 0 ? 
-        <CSVButton data={allReferralsData.data.listReferrals.items}/>:null}
-      <ReferralsList userId={currentUser.userId} data={allReferralsData.data.listReferrals.items} title={'Referrals'} listType={'report'}/>
+        <CSVButton data={turnoverData}/>:null}
+      <ReferralsList userId={currentUser.userId} data={turnoverData} title={'Referrals'} listType={'report'}/>
       </div>
    </div>
   )

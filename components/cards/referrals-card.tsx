@@ -21,6 +21,7 @@ export default function ReferralsCard({
     howDidYouHearAboutUs, 
     assistanceProvided,
     listType,
+    turnover,
     notes}:{
         id: string,
         author: string,
@@ -33,6 +34,7 @@ export default function ReferralsCard({
         howDidYouHearAboutUs: string, 
         assistanceProvided: string,
         listType?: any,
+        turnover?: number,
         notes?: any}){   
 
     const router = useRouter();
@@ -139,15 +141,14 @@ export default function ReferralsCard({
     };
     if (listType == 'report') return (
       <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
-            <td className="flex justify-center border-l text-xs h-full border-gray-400 w-10 items-center">
-          <NotesCard id={id} notes={notes} name={name} author={author}/>
-      </td>
       <td className="flex items-center border-l text-xs h-full border-gray-400 w-24 px-2">{date}</td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-24 justify-center">
-            <input type="checkbox" checked={currentResident}></input></td>
+            <input type="checkbox" defaultChecked={currentResident}></input></td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-32">{source}</td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-40">{name} </td>
       <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{DOADate}</td>
+      {turnover != null ? 
+      <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{turnover} Days</td>: <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">-</td>}
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-60">{reasonForDecline}</td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-64">{howDidYouHearAboutUs}</td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-60">{assistanceProvided}</td>
