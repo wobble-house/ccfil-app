@@ -12,6 +12,7 @@ const client = generateClient();
 export default function ReferralsCard({
     id,
     author,
+    currentResident,
     date, 
     source, 
     name, 
@@ -23,6 +24,7 @@ export default function ReferralsCard({
     notes}:{
         id: string,
         author: string,
+        currentResident?: boolean,
         date: string, 
         source: string, 
         name: string, 
@@ -141,6 +143,8 @@ export default function ReferralsCard({
           <NotesCard id={id} notes={notes} name={name} author={author}/>
       </td>
       <td className="flex items-center border-l text-xs h-full border-gray-400 w-24 px-2">{date}</td>
+      <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-24 justify-center">
+            <input type="checkbox" checked={currentResident}></input></td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-32">{source}</td>
       <td className="flex items-center border-l text-sm px-2 h-full border-gray-400 w-40">{name} </td>
       <td className="flex items-center border-l text-xs px-2 h-full border-gray-400 w-28">{DOADate}</td>

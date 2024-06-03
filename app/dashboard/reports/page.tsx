@@ -8,6 +8,7 @@ import ReferralsList from "@/components/lists/referrals-list"
 import { runWithAmplifyServerContext } from "@/utils/server-utils"
 import { cookies } from "next/headers"
 import { getCurrentUser } from "aws-amplify/auth/server"
+import CSVButton from "@/components/buttons/csv-button"
 export const runtime = 'nodejs'
 export const preferredRegion = 'auto'
 export const dynamic = 'force-dynamic'
@@ -34,6 +35,8 @@ export default async function Reports() {
       <SignInForm/>
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4 mt-16">Reports</h2>
       <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
+      {allReferralsData.data.listReferrals.items.length > 0 ? 
+        <CSVButton data={allReferralsData.data.listReferrals.items}/>:null}
       <ReferralsList userId={currentUser.userId} data={allReferralsData.data.listReferrals.items} title={'Referrals'} listType={'report'}/>
       </div>
    </div>

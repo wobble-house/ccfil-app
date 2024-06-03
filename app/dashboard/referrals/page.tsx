@@ -5,7 +5,6 @@ import SignInForm from "@/components/forms/sign-in-form"
 import ReferralsList from "@/components/lists/referrals-list"
 import { getReferrals } from '@/utils/getData/get-data'
 import { ListReferralsQueryVariables } from "@/utils/graphql/API"
-import CSVButton from "@/components/buttons/csv-button"
 import { cookies } from 'next/headers';
 import { getCurrentUser} from 'aws-amplify/auth/server';
 import { runWithAmplifyServerContext } from "@/utils/server-utils"
@@ -66,8 +65,6 @@ export default async function Referrals() {
       <h2 className="relative text-6xl uppercase text-blue2 text-center bg-gray1 mx-auto max-w-md rounded full bg-opacity-75 mb-16 p-4 mt-16">Referrals</h2>
       
       <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
-      {allReferralsData.data.listReferrals.items.length > 0 ? 
-        <CSVButton data={allReferralsData.data.listReferrals.items}/>:null}
         <ReferralsList userId={currentUser.userId} data={newReferralsData.data.listReferrals.items} title={'Referrals'} listType={'referral'}/>
         {approvedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList userId={currentUser.userId} data={approvedReferralsData.data.listReferrals.items} title={'Approved'} listType={'approved'}/>:null}
         {declinedReferralsData.data.listReferrals.items.length > 0 ? <ReferralsList userId={currentUser.userId} data={declinedReferralsData.data.listReferrals.items} title={'Declined'} listType={'declined'}/>:null}

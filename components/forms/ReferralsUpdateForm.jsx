@@ -38,6 +38,7 @@ export default function ReferralsUpdateForm(props) {
     source: "",
     name: "",
     followUp: "",
+    DOADate: "",
     reasonForDecline: "",
     howDidYouHearAboutUs: "",
     assistanceProvided: "",
@@ -68,6 +69,7 @@ export default function ReferralsUpdateForm(props) {
     setSource(cleanValues.source);
     setName(cleanValues.name);
     setFollowUp(cleanValues.followUp);
+    setDOADate(cleanValues.DOADate);
     setReasonForDecline(cleanValues.reasonForDecline);
     setHowDidYouHearAboutUs(cleanValues.howDidYouHearAboutUs);
     setAssistanceProvided(cleanValues.assistanceProvided);
@@ -95,6 +97,7 @@ export default function ReferralsUpdateForm(props) {
     source: [],
     name: [],
     followUp: [],
+    DOADate: [],
     reasonForDecline: [],
     howDidYouHearAboutUs: [],
     assistanceProvided: [],
@@ -129,6 +132,7 @@ export default function ReferralsUpdateForm(props) {
           source: source ?? null,
           name: name ?? null,
           followUp: followUp ?? null,
+          DOADate: DOADate ?? null,
           reasonForDecline: reasonForDecline ?? null,
           howDidYouHearAboutUs: howDidYouHearAboutUs ?? null,
           assistanceProvided: assistanceProvided ?? null,
@@ -313,6 +317,39 @@ export default function ReferralsUpdateForm(props) {
         errorMessage={errors.followUp?.errorMessage}
         hasError={errors.followUp?.hasError}
         {...getOverrideProps(overrides, "followUp")}
+      ></TextField>
+            <TextField
+        label="DOA/DOD"
+        isRequired={false}
+        isReadOnly={false}
+        type="date"
+        value={DOADate}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              date,
+              source,
+              name,
+              followUp,
+              currentResident,
+              DOADate: value,
+              reasonForDecline,
+              howDidYouHearAboutUs,
+              assistanceProvided,
+            };
+            const result = onChange(modelFields);
+            value = result?.DOADate ?? value;
+          }
+          if (errors.DOADate?.hasError) {
+            runValidationTasks("DOADate", value);
+          }
+          setDOADate(value);
+        }}
+        onBlur={() => runValidationTasks("DOADate", DOADate)}
+        errorMessage={errors.DOADate?.errorMessage}
+        hasError={errors.DOADate?.hasError}
+        {...getOverrideProps(overrides, "DOADate")}
       ></TextField>
       <TextField
         label="Reason for decline"

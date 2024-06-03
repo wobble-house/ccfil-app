@@ -2,6 +2,7 @@ import Button from "../buttons/button";
 import ReferralsCard from "../cards/referrals-card";
 import { getCurrentUserFromServer } from "@/utils/getData/get-data";
 import { GetUserQueryVariables } from "@/utils/graphql/API";
+import { usePathname } from "next/navigation";
 
 export default async function ReferralsList({userId, data, title, listType}:{userId, data, title, listType?}){
   const userVariables: GetUserQueryVariables = {
@@ -75,13 +76,13 @@ const user = await getCurrentUserFromServer(userVariables)
             <tr className={`relative flex flex-row w-full bg-blue2 text-white items-center justify-between`}>
               <th className="flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-sm w-10">Notes</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-24">Date</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-24">Approved</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-32">Source</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-40">Name </th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-28">DOA</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-28">DOA/DOD</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Reason For Decline</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">how Did You Hear About Us</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Assistance Provided</th>
-              
             </tr>
             {data.length < 1 ? <tr className={`relative flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
       {data.map(data => ( 
@@ -89,6 +90,7 @@ const user = await getCurrentUserFromServer(userVariables)
         key={data.id}
         id={data.id}
         author={user.data.getUser.email}
+        currentResident={data.currentResident}
         date={data.date}
         source={data.source}
         name={data.name}
