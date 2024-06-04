@@ -45,7 +45,6 @@ export default function ReferralsCard({
     const [todaysDate, setTodaysDate] = useState(today);
     const [referralModal, setReferralModal] = useState(false)
 
-
     function admitReferral(e){  
       function confirmAdmit(){
         const admitPrompt = prompt('Enter assistance provided')
@@ -139,6 +138,11 @@ export default function ReferralsCard({
         }
         confirmDelete().then(()=>router.refresh());
     };
+
+    function handleReferralEditClose(){
+      setReferralModal(false);
+      router.refresh();
+    }
     if (listType == 'report') return (
       <tr id={id} className={`flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 items-center border-b overflow-auto align-middle content-center justify-between`}>
       <td className="flex items-center border-l text-xs h-full border-gray-400 w-24 px-2">{date}</td>
@@ -184,7 +188,7 @@ export default function ReferralsCard({
             <td className="notes flex justify-center border-l text-xs h-full border-gray-400 items-center">
             {referralModal ? <div className={`absolute flex flex-col-reverse h-[324px] bg-gray2 rounded-xl text-xs p-1 top-0 z-90`}>
                                 <ReferralsUpdateForm id={id}/>
-                                <button className={`text-right mr-1 bg-red-400 rounded-md ml-auto p-2 text-white`}onClick={()=>setReferralModal(false)}>x</button>
+                                <button className={`text-right mr-1 bg-red-400 rounded-md ml-auto p-2 text-white`}onClick={handleReferralEditClose}>x</button>
                               </div>:<button className="flex justify-center items-center align-middle bg-gray-400 text-white text-xs p-1 rounded-md" onClick={()=>setReferralModal(true)}>
                                       edit
                                       </button>}
