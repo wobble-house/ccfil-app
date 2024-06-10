@@ -7,6 +7,8 @@ import { ListReferralsQueryVariables } from "@/utils/graphql/API"
 import ReferralsList from "@/components/lists/referrals-list"
 import { runWithAmplifyServerContext } from "@/utils/server-utils"
 import { cookies } from "next/headers"
+import { getCurrentUserFromServer } from "@/utils/getData/get-data";
+import { GetUserQueryVariables } from "@/utils/graphql/API";
 import { getCurrentUser } from "aws-amplify/auth/server"
 import CSVButton from "@/components/buttons/csv-button"
 import ReferralsWidget from "@/components/cards/referrals-widget"
@@ -50,6 +52,11 @@ export default async function Reports() {
     nextServerContext: { cookies },
     operation: (contextSpec) => getCurrentUser(contextSpec)
   });
+  const userVariables: GetUserQueryVariables = {
+    id: currentUser.userId
+    };
+  
+  const author = await getCurrentUserFromServer(userVariables)
 
   function calculateTurnoverData(){
     let newData = []
@@ -95,7 +102,7 @@ export default async function Reports() {
       <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
       {allReferralsData.data.listReferrals.items.length > 0 ? 
         <CSVButton data={turnoverData}/>:null}
-      <ReferralsList userId={currentUser.userId} data={turnoverData} title={'Referrals'} listType={'report'}/>
+      <ReferralsList author={author.data.getUser.email} data={turnoverData} title={'Referrals'} listType={'report'}/>
       </div>
    </div>
   )

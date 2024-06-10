@@ -1,15 +1,25 @@
+'use client';
+import { useState } from "react";
 import Button from "../buttons/button";
 import ReferralsCard from "../cards/referrals-card";
-import { getCurrentUserFromServer } from "@/utils/getData/get-data";
-import { GetUserQueryVariables } from "@/utils/graphql/API";
 
-export default async function ReferralsList({userId, data, title, listType}:{userId, data, title, listType?}){
-  const userVariables: GetUserQueryVariables = {
-    id: userId
-};
+export default function ReferralsList({ author, data, title, listType}:{ author, data, title, listType?}){
+  const [sortDirection, setSortDirection] = useState(true);
+  const [listData, setListData] = useState(data)
 
-const user = await getCurrentUserFromServer(userVariables)
-
+  function sortDataByKey(data){
+    if (sortDirection == true) {
+      const newData = data.sort((a, b) => a.date.localeCompare(b.date));
+      setListData(newData)
+    } else {
+      const newData = data.sort((a, b) => b.date.localeCompare(a.date))
+      setListData(newData)
+    }
+  };
+  function handleSortButton(){
+    setSortDirection(!sortDirection)
+    sortDataByKey(data)
+  }
   if (listType != 'report') return(
     <div className='flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg max-w-6xl w-full my-10'>
       <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">{title}</h2>
@@ -24,7 +34,7 @@ const user = await getCurrentUserFromServer(userVariables)
               <th className="admit justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Admit</th>
               <th className="decline justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Decline</th>
               <th className="notes flex justify-center items-center h-full border-blue1 border-l text-center font-bold text-xs ">Notes</th>
-              <th className="date flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs ">Date</th>
+              <th className="date flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs ">Date<button className={`${sortDirection == false ? 'rotate-180 mb-2': 'mt-2'} p-1 text-white`} onClick={()=>handleSortButton()}>^</button></th>
               <th className="source flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">Source</th>
               <th className="name flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">Name </th>
               {listType === 'approved' ? <>
@@ -52,7 +62,7 @@ const user = await getCurrentUserFromServer(userVariables)
       <ReferralsCard
         key={data.id}
         id={data.id}
-        author={user.data.getUser.email}
+        author={author}
         date={data.date}
         source={data.source}
         name={data.name}
@@ -74,7 +84,7 @@ const user = await getCurrentUserFromServer(userVariables)
         <table className="relative inline border-2 border-solid rounded-lg w-full">
           <tbody className="w-full flex flex-col flex-grow mx-auto">
             <tr className={`relative flex flex-row w-full bg-blue2 text-white items-center justify-between`}>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-24">Date</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-24">Date<button className={`${sortDirection == false ? 'rotate-180 mb-2': 'mt-2'} p-1 text-white`} onClick={()=>handleSortButton()}>^</button></th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-24">Approved</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-32">Source</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-40">Name </th>
@@ -84,12 +94,11 @@ const user = await getCurrentUserFromServer(userVariables)
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">how Did You Hear About Us</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Program</th>
             </tr>
-            {data.length < 1 ? <tr className={`relative flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
-      {data.map(data => ( 
+      {listData.map(data => ( 
       <ReferralsCard
         key={data.id}
         id={data.id}
-        author={user.data.getUser.email}
+        author={author}
         currentResident={data.currentResident}
         date={data.date}
         source={data.source}
