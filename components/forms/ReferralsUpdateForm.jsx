@@ -16,7 +16,7 @@ import { updateReferrals } from "../../utils/graphql/mutations";
 import { useRouter } from "next/navigation";
 const client = generateClient();
 export default function ReferralsUpdateForm(props) {
-  const router = useRouter
+  const router = useRouter();
   const {
     id: idProp,
     referrals: referralsModelProp,
@@ -168,10 +168,9 @@ export default function ReferralsUpdateForm(props) {
                 ...modelFields,
               },
             },
-          });
+          }).then(router.refresh());
           if (onSuccess) {
             onSuccess(modelFields);
-            router.refresh()
           }
         } catch (err) {
           if (onError) {
