@@ -39,7 +39,7 @@ const user = await getCurrentUserFromServer(userVariables)
               <th className="how flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">how Did You Hear About Us</th>
               :null}
               {listType === 'declined' ?
-              <th className="assistanceProvided flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">Assistance Provided</th>
+              <th className="assistanceProvided flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs col-span-2">Program</th>
               :null}
               {listType !== 'report' ?
               <th className="edit flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-xs">edit</th>
@@ -81,7 +81,7 @@ const user = await getCurrentUserFromServer(userVariables)
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-28">Turnover</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Reason For Decline</th>
               <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-64">how Did You Hear About Us</th>
-              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Assistance Provided</th>
+              <th className="flex justify-center items-center h-full border-blue1 border-l px-2 text-center font-bold text-sm w-60">Program</th>
             </tr>
             {data.length < 1 ? <tr className={`relative flex flex-row w-full odd:bg-gray-100 even:bg-gray-300 justify-center h-20 items-center border-b overflow-auto align-middle content-center`}><td className={`flex flex-row align-middle items-center gap-4 `}><h2 className={`relative text-center w-full text-nowrap`}>No Referrals!</h2><Button text={'Add Referral'} link={'/forms/referrals'}/></td></tr> : null}
       {data.map(data => ( 
