@@ -9,6 +9,7 @@ export default async function ReferralsList({userId, data, title, listType}:{use
 };
 
 const user = await getCurrentUserFromServer(userVariables)
+
   if (listType != 'report') return(
     <div className='flex flex-col bg-white bg-opacity-75 mx-4 border-grey-100 pt-2 rounded-lg max-w-6xl w-full my-10'>
       <h2 className="text-4xl uppercase text-center mx-auto pb-2 ">{title}</h2>

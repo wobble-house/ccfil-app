@@ -89,6 +89,7 @@ export default async function Reports() {
         <ReferralsWidget 
         approved={approvedReferralsData.data.listReferrals.items.length}
         declined={declinedReferralsData.data.listReferrals.items.length}
+        undetermined={allReferralsData.data.listReferrals.items.length - (approvedReferralsData.data.listReferrals.items.length + declinedReferralsData.data.listReferrals.items.length)}
         total={allReferralsData.data.listReferrals.items.length}
         />
       <div className="relative flex flex-col justify-center items-center rounded-lg pb-20">
