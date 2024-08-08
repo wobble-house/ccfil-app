@@ -20,8 +20,8 @@ export default function Outcomes() {
       <NavHeader description={metadata.description} title={metadata.title} bgimage={0}/>
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-              <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16">
-            <ImageHandler src="public/Images/CCFIL-DemographicsInfographic_v02-768x1199.png" 
+              <div className="flex relative z-50 w-full h-full bg-gray1 mx-auto justify-center p-16 mt-16">
+            <ImageHandler src="public/Images/CCFIL-DemographicsInfographic_2023.png" 
             width={623} 
             height={973} 
             alt="demographic infographic" 
