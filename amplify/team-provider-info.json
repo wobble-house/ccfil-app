@@ -1,4 +1,52 @@
 {
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ccfilapp-dev-205746-authRole",
+      "UnauthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-dev-205746-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-dev-205746-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+      "UnauthRoleName": "amplify-ccfilapp-dev-205746-unauthRole",
+      "StackName": "amplify-ccfilapp-dev-205746",
+      "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-ccfilapp-dev-205746/1d282930-8fc3-11ee-93ab-0a6d33c16a7f",
+      "AmplifyAppId": "dymon2l90oqk2"
+    },
+    "categories": {
+      "auth": {
+        "ccfilapp": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueriesd838de2e": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/AdminQueriesd838de2e-725470335a7544725247-build.zip"
+        },
+        "ccfilapp62c969fa": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/ccfilapp62c969fa-6c3645547875526c5432-build.zip"
+        },
+        "ccfilappCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/ccfilappCreateAuthChallenge-424536634958382f7179-build.zip"
+        },
+        "ccfilappCustomMessage": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
+        },
+        "ccfilappDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/ccfilappDefineAuthChallenge-6d753571317365455848-build.zip"
+        },
+        "ccfilappVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-ccfilapp-dev-205746-deployment",
+          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip"
+        }
+      },
+      "storage": {
+        "s3ccfilappstorage4da25038": {}
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplify304c2efeff3e4-staging-161600-authRole",
