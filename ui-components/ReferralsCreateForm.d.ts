@@ -26,7 +26,7 @@ export declare type ReferralsCreateFormInputValues = {
     source?: string;
     name?: string;
     followUp?: string;
-    DOA?: boolean;
+    currentResident?: boolean;
     DOADate?: string;
     reasonForDecline?: string;
     howDidYouHearAboutUs?: string;
@@ -37,7 +37,7 @@ export declare type ReferralsCreateFormValidationValues = {
     source?: ValidationFunction<string>;
     name?: ValidationFunction<string>;
     followUp?: ValidationFunction<string>;
-    DOA?: ValidationFunction<boolean>;
+    currentResident?: ValidationFunction<boolean>;
     DOADate?: ValidationFunction<string>;
     reasonForDecline?: ValidationFunction<string>;
     howDidYouHearAboutUs?: ValidationFunction<string>;
@@ -50,7 +50,7 @@ export declare type ReferralsCreateFormOverridesProps = {
     source?: PrimitiveOverrideProps<TextFieldProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
     followUp?: PrimitiveOverrideProps<TextFieldProps>;
-    DOA?: PrimitiveOverrideProps<SwitchFieldProps>;
+    currentResident?: PrimitiveOverrideProps<SwitchFieldProps>;
     DOADate?: PrimitiveOverrideProps<TextFieldProps>;
     reasonForDecline?: PrimitiveOverrideProps<TextFieldProps>;
     howDidYouHearAboutUs?: PrimitiveOverrideProps<TextFieldProps>;

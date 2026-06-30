@@ -33,7 +33,7 @@ export default function ReferralsCreateForm(props) {
     source: "",
     name: "",
     followUp: "",
-    DOA: false,
+    currentResident: false,
     DOADate: "",
     reasonForDecline: "",
     howDidYouHearAboutUs: "",
@@ -43,7 +43,9 @@ export default function ReferralsCreateForm(props) {
   const [source, setSource] = React.useState(initialValues.source);
   const [name, setName] = React.useState(initialValues.name);
   const [followUp, setFollowUp] = React.useState(initialValues.followUp);
-  const [DOA, setDOA] = React.useState(initialValues.DOA);
+  const [currentResident, setCurrentResident] = React.useState(
+    initialValues.currentResident
+  );
   const [DOADate, setDOADate] = React.useState(initialValues.DOADate);
   const [reasonForDecline, setReasonForDecline] = React.useState(
     initialValues.reasonForDecline
@@ -60,7 +62,7 @@ export default function ReferralsCreateForm(props) {
     setSource(initialValues.source);
     setName(initialValues.name);
     setFollowUp(initialValues.followUp);
-    setDOA(initialValues.DOA);
+    setCurrentResident(initialValues.currentResident);
     setDOADate(initialValues.DOADate);
     setReasonForDecline(initialValues.reasonForDecline);
     setHowDidYouHearAboutUs(initialValues.howDidYouHearAboutUs);
@@ -72,7 +74,7 @@ export default function ReferralsCreateForm(props) {
     source: [],
     name: [],
     followUp: [],
-    DOA: [],
+    currentResident: [],
     DOADate: [],
     reasonForDecline: [],
     howDidYouHearAboutUs: [],
@@ -108,7 +110,7 @@ export default function ReferralsCreateForm(props) {
           source,
           name,
           followUp,
-          DOA,
+          currentResident,
           DOADate,
           reasonForDecline,
           howDidYouHearAboutUs,
@@ -180,7 +182,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -212,7 +214,7 @@ export default function ReferralsCreateForm(props) {
               source: value,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -244,7 +246,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name: value,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -276,7 +278,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp: value,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -296,10 +298,10 @@ export default function ReferralsCreateForm(props) {
         {...getOverrideProps(overrides, "followUp")}
       ></TextField>
       <SwitchField
-        label="Doa"
+        label="Current resident"
         defaultChecked={false}
         isDisabled={false}
-        isChecked={DOA}
+        isChecked={currentResident}
         onChange={(e) => {
           let value = e.target.checked;
           if (onChange) {
@@ -308,24 +310,24 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA: value,
+              currentResident: value,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
               assistanceProvided,
             };
             const result = onChange(modelFields);
-            value = result?.DOA ?? value;
+            value = result?.currentResident ?? value;
           }
-          if (errors.DOA?.hasError) {
-            runValidationTasks("DOA", value);
+          if (errors.currentResident?.hasError) {
+            runValidationTasks("currentResident", value);
           }
-          setDOA(value);
+          setCurrentResident(value);
         }}
-        onBlur={() => runValidationTasks("DOA", DOA)}
-        errorMessage={errors.DOA?.errorMessage}
-        hasError={errors.DOA?.hasError}
-        {...getOverrideProps(overrides, "DOA")}
+        onBlur={() => runValidationTasks("currentResident", currentResident)}
+        errorMessage={errors.currentResident?.errorMessage}
+        hasError={errors.currentResident?.hasError}
+        {...getOverrideProps(overrides, "currentResident")}
       ></SwitchField>
       <TextField
         label="Doa date"
@@ -341,7 +343,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate: value,
               reasonForDecline,
               howDidYouHearAboutUs,
@@ -373,7 +375,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline: value,
               howDidYouHearAboutUs,
@@ -405,7 +407,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs: value,
@@ -439,7 +441,7 @@ export default function ReferralsCreateForm(props) {
               source,
               name,
               followUp,
-              DOA,
+              currentResident,
               DOADate,
               reasonForDecline,
               howDidYouHearAboutUs,
