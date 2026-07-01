@@ -36,18 +36,18 @@ export default function TeamMemberUpdateForm(props) {
     bio: "",
     link: "",
     title: "",
-    isFeatured: false,
     isLeader: false,
-    userId: "",
+    featurePosition: "",
   };
   const [firstName, setFirstName] = React.useState(initialValues.firstName);
   const [lastName, setLastName] = React.useState(initialValues.lastName);
   const [bio, setBio] = React.useState(initialValues.bio);
   const [link, setLink] = React.useState(initialValues.link);
   const [title, setTitle] = React.useState(initialValues.title);
-  const [isFeatured, setIsFeatured] = React.useState(initialValues.isFeatured);
   const [isLeader, setIsLeader] = React.useState(initialValues.isLeader);
-  const [userId, setUserId] = React.useState(initialValues.userId);
+  const [featurePosition, setFeaturePosition] = React.useState(
+    initialValues.featurePosition
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = teamMemberRecord
@@ -58,9 +58,8 @@ export default function TeamMemberUpdateForm(props) {
     setBio(cleanValues.bio);
     setLink(cleanValues.link);
     setTitle(cleanValues.title);
-    setIsFeatured(cleanValues.isFeatured);
     setIsLeader(cleanValues.isLeader);
-    setUserId(cleanValues.userId);
+    setFeaturePosition(cleanValues.featurePosition);
     setErrors({});
   };
   const [teamMemberRecord, setTeamMemberRecord] =
@@ -86,9 +85,8 @@ export default function TeamMemberUpdateForm(props) {
     bio: [],
     link: [],
     title: [],
-    isFeatured: [],
     isLeader: [],
-    userId: [],
+    featurePosition: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -121,9 +119,8 @@ export default function TeamMemberUpdateForm(props) {
           bio: bio ?? null,
           link: link ?? null,
           title: title ?? null,
-          isFeatured: isFeatured ?? null,
           isLeader: isLeader ?? null,
-          userId: userId ?? null,
+          featurePosition,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -189,9 +186,8 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link,
               title,
-              isFeatured,
               isLeader,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.firstName ?? value;
@@ -220,9 +216,8 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link,
               title,
-              isFeatured,
               isLeader,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.lastName ?? value;
@@ -251,9 +246,8 @@ export default function TeamMemberUpdateForm(props) {
               bio: value,
               link,
               title,
-              isFeatured,
               isLeader,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.bio ?? value;
@@ -282,9 +276,8 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link: value,
               title,
-              isFeatured,
               isLeader,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.link ?? value;
@@ -313,9 +306,8 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link,
               title: value,
-              isFeatured,
               isLeader,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -331,37 +323,6 @@ export default function TeamMemberUpdateForm(props) {
         {...getOverrideProps(overrides, "title")}
       ></TextField>
       <SwitchField
-        label="Is featured"
-        defaultChecked={false}
-        isDisabled={false}
-        isChecked={isFeatured}
-        onChange={(e) => {
-          let value = e.target.checked;
-          if (onChange) {
-            const modelFields = {
-              firstName,
-              lastName,
-              bio,
-              link,
-              title,
-              isFeatured: value,
-              isLeader,
-              userId,
-            };
-            const result = onChange(modelFields);
-            value = result?.isFeatured ?? value;
-          }
-          if (errors.isFeatured?.hasError) {
-            runValidationTasks("isFeatured", value);
-          }
-          setIsFeatured(value);
-        }}
-        onBlur={() => runValidationTasks("isFeatured", isFeatured)}
-        errorMessage={errors.isFeatured?.errorMessage}
-        hasError={errors.isFeatured?.hasError}
-        {...getOverrideProps(overrides, "isFeatured")}
-      ></SwitchField>
-      <SwitchField
         label="Is leader"
         defaultChecked={false}
         isDisabled={false}
@@ -375,9 +336,8 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link,
               title,
-              isFeatured,
               isLeader: value,
-              userId,
+              featurePosition,
             };
             const result = onChange(modelFields);
             value = result?.isLeader ?? value;
@@ -393,12 +353,16 @@ export default function TeamMemberUpdateForm(props) {
         {...getOverrideProps(overrides, "isLeader")}
       ></SwitchField>
       <TextField
-        label="User id"
-        isRequired={false}
+        label="Feature position"
+        isRequired={true}
         isReadOnly={false}
-        value={userId}
+        type="number"
+        step="any"
+        value={featurePosition}
         onChange={(e) => {
-          let { value } = e.target;
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
           if (onChange) {
             const modelFields = {
               firstName,
@@ -406,22 +370,21 @@ export default function TeamMemberUpdateForm(props) {
               bio,
               link,
               title,
-              isFeatured,
               isLeader,
-              userId: value,
+              featurePosition: value,
             };
             const result = onChange(modelFields);
-            value = result?.userId ?? value;
+            value = result?.featurePosition ?? value;
           }
-          if (errors.userId?.hasError) {
-            runValidationTasks("userId", value);
+          if (errors.featurePosition?.hasError) {
+            runValidationTasks("featurePosition", value);
           }
-          setUserId(value);
+          setFeaturePosition(value);
         }}
-        onBlur={() => runValidationTasks("userId", userId)}
-        errorMessage={errors.userId?.errorMessage}
-        hasError={errors.userId?.hasError}
-        {...getOverrideProps(overrides, "userId")}
+        onBlur={() => runValidationTasks("featurePosition", featurePosition)}
+        errorMessage={errors.featurePosition?.errorMessage}
+        hasError={errors.featurePosition?.hasError}
+        {...getOverrideProps(overrides, "featurePosition")}
       ></TextField>
       <Flex
         justifyContent="space-between"

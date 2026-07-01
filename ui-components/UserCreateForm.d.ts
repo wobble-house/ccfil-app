@@ -21,43 +21,52 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type TeamMemberCreateFormInputValues = {
+export declare type UserCreateFormInputValues = {
+    username?: string;
+    email?: string;
+    title?: string;
+    bio?: string;
     firstName?: string;
     lastName?: string;
-    bio?: string;
-    link?: string;
-    title?: string;
     isLeader?: boolean;
     featurePosition?: number;
+    link?: string;
+    userHeadshot?: string;
 };
-export declare type TeamMemberCreateFormValidationValues = {
+export declare type UserCreateFormValidationValues = {
+    username?: ValidationFunction<string>;
+    email?: ValidationFunction<string>;
+    title?: ValidationFunction<string>;
+    bio?: ValidationFunction<string>;
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
-    bio?: ValidationFunction<string>;
-    link?: ValidationFunction<string>;
-    title?: ValidationFunction<string>;
     isLeader?: ValidationFunction<boolean>;
     featurePosition?: ValidationFunction<number>;
+    link?: ValidationFunction<string>;
+    userHeadshot?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type TeamMemberCreateFormOverridesProps = {
-    TeamMemberCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type UserCreateFormOverridesProps = {
+    UserCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+    username?: PrimitiveOverrideProps<TextFieldProps>;
+    email?: PrimitiveOverrideProps<TextFieldProps>;
+    title?: PrimitiveOverrideProps<TextFieldProps>;
+    bio?: PrimitiveOverrideProps<TextFieldProps>;
     firstName?: PrimitiveOverrideProps<TextFieldProps>;
     lastName?: PrimitiveOverrideProps<TextFieldProps>;
-    bio?: PrimitiveOverrideProps<TextFieldProps>;
-    link?: PrimitiveOverrideProps<TextFieldProps>;
-    title?: PrimitiveOverrideProps<TextFieldProps>;
     isLeader?: PrimitiveOverrideProps<SwitchFieldProps>;
     featurePosition?: PrimitiveOverrideProps<TextFieldProps>;
+    link?: PrimitiveOverrideProps<TextFieldProps>;
+    userHeadshot?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type TeamMemberCreateFormProps = React.PropsWithChildren<{
-    overrides?: TeamMemberCreateFormOverridesProps | undefined | null;
+export declare type UserCreateFormProps = React.PropsWithChildren<{
+    overrides?: UserCreateFormOverridesProps | undefined | null;
 } & {
     clearOnSuccess?: boolean;
-    onSubmit?: (fields: TeamMemberCreateFormInputValues) => TeamMemberCreateFormInputValues;
-    onSuccess?: (fields: TeamMemberCreateFormInputValues) => void;
-    onError?: (fields: TeamMemberCreateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: TeamMemberCreateFormInputValues) => TeamMemberCreateFormInputValues;
-    onValidate?: TeamMemberCreateFormValidationValues;
+    onSubmit?: (fields: UserCreateFormInputValues) => UserCreateFormInputValues;
+    onSuccess?: (fields: UserCreateFormInputValues) => void;
+    onError?: (fields: UserCreateFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: UserCreateFormInputValues) => UserCreateFormInputValues;
+    onValidate?: UserCreateFormValidationValues;
 } & React.CSSProperties>;
-export default function TeamMemberCreateForm(props: TeamMemberCreateFormProps): React.ReactElement;
+export default function UserCreateForm(props: UserCreateFormProps): React.ReactElement;
