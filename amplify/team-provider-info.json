@@ -105,5 +105,33 @@
         "ccfilapp": {}
       }
     }
+  },
+  "devtwo": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ccfilapp-devtwo-718d7-authRole",
+      "UnauthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-devtwo-718d7-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::703381884667:role/amplify-ccfilapp-devtwo-718d7-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ccfilapp-devtwo-718d7-deployment",
+      "UnauthRoleName": "amplify-ccfilapp-devtwo-718d7-unauthRole",
+      "StackName": "amplify-ccfilapp-devtwo-718d7",
+      "StackId": "arn:aws:cloudformation:us-east-1:703381884667:stack/amplify-ccfilapp-devtwo-718d7/8e8636b0-7550-11f1-a512-0affedf3e03d",
+      "AmplifyAppId": "dymon2l90oqk2"
+    },
+    "categories": {
+      "auth": {
+        "ccfilapp": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueriesd838de2e": {},
+        "ccfilapp62c969fa": {},
+        "ccfilappCreateAuthChallenge": {},
+        "ccfilappCustomMessage": {},
+        "ccfilappDefineAuthChallenge": {},
+        "ccfilappVerifyAuthChallengeResponse": {},
+        "ccfilapp": {}
+      }
+    }
   }
 }
