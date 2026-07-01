@@ -1,6 +1,6 @@
 {
   "resourceName": "s3ccfilappstorage4da25038",
-  "bucketName": "ccfil-app-storage-4da25038",
+  "bucketName": "s3ccfilappstorage4da25038",
   "policyUUID": "8e0613b8",
   "storageAccess": "authAndGuest",
   "guestAccess": [
