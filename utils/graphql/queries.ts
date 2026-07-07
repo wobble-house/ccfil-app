@@ -46,7 +46,6 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -115,7 +114,6 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -161,7 +159,6 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
       __typename
     }
     link
-    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -195,7 +192,6 @@ export const listUsers = /* GraphQL */ `query ListUsers(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -239,7 +235,6 @@ export const listUsers = /* GraphQL */ `query ListUsers(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -281,7 +276,6 @@ export const listUsers = /* GraphQL */ `query ListUsers(
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -351,7 +345,6 @@ export const getReferrals = /* GraphQL */ `query GetReferrals($id: ID!) {
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -443,7 +436,6 @@ export const listReferrals = /* GraphQL */ `query ListReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -748,7 +740,6 @@ export const getFeatureFeedback = /* GraphQL */ `query GetFeatureFeedback($id: I
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -818,7 +809,6 @@ export const listFeatureFeedbacks = /* GraphQL */ `query ListFeatureFeedbacks(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -881,7 +871,6 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -925,7 +914,6 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -967,7 +955,6 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1014,7 +1001,6 @@ export const getUserReferrals = /* GraphQL */ `query GetUserReferrals($id: ID!) 
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1109,7 +1095,6 @@ export const listUserReferrals = /* GraphQL */ `query ListUserReferrals(
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId
@@ -1230,7 +1215,6 @@ export const userReferralsByUserId = /* GraphQL */ `query UserReferralsByUserId(
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId
@@ -1351,7 +1335,6 @@ export const userReferralsByReferralsId = /* GraphQL */ `query UserReferralsByRe
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId
@@ -1435,7 +1418,6 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1479,7 +1461,6 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1521,7 +1502,6 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1552,7 +1532,6 @@ export const getUserFeatureFeedback = /* GraphQL */ `query GetUserFeatureFeedbac
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1649,7 +1628,6 @@ export const listUserFeatureFeedbacks = /* GraphQL */ `query ListUserFeatureFeed
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId
@@ -1754,7 +1732,6 @@ export const userFeatureFeedbacksByUserId = /* GraphQL */ `query UserFeatureFeed
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId
@@ -1859,7 +1836,6 @@ export const userFeatureFeedbacksByFeatureFeedbackId = /* GraphQL */ `query User
           __typename
         }
         link
-        userHeadshot
         createdAt
         updatedAt
         userHeadshotId

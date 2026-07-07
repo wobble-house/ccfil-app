@@ -49,7 +49,6 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -118,7 +117,6 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -164,7 +162,6 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
       __typename
     }
     link
-    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -216,7 +213,6 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -285,7 +281,6 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -331,7 +326,6 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
       __typename
     }
     link
-    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -383,7 +377,6 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -452,7 +445,6 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -498,7 +490,6 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
       __typename
     }
     link
-    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -571,7 +562,6 @@ export const createReferrals = /* GraphQL */ `mutation CreateReferrals(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -678,7 +668,6 @@ export const updateReferrals = /* GraphQL */ `mutation UpdateReferrals(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -785,7 +774,6 @@ export const deleteReferrals = /* GraphQL */ `mutation DeleteReferrals(
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1212,7 +1200,6 @@ export const createFeatureFeedback = /* GraphQL */ `mutation CreateFeatureFeedba
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1297,7 +1284,6 @@ export const updateFeatureFeedback = /* GraphQL */ `mutation UpdateFeatureFeedba
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1382,7 +1368,6 @@ export const deleteFeatureFeedback = /* GraphQL */ `mutation DeleteFeatureFeedba
             __typename
           }
           link
-          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1449,7 +1434,6 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1493,7 +1477,6 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1535,7 +1518,6 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1582,7 +1564,6 @@ export const createUserReferrals = /* GraphQL */ `mutation CreateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1651,7 +1632,6 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1695,7 +1675,6 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1737,7 +1716,6 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1784,7 +1762,6 @@ export const updateUserReferrals = /* GraphQL */ `mutation UpdateUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1853,7 +1830,6 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1897,7 +1873,6 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1939,7 +1914,6 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1986,7 +1960,6 @@ export const deleteUserReferrals = /* GraphQL */ `mutation DeleteUserReferrals(
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2055,7 +2028,6 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2099,7 +2071,6 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2141,7 +2112,6 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2172,7 +2142,6 @@ export const createUserFeatureFeedback = /* GraphQL */ `mutation CreateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2239,7 +2208,6 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2283,7 +2251,6 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2325,7 +2292,6 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2356,7 +2322,6 @@ export const updateUserFeatureFeedback = /* GraphQL */ `mutation UpdateUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2423,7 +2388,6 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2467,7 +2431,6 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2509,7 +2472,6 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
         __typename
       }
       link
-      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2540,7 +2502,6 @@ export const deleteUserFeatureFeedback = /* GraphQL */ `mutation DeleteUserFeatu
             isLeader
             featurePosition
             link
-            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
