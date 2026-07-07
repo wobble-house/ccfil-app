@@ -16,7 +16,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "aws-amplify": "^6.0.18",
@@ -62,6 +62,9 @@
       "@xstate/react": {
         "react": "$react"
       }
+    },
+    "next": {
+      "postcss": "^8.5.10"
     }
   }
 }
