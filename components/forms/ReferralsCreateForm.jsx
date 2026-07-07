@@ -1,7 +1,7 @@
 'use client';
 /* eslint-disable */
 import * as React from "react";
-import { revalidatePath } from "next/cache";
+import { revalidateReferralsPath } from "./actions";
 import { Button,Grid,TextField} from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "@/app/ui-components/utils";
 import { generateClient } from "aws-amplify/api";
@@ -147,7 +147,7 @@ export default function ReferralsCreateForm(props) {
           });
           if (onSuccess) {
             onSuccess(modelFields);
-            revalidatePath('/dashboard/referrals', 'page')
+             await revalidateReferralsPath('/dashboard/referrals', 'page')
             router.push('/dashboard/referrals')
           }
           if (clearOnSuccess) {
