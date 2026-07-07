@@ -46,6 +46,7 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -114,6 +115,7 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -159,6 +161,7 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: Mo
       __typename
     }
     link
+    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -207,6 +210,7 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -275,6 +279,7 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -320,6 +325,7 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: Mo
       __typename
     }
     link
+    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -368,6 +374,7 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -436,6 +443,7 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -481,6 +489,7 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: Mo
       __typename
     }
     link
+    userHeadshot
     createdAt
     updatedAt
     userHeadshotId
@@ -550,6 +559,7 @@ export const onCreateReferrals = /* GraphQL */ `subscription OnCreateReferrals($
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -653,6 +663,7 @@ export const onUpdateReferrals = /* GraphQL */ `subscription OnUpdateReferrals($
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -756,6 +767,7 @@ export const onDeleteReferrals = /* GraphQL */ `subscription OnDeleteReferrals($
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1142,6 +1154,7 @@ export const onCreateFeatureFeedback = /* GraphQL */ `subscription OnCreateFeatu
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1225,6 +1238,7 @@ export const onUpdateFeatureFeedback = /* GraphQL */ `subscription OnUpdateFeatu
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1308,6 +1322,7 @@ export const onDeleteFeatureFeedback = /* GraphQL */ `subscription OnDeleteFeatu
             __typename
           }
           link
+          userHeadshot
           createdAt
           updatedAt
           userHeadshotId
@@ -1373,6 +1388,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1416,6 +1432,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1457,6 +1474,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1503,6 +1521,7 @@ export const onCreateUserReferrals = /* GraphQL */ `subscription OnCreateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1570,6 +1589,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1613,6 +1633,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1654,6 +1675,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1700,6 +1722,7 @@ export const onUpdateUserReferrals = /* GraphQL */ `subscription OnUpdateUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1767,6 +1790,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1810,6 +1834,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1851,6 +1876,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -1897,6 +1923,7 @@ export const onDeleteUserReferrals = /* GraphQL */ `subscription OnDeleteUserRef
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -1964,6 +1991,7 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2007,6 +2035,7 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2048,6 +2077,7 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2078,6 +2108,7 @@ export const onCreateUserFeatureFeedback = /* GraphQL */ `subscription OnCreateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2143,6 +2174,7 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2186,6 +2218,7 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2227,6 +2260,7 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2257,6 +2291,7 @@ export const onUpdateUserFeatureFeedback = /* GraphQL */ `subscription OnUpdateU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2322,6 +2357,7 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2365,6 +2401,7 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
@@ -2406,6 +2443,7 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
         __typename
       }
       link
+      userHeadshot
       createdAt
       updatedAt
       userHeadshotId
@@ -2436,6 +2474,7 @@ export const onDeleteUserFeatureFeedback = /* GraphQL */ `subscription OnDeleteU
             isLeader
             featurePosition
             link
+            userHeadshot
             createdAt
             updatedAt
             userHeadshotId
