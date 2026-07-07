@@ -43,6 +43,9 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "recaptchasecret": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -94,7 +97,7 @@
               "Ref": "AWS::Region"
             },
             "RECAPTCHASECRET": {
-              "Ref": "RECAPTCHASECRET"
+              "Ref": "recaptchasecret"
             }
           }
         },

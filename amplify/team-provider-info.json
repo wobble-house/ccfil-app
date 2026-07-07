@@ -84,7 +84,10 @@
         },
         "ccfilappCustomMessage": {
           "deploymentBucketName": "amplify-ccfilapp-develop-76360-deployment",
-          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
+          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip",
+          "emailsubject": "confirmation",
+          "emailmessage": "click here",
+          "redirecturl": "/"
         },
         "ccfilappDefineAuthChallenge": {
           "deploymentBucketName": "amplify-ccfilapp-develop-76360-deployment",
@@ -92,7 +95,8 @@
         },
         "ccfilappVerifyAuthChallengeResponse": {
           "deploymentBucketName": "amplify-ccfilapp-develop-76360-deployment",
-          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip"
+          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip",
+          "recaptchasecret": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4"
         },
         "ccfilapp": {}
       },

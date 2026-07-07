@@ -12,5 +12,19 @@
   "triggerTemplate": "CustomMessage.json.ejs",
   "triggerEventPath": "CustomMessage.event.json",
   "roleName": "ccfilappCustomMessage",
-  "skipEdit": true
+  "skipEdit": true,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "emailsubject",
+      "environmentVariableName": "EMAILSUBJECT"
+    },
+    {
+      "cloudFormationParameterName": "emailmessage",
+      "environmentVariableName": "EMAILMESSAGE"
+    },
+    {
+      "cloudFormationParameterName": "redirecturl",
+      "environmentVariableName": "REDIRECTURL"
+    }
+  ]
 }
