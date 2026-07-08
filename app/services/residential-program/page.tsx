@@ -19,7 +19,7 @@ export default function ResidentialProgram() {
       <NavHeader description={metadata.description} title={metadata.title} bgimage={0} />
          <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <div className="flex mx-auto py-16 z-50 bg-white w-full justify-center">
+          <div className="flex mx-auto mt-24 pb-20 z-50 bg-white w-full justify-center">
             <ReactMarkdown className="markdown p-2 list-inside text-left max-w-4xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
               {semiIndependentResidentialProgram}
             </ReactMarkdown>
