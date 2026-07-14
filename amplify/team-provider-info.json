@@ -14,16 +14,16 @@
     "categories": {
       "function": {
         "ccfilappCustomMessage": {
-          "EMAILMESSAGE": "click here",
-          "EMAILSUBJECT": "confirmation",
-          "REDIRECTURL": "/",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip"
+          "s3Key": "amplify-builds/ccfilappCustomMessage-4e346f78424345796671-build.zip",
+          "emailsubject": "confirmation",
+          "emailmessage": "click here",
+          "redirecturl": "/"
         },
         "ccfilappVerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4",
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
-          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip"
+          "s3Key": "amplify-builds/ccfilappVerifyAuthChallengeResponse-4d6869626159324c4762-build.zip",
+          "recaptchasecret": "6LfOox8pAAAAAPiJb_acB-aeqsIa8nPjBzVjdWK4"
         },
         "AdminQueriesd838de2e": {
           "deploymentBucketName": "amplify-amplify304c2efeff3e4-staging-161600-deployment",
@@ -49,6 +49,13 @@
       },
       "storage": {
         "s3ccfilappstorage4da25038": {}
+      },
+      "analytics": {
+        "ccfilapp": {}
+      },
+      "api": {
+        "AdminQueries": {},
+        "ccfilapp": {}
       }
     }
   },
