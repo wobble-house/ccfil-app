@@ -3,6 +3,8 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageHandler from "@/utils/image-handler";
+import Link from "next/link";
+import Button from "../buttons/style-button"
 import { usePathname } from "next/navigation";
 
 const whoWeAre = `
@@ -67,7 +69,7 @@ Sterling Heights, MI 48312
                     {`F(586) 573-6397`}
                     </p>
                 </div>
-                <button className="transition ease-in-out duration-[500ms] bg-blue1 hover:px-9 hover:py-2 px-10 py-3 rounded-full uppercase mx-auto hover:text-blue1 hover:bg-transparent font-bold border-solid hover:border-blue1 hover:border-4 text-white">contact us</button>
+                <Button className={"transition ease-in-out duration-[500ms] bg-blue1 hover:px-9 hover:py-2 px-10 py-3 rounded-full uppercase mx-auto hover:text-blue1 hover:bg-transparent font-bold border-solid hover:border-blue1 hover:border-4 text-white"} text={'Contact Us'} link={'/contact'}/>
                 </div>
                 </div>
                 <p className="text-center font-mono text-xs text-white hover:animate-pulse pt-16">©Copyright 2023 Community Connections. All Rights Reserved. Privacy Policy</p>

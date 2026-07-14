@@ -12,5 +12,11 @@
   "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
   "triggerEventPath": "VerifyAuthChallengeResponse.event.json",
   "roleName": "ccfilappVerifyAuthChallengeResponse",
-  "skipEdit": true
+  "skipEdit": true,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "recaptchasecret",
+      "environmentVariableName": "RECAPTCHASECRET"
+    }
+  ]
 }

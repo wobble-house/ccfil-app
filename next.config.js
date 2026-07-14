@@ -41,10 +41,7 @@ module.exports = {
       minimumCacheTTL: 60,
       unoptimized: true,
   },
-    experimental: {
-      typedRoutes: true,
-    },
-    swcMinify: true,
+    typedRoutes: true,
     typescript: {
       // !! WARN !!
       // Dangerously allow production builds to successfully complete even if
