@@ -1,7 +1,7 @@
 import "server-only"
 import { Animation } from '@/utils/animation/animation'
 import { Suspense } from "react"
-import { ReactMarkdown} from "react-markdown/lib/react-markdown"
+import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import Loading from "@/app/loading"
 import NavHeader from "@/components/header/header"
 import { privacyPolicyText } from '@/lib/data/data'

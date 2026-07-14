@@ -277,35 +277,73 @@ Discharge
 `
 
 export const privacyPolicyText = `
-  This privacy policy discloses the privacy practices for [Website Address], which is operated by [County Name]. 
-  This privacy policy applies solely to information collected by this website. It will notify you of the following: 
+  # Privacy Policy
 
-  * What personally identifiable information is collected from you through the website, how it is used and with whom it may be shared. 
-  * What choices are available to you regarding the use of your data. 
-  * The security procedures in place to protect the misuse of your information. 
-  * How you can correct any inaccuracies in the information. 
+  **Effective Date:** July 14, 2026
   
-  ## Information Collection, Use, and Sharing 
-  We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone. 
+  Community Connections for Independent Living, LLC ("CCFIL," "we," "our," or "us") is committed to protecting the privacy of our residents, family members, employees, applicants, referral sources, website visitors, and other individuals who interact with us.
   
-  We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to answer a question, ship an order, etc. 
+  ## Information We Collect
   
-  Unless you ask us not to, we may contact you via email in the future to tell you about new services or changes to this privacy policy. 
+  We may collect personal information that you voluntarily provide, including:
+  * Name
+  * Phone number
+  * Email address
+  * Mailing address
+  * Employment application information
+  * Referral and intake information
+  * Any information submitted through website forms, email, phone calls, or text messages
   
-  ## Your Access to and Control Over Information 
-  You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address or phone number given on our website: 
+  We may also collect limited technical information when you visit our website, such as IP address, browser type, and website usage information.
   
-  * See what data we have about you, if any. 
-  * Change/correct any data we have about you. 
-  * Have us delete any data we have about you. 
-  * Express any concern you have about our use of your data. 
+  ## How We Use Information
   
-  ## Security 
-  We take precautions to protect your information. When you submit sensitive information via the website, your information is protected both online and offline. 
+  We may use your information to:
+  * Respond to inquiries and requests
+  * Provide services and support
+  * Communicate regarding admissions, referrals, employment opportunities, and program services
+  * Send appointment reminders, updates, notifications, and other operational communications
+  * Improve our website and services
+  * Comply with legal and regulatory obligations
   
-  Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a closed lock icon at the bottom of your web browser, or looking for "https" at the beginning of the address of the web page. 
+  ## Text Messaging Communications
   
-  While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment. 
+  By providing your mobile phone number and consenting to receive text messages from Community Connections for Independent Living, LLC, you agree to receive communications related to our services, admissions, referrals, employment opportunities, scheduling, program updates, and other operational matters.
+  * Message frequency may vary.
+  * Message and data rates may apply.
+  * You may opt out of receiving text messages at any time by replying STOP to any message. For assistance, reply HELP or contact us directly.
   
-  ## Updates 
-  Our Privacy Policy may change from time to time and all updates will be posted on this page.`
+  ## Information Sharing
+  
+  * We do not sell, rent, or share personal information with third parties for their marketing purposes.
+  * SMS consent is not shared with third parties or affiliates for marketing purposes.
+  * We may share information with service providers that assist us in operating our business and delivering services, provided they maintain appropriate confidentiality and security protections.
+  * We may also disclose information when required by law, court order, or governmental request.
+  
+  ## Data Security
+  
+  We implement reasonable administrative, technical, and physical safeguards designed to protect personal information from unauthorized access, disclosure, alteration, or destruction. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.
+  
+  ## Third-Party Services
+  
+  Our website may contain links to third-party websites or services. We are not responsible for the privacy practices of those third parties.
+  
+  ## Children's Privacy
+  
+  Our website is not intended for children under the age of 13, and we do not knowingly collect information from children through our website.
+  
+  ## Changes to This Privacy Policy
+  
+  We may update this Privacy Policy from time to time. Any updates will be posted on this page with a revised effective date.
+  
+  ## Contact Us
+  
+  If you have questions regarding this Privacy Policy, please contact:
+  
+  **Community Connections for Independent Living, LLC**
+  * **Phone:** (248) 410-2715
+  * **Website:** [https://ccfil.com/contact](https://ccfil.com/contact)`
+
+export const smsTermsText = `
+
+`
