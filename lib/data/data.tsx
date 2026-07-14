@@ -280,11 +280,11 @@ export const privacyPolicyText = `
   # Privacy Policy
 
   **Effective Date:** July 14, 2026
-  
+
   Community Connections for Independent Living, LLC ("CCFIL," "we," "our," or "us") is committed to protecting the privacy of our residents, family members, employees, applicants, referral sources, website visitors, and other individuals who interact with us.
-  
+
   ## Information We Collect
-  
+
   We may collect personal information that you voluntarily provide, including:
   * Name
   * Phone number
@@ -293,11 +293,11 @@ export const privacyPolicyText = `
   * Employment application information
   * Referral and intake information
   * Any information submitted through website forms, email, phone calls, or text messages
-  
+
   We may also collect limited technical information when you visit our website, such as IP address, browser type, and website usage information.
-  
+
   ## How We Use Information
-  
+
   We may use your information to:
   * Respond to inquiries and requests
   * Provide services and support
@@ -305,45 +305,104 @@ export const privacyPolicyText = `
   * Send appointment reminders, updates, notifications, and other operational communications
   * Improve our website and services
   * Comply with legal and regulatory obligations
-  
+
   ## Text Messaging Communications
-  
+
   By providing your mobile phone number and consenting to receive text messages from Community Connections for Independent Living, LLC, you agree to receive communications related to our services, admissions, referrals, employment opportunities, scheduling, program updates, and other operational matters.
   * Message frequency may vary.
   * Message and data rates may apply.
   * You may opt out of receiving text messages at any time by replying STOP to any message. For assistance, reply HELP or contact us directly.
-  
+
   ## Information Sharing
-  
+
   * We do not sell, rent, or share personal information with third parties for their marketing purposes.
   * SMS consent is not shared with third parties or affiliates for marketing purposes.
   * We may share information with service providers that assist us in operating our business and delivering services, provided they maintain appropriate confidentiality and security protections.
   * We may also disclose information when required by law, court order, or governmental request.
-  
+
   ## Data Security
-  
+
   We implement reasonable administrative, technical, and physical safeguards designed to protect personal information from unauthorized access, disclosure, alteration, or destruction. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.
-  
+
   ## Third-Party Services
-  
+
   Our website may contain links to third-party websites or services. We are not responsible for the privacy practices of those third parties.
-  
+
   ## Children's Privacy
-  
+
   Our website is not intended for children under the age of 13, and we do not knowingly collect information from children through our website.
-  
+
   ## Changes to This Privacy Policy
-  
+
   We may update this Privacy Policy from time to time. Any updates will be posted on this page with a revised effective date.
-  
+
   ## Contact Us
-  
+
   If you have questions regarding this Privacy Policy, please contact:
-  
+
   **Community Connections for Independent Living, LLC**
   * **Phone:** (248) 410-2715
   * **Website:** [https://ccfil.com/contact](https://ccfil.com/contact)`
 
 export const smsTermsText = `
-
-`
+  # SMS Terms & Conditions
+  
+  **Effective Date:** July 14, 2026
+  
+  By opting in to receive SMS text messages from Community Connections for Independent Living, LLC ("CCFIL"), you agree to these SMS Terms & Conditions.
+  
+  ## SMS Program Description
+  
+  CCFIL may send text messages related to:
+  * Admissions and referral communications
+  * Resident and family communications
+  * Scheduling and appointment reminders
+  * Employment and recruiting communications
+  * Service updates and notifications
+  * Other operational and customer service communications
+  
+  ## Message Frequency
+  
+  Message frequency varies based on your interaction with CCFIL and the services requested.
+  
+  ## Fees
+  
+  Message and data rates may apply according to your mobile carrier plan.
+  
+  ## Opt-Out
+  
+  You may opt out of receiving SMS messages at any time by replying:
+  
+  **STOP**
+  
+  After opting out, you will no longer receive SMS communications unless you opt in again.
+  
+  ## Help
+  
+  For assistance, reply:
+  
+  **HELP**
+  
+  or contact us directly at:
+  * **Phone:** (248) 410-2715
+  * **Website:** [https://ccfil.com/contact](https://ccfil.com/contact)
+  
+  ## Supported Carriers
+  
+  SMS services may not be available on all carriers and carrier participation may vary.
+  
+  ## Privacy
+  
+  * Your privacy is important to us. 
+  * Please review our Privacy Policy for information about how we collect, use, and protect your information.
+  * SMS consent is not shared with third parties or affiliates for marketing purposes.
+  
+  ## Changes to Terms
+  
+  CCFIL reserves the right to modify these SMS Terms & Conditions at any time. Updated terms will be posted on our website with a revised effective date.
+  
+  ## Contact Information
+  
+  **Community Connections for Independent Living, LLC**
+  * **Phone:** (248) 410-2715
+  * **Website:** [https://ccfil.com/contact](https://ccfil.com/contact)`
