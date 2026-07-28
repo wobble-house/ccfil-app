@@ -18,6 +18,7 @@
 # misc
 .DS_Store
 *.pem
+.tmp
 
 # debug
 npm-debug.log*
@@ -38,7 +39,8 @@ next-env.d.ts
 
 sendgrid.env
 
-#amplify-do-not-edit-begin
+#amplify-do-not-edit-begin\
+.amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
@@ -49,7 +51,6 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
-ui-components/
 aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json

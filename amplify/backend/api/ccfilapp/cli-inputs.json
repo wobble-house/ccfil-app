@@ -8,11 +8,6 @@
       "keyDescription": "api key description",
       "expirationTime": 30
     },
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "NONE"
-      }
-    },
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
