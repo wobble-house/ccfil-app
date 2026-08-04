@@ -6,8 +6,8 @@ const schema = `type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   username: String
   email: String
-  Referrals: [Referrals] @manyToMany(relationName: "UserReferrals")
-  FeatureFeedback: [FeatureFeedback] @manyToMany(relationName: "UserFeatureFeedback")
+  Referrals: [UserReferrals] @hasMany(indexName: "byUser", fields: ["id"])
+  FeatureFeedback: [UserFeatureFeedback] @hasMany(indexName: "byUser", fields: ["id"])
   title: String
   bio: String
   firstName: String
@@ -31,7 +31,24 @@ type Referrals @model @auth(rules: [{allow: public}]) {
   howDidYouHearAboutUs: String
   assistanceProvided: String
   notes: [Note] @hasMany
-  users: [User] @manyToMany(relationName: "UserReferrals")
+  users: [UserReferrals] @hasMany(indexName: "byReferrals", fields: ["id"])
+}
+
+type UserReferrals @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userId: ID! @index(name: "byUser")
+  referralsId: ID! @index(name: "byReferrals")
+  user: User! @belongsTo(fields: ["userId"])
+  referrals: Referrals! @belongsTo(fields: ["referralsId"])
+}
+
+
+type UserFeatureFeedback @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userId: ID! @index(name: "byUser")
+  featureFeedbackId: ID! @index(name: "byFeatureFeedback")
+  user: User! @belongsTo(fields: ["userId"])
+  featureFeedback: FeatureFeedback! @belongsTo(fields: ["featureFeedbackId"])
 }
 
 type Note @model @auth(rules: [{allow: public}]) {
@@ -82,7 +99,7 @@ type FeatureFeedback @model @auth(rules: [{allow: public}]) {
   featureRequest: String
   other: String
   isComplete: Boolean
-  users: [User] @manyToMany(relationName: "UserFeatureFeedback")
+  users: [UserFeatureFeedback] @hasMany(indexName: "byFeatureFeedback", fields: ["id"])
 }
  `;
 
@@ -109,7 +126,10 @@ export const data = defineData({
   authorizationModes: {
     defaultAuthorizationMode: 'apiKey',
     apiKeyAuthorizationMode: {
-      expiresInDays: 30,
+      // Was 30. Every model is {allow: public}, so the entire public read path
+      // depends on this key; at 30 days the site goes dark a month after the
+      // last deploy.
+      expiresInDays: 365,
       description: 'api key description',
     },
   },
@@ -128,6 +148,11 @@ export function applyEscapeHatches(backend: Backend) {
       effect: aws_iam.Effect.ALLOW,
       actions: ['appsync:GraphQL'],
       resources: [
+        // Gen2's own API, derived rather than hardcoded. AppSync is stateless
+        // and does not participate in refactor, so Gen2 gets a new API ID.
+        `${backend.data.resources.graphqlApi.arn}/*`,
+        // Gen1 API, retained only for the coexistence window so signed-in users
+        // on the Gen1 frontend keep working. Remove at §10 cutover.
         `arn:aws:appsync:${backend.data.stack.region}:${backend.data.stack.account}:apis/3xktyzywrvggxclbrqvos62pmq/*`,
       ],
     })
