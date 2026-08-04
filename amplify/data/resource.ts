@@ -1,6 +1,7 @@
 import { defineData } from '@aws-amplify/backend';
 import type { Backend } from '../backend';
 import { aws_iam } from 'aws-cdk-lib';
+import { Policy, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 
 const schema = `type User @model @auth(rules: [{allow: public}]) {
   id: ID!
@@ -143,18 +144,17 @@ export function applyEscapeHatches(backend: Backend) {
       authenticationType: 'AWS_IAM',
     },
   ];
-  backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
-    new aws_iam.PolicyStatement({
-      effect: aws_iam.Effect.ALLOW,
-      actions: ['appsync:GraphQL'],
-      resources: [
-        // Gen2's own API, derived rather than hardcoded. AppSync is stateless
-        // and does not participate in refactor, so Gen2 gets a new API ID.
-        `${backend.data.resources.graphqlApi.arn}/*`,
-        // Gen1 API, retained only for the coexistence window so signed-in users
-        // on the Gen1 frontend keep working. Remove at §10 cutover.
-        `arn:aws:appsync:${backend.data.stack.region}:${backend.data.stack.account}:apis/3xktyzywrvggxclbrqvos62pmq/*`,
-      ],
-    })
-  );
+  // 1. Explicitly create the Policy inside the data stack
+  const dataAuthPolicy = new Policy(backend.data.stack, 'DataAuthRolePolicy', {
+    statements: [
+      new PolicyStatement({
+        // Copy the exact actions you already have
+        actions: ['appsync:GraphQL'], 
+        resources: [`${backend.data.resources.graphqlApi.arn}/*`]
+      })
+    ]
+  });
+  
+  // 2. Attach it to the auth role
+  backend.auth.resources.authenticatedUserIamRole.attachInlinePolicy(dataAuthPolicy);
 }
