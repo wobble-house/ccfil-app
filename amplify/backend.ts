@@ -43,4 +43,4 @@ export function postRefactor() {
 }
 
 // Uncomment after refactor
-// postRefactor();
+postRefactor();
