@@ -1,7 +1,7 @@
 'use client';
 
 import { Amplify } from 'aws-amplify';
-import config from '../aws-exports';
+import config from '../amplify_outputs.json';
 import { CookieStorage } from 'aws-amplify/utils';
 import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
 
