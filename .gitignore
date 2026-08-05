@@ -33,6 +33,7 @@ gen1-to-gen2-migration-runbook.md
 # amplify
 .amplify
 amplify_outputs*
+amplify_outputs.json
 amplifyconfiguration*
 aws-exports*
 dist
