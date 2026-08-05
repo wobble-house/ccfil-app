@@ -11,6 +11,7 @@ import * as storage from './storage/resource';
 import { defineBackend } from '@aws-amplify/backend';
 import { Tags } from 'aws-cdk-lib';
 import { RemovalPolicy } from 'aws-cdk-lib';
+import { CfnBucket } from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
 
 const backend = defineBackend({
@@ -48,9 +49,12 @@ export function postRefactor() {
 postRefactor();
 
 const bucket = backend.storage.resources.bucket;
-bucket.applyRemovalPolicy(RemovalPolicy.RETAIN);
+const cfnBucket = bucket.node.defaultChild as CfnBucket;
 
-bucket.node.tryRemoveChild('AutoDeleteObjectCustomResource');
+console.log('BUCKET CHILDREN:', bucket.node.children.map((c) => c.node.id));
+
+cfnBucket.addOverride('DeletionPolicy', 'Retain');
+cfnBucket.addOverride('UpdateReplacePolicy', 'Retain');
 
 bucket.addToResourcePolicy(new iam.PolicyStatement({
   sid: 'PublicReadGetObject',
