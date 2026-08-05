@@ -10,6 +10,8 @@ import * as ccfilappVerifyAuthChallengeResponse from './function/ccfilappVerifyA
 import * as storage from './storage/resource';
 import { defineBackend } from '@aws-amplify/backend';
 import { Tags } from 'aws-cdk-lib';
+import { RemovalPolicy } from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
 
 const backend = defineBackend({
   data: data.data,
@@ -44,3 +46,16 @@ export function postRefactor() {
 
 // Uncomment after refactor
 postRefactor();
+
+const bucket = backend.storage.resources.bucket;
+bucket.applyRemovalPolicy(RemovalPolicy.RETAIN);
+
+bucket.node.tryRemoveChild('AutoDeleteObjectCustomResource');
+
+bucket.addToResourcePolicy(new iam.PolicyStatement({
+  sid: 'PublicReadGetObject',
+  effect: iam.Effect.ALLOW,
+  principals: [new iam.AnyPrincipal()],
+  actions: ['s3:GetObject'],
+  resources: [`${bucket.bucketArn}/public/*`],
+}));
