@@ -36,3 +36,10 @@ amplify_outputs*
 amplifyconfiguration*
 aws-exports*
 dist
+
+cdk-storage.json
+deployed-storage.json
+policy-amplify-dymon2l90oqk2-gen-ccfilappstorage4da250381-6po3hqxqbf7d.json
+policy-ccfil-app-storage-4da25038161600-staging.json
+staging-bucket-policy.json
+post-push-storage.json
