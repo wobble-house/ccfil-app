@@ -1,8 +1,7 @@
 import { defineStorage } from '@aws-amplify/backend';
 import { CfnResource } from 'aws-cdk-lib';
 import type { Backend } from '../backend';
-
-const branchName = process.env.AWS_BRANCH ?? 'sandbox';
+import { branchName } from '../branch-name';
 
 export const storage = defineStorage({
   name: `ccfil-app-storage-4da25038161600-${branchName}`,

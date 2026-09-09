@@ -1,7 +1,6 @@
 import { defineFunction } from '@aws-amplify/backend';
 import type { Backend } from '../../backend';
-
-const branchName = process.env.AWS_BRANCH ?? 'sandbox';
+import { branchName } from '../../branch-name';
 
 export const ccfilappDefineAuthChallenge = defineFunction({
   entry: './index.js',

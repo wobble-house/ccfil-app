@@ -8,8 +8,7 @@ import {
 import { Policy, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { Stack } from 'aws-cdk-lib';
 import type { Backend } from '../../backend';
-
-const branchName = process.env.AWS_BRANCH ?? 'sandbox';
+import { branchName } from '../../branch-name';
 
 export function defineAdminQueriesApi(backend: Backend) {
   const stack = backend.createStack('rest-api-stack-AdminQueries');
