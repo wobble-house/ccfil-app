@@ -26,6 +26,16 @@ export function postRefactor(backend: Backend) {
 
 export function applyEscapeHatches(backend: Backend) {
   const s3Bucket = backend.storage.resources.cfnResources.cfnBucket;
+  // Matches gen2-main's existing bucket settings. Without this, CDK's default
+  // BLOCK_ALL prevents the public-read bucket policy in backend.ts from
+  // attaching to a freshly created bucket on any branch other than
+  // gen2-main's legacy one.
+  s3Bucket.publicAccessBlockConfiguration = {
+    blockPublicAcls: false,
+    blockPublicPolicy: false,
+    ignorePublicAcls: false,
+    restrictPublicBuckets: false,
+  };
   s3Bucket.versioningConfiguration = { status: 'Suspended' };
   s3Bucket.bucketEncryption = {
     serverSideEncryptionConfiguration: [
