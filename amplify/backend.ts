@@ -13,6 +13,7 @@ import { Tags } from 'aws-cdk-lib';
 import { RemovalPolicy } from 'aws-cdk-lib';
 import { CfnBucket } from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import { branchName } from './branch-name';
 
 const backend = defineBackend({
   data: data.data,
@@ -45,8 +46,13 @@ export function postRefactor() {
   Tags.of(backend.stack).add('gen2-migration/post-refactor', 'true');
 }
 
-// Uncomment after refactor
-postRefactor();
+// Reconciles gen2-main's CDK-computed bucket name with the physical Gen1-era
+// bucket ("...-staging") that `refactor` imported into this stack (see
+// storage.postRefactor). No other branch has that legacy bucket or import
+// history, so this must not run for any branch but gen2-main.
+if (branchName === 'gen2-main') {
+  postRefactor();
+}
 
 const bucket = backend.storage.resources.bucket;
 const cfnBucket = bucket.node.defaultChild as CfnBucket;
