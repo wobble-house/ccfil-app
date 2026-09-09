@@ -37,6 +37,10 @@ amplify_outputs.json
 amplifyconfiguration*
 aws-exports*
 dist
+# gen1 CLI local state (leaks in if `dev` is checked out in this worktree)
+/amplify/backend/
+/amplify/.config/
+/amplify/#current-cloud-backend/
 
 cdk-storage.json
 deployed-storage.json
