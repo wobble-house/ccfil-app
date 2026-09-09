@@ -1,6 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import config from '../amplify_outputs.json';
+
+const s3BucketUrl = `https://${config.storage.bucket_name}.s3.${config.storage.aws_region}.amazonaws.com`;
 
 export default function ImageHandler(props){
     const { src, fallbackSrc, alt, ...rest } = props;
@@ -8,7 +11,7 @@ export default function ImageHandler(props){
     return (
         <Image
             {...rest}
-            src={`${process.env.NEXT_PUBLIC_S3_BUCKET_URL}/${imgSrc}`}
+            src={`${s3BucketUrl}/${imgSrc}`}
             alt={alt}
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
